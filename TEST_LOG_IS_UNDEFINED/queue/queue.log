@@ -1,0 +1,90 @@
+20:20:31.275 logback [main] INFO  com.xq.study.log.DemoLogApplication
+                - info msg
+20:20:31.279 logback [main] WARN  com.xq.study.log.DemoLogApplication
+                - warn msg
+20:20:31.279 logback [main] ERROR com.xq.study.log.DemoLogApplication
+                - error msg
+20:21:16.709 logback [main] INFO  com.xq.study.log.DemoLogApplication
+                - info msg
+20:21:16.711 logback [main] WARN  com.xq.study.log.DemoLogApplication
+                - warn msg
+20:21:16.712 logback [main] ERROR com.xq.study.log.DemoLogApplication
+                - error msg
+20:22:21.130 logback [main] ERROR com.xq.study.log.DemoLogApplication
+                - =======error msg
+20:22:21.132 logback [main] WARN  com.xq.study.log.DemoLogApplication
+                - =======warn msg
+20:22:21.133 logback [main] INFO  com.xq.study.log.DemoLogApplication
+                - =======info msg
+20:22:39.334 logback [main] ERROR com.xq.study.log.DemoLogApplication
+                - =======error msg
+20:22:39.339 logback [main] WARN  com.xq.study.log.DemoLogApplication
+                - =======warn msg
+20:22:39.340 logback [main] INFO  com.xq.study.log.DemoLogApplication
+                - =======info msg
+20:23:23.421 logback [main] ERROR com.xq.study.log.DemoLogApplication
+                - =======error msg
+20:23:23.424 logback [main] WARN  com.xq.study.log.DemoLogApplication
+                - =======warn msg
+20:23:23.424 logback [main] INFO  com.xq.study.log.DemoLogApplication
+                - =======info msg
+20:23:46.755 logback [main] ERROR com.xq.study.log.DemoLogApplication
+                - =======error msg
+20:23:46.758 logback [main] WARN  com.xq.study.log.DemoLogApplication
+                - =======warn msg
+20:23:46.759 logback [main] INFO  com.xq.study.log.DemoLogApplication
+                - =======info msg
+20:24:27.186 logback [main] ERROR com.xq.study.log.DemoLogApplication
+                - =======error msg
+20:24:27.189 logback [main] WARN  com.xq.study.log.DemoLogApplication
+                - =======warn msg
+20:24:27.190 logback [main] INFO  com.xq.study.log.DemoLogApplication
+                - =======info msg
+20:25:11.844 logback [main] ERROR com.xq.study.log.DemoLogApplication
+                - =======error msg
+20:25:11.847 logback [main] WARN  com.xq.study.log.DemoLogApplication
+                - =======warn msg
+20:25:11.848 logback [main] INFO  com.xq.study.log.DemoLogApplication
+                - =======info msg
+20:25:24.100 logback [main] ERROR com.xq.study.log.DemoLogApplication
+                - =======error msg
+20:25:24.103 logback [main] WARN  com.xq.study.log.DemoLogApplication
+                - =======warn msg
+20:25:24.104 logback [main] INFO  com.xq.study.log.DemoLogApplication
+                - =======info msg
+20:26:10.132 logback [main] ERROR com.xq.study.log.DemoLogApplication
+                - =======error msg
+20:26:10.138 logback [main] WARN  com.xq.study.log.DemoLogApplication
+                - =======warn msg
+20:26:10.139 logback [main] INFO  com.xq.study.log.DemoLogApplication
+                - =======info msg
+20:26:42.239 logback2 [main] ERROR com.xq.study.log.DemoLogApplication
+                - =======error msg
+20:26:42.242 logback2 [main] WARN  com.xq.study.log.DemoLogApplication
+                - =======warn msg
+20:26:42.243 logback2 [main] INFO  com.xq.study.log.DemoLogApplication
+                - =======info msg
+20:26:57.875 logback [main] ERROR com.xq.study.log.DemoLogApplication
+                - =======error msg
+20:26:57.877 logback [main] WARN  com.xq.study.log.DemoLogApplication
+                - =======warn msg
+20:26:57.878 logback [main] INFO  com.xq.study.log.DemoLogApplication
+                - =======info msg
+20:27:25.704 logback [main] ERROR com.xq.study.log.DemoLogApplication
+                - =======error msg
+20:27:25.707 logback [main] WARN  com.xq.study.log.DemoLogApplication
+                - =======warn msg
+20:27:25.708 logback [main] INFO  com.xq.study.log.DemoLogApplication
+                - =======info msg
+20:30:51.672 logback [main] ERROR com.xq.study.log.DemoLogApplication
+                - =======error msg
+20:30:51.675 logback [main] WARN  com.xq.study.log.DemoLogApplication
+                - =======warn msg
+20:30:51.676 logback [main] INFO  com.xq.study.log.DemoLogApplication
+                - =======info msg
+20:33:36.449 logback [main] ERROR com.xq.study.log.DemoLogApplication
+                - =======error msg
+20:33:36.452 logback [main] WARN  com.xq.study.log.DemoLogApplication
+                - =======warn msg
+20:33:36.453 logback [main] INFO  com.xq.study.log.DemoLogApplication
+                - =======info msg
