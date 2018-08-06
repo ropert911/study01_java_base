@@ -1,9 +1,0 @@
-2018-08-05 22:00:27.884 [main] ERROR com.xq.study.log.DemoLogApplication [DemoLogApplication.java:10] =======error msg
-2018-08-05 22:00:27.887 [main] WARN  com.xq.study.log.DemoLogApplication [DemoLogApplication.java:11] =======warn msg
-2018-08-05 22:00:27.889 [main] INFO  com.xq.study.log.DemoLogApplication [DemoLogApplication.java:12] =======info msg
-2018-08-05 22:01:50.953 [main] ERROR com.xq.study.log.DemoLogApplication [DemoLogApplication.java:10] =======error msg
-2018-08-05 22:01:50.959 [main] WARN  com.xq.study.log.DemoLogApplication [DemoLogApplication.java:11] =======warn msg
-2018-08-05 22:01:50.963 [main] INFO  com.xq.study.log.DemoLogApplication [DemoLogApplication.java:12] =======info msg
-2018-08-05 22:02:53.973 [main] ERROR com.xq.study.log.DemoLogApplication [DemoLogApplication.java:10] =======error msg
-2018-08-05 22:02:53.978 [main] WARN  com.xq.study.log.DemoLogApplication [DemoLogApplication.java:11] =======warn msg
-2018-08-05 22:02:53.979 [main] INFO  com.xq.study.log.DemoLogApplication [DemoLogApplication.java:12] =======info msg

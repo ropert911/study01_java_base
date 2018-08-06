@@ -1,6 +1,0 @@
-20:35:57.364 logback [main] ERROR com.xq.study.log.DemoLogApplication
-                - =======error msg
-20:35:57.367 logback [main] WARN  com.xq.study.log.DemoLogApplication
-                - =======warn msg
-20:35:57.368 logback [main] INFO  com.xq.study.log.DemoLogApplication
-                - =======info msg
