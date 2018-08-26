@@ -72,13 +72,13 @@
                     <skipDockerBuild>false</skipDockerBuild>
                     <imageName>${docker.image.prefix}/${project.artifactId}</imageName>
                     <dockerDirectory>${project.basedir}/src/main/docker</dockerDirectory>
-                    <resources>
+                    <main.java.resources>
                         <resource>
                             <targetPath>/</targetPath>
                             <directory>${project.build.directory}</directory>
                             <include>${project.build.finalName}.jar</include>
                         </resource>
-                    </resources>
+                    </main.java.resources>
                 </configuration>
             </plugin>
         </plugins>
