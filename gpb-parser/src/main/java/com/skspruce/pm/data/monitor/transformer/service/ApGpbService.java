@@ -14,8 +14,18 @@ public class ApGpbService {
 
         //logging  AP.APBase
         if (LOGGER.isDebugEnabled()) {
-            LOGGER.debug("===========================AP(AcBaseMac:{},ApBaseMac:{},BinStartTime:{},FirstDomainId:{},ThirdDomainIdDomainId)======================",
-                    ap.getApBase().getAcBaseMac(), ap.getApBase().getApBaseMac(), ap.getApBase().getBinStartTime(), firstDomainId, thirdDomainIdDomainId);
+            LOGGER.debug("===========================AP(AcBaseMac:{}," +
+                            "ApBaseMac:{}," +
+                            "BinStartTime:{}, " +
+                            "bin_vaildtime:{} " +
+                            "FirstDomainId:{}," +
+                            "ThirdDomainIdDomainId)======================",
+                    ap.getApBase().getAcBaseMac(),
+                    ap.getApBase().getApBaseMac(),
+                    ap.getApBase().getBinStartTime(),
+                    ap.getBinVaildtime(),
+                    firstDomainId,
+                    thirdDomainIdDomainId);
             LOGGER.debug("================================Ap.ApBase===========================");
             LOGGER.debug("ApBase.binStartTime:{}", ap.getApBase().getBinStartTime());
             LOGGER.debug("ApBase.apBaseMac:{}", GpbTool.bytesToMacStr(ap.getApBase().getApBaseMac().toByteArray()));
