@@ -24,7 +24,7 @@
         <protobuf.version>2.5.0</protobuf.version>
         <spring.boot.version>1.5.3.RELEASE</spring.boot.version>
         <docker.image.prefix>${project.groupId}</docker.image.prefix>
-        <skspruce-common-protobuf.version>0.0.7</skspruce-common-protobuf.version>
+        <skspruce-common-protobuf.version>0.0.11</skspruce-common-protobuf.version>
         <pm.common.version>0.0.7</pm.common.version>
         <common-tool.version>0.0.1</common-tool.version>
         <protobuf.version>2.5.0</protobuf.version>

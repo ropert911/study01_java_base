@@ -36,7 +36,7 @@ public class ApGpbService {
             LOGGER.debug("ApBase.apBaseBkSoftVersion:{}", ap.getApBase().getApBaseBkSoftVersion());
             LOGGER.debug("ApBase.apBaseBootVersion:{}", ap.getApBase().getApBaseBootVersion());
             LOGGER.debug("ApBase.apBaseBkSoftVersion:{}", ap.getApBase().getApBaseBkSoftVersion());
-            LOGGER.debug("ApBase.apBaseRadioNumber:{}",ap.getApBase().getApBaseRadioNumber().toByteArray());
+            LOGGER.debug("ApBase.apBaseRadioNumber:{}", ap.getApBase().getApBaseRadioNumber().toByteArray());
             LOGGER.debug("ApBase.apBaseEthNumber:{}", ap.getApBase().getApBaseEthNumber().toByteArray());
             LOGGER.debug("ApBase.apBaseCpuName:{}", ap.getApBase().getApBaseCpuName());
             LOGGER.debug("ApBase.apBaseCpuFreq:{}", ap.getApBase().getApBaseCpuFreq());
@@ -47,7 +47,6 @@ public class ApGpbService {
             LOGGER.debug("ApBase.acBaseMac:{}", GpbTool.bytesToMacStr(ap.getApBase().getAcBaseMac().toByteArray()));
             LOGGER.debug("ApBase.apBaseCpuNum:{}", ap.getApBase().getApBaseCpuNum());
         }
-
 
 
         //logging  AP.APStatus
@@ -177,6 +176,10 @@ public class ApGpbService {
             for (int i = 0; i < ap.getVapStatsCount(); i++) {
                 LOGGER.debug("=============VAPBinStats({})==============", i);
                 LOGGER.debug("VAPBinStats.vapSsidEncodeType:{}", ap.getVapStats(i).getVapSsidEncodeType().toByteArray());
+                LOGGER.debug("VAPBinStats.ssid_name:{}", convertSSIDName(ap.getVapStats(i).getVapSsid().toByteArray(), bytesToIntLittleEndian(ap.getVapStats(i).getVapSsidEncodeType().toByteArray())));
+                LOGGER.debug("VAPBinStats.ssid_name:{}", convertSSIDName(ap.getVapStats(i).getVapSsid().toByteArray(), 1));
+                LOGGER.debug("VAPBinStats.ssid_name:{}", convertSSIDName(ap.getVapStats(i).getVapSsid().toByteArray(), 2));
+                LOGGER.debug("VAPBinStats.ssid_name:{}", convertSSIDName(ap.getVapStats(i).getVapSsid().toByteArray(), 3));
                 LOGGER.debug("VAPBinStats.radioId:{}", ap.getVapStats(i).getRadioId().toByteArray());
                 LOGGER.debug("VAPBinStats.wlanKey(byte[int]):{}", ap.getVapStats(i).getWlanKey().toByteArray());
                 LOGGER.debug("VAPBinStats.wlanKey:{}", new String(ap.getVapStats(i).getWlanKey().toByteArray()));
@@ -454,5 +457,39 @@ public class ApGpbService {
             }
         }
 
+    }
+
+    public static String convertSSIDName(byte[] ssid, int ssidEncodeType) {
+        if (ssid == null) {
+            return null;
+        }
+        try {
+            if (ssidEncodeType == 1) {
+                return new String(ssid, "US-ASCII");
+            } else if (ssidEncodeType == 2) {
+                return new String(ssid, "UTF-8");
+            } else if (ssidEncodeType == 3) {
+                return new String(ssid, "GBK");
+            }
+        } catch (Exception e) {
+            throw new IllegalArgumentException("convertSSIDName failed, unsupporte encoding");
+        }
+        return null;
+    }
+
+    public static int bytesToIntLittleEndian(byte[] bytes) {
+        if (bytes != null && bytes.length <= 4) {
+            int res = 0;
+
+            for (int i = 0; i < bytes.length; ++i) {
+                res <<= 8;
+                int temp = bytes[bytes.length - 1 - i] & 255;
+                res |= temp;
+            }
+
+            return res;
+        } else {
+            throw new IllegalArgumentException("bytes is empty, or the length is exceed four!");
+        }
     }
 }
