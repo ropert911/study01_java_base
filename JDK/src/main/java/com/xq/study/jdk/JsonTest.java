@@ -1,11 +1,9 @@
-package com.xq.study.jdk.datatranslate;
+package com.xq.study.jdk;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.junit4.SpringRunner;
+import com.xq.study.jdk.model.Link;
+import com.xq.study.jdk.model.User;
+import org.codehaus.jackson.JsonProcessingException;
+import org.codehaus.jackson.map.ObjectMapper;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -13,12 +11,11 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.*;
 
-@RunWith(SpringRunner.class)
-@SpringBootTest
-public class DatatranslateApplicationTests {
-
-    @Test
-    public void objectMapperTest() {
+/**
+ * Created by xq on 2019/2/24.
+ */
+public class JsonTest {
+    public static void main(String[] args) {
         User user = new User();
         user.setId("01");
         user.setName("张三");
@@ -26,7 +23,7 @@ public class DatatranslateApplicationTests {
         user.setPay(6666.88);
         user.setValid(true);
         user.setOne('E');
-        user.setBirthday(new Date(20l * 366 * 24 * 3600 * 1000)); //1990年
+        user.setBirthday(new Date(20L * 366 * 24 * 3600 * 1000)); //1990年
 
         Link link = new Link();
         link.setAddress("河南省济源市");
@@ -170,5 +167,4 @@ public class DatatranslateApplicationTests {
             e.printStackTrace();
         }
     }
-
 }

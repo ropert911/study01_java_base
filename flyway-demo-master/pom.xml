@@ -59,26 +59,6 @@
 	</dependencies>
 	
 	<build>
-	  <main.java.resources>
-            <resource>
-                <directory>src/main/main.java.resources</directory>
-                <filtering>true</filtering>
-                <excludes>
-					<exclude>bootstrap-test.properties</exclude>
-                    <exclude>bootstrap-dev.properties</exclude>
-                    <exclude>bootstrap-pro.properties</exclude>
-                    <exclude>bootstrap.properties</exclude>
-                </excludes>
-            </resource>
-            <resource>
-                <directory>src/main/main.java.resources</directory>
-                <filtering>true</filtering>
-                <includes>
-                    <include>bootstrap-${env}.properties</include>
-                    <include>bootstrap.properties</include>
-                </includes>
-            </resource>
-        </main.java.resources>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>

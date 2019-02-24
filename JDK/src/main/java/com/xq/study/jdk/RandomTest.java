@@ -1,4 +1,4 @@
-package com.xq.study.jdk.randomTest;
+package com.xq.study.jdk;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -11,13 +11,14 @@ import java.util.Random;
 public class RandomTest {
     private static Logger LOGGER = LoggerFactory.getLogger(RandomTest.class);
 
-    private static void mathrandom() {
-        double num = Math.random() * 100;
-        //Math.random [0.0,1.0)
-        LOGGER.error("Math.random() * 100=>{}", num);
+    public static void main(String[] args) {
+        test1();    //生成随机数
     }
 
-    private static void utilRandom() {
+    private static void test1() {
+        double num = Math.random() * 100;
+        LOGGER.error("Math.random() * 100=>{}", num);
+
         Random r3 = new Random();
 
         LOGGER.info("生成的[0,10)之间的整数");
@@ -32,11 +33,5 @@ public class RandomTest {
             r3.doubles();
         }
         System.out.println(" ");
-    }
-
-
-    public static void main(String[] args) {
-        mathrandom();
-        utilRandom();
     }
 }

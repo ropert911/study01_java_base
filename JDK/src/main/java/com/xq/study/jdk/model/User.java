@@ -1,4 +1,6 @@
-package com.xq.study.jdk.datatranslate;
+package com.xq.study.jdk.model;
+
+import com.xq.study.jdk.model.Link;
 
 import java.util.Date;
 import java.util.List;

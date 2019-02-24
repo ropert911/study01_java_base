@@ -1,4 +1,4 @@
-package com.xq.study.jdk.datatranslate;
+package com.xq.study.jdk.model;
 
 public class Link
 {
