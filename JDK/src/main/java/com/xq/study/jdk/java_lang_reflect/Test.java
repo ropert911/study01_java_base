@@ -94,17 +94,6 @@ public class Test {
             e.printStackTrace();
         }
     }
-
-    public static void useArray() {
-        String[] names = (String[]) Array.newInstance(String.class, 10);
-        names[0] = "hello";
-        Array.set(names, 1, "world");
-        String str = (String) Array.get(names, 0);
-
-        int[][][] matrix1 = (int[][][]) Array.newInstance(int.class, 3, 3, 3);
-        int[][][] matrix2 = (int[][][]) Array.newInstance(int[].class, 3, 3);
-    }
-
     public static void main(String[] args) {
         Test test = new Test();
         String name = "xiaoqian";
@@ -123,8 +112,5 @@ public class Test {
 
         //类中的函数使用
         useMethod();
-
-        //反射的方式使用数组
-        useArray();
     }
 }
