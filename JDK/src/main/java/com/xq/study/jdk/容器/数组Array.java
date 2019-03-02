@@ -1,11 +1,11 @@
-package com.xq.study.jdk;
+package com.xq.study.jdk.容器;
 
 import java.lang.reflect.Array;
 
 /**
  * Created by xq on 2019/2/27.
  */
-public class 容器_数组 {
+public class 数组Array {
     public static void main(String[] args) {
         useArray();
     }
