@@ -12,7 +12,7 @@ import static java.util.stream.Collectors.toList;
  */
 public class FutureTest {
     public static void main(String[] args) {
-//        test1();
+//        zonedDateTimeTest();
 //        System.out.println("=================");
 //        test2();    //使用 CompletableFuture，还有工厂类
         System.out.println("=================");
