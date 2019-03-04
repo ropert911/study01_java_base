@@ -15,7 +15,6 @@
         <!--<module>gpb-parser</module>-->
         <module>JDK</module>
         <module>test</module>
-        <module>scala_test</module>
     </modules>
     <packaging>pom</packaging>
 
