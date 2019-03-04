@@ -186,5 +186,16 @@ public class 时间1_日期时间Test {
         System.out.println("时间相差5 Duration：" + threeMinutes);
         threeMinutes = Duration.of(3, ChronoUnit.MINUTES);
         System.out.println("时间相差6 Duration：" + threeMinutes);
+
+        LocalDate startDate = LocalDate.of(2017, 3, 19);
+        System.out.println("开始时间  : " + startDate);
+
+        LocalDate endDate = LocalDate.of(2018, 3, 25);
+        System.out.println("结束时间 : " + endDate);
+
+        long daysDiff = ChronoUnit.DAYS.between(startDate, endDate);
+        System.out.println("两天之间的差在天数   : " + daysDiff);
+        long monthsDiff = ChronoUnit.MONTHS.between(startDate, endDate);
+        System.out.println("两天之间的差在月数   : " + monthsDiff);
     }
 }
