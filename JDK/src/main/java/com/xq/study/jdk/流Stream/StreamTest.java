@@ -1,4 +1,4 @@
-package com.xq.study.jdk;
+package com.xq.study.jdk.流Stream;
 
 import com.xq.study.jdk.model.Dish;
 
