@@ -1,10 +1,20 @@
 package com.xq.study.jdk.java_io;
 
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.RandomAccessFile;
+import java.io.*;
 
-public class AppendToFile {
+/**
+ * Created by xq on 2019/3/5.
+ */
+public class File_Wirte {
+    public static void main(String[] args) {
+        String fileName = "C:/temp/newTemp.txt";
+        String content = "new append!";
+
+
+        File_Wirte.appendMethodA(fileName, content);  //按方法A追加文件 使用 RandomAccessFile
+        File_Wirte.appendMethodB(fileName, content);  //使用FileWriter 追加写文件
+    }
+
     /**
      * A方法追加文件：使用RandomAccessFile
      */
@@ -35,20 +45,5 @@ public class AppendToFile {
         } catch (IOException e) {
             e.printStackTrace();
         }
-    }
-
-    public static void main(String[] args) {
-        String fileName = "C:/temp/newTemp.txt";
-        String content = "new append!";
-        //按方法A追加文件
-        AppendToFile.appendMethodA(fileName, content);
-        AppendToFile.appendMethodA(fileName, "append end. \n");
-        //显示文件内容
-        ReadFromFile.readFileByLines(fileName);
-        //按方法B追加文件
-        AppendToFile.appendMethodB(fileName, content);
-        AppendToFile.appendMethodB(fileName, "append end. \n");
-        //显示文件内容
-        ReadFromFile.readFileByLines(fileName);
     }
 }

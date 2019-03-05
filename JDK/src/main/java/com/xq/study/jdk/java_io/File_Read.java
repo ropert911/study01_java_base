@@ -5,7 +5,16 @@ import java.io.*;
 /**
  * 文件读取
  */
-public class ReadFromFile {
+public class File_Read {
+    public static void main(String[] args) {
+        String fileName = "C:/temp/newTemp.txt";
+
+        File_Read.readFileByBytes(fileName); //以字节方式读
+        File_Read.readFileByChars(fileName); //以字符为单位读取文件内容，一次读一个字节
+        File_Read.readFileByLines(fileName);     //以行为单位读取文件内容，一次读一整行
+        File_Read.readFileByRandomAccess(fileName);
+    }
+
     /**
      * 以字节为单位读取文件，常用于读二进制文件，如图片、声音、影像等文件。
      */
@@ -25,13 +34,14 @@ public class ReadFromFile {
             e.printStackTrace();
             return;
         }
+
         try {
             System.out.println("以字节为单位读取文件内容，一次读多个字节：");
             // 一次读多个字节
             byte[] tempbytes = new byte[100];
             int byteread = 0;
             in = new FileInputStream(fileName);
-            ReadFromFile.showAvailableBytes(in);
+            File_Read.showAvailableBytes(in);
             // 读入多个字节到字节数组中，byteread为一次读入的字节数
             while ((byteread = in.read(tempbytes)) != -1) {
                 System.out.write(tempbytes, 0, byteread);
@@ -181,11 +191,5 @@ public class ReadFromFile {
         }
     }
 
-    public static void main(String[] args) {
-        String fileName = "C:/temp/newTemp.txt";
-        ReadFromFile.readFileByBytes(fileName);
-        ReadFromFile.readFileByChars(fileName);
-        ReadFromFile.readFileByLines(fileName);
-        ReadFromFile.readFileByRandomAccess(fileName);
-    }
+
 }
