@@ -16,6 +16,7 @@
         <module>JDK</module>
         <module>test</module>
         <module>WebServicePro</module>
+        <module>json</module>
     </modules>
     <packaging>pom</packaging>
 
