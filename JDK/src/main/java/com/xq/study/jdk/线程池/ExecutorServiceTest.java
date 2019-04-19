@@ -4,6 +4,7 @@ import com.google.common.util.concurrent.ThreadFactoryBuilder;
 import com.xq.study.jdk.线程池.task.AggregateTask;
 import com.xq.study.jdk.线程池.task.MyThread;
 import com.xq.study.jdk.线程池.task.TaskSleep;
+import org.springframework.beans.factory.annotation.Qualifier;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -89,6 +90,14 @@ public class ExecutorServiceTest {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
+    }
+
+    public ExecutorService scheduledExecutorService() {
+        ScheduledExecutorService executors = Executors.newScheduledThreadPool(1);
+        executors.scheduleAtFixedRate(() -> {
+            //TODO:这里做任务
+        }, 5, 30, TimeUnit.SECONDS);
+        return executors;
     }
 }
 
