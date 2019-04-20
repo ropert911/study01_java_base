@@ -10,7 +10,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.xq.study.json</groupId>
-    <artifactId>json</artifactId>
+    <artifactId>Json</artifactId>
     <version>0.0.1-SNAPSHOT</version>
 
     <dependencies>

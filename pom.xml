@@ -7,16 +7,20 @@
     <artifactId>study01_java_base</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <modules>
-        <module>log1_log4j</module>
-        <module>log2_slf4j_spring</module>
-        <module>log2_sf4j_org</module>
         <module>elasticjob</module>
+        <module>ES_Client</module>
         <module>flyway-demo-master</module>
-        <!--<module>gpb-parser</module>-->
+        <module>gpb-parser</module>
         <module>JDK</module>
+        <module>Json</module>
+        <module>log1_log4j</module>
+        <module>log2_sf4j_org</module>
+        <module>log2_slf4j_spring</module>
+        <module>Rest</module>
+        <module>Rest_Consumer</module>
+        <module>Rest_Swagger</module>
         <module>test</module>
         <module>WebServicePro</module>
-        <module>json</module>
     </modules>
     <packaging>pom</packaging>
 
