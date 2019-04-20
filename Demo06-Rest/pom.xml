@@ -4,23 +4,16 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.xq.study.spring</groupId>
-    <artifactId>study01_java_base</artifactId>
+    <artifactId>Demo06-Rest</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <modules>
-        <module>Demo01-JDK-Base</module>
-        <module>Demo02-Elasticjob</module>
-        <module>Demo02-Log</module>
-        <module>Demo02-Other</module>
-        <module>Demo02-ZooKeeper</module>
-        <module>Demo04-MQ</module>
-        <module>Demo04-Netty</module>
-        <module>Demo05-Cache</module>
-        <module>Demo05-ES-Client</module>
-        <module>Demo06-Rest</module>
+        <module>Rest-Demo</module>
+        <module>Rest-Consumer</module>
+        <module>Rest-Swagger</module>
     </modules>
     <packaging>pom</packaging>
 
-    <name>study01_java_base</name>
+    <name>Demo06-Rest</name>
     <description>Demo project for Spring Boot</description>
 
     <parent>

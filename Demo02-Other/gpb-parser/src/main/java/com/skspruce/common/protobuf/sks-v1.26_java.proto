@@ -1,0 +1,602 @@
+﻿syntax = "proto3";
+//import "nanopb.proto";
+package SKS;
+    
+message APStatus{
+    uint64 bin_start_time                       = 1;
+    bytes  ap_base_mac                          = 2;
+    uint32 ap_base_ip                           = 3;
+    bytes  ap_status_connect_ac                 = 4;
+    uint64 ap_status_sysuptime                  = 5;
+    uint64 ap_status_online_time                = 6;
+    bytes  ap_status_mem_rt_usage               = 7;
+    bytes  ap_status_mem_avg_usage              = 8;
+    string ap_status_reboot_cause               = 9;
+    uint64 ap_status_sysstart_time              = 10;
+    uint32 ac_ip                                = 11;
+    uint64 ac_connect_time                      = 12;
+}
+message APCPU{
+    uint64 bin_start_time                       = 1;
+    bytes  ap_base_mac                          = 2;
+    uint64 ap_cpu_user                          = 3;
+    uint64 ap_cpu_nice                          = 4;
+    uint64 ap_cpu_system                        = 5;
+    uint64 ap_cpu_iowait                        = 6;
+    uint64 ap_cpu_softirq                       = 7;
+    uint64 ap_cpu_util                          = 8;
+    uint64 ap_cpu_idle                          = 9;
+    uint32 ap_cpu_index                         = 10;
+    bytes  ap_cpu_name                          = 11;
+    bytes  ap_cpu_freq                          = 12;
+}
+message Ether{
+    uint64 first_sample_time                    = 1;
+    uint64 bin_start_time                       = 2;
+    uint64 ElantoAP_rx_bytes                    = 3;
+    uint64 ElantoAP_rx_pkts                     = 4;
+    uint64 APtoElan_tx_bytes                    = 5;
+    uint64 APtoElan_tx_pkts                     = 6;
+    uint64 ElantoAP_rx_bcast_bytes              = 7;
+    uint64 ElantoAP_rx_bcast_pkts               = 8;
+    uint64 ElantoAP_rx_mcast_bytes              = 9;
+    uint64 ElantoAP_rx_mcast_pkts               =10;
+    uint64 APtoElan_tx_bcast_bytes              =11;
+    uint64 APtoElan_tx_bcast_pkts               =12;
+    uint64 APtoElan_tx_mcast_bytes              =13;
+    uint64 APtoElan_tx_mcast_pkts               =14;
+    uint64 WANtoAP_rx_err_pkts                  =15;
+    uint64 APtoWAN_tx_err_pkts                  =16;
+    uint64 LAN_if_rate                          =17;
+    uint64 LAN_if_speed                         =18;
+    uint64 LAN_up_down_times                    =19;
+    bytes  ap_base_mac                          =20;
+    bytes  ether_lan_mac                        =21;
+    string ether_lan_interface_name             =22;
+    bytes  ether_id                             =23;
+    uint32 vlan_id                              =24;
+}
+message WanPortStats{
+    uint64 first_sample_time                    = 1;
+    uint64 bin_start_time                       = 2;
+    uint64 WANtoAP_rx_bytes                     = 3;
+    uint64 WANtoAP_rx_pkts                      = 4;
+    uint64 APtoWAN_tx_bytes                     = 5;
+    uint64 APtoWAN_tx_pkts                      = 6;
+    uint64 WANtoAP_rx_bcast_bytes               = 7;
+    uint64 WANtoAP_rx_bcast_pkts                = 8;
+    uint64 WANtoAP_rx_mcast_bytes               = 9;
+    uint64 WANtoAP_rx_mcast_pkts                = 10;
+    uint64 WANtoAP_rx_err_pkts                  = 11;
+    uint64 APtoWAN_tx_bcast_bytes               = 12;
+    uint64 APtoWAN_tx_bcast_pkts                = 13;
+    uint64 APtoWAN_tx_mcast_bytes               = 14;
+    uint64 APtoWAN_tx_mcast_pkts                = 15;
+    uint64 APtoWAN_tx_err_pkts                  = 16;
+    uint64 WAN_if_rate                          = 17;
+    uint64 WAN_if_speed                         = 18;
+    uint64 up_down_times                        = 19;
+    bytes  ap_base_mac                          = 20;
+    bytes  wanport_mac                          = 21;
+    bytes  wanport_type                         = 22;
+    string wanport_interface_name               = 23;
+    uint32 vlan_id                              = 24;
+    uint32 wanport_ip                           = 25;
+}
+message ChannelBinStats{
+    uint64 first_sample_time                    = 1;
+    uint64 bin_start_time                       = 2;
+    bytes  air_tx                               = 3;
+    bytes  air_rx                               = 4;
+    bytes  air_busy                             = 5;
+    bytes  noise                                = 6;
+    bytes  ap_base_mac                          = 7;
+    bytes  radio_id                             = 8;
+    bytes  channel                              = 9;
+    bytes  txpower                              = 10;
+    uint32 ap_radio_type                        = 11;
+    string band_width 				            = 12;
+}
+message BinTrafficCounter{
+    uint64 first_sample_time                    = 1;
+    uint64 bin_start_time                       = 2;    
+    uint64 STAtoAP_rx_data_bytes                = 3;
+    uint64 STAtoAP_rx_data_pkts                 = 4;
+    uint64 APtoSTA_tx_data_bytes                = 5;
+    uint64 APtoSTA_tx_data_pkts                 = 6;
+    uint64 APtoSTA_tx_data_good_time            = 7;
+    uint64 APtoSTA_tx_data_good_bytes           = 8;
+    uint64 APtoSTA_tx_data_bad_bytes            = 9;
+    uint64 APtoSTA_tx_data_bad_time             = 10;
+    uint64 STAtoAP_rx_data_unauthed_bytes       = 11;/*client bin stats*/
+    uint64 STAtoAP_rx_data_unauthed_pkts        = 12;
+    uint64 APtoSTA_tx_data_unauthed_bytes       = 13;
+    uint64 APtoSTA_tx_data_unauthed_pkts        = 14;
+    uint64 STAtoAP_rx_bcast_bytes               = 15;
+    uint64 STAtoAP_rx_bcast_pkts                = 16;
+    uint64 STAtoAP_rx_mcast_bytes               = 17;
+    uint64 STAtoAP_rx_mcast_pkts                = 18;
+    uint64 APtoSTA_tx_bcast_bytes               = 19;
+    uint64 APtoSTA_tx_bcast_pkts                = 20;
+    uint64 APtoSTA_tx_mcast_bytes               = 21;
+    uint64 APtoSTA_tx_mcast_pkts                = 22;
+    uint64 APtoSTA_tx_mgmt_pkts                 = 23;
+    uint64 STAtoAP_rx_mgmt_pkts                 = 24;
+    uint64 STAtoAP_rx_fcs_err_pkts              = 25;
+    uint64 STAtoAP_rx_mic_err_pkts              = 26;
+    uint64 STAtoAP_tx_mgmt_bytes                = 27;
+    uint64 STAtoAP_rx_mgmt_bytes                = 28;
+    
+}
+message ClientInfo{
+    string user_name                            = 1;
+    string host_name                            = 2;
+    string os_type                              = 3;
+    uint32 user_ip                              = 4;
+}
+
+message ClientActivityInfo{
+    uint64 associated_request_timestamp         = 1;
+    uint64 authorized_timestamp                 = 2;
+    uint64 disconnected_timestamp               = 3;
+    uint64 ip_assigned_timestamp                = 4;
+    uint32 activity_bitmask                     = 5;
+    bytes  disconnected_reason                  = 6;
+    uint64 associated_response_timestamp        = 7;
+    uint64 mac_auth_start_timestamp             = 8;
+    uint64 mac_auth_ok_timestamp                = 9;
+    uint64 ieee8021x_start_timestamp            = 10;
+    uint64 ieee8021x_ok_timestamp               = 11;
+    uint64 wpa_start_timestamp                  = 12;
+    uint64 wpa_ok_timestamp                     = 13;
+    uint64 dhcp_rxdiscover_timestamp            = 14;
+    uint64 dhcp_tx_off_timestamp                = 15;
+    uint64 dhcp_rx_request_timestamp            = 16;
+    uint64 dhcp_tx_ack_timestamp                = 17;
+    uint64 dhcp_rx_renew_timestamp              = 18;  
+    uint64 associated_request_pkts              = 19;
+    uint64 associated_respons_ok_pkts           = 20;
+    uint64 mac_auth_start_pkts                  = 21;
+    uint64 mac_auth_ok_pkts                     = 22;
+    uint64 ieee8021x_start_pkts                 = 23;
+    uint64 ieee8021x_ok_pkts                    = 24;
+    uint64 wpa_start_pkts                       = 25;
+    uint64 wpa_ok_pkts                          = 26;
+    uint64 dhcp_rxdiscover_pkts                 = 27;
+    uint64 dhcp_tx_off_pkts                     = 28;
+    uint64 dhcp_rx_request_pkts                 = 29;
+    uint64 dhcp_tx_ack_pkts                     = 30;
+    uint64 dhcp_rx_renew_pkts                   = 31;
+    uint64 assoc_response_failed_pkts           = 32;
+    uint64 assoc_no_resource_times              = 33;
+    uint64 assoc_ns_rate_times                  = 34;
+    uint64 assoc_other_reject_times             = 35;
+}
+
+message SessionTrafficCounter{
+    uint64 STAtoAP_session_rx_data_bytes                = 1;
+    uint64 STAtoAP_session_rx_data_pkts                 = 2;
+    uint64 APtoSTA_session_tx_data_bytes                = 3;
+    uint64 APtoSTA_session_tx_data_pkts                 = 4;
+    uint64 APtoSTA_session_tx_data_good_time            = 5;
+    uint64 APtoSTA_session_tx_data_bad_bytes            = 6;    
+    uint64 APtoSTA_session_tx_data_bad_time             = 7;
+    uint64 STAtoAP_session_rx_data_unauthed_bytes       = 8;
+    uint64 STAtoAP_session_rx_data_unauthed_pkts        = 9;
+    uint64 APtoSTA_session_tx_data_unauthed_bytes       = 10;
+    uint64 APtoSTA_session_tx_data_unauthed_pkts        = 11;
+    uint64 APtoSTA_session_tx_data_good_bytes           = 12;    
+}
+message ClientIndex{
+    bytes  wlan_key                                             = 1;
+    uint32 ap_radio_type                                        = 2;
+    bytes vap_ssid                                             = 3;
+    uint32 client_radio_type                                    = 4;
+    bytes  ap_base_mac                                          = 5;
+    bytes  client_mac                                           = 6;
+    bytes  channel                                              = 7;
+    uint64 session_id                                           = 8;
+    repeated uint64 multi_session_id                            = 9;
+}
+message ClientSessionStats{
+    ClientIndex                   client_id                     = 1;
+    SessionTrafficCounter         session_traffic               = 2;
+    ClientActivityInfo            client_activity               = 3;
+    ClientInfo                    client_session                = 4;
+}
+
+message    SnrStats{
+    uint64 snr_0_9_db                                           = 1;
+    uint64 snr_9_12_db                                          = 2;
+    uint64 snr_12_15_db                                         = 3;
+    uint64 snr_15_18_db                                         = 4;
+    uint64 snr_18_21_db                                         = 5;
+    uint64 snr_21_24_db                                         = 6;
+    uint64 snr_24_27_db                                         = 7;
+    uint64 snr_27_30_db                                         = 8;
+    uint64 snr_30_33_db                                         = 9;
+    uint64 snr_33_100_db                                        = 10;
+    uint64 rssi_99_90_db                                        = 11;
+    uint64 rssi_90_87_db                                        = 12;
+    uint64 rssi_87_84_db                                        = 13;
+    uint64 rssi_84_81_db                                        = 14;
+    uint64 rssi_81_78_db                                        = 15;
+    uint64 rssi_78_75_db                                        = 16;
+    uint64 rssi_75_72_db                                        = 17;
+    uint64 rssi_72_69_db                                        = 18;
+    uint64 rssi_69_66_db                                        = 19;
+    uint64 rssi_66_63_db                                        = 20;
+    uint64 rssi_63_60_db                                        = 21;
+    uint64 rssi_60_0_db                                         = 22;
+}
+message ClientBinStats{
+    bytes              wlan_key                                 = 1;
+    uint32             ap_radio_type                            = 2;
+    bytes              radio_id                                 = 3;
+    BinTrafficCounter  bin_traffic                              = 4;
+    uint32             client_radio_type                        = 5;
+    bytes              ap_base_mac                              = 6;
+    bytes              client_mac                               = 7;        
+    bytes              channel                                  = 8;
+    uint64             session_id                               = 9;
+    repeated uint64             multi_session_id                = 10;
+    ClientActivityInfo client_activity                          = 11;
+    SnrStats           client_snr                               = 12;             
+    ClientInfo         client_stats                             = 13;    
+}
+message AssocCounter{
+    uint64 STAtoAP_rx_l2auth_pkts                               = 1;
+    uint64 STAtoAP_rx_assoc_pkts                                = 2;
+    uint64 STAtoAP_rx_reassoc_pkts                              = 3;
+    uint64 STAtoAP_rx_deauth_pkts                               = 4;
+    uint64 STAtoAP_rx_disassoc_pkts                             = 5;
+    uint64 STAtoAP_rx_assoc_drop_pkts                           = 6;
+    uint64 APtoSTA_tx_l2auth_reject                             = 7;
+    uint64 APtoSTA_tx_assoc_reject                              = 8;
+    uint64 APtoSTA_tx_deauth_pkts                               = 9;
+    uint64 APtoSTA_tx_disassoc_pkts                             = 10;
+    uint64 APtoSTA_tx_err_disconnect_pkts                       = 11;
+    uint64 APtoSTA_tx_assoc_no_resource_times                   = 12;
+    uint64 APtoSTA_tx_assoc_ns_rate_times                       = 13;
+    uint64 APtoSTA_tx_assoc_other_reject_times                  = 14;
+}
+message VAPBinStats{
+    bytes                vap_ssid_encode_type                   = 1;
+    bytes                radio_id                               = 2;
+    bytes                wlan_key                               = 3;
+    uint32               ap_radio_type                          = 4;
+    bytes                ap_base_mac                            = 5;
+    bytes                security_type                          = 6;
+    bytes                encryption_type                        = 7;
+    bytes                auth_mode                              = 8;
+    uint32               vlan_id                                = 9;    
+    BinTrafficCounter    traffic_count                          = 10;
+    AssocCounter         assoc_count                            = 11;
+    SnrStats             vap_snr                                = 12;
+    bytes                vap_ssid                               = 13;
+    uint64               vap_create_timestamp                   = 14;
+    uint64               vap_del_timestamp                      = 15;
+}
+message APBase{
+    uint64  bin_start_time                                      = 1;
+    bytes   ap_base_mac                                         = 2;
+    string  ap_base_sn                                          = 3;
+    string  ap_base_device_type                                 = 4;
+    string  ap_base_vendor_id                                   = 5;
+    string  ap_base_hw_version                                  = 6;
+    string  ap_base_soft_version                                = 7;
+    string  ap_base_boot_version                                = 8;
+    string  ap_base_bk_soft_version                             = 9;
+    bytes   ap_base_radio_number                                = 10;
+    bytes   ap_base_eth_number                                  = 11;
+    string  ap_base_cpu_name                                    = 12;
+    string  ap_base_cpu_freq                                    = 13;
+    uint32  ap_base_memory                                      = 14;
+    string  ap_base_hostname                                    = 15;
+    string  ap_base_location                                    = 16;
+    string  ap_base_gps                                         = 17;
+    bytes   ac_base_mac                                         = 18;
+    uint32  ap_base_cpu_num                                     = 19;
+    bytes   forward_mode 						  					= 20;
+	string  country_code 			           					= 21;
+}
+message AP{
+    APBase             ap_base                                  = 1;
+    APStatus           ap_status                                = 2;
+    repeated APCPU              ap_cpu                          = 3;
+    repeated Ether              eth_stats                       = 4;
+    repeated WanPortStats       wan_stats                       = 5;
+    repeated ChannelBinStats    channel_stats                   = 6;
+    repeated VAPBinStats        vap_stats                       = 7;
+    repeated ClientSessionStats client_session                  = 8;
+    repeated ClientBinStats     client_bstats                   = 9;
+    uint64             bin_vaildtime                            = 10;
+    uint64   task_id                                            = 11;	
+}
+
+message ACCPCPU{                                                       
+    uint64 ac_cpu_user                            = 1;
+    uint64 ac_cpu_nice                            = 2;
+    uint64 ac_cpu_system                          = 3;
+    uint64 ac_cpu_iowait                          = 4;
+    uint64 ac_cpu_softirq                         = 5;
+    uint64 ac_cpu_util                            = 6;
+    uint64 ac_cpu_idle                            = 7;
+    uint32 ac_cpu_index                           = 8;
+    string ac_cpu_name                            = 9;
+    string ac_cpu_freq                            = 10;
+}      
+message ACDPCPU{                                                       
+    uint64 ac_cpu_usage                           = 1;   
+    uint32 ac_cpu_index                           = 2;
+    string ac_cpu_name                            = 3;
+    string ac_cpu_freq                            = 4;
+}                                                               
+message ACStatus{                                                    
+    float ac_status_mem_avg_usage                 = 1;
+    string ac_ip                                  = 2;
+    uint64 ac_status_sysuptime                    = 3; 
+    uint64 ac_status_online_time                  = 4; 
+    uint32 ac_status_vrrp_enable                  = 5;
+    uint32 ac_status_vrrp_status                  = 6;
+}                                                                     
+message ACBase{                                                        
+    string  ac_base_mac                           = 1;
+    uint32 ac_base_cpu_num                        = 2;
+    string ac_base_sn                             = 3;
+    string ac_base_device_type                    = 4; 
+    string ac_base_hw_version                     = 5; 
+    string ac_base_boot_version                   = 6; 
+    string ac_base_soft_version                   = 7; 
+    string ac_base_hostname                       = 8;
+    string ac_base_vendor_id                      = 9; 
+}
+
+message UserInfo{
+    string client_mac        = 1;
+    string ap_mac            = 2;
+    string user_name         = 3;
+	string auth_mode         = 4;
+}    
+
+message DiskStat{
+	string name            =1;      //目录名
+	uint32 size            =2;      //以M为单位
+	uint32 used            =3;     
+} 
+
+enum IFTYPE {
+    UNKNOWN     = 0;
+    MGMT        = 1;
+    GE          = 2;
+	XG          = 3;
+	QG          = 4;
+	VLAN        = 5;
+	PC          = 6; // port-channel
+	TN          = 7; // tunnel
+}                                                                     
+message IfStatus{                                                     
+    uint32 ac_if_index                            = 1; 
+    string ac_if_name                             = 2;
+	IFTYPE ac_if_type                         = 3;
+    uint32 ac_if_status                           = 4;
+    string ac_if_mac                              = 5;
+    string ac_if_ipv4                             = 6;
+    uint64 ac_if_rate                             = 7;
+    uint64 ac_if_in_bytes                         = 8; 
+    uint64 ac_if_out_bytes                        = 9; 
+}                                                                    
+
+message DhcpPoolStatus{                                              
+    string dhcppool_name                          = 1;
+    string sub_net_ip                             = 2;
+    string sub_net_mask                           = 3;
+    uint32 dhcppool_activeLeases                  = 4;
+    uint32 dhcppool_freeLeases                    = 5;
+    uint32 dhcppool_totalLeases                   = 6;
+}                                                                    
+message LicStatus{
+    string lic_id                                 = 1;
+    uint64 lic_install_time                       = 2;
+    uint32 lic_type                               = 3;
+    string lic_control_type                       = 4;
+    uint32 lic_value                              = 5;
+}
+message APinfo{
+    string ap_base_mac                            = 1;
+    uint32 ap_connect_status                      = 2;
+    uint64 online_time                            = 3;
+    uint64 offline_time                           = 4;    
+}
+message AC{                                                         
+    uint64   task_id                                       = 1;
+    ACBase   ac_base                                       = 2;
+    ACStatus ac_status                                     = 3;
+    repeated ACCPCPU         ac_cp_cpu                     = 4;
+    repeated ACDPCPU         ac_dp_cpu                     = 5;
+    repeated IfStatus        if_stats                      = 6;
+    repeated DhcpPoolStatus  dhcppool_stats                = 7;
+    repeated LicStatus       license_stats                 = 8;
+    repeated APinfo          ap_list                       = 9;
+    uint64   bin_start_time                                = 10;    
+    uint64   bin_validtime                                 = 11;
+    repeated DiskStat        disk_list                      = 12; 
+    repeated UserInfo 	     user_list			   		   = 13;
+}    
+
+message ApTrap{
+    uint32 alarm_id                            = 1;
+    uint32 serverity                           = 2;
+    string device_mac                          = 3;
+    uint32 alarm_status                        = 4;
+    uint32 alarm_count                         = 5;
+    uint64 alarm_last_time                     = 6;
+    uint64 alarm_first_time                    = 7; 
+    string probable_cause                      = 8;
+    string specific_reason                     = 9;
+    
+    //System Alarm: cpu memory
+    bytes sys_cpu_index                        = 10;
+    bytes sys_usage                            = 11;
+    bytes sys_threshold                        = 12;
+    
+    //System Alarm: Module
+    string sys_model_name                      = 13;
+    
+    //Wireless Alarm
+    string wlan_radio                           = 14;
+    string wlan_interface                       = 15;
+    
+    //Wireless Alarm: WirelessAirAlarm
+    bytes wlan_usage                           = 16;
+    bytes wlan_threshold                       = 17;
+    bytes wlan_channel                         = 18;
+    
+    //Wireless Alarm: WirelessLinkDownAlarm WirelessUnAddUserAlarm
+    bytes wlan_ssid_name                      = 19;
+    string wlan_bssid                          = 20;
+    bytes wlan_allow_max_correlate_sta         = 21;
+    bytes wlan_already_correlate_sta           = 22;
+
+    //APConnectAlarm: APConnectACAlarm APConnectNTPAlarm APConnectDataServerAlarm 
+    string addr                               = 23;
+    uint32 port                               = 24;
+    bytes ssid_encode_type                    = 25;
+}
+
+message ApEvent{
+    uint32 event_id                           = 1;
+    string device_mac                         = 2;
+    uint64 event_last_time                    = 3;
+    uint64 event_first_time                   = 4;
+    uint32 event_count                        = 5;
+    string probable_cause                     = 6;
+    string specific_reason                    = 7;
+	
+    //System Event: up down
+    string  sys_interface                     = 8;
+    string  sys_interface_ip                  = 9;
+    string  sys_interface_mac                 = 10;
+
+    //System Event: UpgradeMethod
+    string before_change_version              = 11;
+    string after_change_version               = 12;
+    string upgrade_method                      = 13;
+
+    //System Event: ModeChange
+    string before_change_mode                  = 14;
+    string after_change_mode                   = 15;
+    
+    //Wireless Event:
+    string wlan_radio                          = 16;
+    string wlan_interface                      = 17;
+    
+    //Wireless Event: TxpowerEvent ChannelEvent
+    bytes  wlan_before_change_txpower         = 18;
+    bytes  wlan_after_change_txpower          = 19;
+    bytes  wlan_before_change_channel         = 20;
+    bytes  wlan_after_change_channel          = 21;
+    bytes wlan_affect_ssid_name              = 22;
+    string  wlan_affect_bssid                  = 23;
+
+    //UE Event: UEAuthFail UEAssocFail
+    string sta_mac                             = 24;
+    string wlan_ue_auth_model                  = 25;
+    bytes wlan_ue_ssid_name                    = 26;
+    string  wlan_ue_bssid                      = 27;
+    bytes  ssid_encode_type                    = 28;
+}
+
+message AcEvent{
+    uint32 event_id            = 1;
+    string device_mac          = 2;
+    uint64 event_last_time     = 3;
+    uint64 event_first_time    = 4;
+    uint32 event_count         = 5;
+    string probable_cause      = 6;
+    string specific_reason     = 7;
+
+    string interface           = 8;
+    string interface_ip        = 9;
+    string interface_mac       = 10;
+    string before_change       = 11;
+    string after_change        = 12;
+    string ap_mac              = 13;
+    string addr                = 14;
+    string operate             = 15;
+    string operater_name       = 16;
+}
+
+
+message AcTrap{  
+    uint32 alarm_id               = 1;
+    uint32 serverity              = 2;
+    string device_mac             = 3;
+    uint32 alarm_status           = 4;
+    uint32 alarm_count            = 5;
+    uint64 alarm_last_time        = 6;
+    uint64 alarm_first_time       = 7; 
+    string probable_cause         = 8;
+    string specific_reason        = 9;
+
+    uint32 cpu_index              = 10;
+    string usage                  = 11;
+    string threshold              = 12;
+    string model_name             = 13;
+    string interface              = 14;
+    string addr                   = 15;
+    uint32 port                   = 16;
+    string vrrp_status            = 17;  
+    string sub_net                = 18;
+    string net_mask               = 19;
+    uint64 traffic                = 20;
+    string port_type              = 21;
+    string interface_ip           = 22;
+    string interface_mac          = 23;
+    uint32 lic_assigned           = 24;
+    uint32 lic_reserved           = 25;
+    uint32 lic_auth_num           = 26;
+    uint32 lic_day_to_expeired    = 27;
+    string except_model           = 28;
+    int32  device_temp            = 29;//摄氏度
+    uint32 device_power           = 30;//w
+    string ap_mac                 = 31;
+    uint64 traffic_in             = 32;
+    uint64 traffic_out            = 33;
+    string res_type               = 34;//DP CP    
+    string before_change          = 35;
+    string after_change           = 36;
+    uint32 invalid_ap_qty         = 37;
+}  
+
+
+message EVENT{
+    repeated ApEvent ap_event     = 1;
+    repeated AcEvent ac_event     = 2;
+}
+message TRAP{
+    repeated ApTrap ap_trap       = 1;
+    repeated AcTrap ac_trap       = 2;
+}
+
+enum SRC {
+    UNKNOWN_T     = 0;
+    AC_T          = 1;
+    AP_T          = 2;
+}
+enum TYPE {
+    BASE_T        = 0;
+    REALTIME_T    = 1;
+    EVENT_T       = 2;
+    TRAP_T        = 3;
+}
+
+message SksInfo{
+    SRC        src             = 1;
+    TYPE       type             = 2;
+    AC         ac              = 3;
+    AP         ap              = 4;
+    EVENT      event           = 10;
+    TRAP       trap            = 11;
+}
+

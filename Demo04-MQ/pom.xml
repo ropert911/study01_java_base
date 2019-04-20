@@ -3,38 +3,32 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.xq.study.spring</groupId>
-    <artifactId>study01_java_base</artifactId>
+    <groupId>com.study.mq</groupId>
+    <artifactId>Demo04-MQ</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <modules>
-        <module>Demo01-JDK-Base</module>
-        <module>Demo02-Elasticjob</module>
-        <module>Demo02-Log</module>
-        <module>Demo02-Other</module>
-        <module>Demo02-ZooKeeper</module>
-        <module>Demo04-MQ</module>
-        <module>Demo04-Netty</module>
-        <module>Demo05-Cache</module>
-        <module>Demo05-ES-Client</module>
-        <module>Demo06-Rest</module>
+        <module>ActiveMQ_JMS</module>
+        <module>EIP</module>
+        <module>kafka-customer</module>
+        <module>kafka-office</module>
+        <module>kafka-producer</module>
+        <module>Rabbit_AMQP</module>
+        <module>Rabbit_Demo</module>
+        <module>Rabbit_template</module>
+        <module>rocketmq-customer</module>
+        <module>EIP/rocketmq-producer</module>
     </modules>
     <packaging>pom</packaging>
 
-    <name>study01_java_base</name>
-    <description>Demo project for Spring Boot</description>
+    <name>Demo04-MQ</name>
+    <description>Demo project for mq</description>
 
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>1.5.9.RELEASE</version>
+        <version>1.5.3.RELEASE</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-
-    <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-        <java.version>1.8</java.version>
-    </properties>
 
     <dependencies>
         <dependency>
@@ -57,6 +51,4 @@
             </plugin>
         </plugins>
     </build>
-
-
 </project>

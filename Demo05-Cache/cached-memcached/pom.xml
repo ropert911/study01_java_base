@@ -3,24 +3,12 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.xq.study.spring</groupId>
-    <artifactId>study01_java_base</artifactId>
+    <groupId>com.xq.study.memcached</groupId>
+    <artifactId>cached-memcached</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <modules>
-        <module>Demo01-JDK-Base</module>
-        <module>Demo02-Elasticjob</module>
-        <module>Demo02-Log</module>
-        <module>Demo02-Other</module>
-        <module>Demo02-ZooKeeper</module>
-        <module>Demo04-MQ</module>
-        <module>Demo04-Netty</module>
-        <module>Demo05-Cache</module>
-        <module>Demo05-ES-Client</module>
-        <module>Demo06-Rest</module>
-    </modules>
-    <packaging>pom</packaging>
+    <packaging>jar</packaging>
 
-    <name>study01_java_base</name>
+    <name>cached-memcached</name>
     <description>Demo project for Spring Boot</description>
 
     <parent>
@@ -39,13 +27,23 @@
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
+            <artifactId>spring-boot-starter</artifactId>
         </dependency>
 
         <dependency>
             <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-devtools</artifactId>
+            <scope>runtime</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.whalin</groupId>
+            <artifactId>Memcached-Java-Client</artifactId>
+            <version>3.0.2</version>
         </dependency>
     </dependencies>
 
