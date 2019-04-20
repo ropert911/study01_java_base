@@ -10,10 +10,10 @@
 	</parent>
 
 	<groupId>org.sang</groupId>
-	<artifactId>Rest_Consumer</artifactId>
+	<artifactId>Rest-Consumer</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
-	<name>Rest_Consumer</name>
+	<name>Rest-Consumer</name>
 	<description>Demo project for Spring Boot</description>
 
 	<properties>

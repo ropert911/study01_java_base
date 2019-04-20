@@ -12,7 +12,7 @@
     </parent>
 
     <groupId>com.quick</groupId>
-    <artifactId>Rest_Swagger</artifactId>
+    <artifactId>Rest-Swagger</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>jar</packaging>
 

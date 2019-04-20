@@ -8,7 +8,7 @@
     <version>0.0.1-SNAPSHOT</version>
     <modules>
         <module>elasticjob</module>
-        <module>ES_Client</module>
+        <module>ES-Client</module>
         <module>flyway-demo-master</module>
         <module>gpb-parser</module>
         <module>JDK</module>
@@ -16,9 +16,12 @@
         <module>log1_log4j</module>
         <module>log2_sf4j_org</module>
         <module>log2_slf4j_spring</module>
+        <module>Netty-Client</module>
+        <module>Netty-Demo</module>
+        <module>Netty-Server</module>
         <module>Rest</module>
-        <module>Rest_Consumer</module>
-        <module>Rest_Swagger</module>
+        <module>Rest-Consumer</module>
+        <module>Rest-Swagger</module>
         <module>test</module>
         <module>WebServicePro</module>
     </modules>
