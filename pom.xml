@@ -24,6 +24,8 @@
         <module>Rest-Swagger</module>
         <module>test</module>
         <module>WebServicePro</module>
+        <module>zk-curator</module>
+        <module>zk-zookeeper</module>
     </modules>
     <packaging>pom</packaging>
 
