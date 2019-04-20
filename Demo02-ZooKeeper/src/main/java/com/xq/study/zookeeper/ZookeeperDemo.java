@@ -1,11 +1,10 @@
 package com.xq.study.zookeeper;
 
+import java.io.IOException;
+
 import org.apache.zookeeper.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
-import java.io.IOException;
-
 import static java.lang.Thread.sleep;
 
 public class ZookeeperDemo{
@@ -18,6 +17,7 @@ public class ZookeeperDemo{
             // 创建一个与服务器的连接
             ZooKeeper zk = new ZooKeeper(HOST, TIME_OUT, new Watcher() {
                 // 监控所有被触发的事件
+                @Override
                 public void process(WatchedEvent event) {
 //                    LOGGER.info("触发路径 {} 事件 {}！============", event.getPath(), event.getType());
                 }
