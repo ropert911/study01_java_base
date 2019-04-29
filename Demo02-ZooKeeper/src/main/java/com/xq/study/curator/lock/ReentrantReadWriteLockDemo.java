@@ -15,9 +15,9 @@ import java.util.concurrent.TimeUnit;
 /**
  * Created by sk-qianxiao on 2018/5/16.
  */
-//可重入读写锁
+//可重入读写锁. 使用前要先那一个 /xqtest/locks
 public class ReentrantReadWriteLockDemo {
-    private static final String HOST_URL = "192.168.40.80:2181";
+    private static final String HOST_URL = "192.168.20.51:2181";
     private static final String PATH = "/xqtest/locks";
 
     private final InterProcessReadWriteLock lock;
