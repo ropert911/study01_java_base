@@ -43,9 +43,9 @@ public class ismapiTest {
 
     @Test
     public void queryApAreaAllAp() {
-        ResponseEntity<ResponseInfo> responseEntity = restTemplate.getForEntity("http://192.168.20.91:10015/inner/device/management/queryareaaplist?apMacs=01:02:03:04:05:0A", ResponseInfo.class);
+        ResponseEntity<org.sang.requestLine.ResponseInfo> responseEntity = restTemplate.getForEntity("http://192.168.20.91:10015/inner/device/management/queryareaaplist?apMacs=01:02:03:04:05:0A", org.sang.requestLine.ResponseInfo.class);
 
-        ResponseInfo<List<ApArea>> responseInfo = responseEntity.getBody();
+        org.sang.requestLine.ResponseInfo<List<ApArea>> responseInfo = responseEntity.getBody();
         logger.info("queryareaaplist: body=={}", responseInfo);
     }
 
@@ -64,9 +64,9 @@ public class ismapiTest {
                 ismServer,
                 innerPort);
         //此出问题泛型原因，类型没有正常转换
-        ResponseEntity<ResponseInfo> responseEntity = restTemplate.getForEntity(url, ResponseInfo.class);
+        ResponseEntity<org.sang.requestLine.ResponseInfo> responseEntity = restTemplate.getForEntity(url, org.sang.requestLine.ResponseInfo.class);
 
-        ResponseInfo<List<ApArea>> responseInfo = responseEntity.getBody();
+        org.sang.requestLine.ResponseInfo<List<ApArea>> responseInfo = responseEntity.getBody();
         if (true == responseInfo.getSuccess()) {
             List<ApArea> apAreaList = responseInfo.getData();
             logger.info("get result == {}", apAreaList);
@@ -88,10 +88,10 @@ public class ismapiTest {
                 ismServer,
                 innerPort);
 
-        ParameterizedTypeReference<ResponseInfo<List<ApArea>>> typeRef = new ParameterizedTypeReference<ResponseInfo<List<ApArea>>>() {
+        ParameterizedTypeReference<org.sang.requestLine.ResponseInfo<List<ApArea>>> typeRef = new ParameterizedTypeReference<org.sang.requestLine.ResponseInfo<List<ApArea>>>() {
         };
-        ResponseEntity<ResponseInfo<List<ApArea>>> responseEntity = restTemplate.exchange(url, HttpMethod.GET, null, typeRef);
-        ResponseInfo<List<ApArea>> responseInfo = responseEntity.getBody();
+        ResponseEntity<org.sang.requestLine.ResponseInfo<List<ApArea>>> responseEntity = restTemplate.exchange(url, HttpMethod.GET, null, typeRef);
+        org.sang.requestLine.ResponseInfo<List<ApArea>> responseInfo = responseEntity.getBody();
         if (true == responseInfo.getSuccess()) {
             List<ApArea> apAreaList = responseInfo.getData();
             logger.info("get result == {}", apAreaList);
@@ -114,10 +114,10 @@ public class ismapiTest {
                 ismServer,
                 innerPort);
 
-        ParameterizedTypeReference<ResponseInfo<List<ApArea>>> typeRef = new ParameterizedTypeReference<ResponseInfo<List<ApArea>>>() {
+        ParameterizedTypeReference<org.sang.requestLine.ResponseInfo<List<ApArea>>> typeRef = new ParameterizedTypeReference<org.sang.requestLine.ResponseInfo<List<ApArea>>>() {
         };
-        ResponseEntity<ResponseInfo<List<ApArea>>> responseEntity = restTemplate.exchange(url, HttpMethod.GET, null, typeRef);
-        ResponseInfo<List<ApArea>> responseInfo = responseEntity.getBody();
+        ResponseEntity<org.sang.requestLine.ResponseInfo<List<ApArea>>> responseEntity = restTemplate.exchange(url, HttpMethod.GET, null, typeRef);
+        org.sang.requestLine.ResponseInfo<List<ApArea>> responseInfo = responseEntity.getBody();
         if (true == responseInfo.getSuccess()) {
             List<ApArea> apAreaList = responseInfo.getData();
             logger.info("get result == {}", apAreaList);
