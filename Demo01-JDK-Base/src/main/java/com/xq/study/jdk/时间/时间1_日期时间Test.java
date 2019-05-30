@@ -146,7 +146,7 @@ public class 时间1_日期时间Test {
         //下面几个都相同
         System.out.println(Instant.ofEpochSecond(3));
         System.out.println(Instant.ofEpochSecond(3, 0));
-        System.out.println(Instant.ofEpochSecond(2, 1_000_000_000));
+        System.out.println(Instant.ofEpochSecond(2,1_000_000_000));
         System.out.println(Instant.ofEpochSecond(4, -1_000_000_000));
 
         System.out.println(Instant.now());
