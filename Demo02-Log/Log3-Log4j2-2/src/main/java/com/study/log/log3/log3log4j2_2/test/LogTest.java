@@ -1,4 +1,4 @@
-package com.study.log.log4j2.log3log4j2.test;
+package com.study.log.log3.log3log4j2_2.test;
 
 
 import org.apache.logging.log4j.LogManager;
