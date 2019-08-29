@@ -1,7 +1,42 @@
 除了使用默认的LogBack，Spring Boot还可以使用Log4j、Log42等作为自己的日志系统
+
+Log4j
+    Log4j是Apache的一个开放源代码项目，通过使用Log4j，我们可以控制日志信息输送的目的地是控制台、文件、数据库等；我们也可以控制每一条日志的输出格式；通过定义每一条日志信息的级别，我们能够更加细致地控制日志的生成过程。
+    Log4j有7种不同的log级别，按照等级从低到高依次为：TRACE、DEBUG、INFO、WARN、ERROR、FATAL、OFF。如果配置为OFF级别，表示关闭log。
+    Log4j支持两种格式的配置文件：properties和xml。包含三个主要的组件：Logger、appender、Layout。
+
 LogBack
     Spring Boot默认使用LogBack，所在的jar包spring-boot-starter-logging都是作为spring-boot-starter-web或者spring-boot-starter依赖的一部分
+    Logback，一个“可靠、通用、快速而又灵活的Java日志框架”。
+    logback-access访问模块与Servlet容器集成提供通过Http来访问日志的功能。
+    1. logback-core: Joran, Status, context, pattern parsing
+    2. logback-classic: 是log4j的一个改良版本,完整实现SLF4J API
+    3. logback-access: 访问模块与Servlet容器集成提供通过Http来访问日志的功能
+    选择logback的理由：
+    1. logback比log4j要快大约10倍，而且消耗更少的内存。
+    2. logback-classic模块直接实现了SLF4J的接口，所以我们迁移到logback几乎是零开销的。
+    3. logback不仅支持xml格式的配置文件，还支持groovy格式的配置文件。相比之下，Groovy风格的配置文件更加直观，简洁。
+    4. logback-classic能够检测到配置文件的更新，并且自动重新加载配置文件。
+    5. logback能够优雅的从I/O异常中恢复，从而我们不用重新启动应用程序来恢复logger。
+    6. logback能够根据配置文件中设置的上限值，自动删除旧的日志文件。
+    7. logback能够自动压缩日志文件。
+    8. logback能够在配置文件中加入条件判断（if-then-else)。可以避免不同的开发环境（dev、test、uat…）的配置文件的重复。
+    9. logback带来更多的filter。
+    10. logback的stack trace中会包含详细的包信息。
+    11. logback-access和Jetty、Tomcat集成提供了功能强大的HTTP-access日志。
+
+Log4j2
+    Spring Boot1.4以及之后的版本已经不支持log4j，log4j也很久没有更新了，现在已经有很多其他的日志框架对Log4j进行了改良，比如说SLF4J、Logback等。而且Log4j 2在各个方面都与Logback非常相似，那么为什么我们还需要Log4j 2呢？
+　　1. 插件式结构。Log4j 2支持插件式结构。我们可以根据自己的需要自行扩展Log4j 2. 我们可以实现自己的appender、logger、filter。
+　　2. 配置文件优化。在配置文件中可以引用属性，还可以直接替代或传递到组件。而且支持json格式的配置文件。不像其他的日志框架，它在重新配置的时候不会丢失之前的日志文件。
+　　3. Java 5的并发性。Log4j 2利用Java 5中的并发特性支持，尽可能地执行最低层次的加锁。解决了在log4j 1.x中存留的死锁的问题。
+　　4. 异步logger。Log4j 2是基于LMAX Disruptor库的。在多线程的场景下，和已有的日志框架相比，异步的logger拥有10倍左右的效率提升。
 
 org.slf4j:
     SLF4J是一个用于日志系统的简单Facade，允许最终用户在部署其应用时使用其所希望的日志系统
     spring_boot中内置支持
+
+一般情况下 application.properties是slf4j支持的共用配置文件
+       log4j.properties     log4j配置文件
+       logback.xml          logback配置文件
+                            log4j2支持xml、json、yaml等格式的配置文件
