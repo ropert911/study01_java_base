@@ -7,9 +7,11 @@
     <artifactId>Demo02-Log</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <modules>
-        <module>Log1-LogBack1</module>
-        <module>Log1-LogBack2</module>
-        <module>log1_log4j</module>
+        <module>Log1_Log4j</module>
+        <module>Log2-LogBack1</module>
+        <module>Log2-LogBack2</module>
+        <module>Log3-Log4j2</module>
+        <module>Log3-Log4j2-2</module>
     </modules>
     <packaging>pom</packaging>
 

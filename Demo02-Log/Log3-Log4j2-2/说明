@@ -1,1 +1,2 @@
 注意：LogTest用了 LogManager和 log4j.Logger，没有用slf4j. 在实际使用中还是统一用sfl4j
+    用了log4j2.xml配置
