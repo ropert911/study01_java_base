@@ -50,3 +50,18 @@ Apache Commons Logging
     slf4j 与 common-logging 比较 ：
         common-logging通过动态查找的机制，在程序运行时自动找出真正使用的日志库；
         slf4j在编译时静态绑定真正的Log库。
+
+java.util.logging.Logger
+    java.util.logging.Logger（JUL），JDK自带的日志系统，从JDK1.4就有了。关键元素包括：
+    Logger：应用程序进行logging调用的主要实体。Logger 对象用来记录特定系统或应用程序组件的日志消息。
+    LogRecord：用于在 logging 框架和单独的日志处理程序之间传递 logging 请求。
+    Handler：将 LogRecord 对象导出到各种目的地，包括内存、输出流、控制台、文件和套接字。为此有各种的 Handler 子类。其他 Handler 可能由第三方开发并在核心平台的顶层实现。
+    Level：定义一组可以用来控制 logging 输出的标准 logging 级别。可以配置程序为某些级别输出 logging，而同时忽略其他输出。
+    Filter：为所记录的日志提供日志级别控制以外的细粒度控制。Logging API 支持通用的过滤器机制，该机制允许应用程序代码附加任意的过滤器以控制 logging 输出。
+    Formatter：为格式化 LogRecord 对象提供支持。此包包括的两个格式化程序 SimpleFormatter 和 XMLFormatter 分别用于格式化纯文本或 XML 中的日志记录。与 Handler 一样，其他 Formatter 可能由第三方开发。
+
+    整个JVM内部所有logger的管理，logger的生成、获取等操作都依赖于LogManager，也包括配置文件的读取，LogManager与logger是1对多关系，整个JVM运行时只有一个LogManager，且所有的logger均在LogManager中。
+    logger与handler是多对多关系，logger在进行日志输出的时候会调用所有的hanlder进行日志的处理。
+    handler与formatter是一对一关系，一个handler有一个formatter进行日志的格式化处理。
+    logger与level是一对一关系，hanlder与level也是一对一关系 。
+    JDK默认的logging配置文件为：$JAVA_HOME/jre/lib/logging.properties，可以使用系统属性java.util.logging.config.file指定相应的配置文件对默认的配置文件进行覆盖。
