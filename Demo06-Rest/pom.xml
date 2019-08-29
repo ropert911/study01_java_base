@@ -10,7 +10,7 @@
         <module>Rest-Demo</module>
         <module>Rest-Consumer</module>
         <module>Rest-Swagger</module>
-        <module>Rest-Test</module>
+        <module>Rest-UniTest</module>
     </modules>
     <packaging>pom</packaging>
 

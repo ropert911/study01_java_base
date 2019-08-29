@@ -9,9 +9,9 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.rest.test</groupId>
-    <artifactId>Rest-Test</artifactId>
+    <artifactId>Rest-UniTest</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>Rest-Test</name>
+    <name>Rest-UniTest</name>
     <description>Demo project for Spring Boot</description>
 
     <properties>
