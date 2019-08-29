@@ -8,10 +8,10 @@
         <version>2.1.7.RELEASE</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <groupId>com.rest.test</groupId>
-    <artifactId>Rest-UniTest</artifactId>
+    <groupId>com.study.log.logback</groupId>
+    <artifactId>Log1-LogBack2</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>Rest-UniTest</name>
+    <name>Log1-LogBack2</name>
     <description>Demo project for Spring Boot</description>
 
     <properties>
@@ -21,17 +21,7 @@
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-test</artifactId>
-            <scope>test</scope>
-        </dependency>
-        <dependency> <!-- 引入log4j2依赖 -->
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-log4j</artifactId>
-            <version>1.3.7.RELEASE</version>
+            <artifactId>spring-boot-starter</artifactId>
         </dependency>
     </dependencies>
 

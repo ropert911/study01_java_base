@@ -7,8 +7,9 @@
     <artifactId>Demo02-Log</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <modules>
+        <module>Log1-LogBack1</module>
+        <module>Log1-LogBack2</module>
         <module>log1_log4j</module>
-        <module>log2_sf4j_org</module>
         <module>log2_slf4j_spring</module>
     </modules>
     <packaging>pom</packaging>

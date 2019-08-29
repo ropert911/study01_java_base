@@ -1,0 +1,7 @@
+除了使用默认的LogBack，Spring Boot还可以使用Log4j、Log42等作为自己的日志系统
+LogBack
+    Spring Boot默认使用LogBack，所在的jar包spring-boot-starter-logging都是作为spring-boot-starter-web或者spring-boot-starter依赖的一部分
+
+org.slf4j:
+    SLF4J是一个用于日志系统的简单Facade，允许最终用户在部署其应用时使用其所希望的日志系统
+    spring_boot中内置支持

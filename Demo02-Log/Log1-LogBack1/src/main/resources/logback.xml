@@ -7,14 +7,14 @@
     <contextName>logback</contextName>
     <!--引入资源文件-->
     <property resource="application.properties"/>
-    <!--自定义变量-->
-    <property name="LOG_HOME" value="C://Users/xq/Desktop/log"/>
+    <!--自定义变量,覆盖application.properties中的-->
+    <property name="LOG_HOME" value="C:/Users/sk-qianxiao/Desktop/"/>
 
     <!-- 输出到控制台 -->
     <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
         <!-- 过滤器，过滤error以下所有日志 -->
         <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
-            <level>INFO</level>
+            <level>WARN</level>
         </filter>
         <!-- 打印格式 -->
         <encoder>

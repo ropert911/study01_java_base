@@ -1,0 +1,19 @@
+如果要使用LogBack，原则上是需要添加dependency依赖的
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-logging</artifactId></pre>
+但是因为新建的Spring Boot项目一般都会引用spring-boot-starter或者spring-boot-starter-web，而这两个起步依赖中都已经包含了对于spring-boot-starter-logging的依赖，所以，无需额外添加依赖。
+
+logback是java的日志开源组件，是log4j创始人写的，性能比log4j要好，目前主要分为3个模块
+    logback-core:核心代码模块
+    logback-classic:log4j的一个改良版本，同时实现了slf4j的接口，这样你如果之后要切换其他日志组件也是一件很容易的事
+    logback-access:访问模块与Servlet容器集成提供通过Http来访问日志的功能
+
+Spring Boot默认的日志级别为INFO
+
+日志格式
+%d{yyyy/MM/dd-HH:mm:ss}——日志输出时间
+%thread——输出日志的进程名字，这在Web应用以及异步任务处理中很有用
+%-5level——日志级别，并且使用5个字符靠左对齐
+%logger- ——日志输出者的名字
+%msg——日志消息
+%n——平台的换行符
