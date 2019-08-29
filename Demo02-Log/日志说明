@@ -35,8 +35,18 @@ Log4j2
 org.slf4j:
     SLF4J是一个用于日志系统的简单Facade，允许最终用户在部署其应用时使用其所希望的日志系统
     spring_boot中内置支持
-
-一般情况下 application.properties是slf4j支持的共用配置文件
+    一般情况下 application.properties是slf4j支持的共用配置文件
        log4j.properties     log4j配置文件
        logback.xml          logback配置文件
                             log4j2支持xml、json、yaml等格式的配置文件
+
+Apache Commons Logging
+    common-logging是apache提供的一个通用的日志接口。用户可以自由选择第三方的日志组件作为具体实现，像log4j，或者jdk自带的logging， common-logging会通过动态查找的机制，在程序运行时自动找出真正使用的日志库。
+    当然，common-logging内部有一个Simple logger的简单实现，但是功能很弱。所以使用common-logging，通常都是配合着log4j来使用。
+    使用它的好处就是，代码依赖是common-logging而非log4j， 避免了和具体的日志方案直接耦合，在有必要时，可以更改日志实现的第三方库。
+    Apache Commons Logging ，之前叫 Jakarta Commons Logging（JCL）提供的是一个日志(Log)接口(interface)，同时兼顾轻量级和不依赖于具体的日志实现工具。
+    它提供给中间件/日志工具开发者一个简单的日志操作抽象，允许程序开发人员使用不同的具体日志实现工具。
+    用户被假定已熟悉某种日志实现工具的更高级别的细节。JCL提供的接口，对其它一些日志工具，包括Log4J, Avalon LogKit, and JDK 1.4+等，进行了简单的包装，此接口更接近于Log4J和LogKit的实现。
+    slf4j 与 common-logging 比较 ：
+        common-logging通过动态查找的机制，在程序运行时自动找出真正使用的日志库；
+        slf4j在编译时静态绑定真正的Log库。
