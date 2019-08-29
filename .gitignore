@@ -13,3 +13,4 @@
 target/
 **/target/
 logs/
+/LOG_HOME_IS_UNDEFINED/
