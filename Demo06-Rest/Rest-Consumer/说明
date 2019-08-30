@@ -1,9 +1,10 @@
 swagger地址：  http://127.0.0.1:8080/swagger-ui.html
 
 http://127.0.0.1:8080/book/   是一个比较完事的REST的实现方式
-BookTest        是使用 restTemplate进行book测试            在程序启动的情况下:pass
-RequestLineTest 是使用 RequestLine 进行http请求的功能     在程序启动的情况下:pass
-ismapiTest      是使用 restTemplate进行http请求的示例     pass
+BookTest        是使用 restTemplate进行book测试                在程序启动的情况下:pass
+BookTest2       使用 领先mvc环境进行 BookController测试       pass
+RequestLineTest 是使用 RequestLine 进行http请求的功能         在程序启动的情况下:pass
+ismapiTest      是使用 restTemplate进行http请求的示例          pass
 
 ==================================================================================
 GET---获取
