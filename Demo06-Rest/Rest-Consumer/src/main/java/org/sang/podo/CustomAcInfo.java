@@ -1,4 +1,4 @@
-package org.sang.requestLine;
+package org.sang.podo;
 
 public class CustomAcInfo {
     /**

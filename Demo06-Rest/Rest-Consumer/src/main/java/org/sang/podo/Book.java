@@ -1,4 +1,4 @@
-package org.sang;
+package org.sang.podo;
 
 import java.io.Serializable;
 

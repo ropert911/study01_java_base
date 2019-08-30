@@ -2,6 +2,7 @@ package org.sang;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.sang.podo.Book;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -12,38 +13,46 @@ import org.springframework.web.util.UriComponents;
 import org.springframework.web.util.UriComponentsBuilder;
 
 import java.net.URI;
-import java.util.HashMap;
-import java.util.Map;
 
 /**
  * Created by sang on 2017/9/9.
  */
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class ConsumerBookController {
-    private static Logger logger = LoggerFactory.getLogger(ConsumerBookController.class);
+public class BookTest {
+    private static Logger logger = LoggerFactory.getLogger(BookTest.class);
     private static RestTemplate restTemplate = new RestTemplate();
 
     @Test
     public void getHelloTest() {
-        ResponseEntity<String> responseEntity = restTemplate.getForEntity("http://127.0.0.1:8080/hello", String.class);
+        ResponseEntity<String> responseEntity = restTemplate.getForEntity("http://127.0.0.1:8080/book/hello1", String.class);
         logger.info("getHelloTest: getStatusCode=={}", responseEntity.getStatusCode());
         logger.info("getHelloTest: getStatusCodeValue=={}", responseEntity.getStatusCodeValue());
         logger.info("getHelloTest: getHeaders=={}", responseEntity.getHeaders());
         logger.info("getHelloTest: body=={}", responseEntity.getBody());
+
+        responseEntity = restTemplate.getForEntity("http://127.0.0.1:8080/book/hello2/{name}", String.class, "xiaoqian");
+
+        logger.info("222222: body=={}", responseEntity.getBody());
+        responseEntity = restTemplate.getForEntity("http://127.0.0.1:8080/book/hello3?name={name}", String.class, "xiaoqian");
+        logger.info("333333: body=={}", responseEntity.getBody());
+    }
+
+
+    @Test
+    public void bookAdd() {
+        Book book = new Book();
+        book.setName("红楼梦");
+        book.setAuthor("xq");
+        book.setPrice(30);
+        book.setPublisher("人民文学出版本社");
+        ResponseEntity<Book> responseEntity = restTemplate.postForEntity("http://127.0.0.1:8080/book/book", book, Book.class);
+        logger.info("bookAdd ==== {}", responseEntity.getBody());
     }
 
     @Test
-    public void sayHelloTest() {
-        ResponseEntity<String> responseEntity = restTemplate.getForEntity("http://127.0.0.1:8080/sayhello?name={1}", String.class, "张三");
-        logger.info("sayHelloTest::responseEntity.getBody() ==== {}", responseEntity.getBody());
-    }
-
-    @Test
-    public void sayHello2Test() {
-        Map<String, String> map = new HashMap<>();
-        map.put("name", "李四");
-        ResponseEntity<String> responseEntity = restTemplate.getForEntity("http://127.0.0.1:8080/sayhello?name={name}", String.class, map);
+    public void bookGet() {
+        ResponseEntity<Book> responseEntity = restTemplate.getForEntity("http://127.0.0.1:8080/book/book/{name}", Book.class, "xiaoqian");
         logger.info("sayHello2Test::responseEntity.getBody() ==== {}", responseEntity.getBody());
     }
 
@@ -57,6 +66,7 @@ public class ConsumerBookController {
 
     @Test
     public void book1Test() {
+
         ResponseEntity<Book> responseEntity = restTemplate.getForEntity("http://127.0.0.1:8080/getbook1", Book.class);
         Book book = responseEntity.getBody();
         logger.info("book1Test::responseEntity.getBody() ==== {}", book);

@@ -1,6 +1,6 @@
-package org.sang.requestLine;
+package org.sang.podo;
 
-import org.sang.requestLine.CustomAcInfo;
+import org.sang.podo.CustomAcInfo;
 
 import java.util.List;
 
