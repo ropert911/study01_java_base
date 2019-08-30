@@ -31,7 +31,7 @@ public class BookController {
     }
 
     //添加
-    @RequestMapping(value = "/book/", method = RequestMethod.POST)
+    @RequestMapping(value = "/book", method = RequestMethod.POST)
     public Book book1(@RequestBody Book book) {
         System.out.println(book.getName());
         book.setPrice(33);

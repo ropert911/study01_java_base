@@ -32,10 +32,15 @@ public class BookTest {
         logger.info("getHelloTest: body=={}", responseEntity.getBody());
 
         responseEntity = restTemplate.getForEntity("http://127.0.0.1:8080/book/hello2/{name}", String.class, "xiaoqian");
-
         logger.info("222222: body=={}", responseEntity.getBody());
+
         responseEntity = restTemplate.getForEntity("http://127.0.0.1:8080/book/hello3?name={name}", String.class, "xiaoqian");
         logger.info("333333: body=={}", responseEntity.getBody());
+
+        UriComponents uriComponents = UriComponentsBuilder.fromUriString("http://127.0.0.1:8080/book/hello2/{name}").build().expand("王五").encode();
+        URI uri = uriComponents.toUri();
+       responseEntity = restTemplate.getForEntity(uri, String.class);
+        logger.info("4444444444 ==== {}", responseEntity.getBody());
     }
 
 
@@ -51,51 +56,32 @@ public class BookTest {
     }
 
     @Test
+    public void bookDel() {
+        restTemplate.delete("http://127.0.0.1:8080/book/book/{name}", "xiaoqian");
+    }
+
+    @Test
     public void bookGet() {
         ResponseEntity<Book> responseEntity = restTemplate.getForEntity("http://127.0.0.1:8080/book/book/{name}", Book.class, "xiaoqian");
         logger.info("sayHello2Test::responseEntity.getBody() ==== {}", responseEntity.getBody());
     }
 
     @Test
-    public void sayHello3Test() {
-        UriComponents uriComponents = UriComponentsBuilder.fromUriString("http://127.0.0.1:8080/sayhello?name={name}").build().expand("王五").encode();
-        URI uri = uriComponents.toUri();
-        ResponseEntity<String> responseEntity = restTemplate.getForEntity(uri, String.class);
-        logger.info("sayHello3Test::responseEntity.getBody() ==== {}", responseEntity.getBody());
-    }
-
-    @Test
-    public void book1Test() {
-
-        ResponseEntity<Book> responseEntity = restTemplate.getForEntity("http://127.0.0.1:8080/getbook1", Book.class);
-        Book book = responseEntity.getBody();
-        logger.info("book1Test::responseEntity.getBody() ==== {}", book);
-    }
-
-    @Test
-    public void book2Test() {
-        Book book = restTemplate.getForObject("http://127.0.0.1:8080/getbook1", Book.class);
-        logger.info("book2Test::getForObject() ==== {}", book);
-    }
-
-    @Test
-    public void book3Test() {
+    public void bookModify() {
         Book book = new Book();
         book.setName("红楼梦");
-        ResponseEntity<Book> responseEntity = restTemplate.postForEntity("http://127.0.0.1:8080/getbook2", book, Book.class);
-        Book book1 = responseEntity.getBody();
-        logger.info("book3Test::getForObject() ==== {}", book1);
+        book.setAuthor("xq");
+        book.setPrice(30);
+        book.setPublisher("人民文学出版本社");
+        restTemplate.put("http://127.0.0.1:8080/book/book/{id}",book,1);
     }
 
-    @Test
-    public void putTest() {
-        Book book = new Book();
-        book.setName("红楼梦");
-        restTemplate.put("http://127.0.0.1:8080/getbook3/{1}", book, 99);
-    }
+//    @Test
+//    public void sayHello3Test() {
+//        UriComponents uriComponents = UriComponentsBuilder.fromUriString("http://127.0.0.1:8080/sayhello?name={name}").build().expand("王五").encode();
+//        URI uri = uriComponents.toUri();
+//        ResponseEntity<String> responseEntity = restTemplate.getForEntity(uri, String.class);
+//        logger.info("sayHello3Test::responseEntity.getBody() ==== {}", responseEntity.getBody());
+//    }
 
-    @Test
-    public void deleteTest() {
-        restTemplate.delete("http://127.0.0.1:8080/getbook4/{1}", 100);
-    }
 }

@@ -29,7 +29,7 @@ public class RequestLineTest {
 
     @Test
     public void quertygetAcListByUserTest() {
-        String token = "emuerc9sqlsctk9lpdstz4khqmkwnx7g";  //使用时要换成可用的tokent
+        String token = "pltd4dnfqwqg3sv8flreyt5sff3uutdz";  //使用时要换成可用的tokent
         String lang = "";
         int pageIndex = 1;
         int pageSize = 5000;

@@ -2,6 +2,7 @@ package org.sang;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.sang.podo.ApArea;
 import org.sang.response.ResponseInfo;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
