@@ -20,7 +20,7 @@ import java.util.UUID;
  */
 @RestController
 @RequestMapping("/xq")
-public class HelloController extends BaseController{
+public class HelloController extends BaseController {
 
     private static final org.slf4j.Logger LOGGER = LoggerFactory.getLogger(HelloController.class);
 
@@ -29,35 +29,37 @@ public class HelloController extends BaseController{
     public String say() {
         return "Hello, this is xq.";
     }
-    @RequestMapping("/name")
+
+    @RequestMapping(path ="/name", method = RequestMethod.GET)
     public String name() {
         return "name:xiaoqian";
     }
 
     //返回Jason格式的对象
-    @RequestMapping(path="/users", method = RequestMethod.GET)
+    @RequestMapping(path = "/users", method = RequestMethod.GET)
     public User getUser() {
-        User user=new User();
+        User user = new User();
         user.setUserName("小明");
         user.setPassWord("xxx2");
         return user;
     }
 
-    @RequestMapping("/exception1")
-    public String exception1() throws MyException{
+    @RequestMapping(path = "/exception1", method = RequestMethod.GET)
+    public String exception1() throws MyException {
         throw new MyException("MyException 进行捕获");
     }
-    @RequestMapping("/exception2")
-    public String exception2() throws DataCustomException{
+
+    @RequestMapping(path = "/exception2", method = RequestMethod.GET)
+    public String exception2() throws DataCustomException {
         throw new DataCustomException("ControllerAdvice 进行捕获");
     }
 
-    @RequestMapping("/locale")
-    public Locale hello(Locale locale, Model model) {
+    @RequestMapping(path = "/locale", method = RequestMethod.GET)
+    public Locale hello(Locale locale, Model model) {       //locale为系统可转入参数
         return locale;
     }
 
-    @RequestMapping("/model")
+    @RequestMapping(path = "/model", method = RequestMethod.GET)
     public String model(Locale locale, Model model) {
         model.addAttribute("greeting", "Hello!");
 
@@ -69,7 +71,7 @@ public class HelloController extends BaseController{
         return "hello";
     }
 
-    @RequestMapping("/uid")
+    @RequestMapping(path = "/uid", method = RequestMethod.GET)
     String uid(HttpSession session) {
         UUID uid = (UUID) session.getAttribute("uid");
         if (uid == null) {

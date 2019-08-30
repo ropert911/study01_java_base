@@ -1,2 +1,6 @@
 swagger地址：
     http://127.0.0.1:8080/swagger-ui.html#/
+
+    HelloController     异常捕获，session,locale使用
+    JsrvalidatorController  jsr303验证相关接口参数
+    ValidatorController     validatore验证相关接口
