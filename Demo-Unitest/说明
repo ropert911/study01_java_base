@@ -1,0 +1,21 @@
+@RunWith：标识为JUnit的运行环境；
+@SpringBootTest：获取启动类、加载配置，确定装载Spring Boot；
+@Test：声明需要测试的方法；
+@BeforeClass：针对所有测试，只执行一次，且必须为static void；
+@AfterClass：针对所有测试，只执行一次，且必须为static void；
+@Before：每个测试方法前都会执行的方法；
+@After：每个测试方法前都会执行的方法；
+@Ignore：忽略方法；
+
+超时测试
+@Test(timeout = 1000)
+
+断言测试
+Assert.assertEquals 对比两个值相等
+Assert.assertNotEquals 对比两个值不相等
+Assert.assertSame 对比两个对象的引用相等
+Assert.assertArrayEquals 对比两个数组相等
+Assert.assertTrue 验证返回是否为真
+Assert.assertFlase 验证返回是否为假
+Assert.assertNull 验证null
+Assert.assertNotNull 验证非null

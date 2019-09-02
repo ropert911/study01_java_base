@@ -18,6 +18,7 @@
         <module>Demo05-ES-Client</module>
         <module>Demo06-Rest</module>
         <module>demo-lombok</module>
+        <module>Demo-Unitest</module>
     </modules>
     <packaging>pom</packaging>
 

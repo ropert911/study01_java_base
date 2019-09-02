@@ -1,66 +1,70 @@
 package com.study.unittest.apitest.demoapitest;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.ObjectWriter;
-import com.study.unittest.apitest.demoapitest.controller.BookController;
 import com.study.unittest.apitest.demoapitest.podo.Book;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.*;
 import org.junit.runner.RunWith;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.http.MediaType;
+import org.springframework.boot.test.web.client.TestRestTemplate;
+import org.springframework.http.ResponseEntity;
 import org.springframework.test.context.junit4.SpringRunner;
-import org.springframework.test.web.servlet.MockMvc;
-import org.springframework.test.web.servlet.setup.MockMvcBuilders;
-import org.springframework.web.context.WebApplicationContext;
 
-import static org.hamcrest.CoreMatchers.equalTo;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Created by sang on 2017/9/9.
  */
 @RunWith(SpringRunner.class)
-@SpringBootTest
+@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 public class BookTest2 {
     private static Logger logger = LoggerFactory.getLogger(BookTest2.class);
 
-    // 注入Spring 工厂
-    @Autowired
-    private WebApplicationContext wac;
-    //伪造mvc环境
-    private MockMvc mockMvc;
+    @BeforeClass
+    public static void beforclasss() {
+        logger.info("step before class *************");
+
+    }
+
+    @AfterClass
+    public static void afterclass() {
+        logger.info("step after class *************");
+    }
 
     @Before
-    public void setup() {
-        //两个都可以，一个是全部的，一个是单个
-        mockMvc = MockMvcBuilders.webAppContextSetup(wac).build();
-        mockMvc = MockMvcBuilders.standaloneSetup(new BookController()).build();
+    public void beforTest() {
+        logger.info("step before test **************");
     }
+
+    @After
+    public void afterTest() {
+        logger.info("step after test **************");
+    }
+
+
+    @Autowired
+    private TestRestTemplate testRestTemplate;
 
     @Test
     public void getHelloTest() throws Exception {
-        String result = mockMvc.perform(get("/book/hello1"))
-                .andExpect(status().isOk())
-                .andExpect(content().string(equalTo("hello")))
-                .andReturn().getResponse().getContentAsString();
+        String result = testRestTemplate.getForObject("/book/hello1", String.class);
         logger.info(result);
 
-        result = mockMvc.perform(get("/book/hello2/" + "xiaoqian"))
-                .andExpect(status().isOk())
-                .andExpect(content().string(equalTo("hello xiaoqian")))
-                .andReturn().getResponse().getContentAsString();
+        result = testRestTemplate.getForObject("/book/hello2/" + "xiaoqian", String.class);
+        logger.info(result);
+        Assert.assertEquals(result, "hello xiaoqian");
+
+
+        result = testRestTemplate.getForObject("/book/hello3?name={1}", String.class, "xiaoqian2");
+        Assert.assertEquals(result, "hello xiaoqian2");
         logger.info(result);
 
-        result = mockMvc.perform(get("/book/hello3")
-                .param("name", "xiaoqian2"))
-                .andExpect(status().isOk())         //还有header,content等
-                .andExpect(content().string(equalTo("hello xiaoqian2")))
-                .andReturn().getResponse().getContentAsString(); //对返回字符串的json内容进行判断
+        Map param = new HashMap<String, String>();
+        param.put("name", "xiaoqian2");
+        result = testRestTemplate.getForObject("/book/hello3?name={name}", String.class, param);
+        Assert.assertEquals(result, "hello xiaoqian2");
         logger.info(result);
     }
 
@@ -72,33 +76,22 @@ public class BookTest2 {
         book.setAuthor("xq");
         book.setPrice(30);
         book.setPublisher("人民文学出版本社");
-        ObjectMapper mapper = new ObjectMapper();
-        ObjectWriter ow = mapper.writer().withDefaultPrettyPrinter();
-        String requestJson = ow.writeValueAsString(book);
 
-        String result = mockMvc.perform(post("/book/book")
-                .contentType(MediaType.APPLICATION_JSON_UTF8)
-                .content(requestJson))
-                .andExpect(status().isOk())
-                .andExpect(jsonPath("$.name").isString())
-                .andReturn().getResponse().getContentAsString();
-        logger.info(result);
+
+        ResponseEntity<Book> response = testRestTemplate.postForEntity("/book/book", book, Book.class);
+        Book book1 = testRestTemplate.postForObject("/book/book", book, Book.class);
+        logger.info(response.getBody().toString());
+        logger.info(book1.toString());
     }
 
     @Test
     public void bookDel() throws Exception {
-        String result = mockMvc.perform(delete("/book/book/" + "xiaoqian"))
-                .andExpect(status().isOk())
-                .andReturn().getResponse().getContentAsString();
-        logger.info(result);
+        testRestTemplate.delete("/book/book/" + "xiaoqian");
     }
 
     @Test
     public void bookGet() throws Exception {
-        String result = mockMvc.perform(get("/book/book/" + "xiaoqian")
-                .contentType(MediaType.APPLICATION_JSON_UTF8))
-                .andExpect(status().isOk())
-                .andReturn().getResponse().getContentAsString(); //对返回字符串的json内容进行判断
+        String result = testRestTemplate.getForObject("/book/book/" + "xiaoqian", String.class);
         logger.info(result);
     }
 
@@ -109,15 +102,8 @@ public class BookTest2 {
         book.setAuthor("xq");
         book.setPrice(30);
         book.setPublisher("人民文学出版本社");
-        ObjectMapper mapper = new ObjectMapper();
-        ObjectWriter ow = mapper.writer().withDefaultPrettyPrinter();
-        String requestJson = ow.writeValueAsString(book);
 
-        String result = mockMvc.perform(get("/book/book/" + "xiaoqian")
-                .contentType(MediaType.APPLICATION_JSON_UTF8)
-                .content(requestJson))
-                .andExpect(status().isOk())
-                .andReturn().getResponse().getContentAsString(); //对返回字符串的json内容进行判断
-        logger.info(result);
+        Book b = testRestTemplate.postForObject("/book/book/" + "xiaoqian", book, Book.class);
+        logger.info(b.toString());
     }
 }

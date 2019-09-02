@@ -4,8 +4,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.ObjectWriter;
 import com.study.unittest.apitest.demoapitest.controller.BookController;
 import com.study.unittest.apitest.demoapitest.podo.Book;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.*;
 import org.junit.runner.RunWith;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -35,11 +34,28 @@ public class BookTest {
     //伪造mvc环境
     private MockMvc mockMvc;
 
+    @BeforeClass
+    public static void beforclasss() {
+        logger.info("step before class *************");
+
+    }
+
+    @AfterClass
+    public static void afterclass() {
+        logger.info("step after class *************");
+    }
+
     @Before
-    public void setup() {
+    public void beforTest() {
+        logger.info("step before test **************");
         //两个都可以，一个是全部的，一个是单个
         mockMvc = MockMvcBuilders.webAppContextSetup(wac).build();
         mockMvc = MockMvcBuilders.standaloneSetup(new BookController()).build();
+    }
+
+    @After
+    public void afterTest() {
+        logger.info("step after test **************");
     }
 
     @Test
