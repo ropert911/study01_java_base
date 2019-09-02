@@ -1,3 +1,5 @@
+
+
 @RunWith：标识为JUnit的运行环境；
 @SpringBootTest：获取启动类、加载配置，确定装载Spring Boot；
 @Test：声明需要测试的方法；
@@ -19,3 +21,10 @@ Assert.assertTrue 验证返回是否为真
 Assert.assertFlase 验证返回是否为假
 Assert.assertNull 验证null
 Assert.assertNotNull 验证非null
+
+
+@Transactional  在测试时可以不因测试污染数据库，比较添加后会自动删除
+
+
+
+Idean上覆盖率可以通过 Run "xxx" with Coverage 进行

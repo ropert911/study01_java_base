@@ -1,10 +1,12 @@
-package com.study.unittest.apitest.demoapitest;
+package com.study.unittest.apitest2.emoapitest2;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.ObjectWriter;
-import com.study.unittest.apitest.demoapitest.controller.BookController;
-import com.study.unittest.apitest.demoapitest.podo.Book;
-import org.junit.*;
+import com.study.unittest.apitest2.emoapitest2.controller.ISMUserController;
+import com.study.unittest.apitest2.emoapitest2.podo.IMSUser;
+import org.junit.Assert;
+import org.junit.Before;
+import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -16,17 +18,17 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
 
-import static org.hamcrest.CoreMatchers.equalTo;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 /**
  * Created by sang on 2017/9/9.
  */
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class BookTest {
-    private static Logger logger = LoggerFactory.getLogger(BookTest.class);
+public class IMSUser2Test {
+    private static Logger logger = LoggerFactory.getLogger(IMSUser2Test.class);
 
     // 注入Spring 工厂
     @Autowired
@@ -34,56 +36,16 @@ public class BookTest {
     //伪造mvc环境
     private MockMvc mockMvc;
 
-    @BeforeClass
-    public static void beforclasss() {
-        logger.info("step before class *************");
-
-    }
-
-    @AfterClass
-    public static void afterclass() {
-        logger.info("step after class *************");
-    }
-
     @Before
-    public void beforTest() {
-        logger.info("step before test **************");
+    public void setup() {
         //两个都可以，一个是全部的，一个是单个
         mockMvc = MockMvcBuilders.webAppContextSetup(wac).build();
-        mockMvc = MockMvcBuilders.standaloneSetup(new BookController()).build();
+        mockMvc = MockMvcBuilders.standaloneSetup(new ISMUserController()).build();
     }
-
-    @After
-    public void afterTest() {
-        logger.info("step after test **************");
-    }
-
-    @Test
-    public void getHelloTest() throws Exception {
-        String result = mockMvc.perform(get("/book/hello1"))
-                .andExpect(status().isOk())
-                .andExpect(content().string(equalTo("hello")))
-                .andReturn().getResponse().getContentAsString();
-        logger.info(result);
-
-        result = mockMvc.perform(get("/book/hello2/" + "xiaoqian"))
-                .andExpect(status().isOk())
-                .andExpect(content().string(equalTo("hello xiaoqian")))
-                .andReturn().getResponse().getContentAsString();
-        logger.info(result);
-
-        result = mockMvc.perform(get("/book/hello3")
-                .param("name", "xiaoqian2"))
-                .andExpect(status().isOk())         //还有header,content等
-                .andExpect(content().string(equalTo("hello xiaoqian2")))
-                .andReturn().getResponse().getContentAsString(); //对返回字符串的json内容进行判断
-        logger.info(result);
-    }
-
 
     @Test
     public void bookAdd() throws Exception {
-        Book book = new Book();
+        IMSUser book = new IMSUser();
         book.setName("红楼梦");
         book.setAuthor("xq");
         book.setPrice(30);
@@ -120,7 +82,7 @@ public class BookTest {
 
     @Test
     public void bookModify() throws Exception {
-        Book book = new Book();
+        IMSUser book = new IMSUser();
         book.setName("红楼梦");
         book.setAuthor("xq");
         book.setPrice(30);

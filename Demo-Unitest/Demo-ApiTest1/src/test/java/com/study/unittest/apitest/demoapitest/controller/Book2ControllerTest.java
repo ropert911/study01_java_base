@@ -1,4 +1,4 @@
-package com.study.unittest.apitest.demoapitest;
+package com.study.unittest.apitest.demoapitest.controller;
 
 import com.study.unittest.apitest.demoapitest.podo.Book;
 import org.junit.*;
@@ -19,8 +19,8 @@ import java.util.Map;
  */
 @RunWith(SpringRunner.class)
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
-public class BookTest2 {
-    private static Logger logger = LoggerFactory.getLogger(BookTest2.class);
+public class Book2ControllerTest {
+    private static Logger logger = LoggerFactory.getLogger(Book2ControllerTest.class);
 
     @BeforeClass
     public static void beforclasss() {
@@ -68,6 +68,11 @@ public class BookTest2 {
         logger.info(result);
     }
 
+
+    @Test
+    public void getHello1Test() throws Exception {
+        Assert.assertEquals("ffffffff", "hello xiaoqian2");
+    }
 
     @Test
     public void bookAdd() throws Exception {
