@@ -15,6 +15,11 @@ import org.springframework.web.bind.annotation.*;
 public class ISMUserController {
     private final Logger logger = LoggerFactory.getLogger(getClass());
 
+    @RequestMapping(value = "/hello1", method = RequestMethod.GET)
+    public  String book5() {
+        return "hello";
+    }
+
     //添加
     @RequestMapping(value = "/book", method = RequestMethod.POST)
     public IMSUser book1(@RequestBody IMSUser book) {

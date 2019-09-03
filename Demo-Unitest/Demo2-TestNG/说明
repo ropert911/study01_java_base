@@ -1,5 +1,7 @@
 ISMUserController1Test      TESTNG 各种方法的使用
 ISMUserController2Test      TESTNG 各种方法的使用
+ISMUserController3Test      spring集成testng测试
+ISMUserController5Test      spring集成testng测试
 
 
 @BeforeSuite    在该套件的所有测试都运行在注释的方法之前，仅运行一次。
