@@ -18,14 +18,13 @@ import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
 
 import static org.hamcrest.CoreMatchers.equalTo;
-import static org.junit.Assert.*;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class BookControllerTest {
-    private static Logger logger = LoggerFactory.getLogger(BookControllerTest.class);
+public class Book1ControllerTest {
+    private static Logger logger = LoggerFactory.getLogger(Book1ControllerTest.class);
 
     // 注入Spring 工厂
     @Autowired
