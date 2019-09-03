@@ -36,7 +36,7 @@ public class Book1ControllerTest {
     @Before
     public void setUp() throws Exception {
         //两个都可以，一个是全部的，一个是单个
-//        mockMvc = MockMvcBuilders.webAppContextSetup(wac).build();
+        mockMvc = MockMvcBuilders.webAppContextSetup(wac).build();
         mockMvc = MockMvcBuilders.standaloneSetup(new BookController()).build();
     }
 
