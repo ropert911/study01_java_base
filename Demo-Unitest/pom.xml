@@ -8,8 +8,8 @@
     <name>Demo-Unitest</name>
     <version>0.0.1-SNAPSHOT</version>
     <modules>
-        <module>Demo-ApiTest1</module>
-        <module>Demo-ApiTest2</module>
+        <module>Demo1-JUnit</module>
+        <module>Demo2-TestNG</module>
     </modules>
     <packaging>pom</packaging>
 

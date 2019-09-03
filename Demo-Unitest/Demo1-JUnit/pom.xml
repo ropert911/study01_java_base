@@ -8,10 +8,10 @@
         <version>2.1.7.RELEASE</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <groupId>com.study.unittest.apitest2</groupId>
-    <artifactId>Demo-ApiTest2</artifactId>
+    <groupId>com.study.unittest.apitest</groupId>
+    <artifactId>Demo1-JUnit</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>Demo-ApiTest2</name>
+    <name>Demo1-JUnit</name>
     <description>Demo project for Spring Boot</description>
 
     <properties>
@@ -42,6 +42,18 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <configuration>
+                    <testFailureIgnore>true</testFailureIgnore>
+                    <includes>
+
+                    </includes>
+                    <excludes>
+                        <!-- -->
+                    </excludes>
+                </configuration>
             </plugin>
         </plugins>
     </build>
