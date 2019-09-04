@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 
-<!-- @BeforeSuite -->
-<suite name="TestAll2">
-
-    <!-- @BeforeTest -->
-    <test name="case2-1">
+<suite name="TestAll3">
+    <test name="case3-1">
         <classes>
             <class name="com.study.unittest.apitest2.emoapitest2.controller.ISMUserController3Test"/>
             <class name="com.study.unittest.apitest2.emoapitest2.controller.ISMUserController5Test"/>
         </classes>
     </test>
-    <!-- @AfterTest -->
+    <test name="JUnitTests" junit="true">
+        <classes>
+            <class name="com.study.unittest.apitest2.emoapitest2.controller.JUnit1ControllerTest"/>
+            <class name="com.study.unittest.apitest2.emoapitest2.controller.JUnit2ControllerTest"/>
+        </classes>
+    </test>
 </suite>
-<!-- @AfterSuite -->

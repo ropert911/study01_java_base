@@ -2,10 +2,10 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 
 <!-- @BeforeSuite -->
-<suite name="TestAll">
+<suite name="TestAll1">
 
     <!-- @BeforeTest -->
-    <test name="case1">
+    <test name="case1-1">
         <classes>
             <class name="com.study.unittest.apitest2.emoapitest2.controller.ISMUserController1Test"/>
             <class name="com.study.unittest.apitest2.emoapitest2.controller.ISMUserController2Test"/>
@@ -14,7 +14,7 @@
     <!-- @AfterTest -->
 
     <!-- @BeforeTest -->
-    <test name="case2">
+    <test name="case1-2">
         <classes>
             <class name="com.study.unittest.apitest2.emoapitest2.controller.ISMUserController1Test"/>
         </classes>

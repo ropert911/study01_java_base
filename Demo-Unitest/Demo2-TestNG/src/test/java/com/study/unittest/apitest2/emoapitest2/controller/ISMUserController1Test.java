@@ -1,5 +1,6 @@
 package com.study.unittest.apitest2.emoapitest2.controller;
 
+import org.junit.Assert;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.testng.annotations.*;
@@ -72,6 +73,7 @@ public class ISMUserController1Test {
     @Test(groups="group1-1")
     public void testBook2() {
         logger.info("222---- testBook2");
+        Assert.assertNotNull(null);
     }
 
     @Test(groups="group3")

@@ -35,6 +35,12 @@
             <version>6.8.7</version>
             <scope>test</scope>
         </dependency>
+<!--       用于生成好看一点的测试报告-->
+        <dependency>
+            <groupId>com.aventstack</groupId>
+            <artifactId>extentreports</artifactId>
+            <version>3.1.5</version>
+        </dependency>
         <dependency>
             <groupId>io.swagger</groupId>
             <artifactId>swagger-annotations</artifactId>
@@ -48,6 +54,17 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <configuration>
+                    <suiteXmlFiles>
+                        <suiteXmlFile>src/test/resources/testng1.xml</suiteXmlFile>
+                        <suiteXmlFile>src/test/resources/testng2.xml</suiteXmlFile>
+                        <suiteXmlFile>src/test/resources/testng_junit.xml</suiteXmlFile>
+                    </suiteXmlFiles>
+                </configuration>
             </plugin>
         </plugins>
     </build>

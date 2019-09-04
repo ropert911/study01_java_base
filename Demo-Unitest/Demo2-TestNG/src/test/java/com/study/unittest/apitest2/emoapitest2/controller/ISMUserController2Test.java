@@ -105,7 +105,7 @@ public class ISMUserController2Test {
     }
 
     //多次测试
-    @Test(invocationCount = 10)
+    @Test(invocationCount = 10)   //还可以设置 threadPoolSize  进行测试
     public void repeatThis() {
         logger.info("222---- repeatThis");
     }
