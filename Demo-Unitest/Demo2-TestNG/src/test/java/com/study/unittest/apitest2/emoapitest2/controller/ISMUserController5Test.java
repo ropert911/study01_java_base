@@ -19,9 +19,9 @@ public class ISMUserController5Test extends AbstractTestNGSpringContextTests {
 
     @Test
     public void testBook1() {
-        logger.info("3333---- testBook1");
         String result = testRestTemplate.getForObject("/book/hello1", String.class);
         logger.info(result);
         Assert.assertNotNull(result);
+        logger.info("5555555555555555555555");
     }
 }

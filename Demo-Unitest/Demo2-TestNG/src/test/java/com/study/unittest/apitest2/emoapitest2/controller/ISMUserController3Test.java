@@ -36,5 +36,6 @@ public class ISMUserController3Test  extends AbstractTestNGSpringContextTests{
                 .andReturn().getResponse().getContentAsString();
         logger.info(result);
         Assert.assertNotNull(result);
+        logger.info("333333333333333333333");
     }
 }

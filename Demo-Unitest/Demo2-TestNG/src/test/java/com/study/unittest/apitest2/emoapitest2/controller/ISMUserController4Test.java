@@ -5,14 +5,9 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.testng.AbstractTestNGSpringContextTests;
-import org.springframework.test.context.web.WebAppConfiguration;
 import org.springframework.test.web.servlet.MockMvc;
-import org.springframework.test.web.servlet.setup.MockMvcBuilders;
-import org.springframework.web.context.WebApplicationContext;
 import org.testng.Assert;
-import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 import static org.hamcrest.CoreMatchers.equalTo;
@@ -36,5 +31,6 @@ public class ISMUserController4Test extends AbstractTestNGSpringContextTests{
                 .andReturn().getResponse().getContentAsString();
         logger.info(result);
         Assert.assertNotNull(result);
+        logger.info("4444444444444444444444444");
     }
 }
