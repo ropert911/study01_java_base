@@ -3,11 +3,11 @@
 
 <!-- @BeforeSuite -->
 <suite name="TestAll2">
-
     <!-- @BeforeTest -->
     <test name="case2-1">
         <classes>
             <class name="com.study.unittest.apitest2.emoapitest2.controller.ISMUserController3Test"/>
+            <class name="com.study.unittest.apitest2.emoapitest2.controller.ISMUserController4Test"/>
             <class name="com.study.unittest.apitest2.emoapitest2.controller.ISMUserController5Test"/>
         </classes>
     </test>

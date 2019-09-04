@@ -11,15 +11,10 @@
             <class name="com.study.unittest.apitest2.emoapitest2.controller.ISMUserController2Test"/>
         </classes>
     </test>
-    <!-- @AfterTest -->
-
-    <!-- @BeforeTest -->
     <test name="case1-2">
         <classes>
             <class name="com.study.unittest.apitest2.emoapitest2.controller.ISMUserController1Test"/>
         </classes>
     </test>
-    <!-- @AfterTest -->
-
 </suite>
 <!-- @AfterSuite -->

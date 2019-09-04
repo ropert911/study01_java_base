@@ -61,8 +61,10 @@
                 <configuration>
                     <suiteXmlFiles>
                         <suiteXmlFile>src/test/resources/testng1.xml</suiteXmlFile>
-                        <suiteXmlFile>src/test/resources/testng2.xml</suiteXmlFile>
-                        <suiteXmlFile>src/test/resources/testng_junit.xml</suiteXmlFile>
+<!--                        <suiteXmlFile>src/test/resources/testng2.xml</suiteXmlFile>-->
+                        <suiteXmlFile>src/test/resources/testng3_junit.xml</suiteXmlFile>
+                        <suiteXmlFile>src/test/resources/testng4_logging.xml</suiteXmlFile>
+                        <suiteXmlFile>src/test/resources/testng5_extentreport.xml</suiteXmlFile>
                     </suiteXmlFiles>
                 </configuration>
             </plugin>

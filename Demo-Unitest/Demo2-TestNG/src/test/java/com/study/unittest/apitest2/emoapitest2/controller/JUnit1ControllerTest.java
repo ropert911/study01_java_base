@@ -9,13 +9,11 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.MediaType;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
-import org.springframework.web.context.WebApplicationContext;
 
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
@@ -47,33 +45,11 @@ public class JUnit1ControllerTest {
                 .andExpect(content().string(equalTo("hello")))
                 .andReturn().getResponse().getContentAsString();
         logger.info(result);
-
-
-    }
-
-
-    @Test
-    public void book1() throws Exception {
-        IMSUser book = new IMSUser();
-        book.setName("红楼梦");
-        book.setAuthor("xq");
-        book.setPrice(30);
-        book.setPublisher("人民文学出版本社");
-        ObjectMapper mapper = new ObjectMapper();
-        ObjectWriter ow = mapper.writer().withDefaultPrettyPrinter();
-        String requestJson = ow.writeValueAsString(book);
-
-        String result = mockMvc.perform(post("/book/book")
-                .contentType(MediaType.APPLICATION_JSON_UTF8)
-                .content(requestJson))
-                .andExpect(status().isOk())
-                .andExpect(jsonPath("$.name").isString())
-                .andReturn().getResponse().getContentAsString();
-        logger.info(result);
     }
 
     @Test
     public void book2() throws Exception {
+        logger.info("xxxxxxxxxxxx-----book2");
         String result = mockMvc.perform(delete("/book/book/" + "xiaoqian"))
                 .andExpect(status().isOk())
                 .andReturn().getResponse().getContentAsString();
@@ -82,6 +58,7 @@ public class JUnit1ControllerTest {
 
     @Test
     public void book3() throws Exception {
+        logger.info("xxxxxxxxxxxx-----book3");
         String result = mockMvc.perform(get("/book/book/" + "xiaoqian")
                 .contentType(MediaType.APPLICATION_JSON_UTF8))
                 .andExpect(status().isOk())
@@ -91,6 +68,7 @@ public class JUnit1ControllerTest {
 
     @Test
     public void book4() throws Exception {
+        logger.info("xxxxxxxxxxxx-----book4");
         IMSUser book = new IMSUser();
         book.setName("红楼梦");
         book.setAuthor("xq");
@@ -106,5 +84,6 @@ public class JUnit1ControllerTest {
                 .andExpect(status().isOk())
                 .andReturn().getResponse().getContentAsString(); //对返回字符串的json内容进行判断
         logger.info(result);
+        logger.info("xxxxxxxxxxxx-----book4-2");
     }
 }

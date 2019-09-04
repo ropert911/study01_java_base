@@ -11,9 +11,6 @@ import org.springframework.boot.test.web.client.TestRestTemplate;
 import org.springframework.http.ResponseEntity;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import java.util.HashMap;
-import java.util.Map;
-
 /**
  * Created by sang on 2017/9/9.
  */
@@ -47,20 +44,6 @@ public class JUnit2ControllerTest {
     @Autowired
     private TestRestTemplate testRestTemplate;
 
-    @Test
-    public void bookAdd() throws Exception {
-        IMSUser book = new IMSUser();
-        book.setName("红楼梦");
-        book.setAuthor("xq");
-        book.setPrice(30);
-        book.setPublisher("人民文学出版本社");
-
-
-        ResponseEntity<IMSUser> response = testRestTemplate.postForEntity("/book/book", book, IMSUser.class);
-        IMSUser book1 = testRestTemplate.postForObject("/book/book", book, IMSUser.class);
-        logger.info(response.getBody().toString());
-        logger.info(book1.toString());
-    }
 
     @Test
     public void bookDel() throws Exception {
