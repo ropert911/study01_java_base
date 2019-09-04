@@ -10,6 +10,7 @@
     <modules>
         <module>Demo1-JUnit</module>
         <module>Demo2-TestNG</module>
+        <module>Demo3-Jacoco</module>
     </modules>
     <packaging>pom</packaging>
 
