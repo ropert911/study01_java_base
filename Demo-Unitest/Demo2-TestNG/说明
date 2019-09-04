@@ -1,7 +1,8 @@
 ISMUserController1Test      TESTNG 各种方法的使用
 ISMUserController2Test      TESTNG 各种方法的使用
-ISMUserController3Test      spring集成testng测试
-ISMUserController5Test      spring集成testng测试
+ISMUserController3Test      spring集成testng测试    MockMvcBuilders.standaloneSetup 生成mvc环境
+ISMUserController4Test      spring集成testng测试    自动注入MVC环境
+ISMUserController5Test      spring集成testng测试    webEnvironment 设置springboot的web环境
 
 
 @BeforeSuite    在该套件的所有测试都运行在注释的方法之前，仅运行一次。
