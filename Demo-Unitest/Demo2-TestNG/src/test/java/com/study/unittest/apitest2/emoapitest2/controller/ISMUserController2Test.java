@@ -48,11 +48,6 @@ public class ISMUserController2Test {
         logger.info("xxxx222 -- AfterGroups");
     }
 
-    //    @DataProvider   标记一种方法来提供测试方法的数据。 注释方法必须返回一个Object [] []，其中每个Object []可以被分配给测试方法的参数列表。 要从该DataProvider接收数据的@Test方法需要使用与此注释名称相等的dataProvider名称。
-//    @Factory    将一个方法标记为工厂，返回TestNG将被用作测试类的对象。 该方法必须返回Object []。
-//    @Listeners  定义测试类上的侦听器
-//    @Parameters 描述如何将参数传递给@Test方法
-
     @BeforeMethod   //@Test 执行前执行
     public void BeforeMethod() {
         logger.info("xxxx222 -- BeforeMethod");
@@ -62,7 +57,6 @@ public class ISMUserController2Test {
     public void AfterMethod() {
         logger.info("xxxx222 -- AfterMethod");
     }
-
 
     @Test
     public void testBook1() {
