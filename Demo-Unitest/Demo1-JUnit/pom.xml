@@ -84,6 +84,36 @@
 <!--                            <outputDirectory>target/jacoco-ut2</outputDirectory>         &lt;!&ndash;默认放在target/sit/jacoco目录&ndash;&gt;-->
 <!--                        </configuration>-->
                     </execution>
+                    <!-- 默认在 verify 阶段, we want to fail the build if mimimum code coverage checks aren't met -->
+                    <execution>
+                        <id>check</id>
+                        <goals>
+                            <goal>check</goal>
+                        </goals>
+                        <configuration>
+                            <rules>
+                                <!-- All classes must have 80% line and branch coverage . Note we use 2 d.p so that we get can any check failure messages reported to 2 d.p  -->
+                                <rule>
+                                    <element>CLASS</element>
+                                    <limits>
+                                        <limit>
+                                            <counter>LINE</counter>
+                                            <value>COVEREDRATIO</value>
+                                            <minimum>0.80</minimum>
+                                        </limit>
+                                        <limit>
+                                            <counter>BRANCH</counter>
+                                            <value>COVEREDRATIO</value>
+                                            <minimum>0.80</minimum>
+                                        </limit>
+                                    </limits>
+                                    <excludes>
+                                        <exclude>com.choudhury.codecoverage.Bye</exclude>
+                                    </excludes>
+                                </rule>
+                            </rules>
+                        </configuration>
+                    </execution>
                 </executions>
             </plugin>
         </plugins>

@@ -1,0 +1,18 @@
+Demo1是maven的单项目示例
+
+goals说明
+    report:为单个项目生成多种格式的报告.                                  在test阶段执行
+    report-integration: 同report一样，不过它提供了适合集成的默认值。       在test阶段执行
+    check：检查是否满足代码覆盖率指标，如行，分枝覆盖率 .                  在verify阶段执行
+
+maven 几大阶段
+阶段	    插件	                        作用
+clean	    clean	                        清理自动生成的文件，也就是 target 目录
+validate	由 Maven 核心负责	            验证 Maven 描述文件是否有效
+compile	    compiler、resources	            编译 Java 源码
+test	    compiler、surefire、resources	运行测试代码
+package	    war	                            项目打包，就是生成构件包，也就是打 war 包
+verify	    由 Maven 核心负责	            验证构件包是否有效
+install	    install	                        将构件包安装到本地仓库
+site	    site	                        生成项目站点，就是一堆静态网页文件，包括 JavaDoc
+deploy	    deploy	                        将构件包部署到远程仓库
