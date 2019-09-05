@@ -3,6 +3,7 @@ Demo1是maven的单项目示例
 goals说明
     report:为单个项目生成多种格式的报告.                                  在test阶段执行
     report-integration: 同report一样，不过它提供了适合集成的默认值。       在test阶段执行
+    report-aggregate: Creates a structured code coverage report (HTML, XML, and CSV) from multiple projects within reactor. The report is created from all modules this project depends on. From those projects class and source files as well as JaCoCo execution data files will be collected. In addition execution data is collected from the project itself. This also allows to create coverage reports when tests are in separate projects than the code under test, for example in case of integration tests.
     check：检查是否满足代码覆盖率指标，如行，分枝覆盖率 .                  在verify阶段执行
 
 maven 几大阶段

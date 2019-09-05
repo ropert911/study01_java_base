@@ -35,7 +35,13 @@
             <version>1.5.16</version>
             <scope>compile</scope>
         </dependency>
-    </dependencies>
+        <dependency>
+            <groupId>org.testng</groupId>
+            <artifactId>testng</artifactId>
+            <version>7.0.0</version>
+            <scope>test</scope>
+        </dependency>
+        </dependencies>
 
     <build>
         <plugins>
@@ -56,6 +62,7 @@
                     </execution>
                     <execution>
                         <id>default-prepare-agent-integration</id>
+                        <phase>test</phase>
                         <goals>
                             <goal>prepare-agent-integration</goal>
                         </goals>
@@ -94,7 +101,24 @@
                     </execution>
                 </executions>
             </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>2.16</version>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-failsafe-plugin</artifactId>
+                <version>2.16</version>
+                <executions>
+                    <execution>
+                        <id>default-integration-test</id>
+                        <goals>
+                            <goal>integration-test</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
         </plugins>
     </build>
-
 </project>
