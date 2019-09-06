@@ -9,7 +9,7 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <modelVersion>4.0.0</modelVersion>
-    <groupId>nl.deholtmans.jacoco-multi-module-demo</groupId>
+    <groupId>nl.deholtmans.demo-jacoco-multi-module</groupId>
     <artifactId>module1</artifactId>
     <version>1.0-SNAPSHOT</version>
 
