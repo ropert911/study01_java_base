@@ -1,0 +1,13 @@
+goals说明
+    prepare-agent是字节码插桩，生成单个module的jacoco.exec的。argline定义为属性并引用
+
+    report:为单个项目生成多种格式的报告.                                  在test阶段执行
+    report-integration: 同report一样，不过它提供了适合集成的默认值。       在test阶段执行
+    report-aggregate: Creates a structured code coverage report (HTML, XML, and CSV) from multiple projects within reactor. The report is created from all modules this project depends on. From those projects class and source files as well as JaCoCo execution data files will be collected. In addition execution data is collected from the project itself. This also allows to create coverage reports when tests are in separate projects than the code under test, for example in case of integration tests.
+    check：检查是否满足代码覆盖率指标，如行，分枝覆盖率 .                  在verify阶段执行
+    merge：Mojo for merging a set of execution data files (*.exec) into a single file
+
+运行 mvn clean install
+本项目重点关注 父pom设置和，tesing的设置.  生成结果在testing项目中
+    testing 做了merge，它用到了所有项目，只有一个目的就是生成统一的覆盖率
+    另外，module1没有继承父pom
