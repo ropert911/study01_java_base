@@ -3,7 +3,10 @@ ISMUserController2Test      TESTNG 各种方法的使用
 ISMUserController3Test      spring集成testng测试    MockMvcBuilders.standaloneSetup 生成mvc环境
 ISMUserController4Test      spring集成testng测试    自动注入MVC环境
 ISMUserController5Test      spring集成testng测试    webEnvironment 设置springboot的web环境
-testng5_extentreport.xml    生成extentReport 报告
+
+testng4_logging             自定义日志记录器：CustomListener
+                            自定义记录器：CustomReporter
+testng5_extentreport.xml    生成 ExtentReports报告:ExtentTestNGIReporterListener1,
                             Allure报告：https://www.jianshu.com/p/202442454b02
 
 官方参考：   https://testng.org/doc/documentation-main.html
