@@ -66,52 +66,8 @@
                         <suiteXmlFile>src/test/resources/testng4_logging.xml</suiteXmlFile>
                         <suiteXmlFile>src/test/resources/testng5_extentreport.xml</suiteXmlFile>
                     </suiteXmlFiles>
-                </configuration>
+                 </configuration>
             </plugin>
-
-            <plugin>
-                <groupId>org.jacoco</groupId>
-                <artifactId>jacoco-maven-plugin</artifactId>
-                <version>0.8.4</version>
-                <executions>
-                    <execution>
-                        <id>default-prepare-agent</id>
-                        <goals>
-                            <goal>prepare-agent</goal>
-                        </goals>
-                    </execution>
-<!--                    <execution>-->
-<!--                        <id>default-prepare-agent-integration</id>-->
-<!--                        <goals>-->
-<!--                            <goal>prepare-agent-integration</goal>-->
-<!--                        </goals>-->
-<!--                    </execution>-->
-
-
-<!--                    <execution>-->
-<!--                        <id>default-report</id>-->
-<!--                        <phase>test</phase>-->
-<!--                        <goals>-->
-<!--                            <goal>report</goal>     &lt;!&ndash;target/site/jacoco&ndash;&gt;-->
-<!--                        </goals>-->
-<!--                    </execution>-->
-<!--                    <execution>-->
-<!--                        <id>default-report-integration</id>-->
-<!--                        <phase>test</phase>-->
-<!--                        <goals>-->
-<!--                            <goal>report-integration</goal>-->
-<!--                        </goals>-->
-<!--                    </execution>-->
-                    <execution>
-                        <id>default-report-aggregate</id>
-                        <phase>test</phase>
-                        <goals>
-                            <goal>report-aggregate</goal>   <!--target/site/jacoco-aggregate 我还没有看到数据 -->
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
-        </plugins>
+         </plugins>
     </build>
-
 </project>
