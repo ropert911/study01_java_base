@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequestMapping("/book")
 @Api(value = "", description = "book相关")
-public class Book3Controller {
+public class Book4Controller {
     private final Logger logger = LoggerFactory.getLogger(getClass());
 
     @RequestMapping(value = "/hello1", method = RequestMethod.GET)
