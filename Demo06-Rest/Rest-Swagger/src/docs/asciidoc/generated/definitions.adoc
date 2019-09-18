@@ -1,0 +1,101 @@
+
+[[_definitions]]
+== Definitions
+
+[[_address]]
+=== Address
+
+[options="header", cols=".^3,.^4"]
+|===
+|Name|Schema
+|**area** +
+__optional__|string
+|**num** +
+__optional__|string
+|**province** +
+__optional__|string
+|**street** +
+__optional__|string
+|===
+
+
+[[_e65f4bc5a6f8ca5bd11a22b1ec0a97f0]]
+=== BaseResp«Address»
+
+[options="header", cols=".^3,.^4"]
+|===
+|Name|Schema
+|**code** +
+__optional__|integer(int32)
+|**currentTime** +
+__optional__|integer(int64)
+|**data** +
+__optional__|object
+|**message** +
+__optional__|string
+|===
+
+
+[[_ecbb15f812d51246cc5640beddb4e1ac]]
+=== BaseResp«List«Address»»
+
+[options="header", cols=".^3,.^4"]
+|===
+|Name|Schema
+|**code** +
+__optional__|integer(int32)
+|**currentTime** +
+__optional__|integer(int64)
+|**data** +
+__optional__|object
+|**message** +
+__optional__|string
+|===
+
+
+[[_7add218bcdf0b40c485c510aea3742b2]]
+=== BaseResp«string»
+
+[options="header", cols=".^3,.^4"]
+|===
+|Name|Schema
+|**code** +
+__optional__|integer(int32)
+|**currentTime** +
+__optional__|integer(int64)
+|**data** +
+__optional__|object
+|**message** +
+__optional__|string
+|===
+
+
+[[_paramodel]]
+=== ParaModel
+
+[options="header", cols=".^3,.^4"]
+|===
+|Name|Schema
+|**area** +
+__optional__|enum (地区)
+|**provice** +
+__optional__|enum (省)
+|**streets** +
+__optional__|< <<_street,Street>> > array
+|===
+
+
+[[_street]]
+=== Street
+
+[options="header", cols=".^3,.^4"]
+|===
+|Name|Schema
+|**number** +
+__optional__|integer(int32)
+|**street** +
+__optional__|enum (街道)
+|===
+
+
+

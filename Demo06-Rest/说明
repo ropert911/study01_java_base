@@ -9,3 +9,4 @@ Rest-Demo
     ValidatorController     validatore验证相关接口
 Rest-Swagger
     swagger各位格式示例和说明
+    根据swagger文档的功能 html,pdf等

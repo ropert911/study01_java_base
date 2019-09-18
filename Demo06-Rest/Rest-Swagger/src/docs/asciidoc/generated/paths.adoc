@@ -1,0 +1,202 @@
+
+[[_paths]]
+== Paths
+
+[[_getaddressinfousingpost]]
+=== 获取地址信息
+....
+POST /api/address
+....
+
+
+==== Parameters
+
+[options="header", cols=".^2,.^3,.^9,.^4,.^2"]
+|===
+|Type|Name|Description|Schema|Default
+|**Query**|**area** +
+__required__|地区|string|`"南山区"`
+|**Query**|**num** +
+__required__|门牌号|string|`"666"`
+|**Query**|**province** +
+__required__|省|string|`"广东省"`
+|**Query**|**street** +
+__required__|街道|string|`"桃园路"`
+|===
+
+
+==== Responses
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP Code|Description|Schema
+|**200**|OK|<<_e65f4bc5a6f8ca5bd11a22b1ec0a97f0,BaseResp«Address»>>
+|**201**|Created|No Content
+|**400**|请求参数没填好|No Content
+|**401**|Unauthorized|No Content
+|**403**|Forbidden|No Content
+|**404**|请求路径没有或页面跳转路径不对|No Content
+|===
+
+
+==== Consumes
+
+* `application/json`
+
+
+==== Produces
+
+* `*/*`
+
+
+==== Tags
+
+* api
+
+
+[[_getaddresslistusingpost]]
+=== 获取地址信息(参数体)
+....
+POST /api/address/area/list
+....
+
+
+==== Parameters
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|Type|Name|Description|Schema
+|**Body**|**paraModel** +
+__required__|paraModel|<<_paramodel,ParaModel>>
+|===
+
+
+==== Responses
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP Code|Description|Schema
+|**200**|OK|<<_7add218bcdf0b40c485c510aea3742b2,BaseResp«string»>>
+|**201**|Created|No Content
+|**400**|请求参数没填好|No Content
+|**401**|Unauthorized|No Content
+|**403**|Forbidden|No Content
+|**404**|请求路径没有或页面跳转路径不对|No Content
+|===
+
+
+==== Consumes
+
+* `application/json`
+
+
+==== Produces
+
+* `*/*`
+
+
+==== Tags
+
+* api
+
+
+[[_getaddresslistusingpost_1]]
+=== 获取地址信息
+....
+POST /api/address/list
+....
+
+
+==== Parameters
+
+[options="header", cols=".^2,.^3,.^9,.^4,.^2"]
+|===
+|Type|Name|Description|Schema|Default
+|**Query**|**area** +
+__required__|地区|string|`"南山区"`
+|**Query**|**num** +
+__required__|门牌号|string|`"666"`
+|**Query**|**province** +
+__required__|省|string|`"广东省"`
+|**Query**|**street** +
+__required__|街道|string|`"桃园路"`
+|===
+
+
+==== Responses
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP Code|Description|Schema
+|**200**|OK|<<_ecbb15f812d51246cc5640beddb4e1ac,BaseResp«List«Address»»>>
+|**201**|Created|No Content
+|**400**|请求参数没填好|No Content
+|**401**|Unauthorized|No Content
+|**403**|Forbidden|No Content
+|**404**|请求路径没有或页面跳转路径不对|No Content
+|===
+
+
+==== Consumes
+
+* `application/json`
+
+
+==== Produces
+
+* `*/*`
+
+
+==== Tags
+
+* api
+
+
+[[_getaddressusingget]]
+=== 获取地址信息(路径传参)
+....
+GET /api/address/{area}/{number}
+....
+
+
+==== Parameters
+
+[options="header", cols=".^2,.^3,.^9,.^4,.^2"]
+|===
+|Type|Name|Description|Schema|Default
+|**Path**|**area** +
+__required__|区域|string|`"南山区"`
+|**Path**|**number** +
+__required__|门牌号|string|`"9527"`
+|===
+
+
+==== Responses
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP Code|Description|Schema
+|**200**|OK|<<_7add218bcdf0b40c485c510aea3742b2,BaseResp«string»>>
+|**400**|请求参数没填好|No Content
+|**401**|Unauthorized|No Content
+|**403**|Forbidden|No Content
+|**404**|请求路径没有或页面跳转路径不对|No Content
+|===
+
+
+==== Consumes
+
+* `application/json`
+
+
+==== Produces
+
+* `*/*`
+
+
+==== Tags
+
+* api
+
+
+

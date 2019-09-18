@@ -1,0 +1,35 @@
+= SpringBoot整合Swagger2
+
+
+[[_overview]]
+== Overview
+api接口的文档整理，支持在线测试
+
+
+=== Version information
+[%hardbreaks]
+__Version__ : 1.0
+
+
+=== Contact information
+[%hardbreaks]
+__Contact__ : Vector.Wang
+
+
+=== License information
+[%hardbreaks]
+__Terms of service__ : http://vector4wang.tk/
+
+
+=== URI scheme
+[%hardbreaks]
+__Host__ : localhost:9090
+__BasePath__ : /
+
+
+=== Tags
+
+* api : WebController
+
+
+
