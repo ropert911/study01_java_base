@@ -9,8 +9,10 @@ import org.slf4j.LoggerFactory;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import static io.restassured.RestAssured.get;
 import static junit.framework.TestCase.assertTrue;
 import static org.hamcrest.Matchers.equalTo;
+import static org.hamcrest.Matchers.is;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
@@ -26,7 +28,7 @@ public class AssureTest {
     @Test
     public void parmTest1() {
         RestAssured.basePath = "/demo4/string";
-        String value = RestAssured.get("/hello1").getBody().print();
+        String value = get("/hello1").getBody().print();
         assertTrue(value.equals("hello"));
     }
 
@@ -35,7 +37,7 @@ public class AssureTest {
     @Test
     public void parmTest2() {
         RestAssured.basePath = "/demo4/string";
-        String value = RestAssured.get("/hello2/xiaoqian").getBody().print();
+        String value = get("/hello2/xiaoqian").getBody().print();
         assertTrue(value.equals("hello xiaoqian"));
     }
 
@@ -51,7 +53,7 @@ public class AssureTest {
     @Test
     public void methodTestGet() {
         RestAssured.basePath = "/demo4/book";
-        RestAssured.get("/book/xiaoqian").then().body("name", equalTo("xiaoqian"));
-        RestAssured.get("/book/xiaoqian").then().body("price", equalTo(90));
+        get("/book/xiaoqian").then().body("name", equalTo("xiaoqian"));
+        get("/book/xiaoqian").then().body("price", equalTo(90));
     }
 }

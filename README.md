@@ -3,7 +3,8 @@ study project
 
 spring-study spring-event  容器级事件
 
-
+Demo01-JDK-Base
+    json数据处理：fastjson, googlejson,jackson
 demo-lombok  lombok使用:
     资源自动清理
     数据的tostring, getter,setter,数据格式检查,生成hasheeual方法等

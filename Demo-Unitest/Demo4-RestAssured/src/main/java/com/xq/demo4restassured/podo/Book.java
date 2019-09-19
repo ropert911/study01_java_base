@@ -6,9 +6,10 @@ import java.util.List;
 /**
  * Created by sang on 2017/9/9.
  */
-public class Book implements Serializable{
+public class Book implements Serializable {
     private String name;
     private int price;
+    private double price1;
     private List<Author> authors;
     private Publisher publisher;
     private List<String> tags;
@@ -37,7 +38,13 @@ public class Book implements Serializable{
         this.price = price;
     }
 
+    public double getPrice1() {
+        return price1;
+    }
 
+    public void setPrice1(double price1) {
+        this.price1 = price1;
+    }
 
     public Publisher getPublisher() {
         return publisher;
@@ -55,9 +62,10 @@ public class Book implements Serializable{
         this.tags = tags;
     }
 
-    public Book(String name, int price, List<Author> authors, Publisher publisher, List<String> tags) {
+    public Book(String name, int price, double price1, List<Author> authors, Publisher publisher, List<String> tags) {
         this.name = name;
         this.price = price;
+        this.price1 = price1;
         this.authors = authors;
         this.publisher = publisher;
         this.tags = tags;
@@ -68,6 +76,7 @@ public class Book implements Serializable{
         return "Book{" +
                 "name='" + name + '\'' +
                 ", price=" + price +
+                ", price1=" + price1 +
                 ", authors=" + authors +
                 ", publisher=" + publisher +
                 ", tags=" + tags +

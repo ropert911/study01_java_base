@@ -1,6 +1,13 @@
 package com.xq.demo4restassured;
 
 import io.restassured.RestAssured;
+
+import static io.restassured.RestAssured.get;
+import static io.restassured.RestAssured.given;
+import static io.restassured.config.JsonConfig.jsonConfig;
+import static io.restassured.path.json.config.JsonPathConfig.NumberReturnType.BIG_DECIMAL;
+import static org.hamcrest.Matchers.*;
+
 import io.restassured.response.ValidatableResponse;
 import org.junit.Before;
 import org.junit.Test;
@@ -10,8 +17,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import static org.hamcrest.Matchers.equalTo;
-import static org.hamcrest.Matchers.hasItems;
+import java.math.BigDecimal;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
@@ -26,16 +32,22 @@ public class JsonTest {
     //简单解析Jason
     @Test
     public void jsonParse1() {
-        RestAssured.get("/book/xiaoqian").then().body("name", equalTo("xiaoqian"));
-        RestAssured.get("/book/xiaoqian").then().body("price", equalTo(90));
-        RestAssured.get("/book/xiaoqian").then().body("tags", hasItems("小说","娱乐"));
+        get("/book/xiaoqian").then().body("name", equalTo("xiaoqian"));
+        get("/book/xiaoqian").then().body("price", equalTo(90));
+        //报上来的数据包含的数据，被解析成float类型
+        get("/book/xiaoqian").then().body("price1", is(89.5f));
+        //用rest-assured的JsonConfig来配置返回的所有的json数值都为BigDecimal类型
+        given().config(RestAssured.config().jsonConfig(jsonConfig().numberReturnType(BIG_DECIMAL))).when().
+                get("/book/xiaoqian").then().body("price1", is(new BigDecimal(89.5)));
+        get("/book/xiaoqian").then().body("tags", hasItems("小说", "娱乐"));
     }
 
 
     //解析JSON
     @Test
     public void jsonParse2() {
-        ValidatableResponse resp = RestAssured.get("/book/xiaoqian").then();
+        logger.info("========== {}", get("/book/xiaoqian").body().print());
+        ValidatableResponse resp = get("/book/xiaoqian").then();
         //判断返回Json数据的title
         resp.body("name", equalTo("xiaoqian"));
         //判断二级属性rating.max的值

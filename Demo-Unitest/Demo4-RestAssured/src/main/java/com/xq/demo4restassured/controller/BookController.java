@@ -72,6 +72,6 @@ public class BookController {
         List<String> tags = new ArrayList<>();
         tags.add("娱乐");
         tags.add("小说");
-        return new Book(name, 90, auths, publisher, tags);
+        return new Book(name, 90, 89.5d, auths, publisher, tags);
     }
 }
