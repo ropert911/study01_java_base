@@ -1,6 +1,7 @@
 package com.xq.demo4restassured.podo;
 
 import java.io.Serializable;
+import java.util.List;
 
 /**
  * Created by sang on 2017/9/9.
@@ -8,20 +9,16 @@ import java.io.Serializable;
 public class Book implements Serializable{
     private String name;
     private int price;
-    private String author;
-    private String publisher;
+    private List<Author> authors;
+    private Publisher publisher;
+    private List<String> tags;
 
-    public Book() {
+    public List<Author> getAuthors() {
+        return authors;
     }
 
-    @Override
-    public String toString() {
-        return "Book{" +
-                "name='" + name + '\'' +
-                ", price=" + price +
-                ", author='" + author + '\'' +
-                ", publisher='" + publisher + '\'' +
-                '}';
+    public void setAuthors(List<Author> authors) {
+        this.authors = authors;
     }
 
     public String getName() {
@@ -40,26 +37,40 @@ public class Book implements Serializable{
         this.price = price;
     }
 
-    public String getAuthor() {
-        return author;
-    }
 
-    public void setAuthor(String author) {
-        this.author = author;
-    }
 
-    public String getPublisher() {
+    public Publisher getPublisher() {
         return publisher;
     }
 
-    public void setPublisher(String publisher) {
+    public void setPublisher(Publisher publisher) {
         this.publisher = publisher;
     }
 
-    public Book(String name, int price, String author, String publisher) {
+    public List<String> getTags() {
+        return tags;
+    }
+
+    public void setTags(List<String> tags) {
+        this.tags = tags;
+    }
+
+    public Book(String name, int price, List<Author> authors, Publisher publisher, List<String> tags) {
         this.name = name;
         this.price = price;
-        this.author = author;
+        this.authors = authors;
         this.publisher = publisher;
+        this.tags = tags;
+    }
+
+    @Override
+    public String toString() {
+        return "Book{" +
+                "name='" + name + '\'' +
+                ", price=" + price +
+                ", authors=" + authors +
+                ", publisher=" + publisher +
+                ", tags=" + tags +
+                '}';
     }
 }

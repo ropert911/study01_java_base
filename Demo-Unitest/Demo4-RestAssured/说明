@@ -1,1 +1,9 @@
 http://127.0.0.1:8080/demo4/swagger-ui.html
+官方使用说明：
+    https://github.com/rest-assured/rest-assured/wiki/Usage
+
+AssureTest
+    参数的传递：无参，url本身有参数，以参数序列方式
+    查询方式：Get
+JsonTest
+    Json相关使用

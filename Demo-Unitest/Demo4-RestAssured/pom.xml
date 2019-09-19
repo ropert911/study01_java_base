@@ -43,19 +43,27 @@
             <artifactId>springfox-swagger-ui</artifactId>
             <version>${swagger.version}</version>
         </dependency>
-
-        <!--        rest-assued库-->
-        <dependency>
-            <groupId>com.jayway.restassured</groupId>
-            <artifactId>rest-assured</artifactId>
-            <version>2.8.0</version>
-        </dependency>
         <dependency>
             <groupId>io.springfox</groupId>
             <artifactId>springfox-swagger2</artifactId>
             <version>2.7.0</version>
             <scope>compile</scope>
         </dependency>
+
+        <!--    推荐的 rest-assued库, 最新的版本有点问题-->
+        <dependency>
+            <groupId>io.rest-assured</groupId>
+            <artifactId>rest-assured</artifactId>
+            <version>3.2.0</version>
+            <scope>test</scope>
+        </dependency>
+<!--        另一个不被推荐 Java DSL for easy testing of REST services-->
+<!--        <dependency>-->
+<!--            <groupId>com.jayway.restassured</groupId>-->
+<!--            <artifactId>rest-assured</artifactId>-->
+<!--            <version>2.8.0</version>-->
+<!--        </dependency>-->
+
     </dependencies>
 
     <build>
