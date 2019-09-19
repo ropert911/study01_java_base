@@ -23,8 +23,8 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class Book1ControllerTest {
-    private static Logger logger = LoggerFactory.getLogger(Book1ControllerTest.class);
+public class MockMvcTest {
+    private static Logger logger = LoggerFactory.getLogger(MockMvcTest.class);
 
     // 注入Spring 工厂
     @Autowired

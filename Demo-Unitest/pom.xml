@@ -11,6 +11,7 @@
         <module>Demo1-JUnit</module>
         <module>Demo2-TestNG</module>
         <module>Demo3-Jacoco</module>
+        <module>Demo4-RestAssured</module>
     </modules>
     <packaging>pom</packaging>
 

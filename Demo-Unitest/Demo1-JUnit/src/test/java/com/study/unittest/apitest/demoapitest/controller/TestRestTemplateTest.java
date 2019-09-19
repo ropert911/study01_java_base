@@ -19,8 +19,8 @@ import java.util.Map;
  */
 @RunWith(SpringRunner.class)
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
-public class Book2ControllerTest {
-    private static Logger logger = LoggerFactory.getLogger(Book2ControllerTest.class);
+public class TestRestTemplateTest {
+    private static Logger logger = LoggerFactory.getLogger(TestRestTemplateTest.class);
 
     @BeforeClass
     public static void beforclasss() {
