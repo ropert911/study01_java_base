@@ -18,8 +18,10 @@ import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
 
 import static org.hamcrest.CoreMatchers.equalTo;
+import static org.hamcrest.CoreMatchers.is;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
@@ -52,7 +54,9 @@ public class MockMvcTest {
                 .andReturn().getResponse().getContentAsString();
         logger.info(result);
 
-
+        //进行json格式的判断
+        mockMvc.perform(get("/book/xiaoqian"))
+                .andExpect(jsonPath("$.author", is("罗贯中")));
     }
 
     @Test
