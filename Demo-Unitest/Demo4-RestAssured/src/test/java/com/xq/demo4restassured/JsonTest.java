@@ -5,7 +5,9 @@ import io.restassured.RestAssured;
 import static io.restassured.RestAssured.get;
 import static io.restassured.RestAssured.given;
 import static io.restassured.config.JsonConfig.jsonConfig;
+import static io.restassured.module.jsv.JsonSchemaValidator.matchesJsonSchemaInClasspath;
 import static io.restassured.path.json.config.JsonPathConfig.NumberReturnType.BIG_DECIMAL;
+import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.*;
 
 import io.restassured.response.ValidatableResponse;
@@ -58,5 +60,13 @@ public class JsonTest {
         resp.body("authors[0].name", equalTo("张三"));
         //判断数组中是否有该元素
         resp.body("tags", hasItems("小说"));
+
+        //matchesJsonSchemaInClasspath获取的内容和文件中的内容进行比较
+        get("/products").then().assertThat().body(matchesJsonSchemaInClasspath("products-schema.json"));
+        String value = get("/products").getBody().print();
+        assertThat(value, matchesJsonSchemaInClasspath("products-schema.json"));
+
+        //匿名的JSON根属性
+        get("/list").then().body("$", hasItems(1, 2, 3)); // An empty string "" would work as well
     }
 }

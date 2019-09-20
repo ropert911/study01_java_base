@@ -16,7 +16,7 @@ public class IpConfiguration implements ApplicationListener<WebServerInitialized
     @Override
     public void onApplicationEvent(WebServerInitializedEvent webServerInitializedEvent) {
         this.port = webServerInitializedEvent.getWebServer().getPort();
-        RestAssured.baseURI = "http://127.0.0.1:" + port;
+        RestAssured.baseURI = "http://localhost:" + port;
         RestAssured.port = port;
         logger.info("=================== {}", port);
 

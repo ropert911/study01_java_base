@@ -74,4 +74,22 @@ public class BookController {
         tags.add("小说");
         return new Book(name, 90, 89.5d, auths, publisher, tags);
     }
+
+
+
+
+    @RequestMapping(value = "/products", method = RequestMethod.GET)
+    public Publisher hello4(String name) {
+        Publisher publisher = new Publisher();
+        publisher.setName("XXX");
+        return publisher;
+    }
+    @RequestMapping(value = "/list", method = RequestMethod.GET)
+    public List<Integer> hello5(String name) {
+        List<Integer> a = new ArrayList<>();
+        a.add(1);
+        a.add(2);
+        a.add(3);
+        return a;
+    }
 }
