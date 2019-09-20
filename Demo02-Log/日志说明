@@ -1,3 +1,9 @@
+Log1_Log4j: 使用jog4j+专用配置文件
+Log2-LogBack1:  使用logback的专用配置文件
+Log2-LogBack2:  使用properties配置文件
+Log3-Log4j2：使用properties配置文件
+Log3-Log4j2-2： 使用log4j2的专用配置文件
+
 除了使用默认的LogBack，Spring Boot还可以使用Log4j、Log42等作为自己的日志系统
 
 Log4j
