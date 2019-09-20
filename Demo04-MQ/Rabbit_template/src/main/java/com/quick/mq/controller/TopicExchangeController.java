@@ -9,11 +9,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
- * @Author: wangxc
- * @GitHub: https://github.com/vector4wang
- * @CSDN: http://blog.csdn.net/qqhjqs?viewmode=contents
- * @BLOG: http://vector4wang.tk
- * @wxid: BMHJQS
+ * @author: wangxc
+ * @date 2019/9/20
  */
 @RestController
 @RequestMapping("/rabbit5")

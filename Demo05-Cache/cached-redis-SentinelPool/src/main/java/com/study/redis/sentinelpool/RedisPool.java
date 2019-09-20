@@ -44,8 +44,8 @@ public class RedisPool {
 
     /**
      * 得到Jedis连接客户端
-     * @param db
-     * @return
+     * @param db XXX
+     * @return xxx
      */
     public Jedis getClient(int db) {
         Jedis jedis = jedisSentinelPool.getResource();

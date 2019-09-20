@@ -3,7 +3,7 @@ package com.quick.utils;
 import java.util.Date;
 
 /**
- * @param <T>
+ * @param <T> xx
  */
 public class BaseResp<T> {
     /**
@@ -72,7 +72,7 @@ public class BaseResp<T> {
 
     /**
      * 不带数据的返回结果
-     * @param resultStatus
+     * @param resultStatus xx
      */
     public BaseResp(ResultStatus resultStatus) {
         this.code = resultStatus.getErrorCode();
@@ -83,8 +83,8 @@ public class BaseResp<T> {
 
     /**
      * 带数据的返回结果
-     * @param resultStatus
-     * @param data
+     * @param resultStatus xx
+     * @param data xx
      */
     public BaseResp(ResultStatus resultStatus, T data) {
         this.code = resultStatus.getErrorCode();

@@ -23,8 +23,8 @@ public class BookController {
     /**
      * 添加
      *
-     * @param book
-     * @return
+     * @param book xx
+     * @return xx
      */
     @RequestMapping(value = "/book", method = RequestMethod.POST)
     public Book book1(@RequestBody Book book) {

@@ -5,11 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 /**
- * @Author: wangxc
- * @GitHub: https://github.com/vector4wang
- * @CSDN: http://blog.csdn.net/qqhjqs?viewmode=contents
- * @BLOG: http://vector4wang.tk
- * @wxid: BMHJQS
+ * @author: wangxc
  */
 @Component
 public class TopicSender {

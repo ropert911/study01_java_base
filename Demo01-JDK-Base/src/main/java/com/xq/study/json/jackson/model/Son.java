@@ -26,7 +26,7 @@ public class Son extends Family {
     @Override
     public String toString() {
         return "Son{" +
-                "a=" + a +
+                "SayHelloResponse=" + a +
                 ", sonName='" + sonName + '\'' +
                 '}';
     }

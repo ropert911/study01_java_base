@@ -17,6 +17,8 @@ public class File_Wirte {
 
     /**
      * A方法追加文件：使用RandomAccessFile
+     * @param fileName xx
+     * @param content xx
      */
     public static void appendMethodA(String fileName, String content) {
         try {
@@ -35,6 +37,8 @@ public class File_Wirte {
 
     /**
      * B方法追加文件：使用FileWriter
+     * @param fileName xx
+     * @param content xx
      */
     public static void appendMethodB(String fileName, String content) {
         try {

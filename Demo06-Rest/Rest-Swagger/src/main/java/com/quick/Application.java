@@ -12,8 +12,7 @@ import springfox.documentation.spring.web.plugins.Docket;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 /**
- * @author xiaoqian
- * @date 2019/0918
+ * @author sk-qianxiao
  */
 @SpringBootApplication
 public class Application {
