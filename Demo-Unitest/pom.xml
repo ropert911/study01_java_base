@@ -13,6 +13,7 @@
         <module>Demo3-Jacoco</module>
         <module>Demo4-RestAssured</module>
         <module>demo-jacoco-multi-module</module>
+        <module>spring-test-dbunit-sample</module>
     </modules>
     <packaging>pom</packaging>
 
