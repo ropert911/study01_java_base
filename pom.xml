@@ -8,16 +8,15 @@
     <version>0.0.1-SNAPSHOT</version>
     <modules>
         <module>Demo01-JDK-Base</module>
+        <module>Demo01-Log</module>
         <module>Demo02-Elasticjob</module>
-        <module>Demo02-Log</module>
         <module>Demo02-Other</module>
-        <module>Demo02-ZooKeeper</module>
+<!--        <module>Demo02-ZooKeeper</module>-->
         <module>Demo04-MQ</module>
         <module>Demo04-Netty</module>
         <module>Demo05-Cache</module>
         <module>Demo05-ES-Client</module>
         <module>Demo06-Rest</module>
-        <module>demo-lombok</module>
         <module>Demo-Unitest</module>
     </modules>
     <packaging>pom</packaging>

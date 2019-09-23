@@ -8,7 +8,6 @@
     <version>0.0.1-SNAPSHOT</version>
     <modules>
         <module>ActiveMQ_JMS</module>
-        <module>EIP</module>
         <module>kafka-customer</module>
         <module>kafka-office</module>
         <module>kafka-producer</module>
@@ -16,7 +15,7 @@
         <module>Rabbit_Demo</module>
         <module>Rabbit_template</module>
         <module>rocketmq-customer</module>
-        <module>EIP/rocketmq-producer</module>
+        <module>rocketmq-producer</module>
     </modules>
     <packaging>pom</packaging>
 
