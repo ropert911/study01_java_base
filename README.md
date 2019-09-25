@@ -11,6 +11,7 @@ Demo01-JDK-Base
     http,udp，web服务与客户端
     随机数据，时间，容器
     stream处理
+    ExcelParse  excel解析功能
 Demo02-Elasticjob:略
 Demo02-Log:略
 Demo02-Other:
