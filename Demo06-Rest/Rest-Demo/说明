@@ -1,6 +1,17 @@
 swagger地址：
     http://127.0.0.1:8080/swagger-ui.html#/
 
-    HelloController     异常捕获，session,locale使用
+    BaseController: 定制统一异常处理，捕获MyException类型的异常
+        http://127.0.0.1:8080/xq/exception1 可触发
+    CustomExceptionHandler:定制统一异常处理，捕获CustomExceptionHandler类型的异常
+        http://127.0.0.1:8080/xq/exception2 可触发
+    GlobalExceptionHandler 和 CustomExceptionHandler 一样都是通过 ControllerAdvice 和 RestControllerAdvice设置的全局的。
+        BaseController是通过继承实现的controller级别的异常处理
+        GlobalExceptionHandler 还实现了不同异常的不同处理
+    CustomErrorController  实现自定义error页面
+
+    http://127.0.0.1:8080/xq/locale     获取主机语言
+    http://127.0.0.1:8080/xq/uid        session数据设定和获取
+
     JsrvalidatorController  jsr303验证相关接口参数
     ValidatorController     validatore验证相关接口
