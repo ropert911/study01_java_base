@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.xq.study.spring</groupId>
+    <artifactId>study02-spring-boot</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <modules>
+        <module>MyBlog</module>
+        <module>quick-ElasticSearch</module>
+        <module>quick-img2txt</module>
+        <module>quick-log</module>
+        <module>quick-mybatis-druid</module>
+        <module>quick-oauth2</module>
+        <module>quick-oss</module>
+        <module>quick-package-assembly</module>
+        <module>quick-package-assembly-multi-env</module>
+        <module>quick-tika</module>
+        <module>quick-wx-api</module>
+        <module>spring-boot-mybatis-annotation</module>
+        <module>spring-boot-mybatis-annotation-mulidatasource</module>
+        <module>spring-boot-mybatis-mulidatasource</module>
+        <module>spring-boot-mybatis-xml</module>
+        <module>spring-boot-shiro</module>
+        <module>Test27-mybatis3</module>
+        <module>Test27-mybatis4</module>
+        <module>Test27-mybatis5</module>
+        <module>Test27-mybatis6</module>
+        <module>Test27-mybatis7</module>
+        <module>Test27-mybatis8</module>
+        <module>Test27-mybatis9</module>
+    </modules>
+    <packaging>pom</packaging>
+
+    <name>demo01_spring-boot-examples</name>
+    <description>Demo project for Spring Boot</description>
+
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>1.5.3.RELEASE</version>
+        <relativePath/> <!-- lookup parent from repository -->
+    </parent>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <java.version>1.8</java.version>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
+
+
+</project>
