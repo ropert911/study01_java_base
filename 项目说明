@@ -8,6 +8,8 @@ Demo01-JDK-Base
     jdk.excel       excel文件的解析
     net.http        Http请求：HttpURLConnection方式；
     net.udp         UDB客户端 ，服务器
+    OptionalTest    Optional的使用
+    RandomTest      随机数的生成
 
     json数据处理：fastjson, googlejson,jackson
     异步请求：FutureTest
