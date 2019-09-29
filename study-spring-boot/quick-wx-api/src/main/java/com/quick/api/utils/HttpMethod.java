@@ -3,7 +3,7 @@ package com.quick.api.utils;
 /**
  * @Author: wangxc
  * @GitHub: https://github.com/vector4wang
- * @CSDN: http://blog.csdn.net/qqhjqs?viewmode=contents
+ * @CSDN: http://blog.csdn.net_udp/qqhjqs?viewmode=contents
  * @BLOG: http://vector4wang.tk
  * @wxid: BMHJQS
  */

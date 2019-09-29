@@ -1,4 +1,12 @@
 Demo01-JDK-Base
+    jdk.compress    GZip压缩，解压缩
+    jdk.container   容器的使用
+        DataArrayTest 多维数据的使用；数据转set；数据转List
+        ListTest        List转数组；List转Set
+        MapTest         Map的使用
+        SetTest         Set的使用
+    net.udp         UDB客户端 ，服务器
+
     json数据处理：fastjson, googlejson,jackson
     异步请求：FutureTest
     线程池

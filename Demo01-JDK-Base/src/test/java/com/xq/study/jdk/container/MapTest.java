@@ -1,19 +1,18 @@
 package com.xq.study.jdk.container;
 
+import org.junit.Test;
+
 import java.util.*;
 
 /**
  * Created by sk-qianxiao on 2019/3/4.
  */
-public class Map_Test {
-    public static void main(String arg[]) {
-        transfor();//Map 遍历
-
-        testMap2List(); //Map 转 list
-        testMap2Set();  //Map 转 Set
-    }
-
-    private static void transfor() {
+public class MapTest {
+    /**
+     * Map 遍历
+     */
+    @Test
+    public void transforTest() {
         Map<Integer, Integer> map = new HashMap<>();
         //这是最常见的并且在大多数情况下也是最可取的遍历方式。在键值都需要时使用
         for (Map.Entry<Integer, Integer> entry : map.entrySet()) {
@@ -47,7 +46,11 @@ public class Map_Test {
         }
     }
 
-    private static void testMap2List() {
+    /**
+     * Map 转 list
+     */
+    @Test
+    public void map2ListTest() {
         Map<String, String> map = new HashMap<String, String>();
         map.put("A", "ABC");
         map.put("K", "KK");
@@ -62,7 +65,11 @@ public class Map_Test {
         System.out.println("mapValuesList:" + mapValuesList);
     }
 
-    private static void testMap2Set() {
+    /**
+     * Map 转 Set
+     */
+    @Test
+    public void map2SetTest() {
         Map<String, String> map = new HashMap<String, String>();
         map.put("A", "ABC");
         map.put("K", "KK");
@@ -76,5 +83,4 @@ public class Map_Test {
         Set<String> mapValuesSet = new HashSet<String>(map.values());
         System.out.println("mapValuesSet:" + mapValuesSet);
     }
-
 }

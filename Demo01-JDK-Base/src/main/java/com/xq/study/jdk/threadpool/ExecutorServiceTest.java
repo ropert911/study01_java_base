@@ -16,7 +16,7 @@ public class ExecutorServiceTest {
     public static void main(String[] args) {
 //        ExecutorService es = Executors.newFixedThreadPool(10);    //指标线程数量
 
-        useThreadRunable(); //一个一个加任务:添加 Runaal任务
+        useThreadRunable(); //一个一个加任务:添加 Runalbe
         useThread1();   //一个一个加任务:添加 Thread任务
         useThread2();  //批量添加要执行的任务
 

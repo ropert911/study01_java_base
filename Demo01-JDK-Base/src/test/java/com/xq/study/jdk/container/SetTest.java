@@ -1,17 +1,18 @@
 package com.xq.study.jdk.container;
 
+import org.junit.Test;
+
 import java.util.*;
 
 /**
  * Created by sk-qianxiao on 2019/3/4.
  */
-public class Set_Test {
-    public static void main(String arg[]){
-        testSet2Array();//Set 转 数据
-        testSet2List(); //set 转 list
-    }
-
-    private static void testSet2Array() {
+public class SetTest {
+    /**
+     * Set 转 数据
+     */
+    @Test
+    public void testSet2Array() {
         Set<String> set = new HashSet<String>();
         set.add("AA");
         set.add("BB");
@@ -23,7 +24,11 @@ public class Set_Test {
         System.out.println(Arrays.toString(arr));
     }
 
-    private static void testSet2List() {
+    /**
+     * /set 转 list
+     */
+    @Test
+    public void testSet2List() {
 
         Set<String> set = new HashSet<String>();
         set.add("AA");
@@ -34,5 +39,4 @@ public class Set_Test {
         List<String> setList = new ArrayList<String>(set);
         System.out.println(setList);
     }
-
 }

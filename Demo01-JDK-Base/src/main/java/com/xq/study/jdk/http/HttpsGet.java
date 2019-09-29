@@ -15,8 +15,8 @@ import java.security.cert.X509Certificate;
     /*
      * (non-Javadoc)
      *
-     * @see javax.net.ssl.HostnameVerifier#verify(java.lang.String,
-     * javax.net.ssl.SSLSession)
+     * @see javax.net_udp.ssl.HostnameVerifier#verify(java.lang.String,
+     * javax.net_udp.ssl.SSLSession)
      */
     @Override
     public boolean verify(String arg0, SSLSession arg1) {

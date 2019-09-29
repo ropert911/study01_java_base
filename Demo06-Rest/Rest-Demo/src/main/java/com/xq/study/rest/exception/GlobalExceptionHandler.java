@@ -17,7 +17,7 @@ import java.io.IOException;
 /**
  * @Author: wangxc
  * @GitHub: https://github.com/vector4wang
- * @CSDN: http://blog.csdn.net/qqhjqs?viewmode=contents
+ * @CSDN: http://blog.csdn.net_udp/qqhjqs?viewmode=contents
  * @BLOG: http://vector4wang.tk
  * @wxid: BMHJQS
  * 参考:http://neverflyaway.iteye.com/blog/2301571  http://blog.csdn.net/u010935920/article/details/71024018
