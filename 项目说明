@@ -6,6 +6,7 @@ Demo01-JDK-Base
         MapTest         Map的使用
         SetTest         Set的使用
     jdk.excel       excel文件的解析
+    net.http        Http请求：HttpURLConnection方式；
     net.udp         UDB客户端 ，服务器
 
     json数据处理：fastjson, googlejson,jackson
