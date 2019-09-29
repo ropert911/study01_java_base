@@ -1,9 +1,12 @@
-package com.xq.study.json.googlejson;
+package com.xq.study.jdk.json.googlejson;
 
 import com.google.gson.Gson;
+import com.xq.study.model.Family;
+import org.junit.Test;
 
 public class GooglejsonTest {
-    public static void main(String arg[]) {
+    @Test
+    public void test1() {
         Family a = new Family();
         a.setfName("xqFamily");
 

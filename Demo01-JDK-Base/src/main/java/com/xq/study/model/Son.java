@@ -1,4 +1,6 @@
-package com.xq.study.json.jackson.model;
+package com.xq.study.model;
+
+import com.xq.study.model.Family;
 
 /**
  * Created by sk-qianxiao on 2019/4/19.

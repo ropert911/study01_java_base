@@ -1,4 +1,4 @@
-package com.xq.study.json.jackson.model;
+package com.xq.study.model;
 
 /**
  * Created by sk-qianxiao on 2019/4/19.

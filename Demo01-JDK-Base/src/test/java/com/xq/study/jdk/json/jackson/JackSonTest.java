@@ -1,17 +1,19 @@
-package com.xq.study.json.jackson;
+package com.xq.study.jdk.json.jackson;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ObjectNode;
-import com.xq.study.json.jackson.model.Family;
-import com.xq.study.json.jackson.model.Son;
+import com.xq.study.model.Family;
+import com.xq.study.model.Son;
+import org.junit.Test;
 
 
 /**
- * Created by sk-qianxiao on 2019/4/19.
+ * @author sk-qianxiao
  */
-public class JackSonMain {
-    public static void main(String arg[]) {
+public class JackSonTest {
+    @Test
+    public void test1() {
         Son son = new Son();
         son.setSonName("SonName");
         son.setfName("FamilyName");
@@ -35,7 +37,8 @@ public class JackSonMain {
         }
     }
 
-    public static void test1() {
+    @Test
+    public void test2() {
         try {
             String tmp = "aaaaaaaaaaa";
             ObjectMapper objectMapper = JsonUtils.getObjectMapper();
