@@ -9,6 +9,7 @@ Demo01-JDK-Base
     jdk.json            json数据处理：fastjson, googlejson,jackson
     jdk.net.http        Http请求：HttpURLConnection方式；
     jdk.net.udp         UDB客户端 ，服务器
+    jdk.stream          java Stream处理
     jdk.time        时间处理
     FutureTest       异步请求示例
     OptionalTest    Optional的使用
@@ -17,8 +18,6 @@ Demo01-JDK-Base
     线程池
     文件操作,文件压力
     http,udp，web服务与客户端
-    stream处理
-    ExcelParse  excel解析功能
 Demo02-Log:略
 Demo02-Elasticjob:略
 Demo02-Other:

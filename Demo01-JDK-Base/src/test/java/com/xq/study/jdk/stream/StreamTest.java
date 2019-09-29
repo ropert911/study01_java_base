@@ -1,6 +1,7 @@
-package com.xq.study.jdk2.stream;
+package com.xq.study.jdk.stream;
 
 import com.xq.study.model.Dish;
+import org.junit.Test;
 
 import java.io.IOException;
 import java.nio.charset.Charset;
@@ -21,29 +22,11 @@ import static java.util.stream.Collectors.toList;
  * Created by xq on 2019/2/24.
  */
 public class StreamTest {
-    public static void main(String[] args) {
-        StreamTest t = new StreamTest();
-        t.test1();      //filter,map,skip,limit,sort 等中间操作
-        t.test2();      //forEach, collect
-
-        t.test3();      //anyMatch,allMath, noneMathc等结果判断操作
-        t.test4();      //findAny,findFirst 元素查找
-        t.reduce();     //reduce: 它不适合做原始类型的操作 int,double等
-
-        t.test6();      //原始流物化成 IntStream,DoubleStream等，从而方便做基本数据类型的操作 最大，最小等
-        t.test7();      //生成流
-
-        t.test8();      //分组， 规约, 汇总：求和，平均，计数，最大，最小，连接，
-        t.test9();      //分区：只两个分组的分组功能
-
-        //分治合并框架：ForkJoinTask(分治合并,这和Stream里的并行一样)
-        //相应的还有 Spliterator 任务拆分，这里没有给示例
-        t.test10(10);
-
-    }
-
-    //中间操作
-    void test1() {
+    /**
+     * filter,map,skip,limit,sort 等中间操作
+     */
+    @Test
+    public void test1() {
         List<Integer> numbers = Arrays.asList(1, 2, 1, 3, 3, 2, 4);
         numbers.stream().filter(i -> i % 2 == 0).sorted().forEach(System.out::println);
         numbers.stream().filter(i -> i % 2 == 0).sorted(Comparator.reverseOrder()).forEach(System.out::println);
@@ -67,8 +50,11 @@ public class StreamTest {
                         .distinct().collect(toList());
     }
 
-    //终端操作
-    void test2() {
+    /**
+     * forEach, collect
+     */
+    @Test
+    public void test2() {
         //forEach操作
         List<Integer> numbers = Arrays.asList(1, 2, 1, 3, 3, 2, 4);
         numbers.stream().forEach(System.out::println);  //numbers.forEach(System.out::println);
@@ -81,7 +67,11 @@ public class StreamTest {
         List<Dish> dishNames = menu.stream().collect(toList());
     }
 
-    void test3() {
+    /**
+     * anyMatch,allMath, noneMathc等结果判断操作
+     */
+    @Test
+    public void test3() {
         List<Dish> menu = new ArrayList<>();
 
         //anyMatch: 至少匹配一个元素
@@ -94,7 +84,11 @@ public class StreamTest {
         isHealthy = menu.stream().noneMatch(d -> d.getCalories() >= 1000);
     }
 
-    void test4() {
+    /**
+     * findAny,findFirst 元素查找
+     */
+    @Test
+    public void test4() {
         List<Dish> menu = new ArrayList<>();
 
         //findAny: 查找到任一个元素
@@ -106,7 +100,11 @@ public class StreamTest {
                 someNumbers.stream().map(x -> x * x).filter(x -> x % 3 == 0).findFirst();
     }
 
-    void reduce() {
+    /**
+     * reduce: 它不适合做原始类型的操作 int,double等
+     */
+    @Test
+    public void reduce() {
         List<Integer> numbers = Arrays.asList(1, 3, 5);
 
         numbers.stream().reduce(0, (a, b) -> a + b);  //求和:第一个是初始值，第二个是BinaryOperator
@@ -115,7 +113,11 @@ public class StreamTest {
         numbers.stream().reduce(Integer::min);                              //最小
     }
 
-    void test6() {
+    /**
+     * 原始流物化成 IntStream,DoubleStream等，从而方便做基本数据类型的操作 最大，最小等
+     */
+    @Test
+    public void test6() {
         //生成流
         IntStream evenNumbers = IntStream.rangeClosed(1, 100).filter(n -> n % 2 == 0);
         System.out.println(evenNumbers.count());
@@ -145,7 +147,11 @@ public class StreamTest {
                 System.out.println(t[0] + ", " + t[1] + ", " + t[2]));
     }
 
-    void test7() {
+    /**
+     * 生成流
+     */
+    @Test
+    public void test7() {
         //空流
         Stream<String> emptyStream = Stream.empty();
 
@@ -174,10 +180,19 @@ public class StreamTest {
         });
     }
 
-    void test8() {
+    /**
+     * 分组， 规约, 汇总：求和，平均，计数，最大，最小，连接
+     */
+    @Test
+    public void test8() {
         List<Dish> menu = new ArrayList<>();
+        Dish dish = new Dish();
+        dish.setName("宫爆肉丁");
+        menu.add(dish);
+
         //计数
         Long count = menu.stream().collect(Collectors.counting());
+        System.out.println(count);
 
         //最大,最小值
         Comparator<Dish> dishCaloriesComparator = Comparator.comparingInt(Dish::getCalories).reversed();
@@ -189,6 +204,7 @@ public class StreamTest {
 
         //连接字串，每个 tostring后连接
         String j1 = menu.stream().map(Dish::getName).collect(Collectors.joining());
+        System.out.println("111111===" + j1);
         String j2 = menu.stream().map(Dish::getName).collect(Collectors.reducing((s1, s2) -> s1 + s2)).get();
         String j3 = menu.stream().collect(Collectors.reducing("", Dish::getName, (s1, s2) -> s1 + s2));
 
@@ -204,10 +220,10 @@ public class StreamTest {
         Map<Integer, Map<Integer, List<Dish>>> dishesByTypeCaloricLevel =
                 menu.stream().collect(
                         Collectors.groupingBy(Dish::getType,
-                                Collectors.groupingBy(dish -> {
-                                    if (dish.getCalories() <= 400) {
+                                Collectors.groupingBy(disht -> {
+                                    if (disht.getCalories() <= 400) {
                                         return 1;
-                                    } else if (dish.getCalories() <= 700) {
+                                    } else if (disht.getCalories() <= 700) {
                                         return 2;
                                     } else {
                                         return 3;
@@ -222,8 +238,19 @@ public class StreamTest {
                 Collectors.groupingBy(Dish::getType, Collectors.maxBy(Comparator.comparingInt(Dish::getCalories))));
     }
 
-    void test9() {
+    /**
+     * 分区：只两个分组的分组功能
+     */
+    @Test
+    public void test9() {
         List<Dish> menu = new ArrayList<>();
+        Dish dish = new Dish();
+        dish.setName("宫爆肉丁");
+        dish.setCalories(1);
+        Dish dish2 = new Dish();
+        dish2.setName("宫爆肉丁");
+        dish2.setCalories(2);
+        menu.add(dish2);
 
         Map<Boolean, List<Dish>> partitionedMenu =
                 menu.stream().collect(Collectors.partitioningBy(Dish::isVegetarian));
@@ -235,13 +262,6 @@ public class StreamTest {
                 menu.stream().collect(
                         Collectors.partitioningBy(Dish::isVegetarian,
                                 Collectors.groupingBy(Dish::getType)));
-
-        Map<Boolean, Dish> mostCaloricPartitionedByVegetarian =
-                menu.stream().collect(
-                        Collectors.partitioningBy(Dish::isVegetarian,
-                                Collectors.collectingAndThen(
-                                        Collectors.maxBy(Comparator.comparing(Dish::getCalories)),
-                                        Optional::get)));
     }
 
     class ForkJoinSumCalculator extends RecursiveTask<Long> {
@@ -285,9 +305,17 @@ public class StreamTest {
         }
     }
 
-    long test10(long n) {
+    /**
+     * 分治合并框架：ForkJoinTask(分治合并,这和Stream里的并行一样)
+     * 相应的还有 Spliterator 任务拆分，这里没有给示例
+     *
+     * @return
+     */
+    @Test
+    public void test10() {
+        long n = 10;
         long[] numbers = LongStream.rangeClosed(1, n).toArray();
         ForkJoinTask<Long> task = new ForkJoinSumCalculator(numbers);
-        return new ForkJoinPool().invoke(task);
+        new ForkJoinPool().invoke(task);
     }
 }
