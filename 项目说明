@@ -6,6 +6,8 @@ Demo01-JDK-Base
         MapTest         Map的使用
         SetTest         Set的使用
     jdk.excel       excel文件的解析
+    jdk.java_io         文件操作
+    jdk.javax_script    执行脚本
     jdk.json            json数据处理：fastjson, googlejson,jackson
     jdk.net.http        Http请求：HttpURLConnection方式；
     jdk.net.udp         UDB客户端 ，服务器
@@ -15,10 +17,6 @@ Demo01-JDK-Base
     FutureTest       异步请求示例
     OptionalTest    Optional的使用
     RandomTest      随机数的生成
-
-
-    文件操作,文件压力
-    http,udp，web服务与客户端
 Demo02-Log:略
 Demo02-Elasticjob:略
 Demo02-Other:

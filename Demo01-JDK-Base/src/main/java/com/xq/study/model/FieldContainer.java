@@ -1,4 +1,4 @@
-package com.xq.study.jdk2.reflect;
+package com.xq.study.model;
 
 /**
  * Created by xq on 2018/6/24.

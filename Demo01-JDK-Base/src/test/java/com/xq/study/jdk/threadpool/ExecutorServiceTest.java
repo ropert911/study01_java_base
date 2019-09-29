@@ -87,7 +87,7 @@ public class ExecutorServiceTest {
 
         try {
             for (int i = 0; i < 15; i++) {
-                Runnable task = new AggregateTask("Test" + i);
+                Runnable task = new AggregateTask("ReflectTest" + i);
                 executorService.submit(task);
             }
 
@@ -101,7 +101,7 @@ public class ExecutorServiceTest {
     public void scheduledExecutorService() {
         ScheduledExecutorService executors = Executors.newScheduledThreadPool(1);
         for (int i = 0; i < 3; i++) {
-            Runnable task = new AggregateTask("Test" + i);
+            Runnable task = new AggregateTask("ReflectTest" + i);
             executors.scheduleAtFixedRate(task, 5, 30, TimeUnit.SECONDS);
         }
         executors.shutdown();

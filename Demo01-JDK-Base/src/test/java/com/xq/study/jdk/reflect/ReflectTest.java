@@ -1,9 +1,17 @@
-package com.xq.study.jdk2.reflect;
+package com.xq.study.jdk.reflect;
 
+
+import com.xq.study.model.FieldContainer;
+import com.xq.study.model.MethodContainer;
+import com.xq.study.model.StaticNestedClass;
+import com.xq.study.model.VarargsConstructor;
 
 import java.lang.reflect.*;
 
-public class Test {
+/**
+ * @author sk-qianxiao
+ */
+public class ReflectTest {
     public void setName(String name) {
         System.out.println(name);
     }
@@ -13,8 +21,10 @@ public class Test {
 
         try {
             Class<?> clazz = obj.getClass();
-            Method method = clazz.getMethod(methodName, value.getClass()); //通知类的方法名和参数名获取类里的函数
-            method.invoke(obj, value);      //参数函数进行调用
+            /**通知类的方法名和参数名获取类里的函数*/
+            Method method = clazz.getMethod(methodName, value.getClass());
+            /**参数函数进行调用*/
+            method.invoke(obj, value);
 
         } catch (NoSuchMethodException e) {
             e.printStackTrace();
@@ -94,8 +104,9 @@ public class Test {
             e.printStackTrace();
         }
     }
+
     public static void main(String[] args) {
-        Test test = new Test();
+        ReflectTest test = new ReflectTest();
         String name = "xiaoqian";
 
         //参考反射调用类的public方法

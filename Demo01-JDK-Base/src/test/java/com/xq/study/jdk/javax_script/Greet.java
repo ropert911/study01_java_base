@@ -1,4 +1,4 @@
-package com.xq.study.jdk2.javax_script;
+package com.xq.study.jdk.javax_script;
 
 /**
  * Created by xq on 2018/6/24.

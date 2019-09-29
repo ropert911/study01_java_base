@@ -1,4 +1,4 @@
-package com.xq.study.jdk2.reflect;
+package com.xq.study.model;
 
 /**
  * Created by xq on 2018/6/24.
@@ -8,7 +8,7 @@ public class StaticNestedClass {
         System.out.println("1111");
     }
 
-    class NestedClass {
+    public class NestedClass {
         public NestedClass(int count) {
             System.out.println("2222");
         }
