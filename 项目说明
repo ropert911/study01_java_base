@@ -5,6 +5,7 @@ Demo01-JDK-Base
         ListTest        List转数组；List转Set
         MapTest         Map的使用
         SetTest         Set的使用
+    jdk.excel       excel文件的解析
     net.udp         UDB客户端 ，服务器
 
     json数据处理：fastjson, googlejson,jackson
