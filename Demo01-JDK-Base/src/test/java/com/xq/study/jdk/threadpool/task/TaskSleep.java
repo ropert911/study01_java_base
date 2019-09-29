@@ -1,4 +1,4 @@
-package com.xq.study.jdk2.threadpool.task;
+package com.xq.study.jdk.threadpool.task;
 
 import java.util.concurrent.Callable;
 

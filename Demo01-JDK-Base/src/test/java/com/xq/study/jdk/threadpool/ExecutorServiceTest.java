@@ -1,30 +1,24 @@
-package com.xq.study.jdk2.threadpool;
+package com.xq.study.jdk.threadpool;
 
 import com.google.common.util.concurrent.ThreadFactoryBuilder;
-import com.xq.study.jdk2.threadpool.task.AggregateTask;
-import com.xq.study.jdk2.threadpool.task.MyThread;
-import com.xq.study.jdk2.threadpool.task.TaskSleep;
+import com.xq.study.jdk.threadpool.task.AggregateTask;
+import com.xq.study.jdk.threadpool.task.MyThread;
+import com.xq.study.jdk.threadpool.task.TaskSleep;
+import org.junit.Test;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.*;
 
 /**
- * Created by wangxc on 2017/3/27.
+ * @author sk-qianxiao
  */
 public class ExecutorServiceTest {
-    public static void main(String[] args) {
-//        ExecutorService es = Executors.newFixedThreadPool(10);    //指标线程数量
-
-        useThreadRunable(); //一个一个加任务:添加 Runalbe
-        useThread1();   //一个一个加任务:添加 Thread任务
-        useThread2();  //批量添加要执行的任务
-
-        useThread3();      //手动建 ExecutorService,  :添加 Runaal任务
-
-    }
-
-    private static void useThreadRunable() {
+    /**
+     * 一个一个加任务:添加 Runalbe
+     */
+    @Test
+    public void useThreadRunable() {
         try {
             ExecutorService exec = Executors.newCachedThreadPool();
             Runnable task = new AggregateTask("test");
@@ -34,7 +28,11 @@ public class ExecutorServiceTest {
         }
     }
 
-    private static void useThread1() {
+    /**
+     * 一个一个加任务:添加 Thread任务
+     */
+    @Test
+    public void useThread1() {
         ExecutorService exec = Executors.newCachedThreadPool();
         for (int i = 0; i < 15; i++) {
             exec.execute(new MyThread("张" + i));
@@ -42,7 +40,11 @@ public class ExecutorServiceTest {
         exec.shutdown();//并不是终止线程的运行，而是禁止在这个Executor中添加新的任务
     }
 
-    private static void useThread2() {
+    /**
+     * 批量添加要执行的任务
+     */
+    @Test
+    public void useThread2() {
         long stat = System.currentTimeMillis();
 
         ExecutorService executorService = Executors.newCachedThreadPool();
@@ -69,7 +71,11 @@ public class ExecutorServiceTest {
         System.out.println((double) (end - stat) / 1000);
     }
 
-    public static void useThread3() {
+    /**
+     * 手动建 ExecutorService,  :添加 Runaal任务
+     */
+    @Test
+    public void useThread3() {
         BlockingQueue<Runnable> QUEUE = new SynchronousQueue<>();
         ThreadFactory THREAD_FACTORY = new ThreadFactoryBuilder().setNameFormat("AggregateService-pool-%d").build();
         ExecutorService executorService = new ThreadPoolExecutor(5,
@@ -91,12 +97,14 @@ public class ExecutorServiceTest {
         }
     }
 
-    public ExecutorService scheduledExecutorService() {
+    @Test
+    public void scheduledExecutorService() {
         ScheduledExecutorService executors = Executors.newScheduledThreadPool(1);
-        executors.scheduleAtFixedRate(() -> {
-            //TODO:这里做任务
-        }, 5, 30, TimeUnit.SECONDS);
-        return executors;
+        for (int i = 0; i < 3; i++) {
+            Runnable task = new AggregateTask("Test" + i);
+            executors.scheduleAtFixedRate(task, 5, 30, TimeUnit.SECONDS);
+        }
+        executors.shutdown();
     }
 }
 
