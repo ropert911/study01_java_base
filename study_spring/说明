@@ -1,0 +1,21 @@
+spring-anocation:   自定义注解
+spring-AOP: AOP的使用
+spring-bean: 使用 @Configuration @Bean进行注入对象的初始化
+spring-bean-xml:xml方式初始化bean数据
+spring-EL
+    文档数据加载+数据格式验证
+spring-res-file:    资源文件的使用
+spring-event
+    spring进程内事件通知
+spring-i18n
+    语言国际化
+spring-threadpool
+    spring多线程
+spring-utils
+    conditional：判断不同平台进行对象的注入
+    ForkJoinPool：线程调度
+    schedule:   调度：都是进程内的。
+        java_scheduled:ScheduledExecutorService调度
+        java_timer:java的Timer调度, 和java的ScheduledExecutorService效果一样
+        quartz：使用quarz进行调度
+        springscheduler：使用spring scheduler进行调度
