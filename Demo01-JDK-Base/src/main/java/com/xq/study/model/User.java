@@ -1,6 +1,4 @@
-package com.xq.study.jdk2.model;
-
-import com.xq.study.jdk2.model.Link;
+package com.xq.study.model;
 
 import java.util.Date;
 import java.util.List;

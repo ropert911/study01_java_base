@@ -1,5 +1,6 @@
-package com.xq.study.jdk2.time;
+package com.xq.study.jdk.time;
 
+import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -18,16 +19,10 @@ import java.util.TimeZone;
 public class Time_Calendar_DateTest {
     private static Logger LOGGER = LoggerFactory.getLogger(Time_Calendar_DateTest.class);
 
-    public static void main(String[] args) {
-        System.out.println("============== 日历测试");
-        calendarTest();
-        dateTest();
-
-        test1();
-    }
-
-    private static void calendarTest() {
-        /*
+    @Test
+    public void calendarTest() {
+        /** 日历打印出来的格式 */
+        /**
         java.util.GregorianCalendar
         [time=1506124495243,                            //utc时间，单位毫秒
         areFieldsSet=true,areAllFieldsSet=true,
@@ -59,14 +54,30 @@ public class Time_Calendar_DateTest {
         printCalendar(calendar);
     }
 
-    private static void dateTest() {
+    @Test
+    public void dateTest() {
         LOGGER.error("============= show Date");
         Date date = new Date();
         SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss Z");//设置日期时间格式
         LOGGER.error("日期格式化输出=>{}", df.format(date));
     }
 
-    private static void printCalendar(Calendar time) {
+    @Test
+    public void test1() {
+        //取得当前的Hijrah 日期，紧接着对其进行修正，得到斋月的第一天，即第9个月
+        HijrahDate ramadanDate = HijrahDate.now().with(ChronoField.DAY_OF_MONTH, 1)
+                .with(ChronoField.MONTH_OF_YEAR, 9);
+        System.out.println("Ramadan starts on " +
+                IsoChronology.INSTANCE.date(ramadanDate) +
+                " and ends on " +
+                IsoChronology.INSTANCE.date(
+                        ramadanDate.with(
+                                TemporalAdjusters.lastDayOfMonth())));
+    }
+
+
+
+    private void printCalendar(Calendar time) {
         int year = time.get(Calendar.YEAR);
         int month = time.get(Calendar.MONTH) + 1;
         int date = time.get(Calendar.DATE);
@@ -92,17 +103,5 @@ public class Time_Calendar_DateTest {
 
         long secs = time.getTimeInMillis();
         LOGGER.error("毫秒数：" + secs);
-    }
-
-    public static void test1() {
-        //取得当前的Hijrah 日期，紧接着对其进行修正，得到斋月的第一天，即第9个月
-        HijrahDate ramadanDate = HijrahDate.now().with(ChronoField.DAY_OF_MONTH, 1)
-                .with(ChronoField.MONTH_OF_YEAR, 9);
-        System.out.println("Ramadan starts on " +
-                IsoChronology.INSTANCE.date(ramadanDate) +
-                " and ends on " +
-                IsoChronology.INSTANCE.date(
-                        ramadanDate.with(
-                                TemporalAdjusters.lastDayOfMonth())));
     }
 }

@@ -6,9 +6,10 @@ Demo01-JDK-Base
         MapTest         Map的使用
         SetTest         Set的使用
     jdk.excel       excel文件的解析
-    json            json数据处理：fastjson, googlejson,jackson
-    net.http        Http请求：HttpURLConnection方式；
-    net.udp         UDB客户端 ，服务器
+    jdk.json            json数据处理：fastjson, googlejson,jackson
+    jdk.net.http        Http请求：HttpURLConnection方式；
+    jdk.net.udp         UDB客户端 ，服务器
+    jdk.time        时间处理
     FutureTest       异步请求示例
     OptionalTest    Optional的使用
     RandomTest      随机数的生成
@@ -16,7 +17,6 @@ Demo01-JDK-Base
     线程池
     文件操作,文件压力
     http,udp，web服务与客户端
-    随机数据，时间，容器
     stream处理
     ExcelParse  excel解析功能
 Demo02-Log:略

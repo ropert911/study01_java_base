@@ -1,4 +1,4 @@
-package com.xq.study.jdk2.model;
+package com.xq.study.model;
 
 public class Link
 {

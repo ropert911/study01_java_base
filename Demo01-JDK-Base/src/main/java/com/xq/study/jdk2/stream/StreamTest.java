@@ -1,6 +1,6 @@
 package com.xq.study.jdk2.stream;
 
-import com.xq.study.jdk2.model.Dish;
+import com.xq.study.model.Dish;
 
 import java.io.IOException;
 import java.nio.charset.Charset;

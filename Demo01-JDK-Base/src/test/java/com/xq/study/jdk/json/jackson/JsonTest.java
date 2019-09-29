@@ -1,10 +1,12 @@
-package com.xq.study.jdk2;
+package com.xq.study.jdk.json.jackson;
 
 
+import com.xq.study.model.Link;
+import com.xq.study.model.User;
 import org.codehaus.jackson.JsonProcessingException;
 import org.codehaus.jackson.map.ObjectMapper;
+import org.junit.Test;
 
-import com.xq.study.jdk2.model.*;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -12,10 +14,11 @@ import java.io.InputStream;
 import java.util.*;
 
 /**
- * Created by xq on 2019/2/24.
+ * @author sk-qianxiao
  */
 public class JsonTest {
-    public static void main(String[] args) {
+    @Test
+    public void test1() {
         User user = new User();
         user.setId("01");
         user.setName("张三");
