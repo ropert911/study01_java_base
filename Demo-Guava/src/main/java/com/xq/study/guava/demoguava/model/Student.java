@@ -1,4 +1,4 @@
-package com.xq.study.grava.demoguava.model;
+package com.xq.study.guava.demoguava.model;
 
 
 import com.google.common.collect.ComparisonChain;

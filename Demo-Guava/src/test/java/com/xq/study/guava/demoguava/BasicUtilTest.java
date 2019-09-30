@@ -1,4 +1,4 @@
-package com.xq.study.grava.demoguava;
+package com.xq.study.guava.demoguava;
 
 import com.google.common.base.Objects;
 import com.google.common.base.Optional;

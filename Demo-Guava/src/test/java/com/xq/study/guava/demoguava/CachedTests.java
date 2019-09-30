@@ -1,4 +1,4 @@
-package com.xq.study.grava.demoguava;
+package com.xq.study.guava.demoguava;
 
 import com.google.common.cache.Cache;
 import org.junit.Test;

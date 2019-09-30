@@ -17,7 +17,7 @@
         <module>Demo05-Cache</module>
         <module>Demo05-ES-Client</module>
         <module>Demo06-Rest</module>
-        <module>Demo-Grava</module>
+        <module>Demo-Guava</module>
         <module>Demo-Unitest</module>
         <module>study-database</module>
         <module>study-spring-boot</module>

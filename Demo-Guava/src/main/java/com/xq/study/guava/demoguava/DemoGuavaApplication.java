@@ -1,4 +1,4 @@
-package com.xq.study.grava.demoguava;
+package com.xq.study.guava.demoguava;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

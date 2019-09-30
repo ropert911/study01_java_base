@@ -9,9 +9,9 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.xq.study.grava</groupId>
-    <artifactId>demo-grava</artifactId>
+    <artifactId>demo-guava</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>demo-grava</name>
+    <name>demo-guava</name>
     <description>Demo project for Spring Boot</description>
 
     <properties>

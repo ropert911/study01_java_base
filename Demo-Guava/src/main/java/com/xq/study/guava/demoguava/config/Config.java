@@ -1,4 +1,4 @@
-package com.xq.study.grava.demoguava.config;
+package com.xq.study.guava.demoguava.config;
 
 import com.google.common.cache.Cache;
 import com.google.common.cache.CacheBuilder;
