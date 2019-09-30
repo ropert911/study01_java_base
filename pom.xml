@@ -4,20 +4,22 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.xq.study.spring</groupId>
-    <artifactId>study01_java_base</artifactId>
+    <artifactId>study_spring</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <modules>
         <module>Demo01-JDK-Base</module>
         <module>Demo01-Log</module>
         <module>Demo02-Elasticjob</module>
         <module>Demo02-Other</module>
-<!--        <module>Demo02-ZooKeeper</module>-->
+        <module>Demo02-ZooKeeper</module>
         <module>Demo04-MQ</module>
         <module>Demo04-Netty</module>
         <module>Demo05-Cache</module>
         <module>Demo05-ES-Client</module>
         <module>Demo06-Rest</module>
         <module>Demo-Unitest</module>
+        <module>study-spring-boot</module>
+        <module>study_spring</module>
     </modules>
     <packaging>pom</packaging>
 

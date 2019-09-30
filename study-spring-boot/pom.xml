@@ -10,8 +10,8 @@
         <module>MyBlog</module>
         <module>quick-ElasticSearch</module>
         <module>quick-img2txt</module>
-        <module>quick-log</module>
         <module>quick-mybatis-druid</module>
+        <module>quick-okhttp</module>
         <module>quick-oauth2</module>
         <module>quick-oss</module>
         <module>quick-package-assembly</module>
