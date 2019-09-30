@@ -1,12 +1,10 @@
 package com.xq.study.model;
 
-import com.xq.study.model.Family;
-
 /**
- * Created by sk-qianxiao on 2019/4/19.
+ * @author sk-qianxiao
  */
 public class Son extends Family {
-    private Family a;
+    private Family family;
     private String sonName;
 
     public String getSonName() {
@@ -17,18 +15,18 @@ public class Son extends Family {
         this.sonName = sonName;
     }
 
-    public Family getA() {
-        return a;
+    public Family getFamily() {
+        return family;
     }
 
-    public void setA(Family a) {
-        this.a = a;
+    public void setFamily(Family family) {
+        this.family = family;
     }
 
     @Override
     public String toString() {
         return "Son{" +
-                "SayHelloResponse=" + a +
+                "SayHelloResponse=" + family +
                 ", sonName='" + sonName + '\'' +
                 '}';
     }

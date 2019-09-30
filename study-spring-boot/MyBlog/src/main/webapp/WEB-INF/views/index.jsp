@@ -19,8 +19,8 @@
             <div class="jumbotron">
                 <h3>${article.title}</h3>
                 <span class="summary">${article.summary}</span><br><br>
-                <p><a class="btn btn-primary btn-lg" href="/detail/${article.id}/firstPage"
-                      role="button">阅读全文</a></p>
+                <p><family class="btn btn-primary btn-lg" href="/detail/${article.id}/firstPage"
+                      role="button">阅读全文</family></p>
             </div>
         </div>
     </div>

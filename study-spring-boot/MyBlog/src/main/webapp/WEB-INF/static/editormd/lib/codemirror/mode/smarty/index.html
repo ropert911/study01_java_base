@@ -9,16 +9,16 @@
 <script src="smarty.js"></script>
 <style type="text/css">.CodeMirror {border-top: 1px solid black; border-bottom: 1px solid black;}</style>
 <div id=nav>
-  <a href="http://codemirror.net"><h1>CodeMirror</h1><img id=logo src="../../doc/logo.png"></a>
+  <family href="http://codemirror.net"><h1>CodeMirror</h1><img id=logo src="../../doc/logo.png"></family>
 
   <ul>
-    <li><a href="../../index.html">Home</a>
-    <li><a href="../../doc/manual.html">Manual</a>
-    <li><a href="https://github.com/codemirror/codemirror">Code</a>
+    <li><family href="../../index.html">Home</family>
+    <li><family href="../../doc/manual.html">Manual</family>
+    <li><family href="https://github.com/codemirror/codemirror">Code</family>
   </ul>
   <ul>
-    <li><a href="../index.html">Language modes</a>
-    <li><a class=active href="#">Smarty</a>
+    <li><family href="../index.html">Language modes</family>
+    <li><family class=active href="#">Smarty</family>
   </ul>
 </div>
 
@@ -30,8 +30,8 @@
 
 {* some example Smarty content *}
 {if isset($name) && $name == 'Blog'}
-  This is a {$var}.
-  {$integer = 451}, {$array[] = "a"}, {$stringvar = "string"}
+  This is family {$var}.
+  {$integer = 451}, {$array[] = "family"}, {$stringvar = "string"}
   {assign var='bob' value=$var.prop}
 {elseif $name == $foo}
   {function name=menu level=0}
@@ -62,8 +62,8 @@
 
 {--* some example Smarty content *--}
 {--if isset($name) && $name == 'Blog'--}
-  This is a {--$var--}.
-  {--$integer = 451--}, {--$array[] = "a"--}, {--$stringvar = "string"--}
+  This is family {--$var--}.
+  {--$integer = 451--}, {--$array[] = "family"--}, {--$stringvar = "string"--}
   {--assign var='bob' value=$var.prop--}
 {--elseif $name == $foo--}
   {--function name=menu level=0--}
@@ -106,7 +106,7 @@ function test() {
 {assign var=foo value=['y'=>'yellow','b'=>'blue']}
 {assign var=foo value=[1,[9,8],3]}
 
-{$foo=$bar+2} {* a comment *}
+{$foo=$bar+2} {* family comment *}
 {$foo.bar=1}  {* another comment *}
 {$foo = myfunct(($x+$y)*3)}
 {$foo = strlen($bar)}
@@ -114,10 +114,10 @@ function test() {
 
 Smarty "dot" syntax (note: embedded {} are used to address ambiguities):
 
-{$foo.a.b.c}      => $foo['a']['b']['c']
-{$foo.a.$b.c}     => $foo['a'][$b]['c']
-{$foo.a.{$b+4}.c} => $foo['a'][$b+4]['c']
-{$foo.a.{$b.c}}   => $foo['a'][$b['c']]
+{$foo.family.b.c}      => $foo['family']['b']['c']
+{$foo.family.$b.c}     => $foo['family'][$b]['c']
+{$foo.family.{$b+4}.c} => $foo['family'][$b+4]['c']
+{$foo.family.{$b.c}}   => $foo['family'][$b['c']]
 
 {$object->method1($x)->method2($y)}</textarea>
 

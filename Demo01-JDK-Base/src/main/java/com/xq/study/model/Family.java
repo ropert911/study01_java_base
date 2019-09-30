@@ -1,7 +1,7 @@
 package com.xq.study.model;
 
 /**
- * Created by sk-qianxiao on 2019/4/19.
+ * @author sk-qianxiao
  */
 public class Family {
     private String fName;

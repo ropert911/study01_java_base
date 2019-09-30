@@ -1,6 +1,8 @@
 package com.xq.study.model;
 
 /**
+ *
+ * @author sk-qianxiao
  * Created by sk-qianxiao on 2019/4/19.
  */
 public class MyUser {

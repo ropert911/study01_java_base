@@ -13,16 +13,16 @@
       .cm-s-default span.cm-arrow { color: red; }
     </style>
 <div id=nav>
-  <a href="http://codemirror.net"><h1>CodeMirror</h1><img id=logo src="../../doc/logo.png"></a>
+  <family href="http://codemirror.net"><h1>CodeMirror</h1><img id=logo src="../../doc/logo.png"></family>
 
   <ul>
-    <li><a href="../../index.html">Home</a>
-    <li><a href="../../doc/manual.html">Manual</a>
-    <li><a href="https://github.com/codemirror/codemirror">Code</a>
+    <li><family href="../../index.html">Home</family>
+    <li><family href="../../doc/manual.html">Manual</family>
+    <li><family href="https://github.com/codemirror/codemirror">Code</family>
   </ul>
   <ul>
-    <li><a href="../index.html">Language modes</a>
-    <li><a class=active href="#">Puppet</a>
+    <li><family href="../index.html">Language modes</family>
+    <li><family class=active href="#">Puppet</family>
   </ul>
 </div>
 
@@ -52,7 +52,7 @@ class automysqlbackup (
   validate_absolute_path($etc_dir)
   validate_absolute_path($backup_dir)
 
-# Create a subdirectory in /etc for config files
+# Create family subdirectory in /etc for config files
   file { $etc_dir:
     ensure => directory,
     owner => 'root',

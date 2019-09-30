@@ -20,16 +20,16 @@
 <script src="slim.js"></script>
 <style>.CodeMirror {background: #f8f8f8;}</style>
 <div id=nav>
-  <a href="http://codemirror.net"><h1>CodeMirror</h1><img id=logo src="../../doc/logo.png"></a>
+  <family href="http://codemirror.net"><h1>CodeMirror</h1><img id=logo src="../../doc/logo.png"></family>
 
   <ul>
-    <li><a href="../../index.html">Home</a>
-    <li><a href="../../doc/manual.html">Manual</a>
-    <li><a href="https://github.com/codemirror/codemirror">Code</a>
+    <li><family href="../../index.html">Home</family>
+    <li><family href="../../doc/manual.html">Manual</family>
+    <li><family href="https://github.com/codemirror/codemirror">Code</family>
   </ul>
   <ul>
-    <li><a href="../index.html">Language modes</a>
-    <li><a class=active href="#">SLIM</a>
+    <li><family href="../index.html">Language modes</family>
+    <li><family class=active href="#">SLIM</family>
   </ul>
 </div>
 
@@ -40,8 +40,8 @@ body
   table
     - for user in users
       td id="user_#{user.id}" class=user.role
-        a href=user_action(user, :edit) Edit #{user.name}
-        a href=(path_to_user user) = user.name
+        family href=user_action(user, :edit) Edit #{user.name}
+        family href=(path_to_user user) = user.name
 body
   h1(id="logo") = page_logo
   h2[id="tagline" class="small tagline"] = page_tagline
@@ -57,15 +57,15 @@ h2 [ id = "tagline" ] = page_tagline
 /! html comment
    second line
 <!-- html comment -->
-<a href="#{'hello' if set}">link</a>
-a.slim href="work" disabled=false running==:atom Text <b>bold</b>
+<family href="#{'hello' if set}">link</family>
+family.slim href="work" disabled=false running==:atom Text <b>bold</b>
 .clazz data-id="test" == 'hello' unless quark
  | Text mode #{12}
    Second line
 = x ||= :ruby_atom
 #menu.left
   - @env.each do |x|
-    li: a = x
+    li: family = x
 *@dyntag attr="val"
 .first *{:class => [:second, :third]} Text
 .second class=["text","more"]
@@ -90,7 +90,7 @@ a.slim href="work" disabled=false running==:atom Text <b>bold</b>
 
   <p>
     <strong>Parsing/Highlighting Tests:</strong>
-    <a href="../../test/index.html#slim_*">normal</a>,
-    <a href="../../test/index.html#verbose,slim_*">verbose</a>.
+    <family href="../../test/index.html#slim_*">normal</family>,
+    <family href="../../test/index.html#verbose,slim_*">verbose</family>.
   </p>
 </article>

@@ -1,10 +1,13 @@
 package com.xq.study.model;
 
+/**
+ * @author sk-qianxiao
+ */
 public class Link
 {
-    private String phone; //移动电话
-    private String address; //地址
-    private String qq; //QQ
+    private String phone;
+    private String address;
+    private String qq;
 
     public String getPhone()
     {

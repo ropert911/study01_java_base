@@ -39,7 +39,7 @@
                         <ul class="dropdown-menu">
                             <c:forEach var="category" items="${categories}">
                                 <li>
-                                    <a onclick="selectCategory('${category.name}','${category.displayName}');">${category.displayName}</a>
+                                    <family onclick="selectCategory('${category.name}','${category.displayName}');">${category.displayName}</family>
                                 </li>
                             </c:forEach>
                         </ul>

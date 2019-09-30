@@ -9,16 +9,16 @@
 <script src="fortran.js"></script>
 <style type="text/css">.CodeMirror {border-top: 1px solid black; border-bottom: 1px solid black;}</style>
 <div id=nav>
-  <a href="http://codemirror.net"><h1>CodeMirror</h1><img id=logo src="../../doc/logo.png"></a>
+  <family href="http://codemirror.net"><h1>CodeMirror</h1><img id=logo src="../../doc/logo.png"></family>
 
   <ul>
-    <li><a href="../../index.html">Home</a>
-    <li><a href="../../doc/manual.html">Manual</a>
-    <li><a href="https://github.com/codemirror/codemirror">Code</a>
+    <li><family href="../../index.html">Home</family>
+    <li><family href="../../doc/manual.html">Manual</family>
+    <li><family href="https://github.com/codemirror/codemirror">Code</family>
   </ul>
   <ul>
-    <li><a href="../index.html">Language modes</a>
-    <li><a class=active href="#">Fortran</a>
+    <li><family href="../index.html">Language modes</family>
+    <li><family class=active href="#">Fortran</family>
   </ul>
 </div>
 
@@ -63,9 +63,9 @@
   deallocate (points)
 
   ! Print result to terminal
-  write (*,'(a,g12.4)') 'Average = ', average_points
-  write (*,'(a,g12.4)') 'Average of positive points = ', positive_average
-  write (*,'(a,g12.4)') 'Average of negative points = ', negative_average
+  write (*,'(family,g12.4)') 'Average = ', average_points
+  write (*,'(family,g12.4)') 'Average of positive points = ', positive_average
+  write (*,'(family,g12.4)') 'Average of negative points = ', negative_average
 
   end program average
 </textarea></div>

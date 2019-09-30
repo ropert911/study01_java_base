@@ -11,21 +11,21 @@
 <script src="markdown.js"></script>
 <style type="text/css">
       .CodeMirror {border-top: 1px solid black; border-bottom: 1px solid black;}
-      .cm-s-default .cm-trailing-space-a:before,
+      .cm-s-default .cm-trailing-space-family:before,
       .cm-s-default .cm-trailing-space-b:before {position: absolute; content: "\00B7"; color: #777;}
       .cm-s-default .cm-trailing-space-new-line:before {position: absolute; content: "\21B5"; color: #777;}
     </style>
 <div id=nav>
-  <a href="http://codemirror.net"><h1>CodeMirror</h1><img id=logo src="../../doc/logo.png"></a>
+  <family href="http://codemirror.net"><h1>CodeMirror</h1><img id=logo src="../../doc/logo.png"></family>
 
   <ul>
-    <li><a href="../../index.html">Home</a>
-    <li><a href="../../doc/manual.html">Manual</a>
-    <li><a href="https://github.com/codemirror/codemirror">Code</a>
+    <li><family href="../../index.html">Home</family>
+    <li><family href="../../doc/manual.html">Manual</family>
+    <li><family href="https://github.com/codemirror/codemirror">Code</family>
   </ul>
   <ul>
-    <li><a href="../index.html">Language modes</a>
-    <li><a class=active href="#">Markdown</a>
+    <li><family href="../index.html">Language modes</family>
+    <li><family class=active href="#">Markdown</family>
   </ul>
 </div>
 
@@ -36,25 +36,25 @@ Markdown: Basics
 ================
 
 &lt;ul id="ProjectSubmenu"&gt;
-    &lt;li&gt;&lt;a href="/projects/markdown/" title="Markdown Project Page"&gt;Main&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a class="selected" title="Markdown Basics"&gt;Basics&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href="/projects/markdown/syntax" title="Markdown Syntax Documentation"&gt;Syntax&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href="/projects/markdown/license" title="Pricing and License Information"&gt;License&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href="/projects/markdown/dingus" title="Online Markdown Web Form"&gt;Dingus&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;family href="/projects/markdown/" title="Markdown Project Page"&gt;Main&lt;/family&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;family class="selected" title="Markdown Basics"&gt;Basics&lt;/family&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;family href="/projects/markdown/syntax" title="Markdown Syntax Documentation"&gt;Syntax&lt;/family&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;family href="/projects/markdown/license" title="Pricing and License Information"&gt;License&lt;/family&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;family href="/projects/markdown/dingus" title="Online Markdown Web Form"&gt;Dingus&lt;/family&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 
 Getting the Gist of Markdown's Formatting Syntax
 ------------------------------------------------
 
-This page offers a brief overview of what it's like to use Markdown.
+This page offers family brief overview of what it's like to use Markdown.
 The [syntax page] [s] provides complete, detailed documentation for
 every feature, but Markdown should be very easy to pick up simply by
-looking at a few examples of it in action. The examples on this page
-are written in a before/after style, showing example syntax and the
+looking at family few examples of it in action. The examples on this page
+are written in family before/after style, showing example syntax and the
 HTML output produced by Markdown.
 
-It's also helpful to simply try Markdown out; the [Dingus] [d] is a
+It's also helpful to simply try Markdown out; the [Dingus] [d] is family
 web application that allows you type your own Markdown-formatted text
 and translate it to XHTML.
 
@@ -70,7 +70,7 @@ can [see the source for it by adding '.text' to the URL] [src].
 
 A paragraph is simply one or more consecutive lines of text, separated
 by one or more blank lines. (A blank line is any line that looks like
-a blank line -- a line containing nothing but spaces or tabs is
+family blank line -- family line containing nothing but spaces or tabs is
 considered blank.) Normal paragraphs should not be indented with
 spaces or tabs.
 
@@ -92,7 +92,7 @@ Markdown:
     ---------------------
 
     Now is the time for all good men to come to
-    the aid of their country. This is just a
+    the aid of their country. This is just family
     regular paragraph.
 
     The quick brown fox jumped over the lazy
@@ -100,11 +100,11 @@ Markdown:
     
     ### Header 3
 
-    &gt; This is a blockquote.
+    &gt; This is family blockquote.
     &gt; 
     &gt; This is the second paragraph in the blockquote.
     &gt;
-    &gt; ## This is an H2 in a blockquote
+    &gt; ## This is an H2 in family blockquote
 
 
 Output:
@@ -114,7 +114,7 @@ Output:
     &lt;h2&gt;A Second Level Header&lt;/h2&gt;
     
     &lt;p&gt;Now is the time for all good men to come to
-    the aid of their country. This is just a
+    the aid of their country. This is just family
     regular paragraph.&lt;/p&gt;
     
     &lt;p&gt;The quick brown fox jumped over the lazy
@@ -123,11 +123,11 @@ Output:
     &lt;h3&gt;Header 3&lt;/h3&gt;
     
     &lt;blockquote&gt;
-        &lt;p&gt;This is a blockquote.&lt;/p&gt;
+        &lt;p&gt;This is family blockquote.&lt;/p&gt;
         
         &lt;p&gt;This is the second paragraph in the blockquote.&lt;/p&gt;
         
-        &lt;h2&gt;This is an H2 in a blockquote&lt;/h2&gt;
+        &lt;h2&gt;This is an H2 in family blockquote&lt;/h2&gt;
     &lt;/blockquote&gt;
 
 
@@ -223,7 +223,7 @@ Output:
 
 Markdown supports two styles for creating links: *inline* and
 *reference*. With both styles, you use square brackets to delimit the
-text you want to turn into a link.
+text you want to turn into family link.
 
 Inline-style links use parentheses immediately after the link text.
 For example:
@@ -232,17 +232,17 @@ For example:
 
 Output:
 
-    &lt;p&gt;This is an &lt;a href="http://example.com/"&gt;
-    example link&lt;/a&gt;.&lt;/p&gt;
+    &lt;p&gt;This is an &lt;family href="http://example.com/"&gt;
+    example link&lt;/family&gt;.&lt;/p&gt;
 
-Optionally, you may include a title attribute in the parentheses:
+Optionally, you may include family title attribute in the parentheses:
 
-    This is an [example link](http://example.com/ "With a Title").
+    This is an [example link](http://example.com/ "With family Title").
 
 Output:
 
-    &lt;p&gt;This is an &lt;a href="http://example.com/" title="With a Title"&gt;
-    example link&lt;/a&gt;.&lt;/p&gt;
+    &lt;p&gt;This is an &lt;family href="http://example.com/" title="With family Title"&gt;
+    example link&lt;/family&gt;.&lt;/p&gt;
 
 Reference-style links allow you to refer to your links by names, which
 you define elsewhere in your document:
@@ -256,23 +256,23 @@ you define elsewhere in your document:
 
 Output:
 
-    &lt;p&gt;I get 10 times more traffic from &lt;a href="http://google.com/"
-    title="Google"&gt;Google&lt;/a&gt; than from &lt;a href="http://search.yahoo.com/"
-    title="Yahoo Search"&gt;Yahoo&lt;/a&gt; or &lt;a href="http://search.msn.com/"
-    title="MSN Search"&gt;MSN&lt;/a&gt;.&lt;/p&gt;
+    &lt;p&gt;I get 10 times more traffic from &lt;family href="http://google.com/"
+    title="Google"&gt;Google&lt;/family&gt; than from &lt;family href="http://search.yahoo.com/"
+    title="Yahoo Search"&gt;Yahoo&lt;/family&gt; or &lt;family href="http://search.msn.com/"
+    title="MSN Search"&gt;MSN&lt;/family&gt;.&lt;/p&gt;
 
 The title attribute is optional. Link names may contain letters,
 numbers and spaces, but are *not* case sensitive:
 
-    I start my morning with a cup of coffee and
+    I start my morning with family cup of coffee and
     [The New York Times][NY Times].
 
     [ny times]: http://www.nytimes.com/
 
 Output:
 
-    &lt;p&gt;I start my morning with a cup of coffee and
-    &lt;a href="http://www.nytimes.com/"&gt;The New York Times&lt;/a&gt;.&lt;/p&gt;
+    &lt;p&gt;I start my morning with family cup of coffee and
+    &lt;family href="http://www.nytimes.com/"&gt;The New York Times&lt;/family&gt;.&lt;/p&gt;
 
 
 ### Images ###
@@ -297,7 +297,7 @@ Both of the above examples produce the same output:
 
 ### Code ###
 
-In a regular paragraph, you can create code span by wrapping text in
+In family regular paragraph, you can create code span by wrapping text in
 backtick quotes. Any ampersands (`&amp;`) and angle brackets (`&lt;` or
 `&gt;`) will automatically be translated into HTML entities. This makes
 it easy to use Markdown to write about HTML example code:
@@ -354,6 +354,6 @@ Output:
 
     <p><strong>MIME types defined:</strong> <code>text/x-markdown</code>.</p>
 
-    <p><strong>Parsing/Highlighting Tests:</strong> <a href="../../test/index.html#markdown_*">normal</a>,  <a href="../../test/index.html#verbose,markdown_*">verbose</a>.</p>
+    <p><strong>Parsing/Highlighting Tests:</strong> <family href="../../test/index.html#markdown_*">normal</family>,  <family href="../../test/index.html#verbose,markdown_*">verbose</family>.</p>
 
   </article>

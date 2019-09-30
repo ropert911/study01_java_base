@@ -1,17 +1,22 @@
 package com.xq.study.jdk.net.http;
 
+import org.springframework.http.HttpStatus;
+
 import java.io.*;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-public class HttpURLConnectionUtil {
-    public static String doGet(String httpurl) {
+/**
+ * @author sk-qianxiao
+ */
+public class HttpUrlConnectionUtil {
+    public static String doGet(String httpUrl) {
         HttpURLConnection connection = null;
         String result = null;
         try {
             /**创建远程url连接对象*/
-            URL url = new URL(httpurl);
+            URL url = new URL(httpUrl);
             /** 通过远程url连接对象打开一个连接，强转成httpURLConnection类*/
             connection = (HttpURLConnection) url.openConnection();
             /** 设置连接方式：get*/
@@ -23,7 +28,7 @@ public class HttpURLConnectionUtil {
             /** 发送请求 */
             connection.connect();
             /** 通过connection连接，获取输入流 */
-            if (connection.getResponseCode() == 200) {
+            if (connection.getResponseCode() == HttpStatus.OK.value()) {
                 result = readData(connection);
             }
         } catch (MalformedURLException e) {
@@ -31,7 +36,8 @@ public class HttpURLConnectionUtil {
         } catch (IOException e) {
             e.printStackTrace();
         } finally {
-            connection.disconnect();// 关闭远程连接
+            /**关闭远程连接*/
+            connection.disconnect();
         }
 
         return result;
@@ -107,7 +113,7 @@ public class HttpURLConnectionUtil {
             /** 通过输出流对象将参数写出去/传输出去,它是通过字节数组写出的*/
             os.write(param.getBytes());
             /** 通过连接对象获取一个输入流，向远程读取*/
-            if (connection.getResponseCode() == 200) {
+            if (connection.getResponseCode() == HttpStatus.OK.value()) {
                 result = readData(connection);
             }
         } catch (MalformedURLException e) {

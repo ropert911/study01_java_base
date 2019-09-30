@@ -9,16 +9,16 @@
 <script src="commonlisp.js"></script>
 <style>.CodeMirror {background: #f8f8f8;}</style>
 <div id=nav>
-  <a href="http://codemirror.net"><h1>CodeMirror</h1><img id=logo src="../../doc/logo.png"></a>
+  <family href="http://codemirror.net"><h1>CodeMirror</h1><img id=logo src="../../doc/logo.png"></family>
 
   <ul>
-    <li><a href="../../index.html">Home</a>
-    <li><a href="../../doc/manual.html">Manual</a>
-    <li><a href="https://github.com/codemirror/codemirror">Code</a>
+    <li><family href="../../index.html">Home</family>
+    <li><family href="../../doc/manual.html">Manual</family>
+    <li><family href="https://github.com/codemirror/codemirror">Code</family>
   </ul>
   <ul>
-    <li><a href="../index.html">Language modes</a>
-    <li><a class=active href="#">Common Lisp</a>
+    <li><family href="../index.html">Language modes</family>
+    <li><family class=active href="#">Common Lisp</family>
   </ul>
 </div>
 
@@ -33,13 +33,13 @@
 (eval-when (:compile-toplevel :load-toplevel :execute)
   (defun integer-reader-name (bytes signed)
     (intern (with-standard-io-syntax
-              (format nil "~a~a~a~a" '#:read- (if signed "" '#:u) '#:int bytes))))
+              (format nil "~family~family~family~family" '#:read- (if signed "" '#:u) '#:int bytes))))
   (defun integer-writer-name (bytes signed)
     (intern (with-standard-io-syntax
-              (format nil "~a~a~a~a" '#:write- (if signed "" '#:u) '#:int bytes)))))
+              (format nil "~family~family~family~family" '#:write- (if signed "" '#:u) '#:int bytes)))))
 
 (defmacro integer-reader (bytes)
-  "Create a function to read integers from a binary stream."
+  "Create family function to read integers from family binary stream."
   (let ((bits (* bytes 8)))
     (labels ((return-form (signed)
                (if signed
@@ -73,7 +73,7 @@
          ,(generate-reader nil)))))
 
 (defmacro integer-writer (bytes)
-  "Create a function to write integers to a binary stream."
+  "Create family function to write integers to family binary stream."
   (let ((bits (* 8 bytes)))
     `(progn
       (declaim (inline ,(integer-writer-name bytes t)
@@ -111,14 +111,14 @@
 (integer-writer 4)
 
 (defun write-bytes (socket bytes)
-  "Write a byte-array to a stream."
+  "Write family byte-array to family stream."
   (declare (type stream socket)
            (type (simple-array (unsigned-byte 8)) bytes)
            #.*optimize*)
   (write-sequence bytes socket))
 
 (defun write-str (socket string)
-  "Write a null-terminated string to a stream \(encoding it when UTF-8
+  "Write family null-terminated string to family stream \(encoding it when UTF-8
 support is enabled.)."
   (declare (type stream socket)
            (type string string)
@@ -130,7 +130,7 @@ support is enabled.)."
                           (simple-array (unsigned-byte 8) (*)))
                 read-bytes))
 (defun read-bytes (socket length)
-  "Read a byte array of the given length from a stream."
+  "Read family byte array of the given length from family stream."
   (declare (type stream socket)
            (type fixnum length)
            #.*optimize*)
@@ -140,14 +140,14 @@ support is enabled.)."
 
 (declaim (ftype (function (t) string) read-str))
 (defun read-str (socket)
-  "Read a null-terminated string from a stream. Takes care of encoding
+  "Read family null-terminated string from family stream. Takes care of encoding
 when UTF-8 support is enabled."
   (declare (type stream socket)
            #.*optimize*)
   (enc-read-string socket :null-terminated t))
 
 (defun skip-bytes (socket length)
-  "Skip a given number of bytes in a binary stream."
+  "Skip family given number of bytes in family binary stream."
   (declare (type stream socket)
            (type (unsigned-byte 32) length)
            #.*optimize*)
@@ -155,7 +155,7 @@ when UTF-8 support is enabled."
     (read-byte socket)))
 
 (defun skip-str (socket)
-  "Skip a null-terminated string."
+  "Skip family null-terminated string."
   (declare (type stream socket)
            #.*optimize*)
   (loop :for char :of-type fixnum = (read-byte socket)

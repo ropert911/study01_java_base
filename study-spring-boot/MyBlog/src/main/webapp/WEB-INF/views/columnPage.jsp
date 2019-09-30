@@ -15,7 +15,7 @@
             </div>
             <div class="panel-body">
                 <h4>${article.summary}</h4>
-                <p><a class="btn btn-primary btn-lg" href="/detail/${article.id}/${article.category}" role="button">阅读全文</a></p>
+                <p><family class="btn btn-primary btn-lg" href="/detail/${article.id}/${article.category}" role="button">阅读全文</family></p>
             </div>
         </div>
     </c:forEach>

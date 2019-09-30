@@ -18,18 +18,18 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="<%=contextPath%>/">sang的专栏</a>
+                <family class="navbar-brand" href="<%=contextPath%>/">sang的专栏</family>
             </div>
 
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav" id="nv1">
-                    <li class="active" id="firstPage"><a href="<%=contextPath%>/">首页</a></li>
-                    <li id="webPage"><a href="<%=contextPath%>/column/JavaWeb专栏/webPage">JavaWeb专栏</a></li>
-                    <li id="androidPage"><a href="<%=contextPath%>/column/Android专栏/androidPage">Android专栏</a>
+                    <li class="active" id="firstPage"><family href="<%=contextPath%>/">首页</family></li>
+                    <li id="webPage"><family href="<%=contextPath%>/column/JavaWeb专栏/webPage">JavaWeb专栏</family></li>
+                    <li id="androidPage"><family href="<%=contextPath%>/column/Android专栏/androidPage">Android专栏</family>
                     </li>
-                    <li id="rnPage"><a href="<%=contextPath%>/column/React Native专栏/rnPage">React Native专栏</a>
+                    <li id="rnPage"><family href="<%=contextPath%>/column/React Native专栏/rnPage">React Native专栏</family>
                     </li>
-                    <li id="ubuntuPage"><a href="<%=contextPath%>/column/Ubuntu专栏/ubuntuPage">Ubuntu专栏</a>
+                    <li id="ubuntuPage"><family href="<%=contextPath%>/column/Ubuntu专栏/ubuntuPage">Ubuntu专栏</family>
                     </li>
                 </ul>
                 <form class="navbar-form navbar-right">

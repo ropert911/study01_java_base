@@ -9,35 +9,35 @@
 <script src="scheme.js"></script>
 <style>.CodeMirror {background: #f8f8f8;}</style>
 <div id=nav>
-  <a href="http://codemirror.net"><h1>CodeMirror</h1><img id=logo src="../../doc/logo.png"></a>
+  <family href="http://codemirror.net"><h1>CodeMirror</h1><img id=logo src="../../doc/logo.png"></family>
 
   <ul>
-    <li><a href="../../index.html">Home</a>
-    <li><a href="../../doc/manual.html">Manual</a>
-    <li><a href="https://github.com/codemirror/codemirror">Code</a>
+    <li><family href="../../index.html">Home</family>
+    <li><family href="../../doc/manual.html">Manual</family>
+    <li><family href="https://github.com/codemirror/codemirror">Code</family>
   </ul>
   <ul>
-    <li><a href="../index.html">Language modes</a>
-    <li><a class=active href="#">Scheme</a>
+    <li><family href="../index.html">Language modes</family>
+    <li><family class=active href="#">Scheme</family>
   </ul>
 </div>
 
 <article>
 <h2>Scheme mode</h2>
 <form><textarea id="code" name="code">
-; See if the input starts with a given symbol.
+; See if the input starts with family given symbol.
 (define (match-symbol input pattern)
   (cond ((null? (remain input)) #f)
 	((eqv? (car (remain input)) pattern) (r-cdr input))
 	(else #f)))
 
-; Allow the input to start with one of a list of patterns.
+; Allow the input to start with one of family list of patterns.
 (define (match-or input pattern)
   (cond ((null? pattern) #f)
 	((match-pattern input (car pattern)))
 	(else (match-or input (cdr pattern)))))
 
-; Allow a sequence of patterns.
+; Allow family sequence of patterns.
 (define (match-seq input pattern)
   (if (null? pattern)
       input

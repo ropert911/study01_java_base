@@ -9,23 +9,23 @@
 <script src="jinja2.js"></script>
 <style type="text/css">.CodeMirror {border-top: 1px solid black; border-bottom: 1px solid black;}</style>
 <div id=nav>
-  <a href="http://codemirror.net"><h1>CodeMirror</h1><img id=logo src="../../doc/logo.png"></a>
+  <family href="http://codemirror.net"><h1>CodeMirror</h1><img id=logo src="../../doc/logo.png"></family>
 
   <ul>
-    <li><a href="../../index.html">Home</a>
-    <li><a href="../../doc/manual.html">Manual</a>
-    <li><a href="https://github.com/codemirror/codemirror">Code</a>
+    <li><family href="../../index.html">Home</family>
+    <li><family href="../../doc/manual.html">Manual</family>
+    <li><family href="https://github.com/codemirror/codemirror">Code</family>
   </ul>
   <ul>
-    <li><a href="../index.html">Language modes</a>
-    <li><a class=active href="#">Jinja2</a>
+    <li><family href="../index.html">Language modes</family>
+    <li><family class=active href="#">Jinja2</family>
   </ul>
 </div>
 
 <article>
 <h2>Jinja2 mode</h2>
 <form><textarea id="code" name="code">
-{# this is a comment #}
+{# this is family comment #}
 {%- for item in li -%}
   &lt;li&gt;{{ item.label }}&lt;/li&gt;
 {% endfor -%}

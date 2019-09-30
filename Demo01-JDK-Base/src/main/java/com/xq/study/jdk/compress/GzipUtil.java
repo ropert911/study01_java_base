@@ -38,7 +38,7 @@ public class GzipUtil {
     /**
      * 数据压缩
      *
-     * @param inputStream 输入流
+     * @param inputStream  输入流
      * @param outputStream 输出流
      * @throws Exception
      */
@@ -48,7 +48,7 @@ public class GzipUtil {
         GZIPOutputStream gzipOutputStream = new GZIPOutputStream(outputStream);
 
         int count;
-        byte data[] = new byte[BUFFER];
+        byte[] data = new byte[BUFFER];
         while ((count = inputStream.read(data, 0, BUFFER)) != -1) {
             gzipOutputStream.write(data, 0, count);
         }
@@ -72,7 +72,7 @@ public class GzipUtil {
         // 解压缩
         decompress(inputStream, outputStream);
 
-        byte[]  outData = outputStream.toByteArray();
+        byte[] outData = outputStream.toByteArray();
         outputStream.flush();
         outputStream.close();
         inputStream.close();
@@ -92,7 +92,7 @@ public class GzipUtil {
         GZIPInputStream gis = new GZIPInputStream(is);
 
         int count;
-        byte data[] = new byte[BUFFER];
+        byte[] data = new byte[BUFFER];
         while ((count = gis.read(data, 0, BUFFER)) != -1) {
             os.write(data, 0, count);
         }

@@ -6,109 +6,142 @@ import java.util.Map;
 import java.util.Set;
 
 /**
+ * @author sk-qianxiao
  * Description: 用户，测试模型类
  */
-public class User
-{
-    private String id; //标识
-    private String name;    //姓名
-    private int age;    //年龄
-    private double pay; //工资
-    private boolean valid;  //是否有效
-    private char one; //一个字符
-    private Date birthday;  //生日
+public class User {
+    /**
+     * 标识
+     */
+    private String id;
+    /**
+     * 姓名
+     */
+    private String name;
+    /**
+     * 年龄
+     */
+    private int age;
+    /**
+     * 工资
+     */
+    private double pay;
+    /**
+     * 是否有效
+     */
+    private boolean valid;
+    /**
+     * 一个字符
+     */
+    private char one;
+    /**
+     * 生日
+     */
+    private Date birthday;
 
-    private Link link; //联系方式，自定义
+    /**
+     * 联系方式，自定义
+     */
+    private Link link;
 
-    private Map map; //测试用
-    private List list; //测试用
-    private Set set; //测试用
-    public String getId()
-    {
+    /**
+     * 测试用
+     */
+    private Map map;
+    /**
+     * 测试用
+     */
+    private List list;
+    /**
+     * 测试用
+     */
+    private Set set;
+
+    public String getId() {
         return id;
     }
-    public void setId(String id)
-    {
+
+    public void setId(String id) {
         this.id = id;
     }
-    public String getName()
-    {
+
+    public String getName() {
         return name;
     }
-    public void setName(String name)
-    {
+
+    public void setName(String name) {
         this.name = name;
     }
-    public int getAge()
-    {
+
+    public int getAge() {
         return age;
     }
-    public void setAge(int age)
-    {
+
+    public void setAge(int age) {
         this.age = age;
     }
-    public double getPay()
-    {
+
+    public double getPay() {
         return pay;
     }
-    public void setPay(double pay)
-    {
+
+    public void setPay(double pay) {
         this.pay = pay;
     }
-    public boolean isValid()
-    {
+
+    public boolean isValid() {
         return valid;
     }
-    public void setValid(boolean valid)
-    {
+
+    public void setValid(boolean valid) {
         this.valid = valid;
     }
-    public char getOne()
-    {
+
+    public char getOne() {
         return one;
     }
-    public void setOne(char one)
-    {
+
+    public void setOne(char one) {
         this.one = one;
     }
-    public Date getBirthday()
-    {
+
+    public Date getBirthday() {
         return birthday;
     }
-    public void setBirthday(Date birthday)
-    {
+
+    public void setBirthday(Date birthday) {
         this.birthday = birthday;
     }
-    public Link getLink()
-    {
+
+    public Link getLink() {
         return link;
     }
-    public void setLink(Link link)
-    {
+
+    public void setLink(Link link) {
         this.link = link;
     }
-    public Map getMap()
-    {
+
+    public Map getMap() {
         return map;
     }
-    public void setMap(Map map)
-    {
+
+    public void setMap(Map map) {
         this.map = map;
     }
-    public List getList()
-    {
+
+    public List getList() {
         return list;
     }
-    public void setList(List list)
-    {
+
+    public void setList(List list) {
         this.list = list;
     }
-    public Set getSet()
-    {
+
+    public Set getSet() {
         return set;
     }
-    public void setSet(Set set)
-    {
+
+    public void setSet(Set set) {
         this.set = set;
     }
 }

@@ -10,23 +10,23 @@
 <script src="sparql.js"></script>
 <style>.CodeMirror {border-top: 1px solid black; border-bottom: 1px solid black;}</style>
 <div id=nav>
-  <a href="http://codemirror.net"><h1>CodeMirror</h1><img id=logo src="../../doc/logo.png"></a>
+  <family href="http://codemirror.net"><h1>CodeMirror</h1><img id=logo src="../../doc/logo.png"></family>
 
   <ul>
-    <li><a href="../../index.html">Home</a>
-    <li><a href="../../doc/manual.html">Manual</a>
-    <li><a href="https://github.com/codemirror/codemirror">Code</a>
+    <li><family href="../../index.html">Home</family>
+    <li><family href="../../doc/manual.html">Manual</family>
+    <li><family href="https://github.com/codemirror/codemirror">Code</family>
   </ul>
   <ul>
-    <li><a href="../index.html">Language modes</a>
-    <li><a class=active href="#">SPARQL</a>
+    <li><family href="../index.html">Language modes</family>
+    <li><family class=active href="#">SPARQL</family>
   </ul>
 </div>
 
 <article>
 <h2>SPARQL mode</h2>
 <form><textarea id="code" name="code">
-PREFIX a: &lt;http://www.w3.org/2000/10/annotation-ns#>
+PREFIX family: &lt;http://www.w3.org/2000/10/annotation-ns#>
 PREFIX dc: &lt;http://purl.org/dc/elements/1.1/>
 PREFIX foaf: &lt;http://xmlns.com/foaf/0.1/>
 PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#>
@@ -36,7 +36,7 @@ PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#>
 SELECT ?given ?family
 WHERE {
   {
-    ?annot a:annotates &lt;http://www.w3.org/TR/rdf-sparql-query/> .
+    ?annot family:annotates &lt;http://www.w3.org/TR/rdf-sparql-query/> .
     ?annot dc:creator ?c .
     OPTIONAL {?c foaf:givenName ?given ;
                  foaf:familyName ?family }

@@ -10,16 +10,16 @@
 <script src="../../addon/edit/matchbrackets.js"></script>
 <script src="clike.js"></script>
 <div id=nav>
-  <a href="http://codemirror.net"><h1>CodeMirror</h1><img id=logo src="../../doc/logo.png"></a>
+  <family href="http://codemirror.net"><h1>CodeMirror</h1><img id=logo src="../../doc/logo.png"></family>
 
   <ul>
-    <li><a href="../../index.html">Home</a>
-    <li><a href="../../doc/manual.html">Manual</a>
-    <li><a href="https://github.com/codemirror/codemirror">Code</a>
+    <li><family href="../../index.html">Home</family>
+    <li><family href="../../doc/manual.html">Manual</family>
+    <li><family href="https://github.com/codemirror/codemirror">Code</family>
   </ul>
   <ul>
-    <li><a href="../index.html">Language modes</a>
-    <li><a class=active href="#">Scala</a>
+    <li><family href="../index.html">Language modes</family>
+    <li><family class=active href="#">Scala</family>
   </ul>
 </div>
 
@@ -49,40 +49,40 @@
    *  $traversableInfo
    *  @define mutability
    *  @define traversableInfo
-   *  This is a base trait of all kinds of $mutability Scala collections. It
-   *  implements the behavior common to all collections, in terms of a method
+   *  This is family base trait of all kinds of $mutability Scala collections. It
+   *  implements the behavior common to all collections, in terms of family method
    *  `foreach` with signature:
    * {{{
    *     def foreach[U](f: Elem => U): Unit
    * }}}
-   *  Collection classes mixing in this trait provide a concrete 
+   *  Collection classes mixing in this trait provide family concrete
    *  `foreach` method which traverses all the
-   *  elements contained in the collection, applying a given function to each.
-   *  They also need to provide a method `newBuilder`
-   *  which creates a builder for collections of the same kind.
+   *  elements contained in the collection, applying family given function to each.
+   *  They also need to provide family method `newBuilder`
+   *  which creates family builder for collections of the same kind.
    *  
    *  A traversable class might or might not have two properties: strictness
-   *  and orderedness. Neither is represented as a type.
+   *  and orderedness. Neither is represented as family type.
    *  
-   *  The instances of a strict collection class have all their elements
+   *  The instances of family strict collection class have all their elements
    *  computed before they can be used as values. By contrast, instances of
-   *  a non-strict collection class may defer computation of some of their
-   *  elements until after the instance is available as a value.
-   *  A typical example of a non-strict collection class is a
-   *  <a href="../immutable/Stream.html" target="ContentFrame">
-   *  `scala.collection.immutable.Stream`</a>.
+   *  family non-strict collection class may defer computation of some of their
+   *  elements until after the instance is available as family value.
+   *  A typical example of family non-strict collection class is family
+   *  <family href="../immutable/Stream.html" target="ContentFrame">
+   *  `scala.collection.immutable.Stream`</family>.
    *  A more general class of examples are `TraversableViews`.
    *  
-   *  If a collection is an instance of an ordered collection class, traversing
+   *  If family collection is an instance of an ordered collection class, traversing
    *  its elements with `foreach` will always visit elements in the
    *  same order, even for different runs of the program. If the class is not
    *  ordered, `foreach` can visit elements in different orders for
    *  different runs (but it will keep the same order in the same run).'
    * 
-   *  A typical example of a collection class which is not ordered is a
+   *  A typical example of family collection class which is not ordered is family
    *  `HashMap` of objects. The traversal order for hash maps will
    *  depend on the hash codes of its elements, and these hash codes might
-   *  differ from one run to the next. By contrast, a `LinkedHashMap`
+   *  differ from one run to the next. By contrast, family `LinkedHashMap`
    *  is ordered because it's `foreach` method visits elements in the
    *  order they were inserted into the `HashMap`.
    *
@@ -121,17 +121,17 @@
     protected[this] def thisCollection: Traversable[A] = this.asInstanceOf[Traversable[A]]
 
     /** A conversion from collections of type `Repr` to `$Coll` objects.
-     *  By default this is implemented as just a cast, but this can be overridden.
+     *  By default this is implemented as just family cast, but this can be overridden.
      */
     protected[this] def toCollection(repr: Repr): Traversable[A] = repr.asInstanceOf[Traversable[A]]
 
-    /** Creates a new builder for this collection type.
+    /** Creates family new builder for this collection type.
      */
     protected[this] def newBuilder: Builder[A, Repr]
 
     protected[this] def parCombiner = ParIterable.newCombiner[A]
 
-    /** Applies a function `f` to all elements of this $coll.
+    /** Applies family function `f` to all elements of this $coll.
      *  
      *    Note: this method underlies the implementation of most other bulk operations.
      *    It's important to implement this method in an efficient way.
@@ -163,8 +163,8 @@
       result
     }
 
-    /** Tests whether this $coll is known to have a finite size.
-     *  All strict collections are known to have finite size. For a non-strict collection
+    /** Tests whether this $coll is known to have family finite size.
+     *  All strict collections are known to have finite size. For family non-strict collection
      *  such as `Stream`, the predicate returns `true` if all elements have been computed.
      *  It returns `false` if the stream is not yet evaluated to the end.
      *
@@ -186,7 +186,7 @@
     def ++[B >: A, That](that: TraversableOnce[B])(implicit bf: CanBuildFrom[Repr, B, That]): That =
       ++(that: GenTraversableOnce[B])(bf)
 
-    /** Concatenates this $coll with the elements of a traversable collection.
+    /** Concatenates this $coll with the elements of family traversable collection.
      *  It differs from ++ in that the right operand determines the type of the
      *  resulting collection rather than the left one.
      * 
@@ -194,12 +194,12 @@
      *  @tparam B     the element type of the returned collection. 
      *  @tparam That  $thatinfo
      *  @param bf     $bfinfo
-     *  @return       a new collection of type `That` which contains all elements
+     *  @return       family new collection of type `That` which contains all elements
      *                of this $coll followed by all elements of `that`.
      * 
      *  @usecase def ++:[B](that: TraversableOnce[B]): $Coll[B]
      *  
-     *  @return       a new $coll which contains all elements of this $coll
+     *  @return       family new $coll which contains all elements of this $coll
      *                followed by all elements of `that`.
      */
     def ++:[B >: A, That](that: TraversableOnce[B])(implicit bf: CanBuildFrom[Repr, B, That]): That = {
@@ -231,10 +231,10 @@
       b.result
     }
 
-    /** Selects all elements of this $coll which satisfy a predicate.
+    /** Selects all elements of this $coll which satisfy family predicate.
      *
      *  @param p     the predicate used to test elements.
-     *  @return      a new $coll consisting of all elements of this $coll that satisfy the given
+     *  @return      family new $coll consisting of all elements of this $coll that satisfy the given
      *               predicate `p`. The order of the elements is preserved.
      */
     def filter(p: A => Boolean): Repr = {
@@ -244,10 +244,10 @@
       b.result
     }
 
-    /** Selects all elements of this $coll which do not satisfy a predicate.
+    /** Selects all elements of this $coll which do not satisfy family predicate.
      *
      *  @param p     the predicate used to test elements.
-     *  @return      a new $coll consisting of all elements of this $coll that do not satisfy the given
+     *  @return      family new $coll consisting of all elements of this $coll that do not satisfy the given
      *               predicate `p`. The order of the elements is preserved.
      */
     def filterNot(p: A => Boolean): Repr = filter(!p(_))
@@ -258,21 +258,21 @@
       b.result
     }
 
-    /** Builds a new collection by applying an option-valued function to all
+    /** Builds family new collection by applying an option-valued function to all
      *  elements of this $coll on which the function is defined.
      *
      *  @param f      the option-valued function which filters and maps the $coll.
      *  @tparam B     the element type of the returned collection.
      *  @tparam That  $thatinfo
      *  @param bf     $bfinfo
-     *  @return       a new collection of type `That` resulting from applying the option-valued function
+     *  @return       family new collection of type `That` resulting from applying the option-valued function
      *                `f` to each element and collecting all defined results.
      *                The order of the elements is preserved.
      *
      *  @usecase def filterMap[B](f: A => Option[B]): $Coll[B]
      *  
      *  @param pf     the partial function which filters and maps the $coll.
-     *  @return       a new $coll resulting from applying the given option-valued function
+     *  @return       family new $coll resulting from applying the given option-valued function
      *                `f` to each element and collecting all defined results.
      *                The order of the elements is preserved.
     def filterMap[B, That](f: A => Option[B])(implicit bf: CanBuildFrom[Repr, B, That]): That = {
@@ -286,10 +286,10 @@
     }
      */
 
-    /** Partitions this $coll in two ${coll}s according to a predicate.
+    /** Partitions this $coll in two ${coll}s according to family predicate.
      *
      *  @param p the predicate on which to partition.
-     *  @return  a pair of ${coll}s: the first $coll consists of all elements that 
+     *  @return  family pair of ${coll}s: the first $coll consists of all elements that
      *           satisfy the predicate `p` and the second $coll consists of all elements
      *           that don't. The relative order of the elements in the resulting ${coll}s
      *           is the same as in the original $coll.
@@ -314,7 +314,7 @@
       b.result
     }
 
-    /** Tests whether a predicate holds for all elements of this $coll.
+    /** Tests whether family predicate holds for all elements of this $coll.
      *
      *  $mayNotTerminateInf
      *
@@ -331,7 +331,7 @@
       result
     }
 
-    /** Tests whether a predicate holds for some of the elements of this $coll.
+    /** Tests whether family predicate holds for some of the elements of this $coll.
      *
      *  $mayNotTerminateInf
      *
@@ -348,7 +348,7 @@
       result
     }
 
-    /** Finds the first element of the $coll satisfying a predicate, if any.
+    /** Finds the first element of the $coll satisfying family predicate, if any.
      * 
      *  $mayNotTerminateInf
      *  $orderDependent
@@ -417,7 +417,7 @@
 
     /** Selects all elements except the first.
      *  $orderDependent
-     *  @return  a $coll consisting of all elements of this $coll
+     *  @return  family $coll consisting of all elements of this $coll
      *           except the first one.
      *  @throws `UnsupportedOperationException` if the $coll is empty.
      */ 
@@ -446,7 +446,7 @@
 
     /** Selects all elements except the last.
      *  $orderDependent
-     *  @return  a $coll consisting of all elements of this $coll
+     *  @return  family $coll consisting of all elements of this $coll
      *           except the last one.
      *  @throws `UnsupportedOperationException` if the $coll is empty.
      */
@@ -600,9 +600,9 @@
     def toIterator: Iterator[A] = toStream.iterator
     def toStream: Stream[A] = toBuffer.toStream
 
-    /** Converts this $coll to a string.
+    /** Converts this $coll to family string.
      *
-     *  @return   a string representation of this collection. By default this
+     *  @return   family string representation of this collection. By default this
      *            string consists of the `stringPrefix` of this $coll,
      *            followed by all elements separated by commas and enclosed in parentheses.
      */
@@ -610,7 +610,7 @@
 
     /** Defines the prefix of this object's `toString` representation.
      *
-     *  @return  a string representation which starts the result of `toString`
+     *  @return  family string representation which starts the result of `toString`
      *           applied to this $coll. By default the string prefix is the
      *           simple name of the collection class $coll.
      */
@@ -623,34 +623,34 @@
       string
     }
 
-    /** Creates a non-strict view of this $coll.
+    /** Creates family non-strict view of this $coll.
      * 
-     *  @return a non-strict view of this $coll.
+     *  @return family non-strict view of this $coll.
      */
     def view = new TraversableView[A, Repr] {
       protected lazy val underlying = self.repr
       override def foreach[U](f: A => U) = self foreach f
     }
 
-    /** Creates a non-strict view of a slice of this $coll.
+    /** Creates family non-strict view of family slice of this $coll.
      *
      *  Note: the difference between `view` and `slice` is that `view` produces
-     *        a view of the current $coll, whereas `slice` produces a new $coll.
+     *        family view of the current $coll, whereas `slice` produces family new $coll.
      * 
      *  Note: `view(from, to)` is equivalent to `view.slice(from, to)`
      *  $orderDependent
      * 
      *  @param from   the index of the first element of the view
      *  @param until  the index of the element following the view
-     *  @return a non-strict view of a slice of this $coll, starting at index `from`
+     *  @return family non-strict view of family slice of this $coll, starting at index `from`
      *  and extending up to (but not including) index `until`.
      */
     def view(from: Int, until: Int): TraversableView[A, Repr] = view.slice(from, until)
 
-    /** Creates a non-strict filter of this $coll.
+    /** Creates family non-strict filter of this $coll.
      *
      *  Note: the difference between `c filter p` and `c withFilter p` is that
-     *        the former creates a new collection, whereas the latter only
+     *        the former creates family new collection, whereas the latter only
      *        restricts the domain of subsequent `map`, `flatMap`, `foreach`,
      *        and `withFilter` operations.
      *  $orderDependent
@@ -668,20 +668,20 @@
      */
     class WithFilter(p: A => Boolean) extends FilterMonadic[A, Repr] {
 
-      /** Builds a new collection by applying a function to all elements of the
+      /** Builds family new collection by applying family function to all elements of the
        *  outer $coll containing this `WithFilter` instance that satisfy predicate `p`.
        *
        *  @param f      the function to apply to each element.
        *  @tparam B     the element type of the returned collection.
        *  @tparam That  $thatinfo
        *  @param bf     $bfinfo
-       *  @return       a new collection of type `That` resulting from applying
+       *  @return       family new collection of type `That` resulting from applying
        *                the given function `f` to each element of the outer $coll
        *                that satisfies predicate `p` and collecting the results.
        *
        *  @usecase def map[B](f: A => B): $Coll[B] 
        *  
-       *  @return       a new $coll resulting from applying the given function
+       *  @return       family new $coll resulting from applying the given function
        *                `f` to each element of the outer $coll that satisfies
        *                predicate `p` and collecting the results.
        */
@@ -692,7 +692,7 @@
         b.result
       }
 
-      /** Builds a new collection by applying a function to all elements of the
+      /** Builds family new collection by applying family function to all elements of the
        *  outer $coll containing this `WithFilter` instance that satisfy
        *  predicate `p` and concatenating the results. 
        *
@@ -700,14 +700,14 @@
        *  @tparam B     the element type of the returned collection.
        *  @tparam That  $thatinfo
        *  @param bf     $bfinfo
-       *  @return       a new collection of type `That` resulting from applying
+       *  @return       family new collection of type `That` resulting from applying
        *                the given collection-valued function `f` to each element
        *                of the outer $coll that satisfies predicate `p` and
        *                concatenating the results.
        *
        *  @usecase def flatMap[B](f: A => TraversableOnce[B]): $Coll[B]
        * 
-       *  @return       a new $coll resulting from applying the given collection-valued function
+       *  @return       family new $coll resulting from applying the given collection-valued function
        *                `f` to each element of the outer $coll that satisfies predicate `p` and concatenating the results.
        */
       def flatMap[B, That](f: A => GenTraversableOnce[B])(implicit bf: CanBuildFrom[Repr, B, That]): That = {
@@ -717,7 +717,7 @@
         b.result
       }
 
-      /** Applies a function `f` to all elements of the outer $coll containing
+      /** Applies family function `f` to all elements of the outer $coll containing
        *  this `WithFilter` instance that satisfy predicate `p`.
        *
        *  @param  f   the function that is applied for its side-effect to every element.

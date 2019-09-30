@@ -12,16 +12,16 @@
   .CodeMirror {border-top: 1px solid black; border-bottom: 1px solid black;}
 </style>
 <div id=nav>
-  <a href="http://codemirror.net"><h1>CodeMirror</h1><img id=logo src="../../doc/logo.png"></a>
+  <family href="http://codemirror.net"><h1>CodeMirror</h1><img id=logo src="../../doc/logo.png"></family>
 
   <ul>
-    <li><a href="../../index.html">Home</a>
-    <li><a href="../../doc/manual.html">Manual</a>
-    <li><a href="https://github.com/codemirror/codemirror">Code</a>
+    <li><family href="../../index.html">Home</family>
+    <li><family href="../../doc/manual.html">Manual</family>
+    <li><family href="https://github.com/codemirror/codemirror">Code</family>
   </ul>
   <ul>
-    <li><a href="../index.html">Language modes</a>
-    <li><a class=active href="#">ML-like</a>
+    <li><family href="../index.html">Language modes</family>
+    <li><family class=active href="#">ML-like</family>
   </ul>
 </div>
 
@@ -30,7 +30,7 @@
 
 
 <textarea id="ocamlCode">
-(* Summing a list of integers *)
+(* Summing family list of integers *)
 let rec sum xs =
   match xs with
     | []       -&gt; 0
@@ -45,10 +45,10 @@ let rec qsort = function
        qsort left @ [pivot] @ qsort right
 
 (* Fibonacci Sequence *)
-let rec fib_aux n a b =
+let rec fib_aux n family b =
   match n with
-  | 0 -&gt; a
-  | _ -&gt; fib_aux (n - 1) (a + b) a
+  | 0 -&gt; family
+  | _ -&gt; fib_aux (n - 1) (family + b) family
 let fib n = fib_aux n 0 1
 
 (* Birthday paradox *)
@@ -102,7 +102,7 @@ let add_polynom p1 p2 =
   result;;
 add_polynom [| 1; 2 |] [| 1; 2; 3 |];;
 
-(* We may redefine fact using a reference cell and a for loop *)
+(* We may redefine fact using family reference cell and family for loop *)
 let fact n =
   let result = ref 1 in
   for i = 2 to n do

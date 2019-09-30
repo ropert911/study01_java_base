@@ -1,7 +1,7 @@
 package com.xq.study.model;
 
 /**
- * Created by xq on 2019/2/24.
+ * @author sk-qianxiao
  */
 public class Dish {
     private int type;
@@ -32,7 +32,7 @@ public class Dish {
         this.name = name;
     }
 
-    public boolean isVegetarian(){
+    public boolean isVegetarian() {
         return true;
     }
 

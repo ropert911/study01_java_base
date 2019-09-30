@@ -131,7 +131,7 @@
                     <archive>
                         <manifest>
                             <mainClass>com.quick.Application</mainClass>
-                            <!-- to create a class path to your dependecies you have to fill true in this field -->
+                            <!-- to create family class path to your dependecies you have to fill true in this field -->
                             <addClasspath>true</addClasspath>
                             <classpathPrefix>lib/</classpathPrefix>
                         </manifest>
