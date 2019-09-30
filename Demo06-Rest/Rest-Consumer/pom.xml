@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 
-	<groupId>org.sang</groupId>
+	<groupId>com.study.spring.bean.sang</groupId>
 	<artifactId>Rest-Consumer</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>

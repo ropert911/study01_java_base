@@ -5,12 +5,12 @@
 <configuration>
     <properties resource="db.properties"/>
     <typeAliases>
-        <typeAlias type="org.sang.bean.User" alias="user"/>
+        <typeAlias type="com.study.spring.bean.sang.bean.User" alias="user"/>
     </typeAliases>
-        <!--<package name="org.sang.db"/>-->
+        <!--<package name="com.study.spring.bean.sang.db"/>-->
     <typeHandlers>
-        <typeHandler handler="org.sang.db.MyDateTypeHandler"/>
-        <typeHandler handler="org.sang.db.MyListTypeHandler"/>
+        <typeHandler handler="com.study.spring.bean.sang.db.MyDateTypeHandler"/>
+        <typeHandler handler="com.study.spring.bean.sang.db.MyListTypeHandler"/>
     </typeHandlers>
     <environments default="development">
         <environment id="development">

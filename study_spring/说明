@@ -1,7 +1,10 @@
+spring-bean:
+    conditional：判断不同平台进行对象的注入  使用 @Configuration @Bean @Conditional
+    xml：        以xml方式初始化bean数据
+
+
 spring-anocation:   自定义注解
 spring-AOP: AOP的使用
-spring-bean: 使用 @Configuration @Bean进行注入对象的初始化
-spring-bean-xml:xml方式初始化bean数据
 spring-EL
     文档数据加载+数据格式验证
 spring-res-file:    资源文件的使用

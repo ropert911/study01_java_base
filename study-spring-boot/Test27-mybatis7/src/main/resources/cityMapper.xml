@@ -2,8 +2,8 @@
 <!DOCTYPE mapper
 PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="org.sang.db.CityMapper">
-    <select id="findCityByPid" parameterType="long" resultType="org.sang.bean.City">
+<mapper namespace="com.study.spring.bean.sang.db.CityMapper">
+    <select id="findCityByPid" parameterType="long" resultType="com.study.spring.bean.sang.bean.City">
         SELECT * FROM city WHERE pid=#{id}
     </select>
 </mapper>

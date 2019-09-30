@@ -17,10 +17,10 @@
         <!--<setting name="mapUnderscoreToCamelCase" value="true"/>-->
     <!--</settings>-->
     <typeAliases>
-        <package name="org.sang.bean"/>
+        <package name="com.study.spring.bean.sang.bean"/>
     </typeAliases>
     <plugins>
-        <plugin interceptor="org.sang.db.SqlInterceptor">
+        <plugin interceptor="com.study.spring.bean.sang.db.SqlInterceptor">
         </plugin>
     </plugins>
     <environments default="development">
@@ -34,7 +34,7 @@
             </dataSource>
         </environment>
     </environments>
-        <!--<package name="org.sang.db"/>-->
+        <!--<package name="com.study.spring.bean.sang.db"/>-->
         <!--<mapper class="org.UserMapper"/>-->
         <!--<mapper url="file:///home/sang/workspace/JavaEE/Test27-mybatis4/src/main/resources/userMapper.xml"/>-->
     <mappers>

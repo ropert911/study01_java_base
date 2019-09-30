@@ -13,11 +13,11 @@ Demo01-JDK-Base
     jdk.net.udp         UDB客户端 ，服务器
     jdk.stream          java Stream处理
     jdk.threadpool      线程池
-    jdk.time        时间处理
-    FutureTest       异步请求示例
-    OptionalTest    Optional的使用
-    RandomTest      随机数的生成
-Demo02-Log:略
+    jdk.time            时间处理
+    FutureTest          异步请求示例
+    OptionalTest        Optional的使用
+    RandomTest          随机数的生成
+Demo02-Log: Log4j, LogBack,Log4j2 日志的使用
 Demo02-Elasticjob:略
 Demo02-Other:
     demo-lombok：lombok使用:资源自动清理; 数据的tostring, getter,setter; 数据格式检查,生成hashequal方法等

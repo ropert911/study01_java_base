@@ -5,7 +5,7 @@
 <configuration>
     <properties resource="db.properties"/>
     <typeAliases>
-        <package name="org.sang.bean"/>
+        <package name="com.study.spring.bean.sang.bean"/>
     </typeAliases>
     <environments default="development">
         <environment id="development">

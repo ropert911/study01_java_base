@@ -10,9 +10,9 @@
         <!--<property name="username" value="root"/>-->
         <!--<property name="password" value="sang"/>-->
     <!--</properties>-->
-        <!--<typeAlias type="org.sang.bean.User" alias="user"/>-->
+        <!--<typeAlias type="com.study.spring.bean.sang.bean.User" alias="user"/>-->
     <typeAliases>
-        <package name="org.sang.bean"/>
+        <package name="com.study.spring.bean.sang.bean"/>
     </typeAliases>
     <environments default="development">
         <environment id="development">
@@ -26,8 +26,8 @@
         </environment>
     </environments>
         <!--<mapper resource="userMapper.xml"/>-->
-        <!--<package name="org.sang.db"/>-->
-        <!--<mapper class="org.sang.db.UserMapper"/>-->
+        <!--<package name="com.study.spring.bean.sang.db"/>-->
+        <!--<mapper class="com.study.spring.bean.sang.db.UserMapper"/>-->
     <mappers>
         <mapper url="file:///home/sang/workspace/JavaEE/Test27-mybatis4/src/main/resources/userMapper.xml"/>
     </mappers>

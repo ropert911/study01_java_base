@@ -2,31 +2,31 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="org.sang.db.UserMapper">
-    <resultMap id="userResultMap" type="org.sang.bean.User">
-        <result typeHandler="org.sang.db.MyDateTypeHandler" column="regTime" javaType="java.util.Date"
+<mapper namespace="com.study.spring.bean.sang.db.UserMapper">
+    <resultMap id="userResultMap" type="com.study.spring.bean.sang.bean.User">
+        <result typeHandler="com.study.spring.bean.sang.db.MyDateTypeHandler" column="regTime" javaType="java.util.Date"
                 jdbcType="VARCHAR"
                 property="regTime"/>
     </resultMap>
-    <select id="getUser" resultType="org.sang.bean.User">
+    <select id="getUser" resultType="com.study.spring.bean.sang.bean.User">
         select * from user4
     </select>
-    <select id="getPerson" resultType="org.sang.bean.Person">
+    <select id="getPerson" resultType="com.study.spring.bean.sang.bean.Person">
         select * from person
     </select>
     <select id="getUser2" resultMap="userResultMap">
         select * from user4
     </select>
-    <insert id="insertUser" parameterType="org.sang.bean.User">
-        INSERT INTO user4(username,password,regTime) VALUES (#{username},#{password},#{regTime,javaType=Date,jdbcType=VARCHAR,typeHandler=org.sang.db.MyDateTypeHandler})
+    <insert id="insertUser" parameterType="com.study.spring.bean.sang.bean.User">
+        INSERT INTO user4(username,password,regTime) VALUES (#{username},#{password},#{regTime,javaType=Date,jdbcType=VARCHAR,typeHandler=com.study.spring.bean.sang.db.MyDateTypeHandler})
     </insert>
     <insert id="insertUser2">
         INSERT INTO user4(username,password,regTime) VALUES (#{username},#{password},#{regTime,javaType=Date,jdbcType=VARCHAR})
     </insert>
     <insert id="insertUser3">
-        INSERT INTO user4(username,password,regTime) VALUES (#{username},#{password},#{regTime,typeHandler=org.sang.db.MyDateTypeHandler})
+        INSERT INTO user4(username,password,regTime) VALUES (#{username},#{password},#{regTime,typeHandler=com.study.spring.bean.sang.db.MyDateTypeHandler})
     </insert>
     <insert id="insertPerson">
-        INSERT INTO person(interest) VALUES (#{interest,typeHandler=org.sang.db.MyListTypeHandler})
+        INSERT INTO person(interest) VALUES (#{interest,typeHandler=com.study.spring.bean.sang.db.MyListTypeHandler})
     </insert>
 </mapper>

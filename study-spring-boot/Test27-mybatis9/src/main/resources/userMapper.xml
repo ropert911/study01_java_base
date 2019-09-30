@@ -2,8 +2,8 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="org.sang.db.UserMapper">
-    <resultMap id="u" type="org.sang.bean.User">
+<mapper namespace="com.study.spring.bean.sang.db.UserMapper">
+    <resultMap id="u" type="com.study.spring.bean.sang.bean.User">
         <result column="user_name" property="username"/>
     </resultMap>
     <select id="getUser" resultMap="u" parameterType="String">
