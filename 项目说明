@@ -17,7 +17,7 @@ Demo01-JDK-Base
     OptionalTest        Optional的使用
     RandomTest          随机数的生成
 Demo02-Log: Log4j, LogBack,Log4j2 日志的使用
-Demo02-Elasticjob:略
+Demo02-Elasticjob: elasticjob的任务调度
 Demo02-Other:
     demo-lombok：lombok使用:资源自动清理; 数据的tostring, getter,setter; 数据格式检查,生成hashequal方法等
     flyway, gpb
@@ -27,14 +27,14 @@ Demo04-MQ：各种消息队列的操作, ActiveMq, kafka, rabbitmq, rocketmq
 Demo04-Netty:略
 Demo05-Cache:缓存操作
     内存: cacheable
-    redis:cacheable, RedisTemplate,各种容器，哨兵模式操作
+    redis:cacheable, RedisTemplate ,各种容器，哨兵模式操作
     memcached:
     rest:cacheable
 Demo05-ES-Client:ES客户端
 Demo06-Rest:
     rest客户端，服务端
     Rest-Demo：各位层级的异常处理
-    Rest-Swagger：swagger文档写法 + 生成swagger文档 
+    Rest-Swagger：swagger文档写法 + 生成swagger文档
 Demo-Unitest
     Demo1-JUnit：    Junit示例，testresttemplate, spring mocmvc(支持json)
     Demo2-TestNG：   testng示例，与junit兼容，生成报告，监听用户执行（生成其它报告）
@@ -49,6 +49,7 @@ spring-bean:
     conditional：判断不同平台进行对象的注入  使用 @Configuration @Bean @Conditional
     context：实现bean生命周期监控管理
     xml：        以xml方式初始化bean数据
+spring-EL:  el表达式对成员变量进行赋值
 spring-event：   spring进程内事件通知
 spring-i18n：    语言国际化
 spring-res-file:    资源文件的使用
