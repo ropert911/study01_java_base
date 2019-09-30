@@ -1,4 +1,4 @@
-package com.study.cache.other.domain;
+package com.study.cache.other.dao;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

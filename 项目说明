@@ -26,10 +26,14 @@ Demo02-ZooKeeper:
 Demo04-MQ：各种消息队列的操作, ActiveMq, kafka, rabbitmq, rocketmq
 Demo04-Netty:略
 Demo05-Cache:缓存操作
-    内存: cacheable
-    redis:cacheable, RedisTemplate ,各种容器，哨兵模式操作
-    memcached:
-    rest:cacheable
+    内存: Cacheable-Mem, Cacheable-Other:也使用内存，不过用xml做的配置
+    Cacheable-Redis：使用Redis配置的CacheManager
+    cached-memcached：使用memcached做缓存
+    cached-redis:
+        example：redistemplate做缓存的各种操作
+        example2: 事物操作，pipeline操作
+        rawexample:使用jedis进行监听，与操作
+    cached-redis-SentinelPool:哨兵模式操作
 Demo05-ES-Client:ES客户端
 Demo06-Rest:
     rest客户端，服务端
