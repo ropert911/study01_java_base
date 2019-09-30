@@ -4,7 +4,7 @@ import org.springframework.context.ApplicationListener;
 import org.springframework.stereotype.Component;
 
 /**
- * Created by sang on 16-12-13.
+ * @author sk-qianxiao
  */
 @Component
 public class DemoListener implements ApplicationListener<DemoEvent> {

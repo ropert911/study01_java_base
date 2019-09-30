@@ -1,16 +1,14 @@
-package com.study.spring.threadpool;
+package com.study.scheduled;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.scheduling.annotation.EnableScheduling;
 
-/**
- * @author sk-qianxiao
- */
 @SpringBootApplication
 @EnableScheduling
-public class App {
+public class SpringUtilsApplication {
+
     public static void main(String[] args) {
-        SpringApplication.run(App.class, args);
+        SpringApplication.run(SpringUtilsApplication.class, args);
     }
 }

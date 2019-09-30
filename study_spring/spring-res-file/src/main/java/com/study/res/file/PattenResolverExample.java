@@ -15,7 +15,7 @@ import java.io.InputStream;
 import java.io.OutputStream;
 
 /**
- * Discription:[ ]
+ * @author sk-qianxiao
  */
 public class PattenResolverExample {
     public static void main(String[] args) {

@@ -12,7 +12,6 @@ Demo01-JDK-Base
     jdk.net.http        Http请求：HttpURLConnection方式；
     jdk.net.udp         UDB客户端 ，服务器
     jdk.stream          java Stream处理
-    jdk.threadpool      线程池
     jdk.time            时间处理
     FutureTest          异步请求示例
     OptionalTest        Optional的使用

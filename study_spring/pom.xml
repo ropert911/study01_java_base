@@ -16,8 +16,8 @@
         <module>spring-i18n</module>
         <module>spring-meta-inf</module>
         <module>spring-res-file</module>
+        <module>spring-scheduled</module>
         <module>spring-threadpool</module>
-        <module>spring-utils</module>
     </modules>
     <packaging>pom</packaging>
 
