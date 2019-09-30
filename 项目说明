@@ -41,6 +41,9 @@ Demo06-Rest:
     Rest-Swagger：swagger文档写法 + 生成swagger文档
 Demo-Grava: grava使用示例
     CachedTests：    缓存示例
+    Student:        Object操作实现比较器
+    BasicUtilTest:  基本操作：Optional的使用，前置条件检查功能，Object方法
+    更多使用可参考：https://ifeve.com/google-guava/
 Demo-Unitest
     Demo1-JUnit：    Junit示例，testresttemplate, spring mocmvc(支持json)
     Demo2-TestNG：   testng示例，与junit兼容，生成报告，监听用户执行（生成其它报告）
