@@ -3,7 +3,7 @@ package com.study.spring.bean.sang;
 import org.apache.ibatis.session.SqlSession;
 import org.junit.Test;
 import com.study.spring.bean.sang.bean.User;
-import com.study.spring.bean.sang.db.DBUtils;
+import com.study.spring.bean.sang.db.DbUtils;
 import com.study.spring.bean.sang.db.UserMapper;
 
 /**
@@ -14,7 +14,7 @@ public class Main {
     public void test1() {
         SqlSession sqlSession = null;
         try {
-            sqlSession = DBUtils.openSqlSession();
+            sqlSession = DbUtils.openSqlSession();
             UserMapper userMapper = sqlSession.getMapper(UserMapper.class);
             User user = userMapper.getUser(1l);
             System.out.println(user);
@@ -34,7 +34,7 @@ public class Main {
     public void test2() {
         SqlSession sqlSession = null;
         try {
-            sqlSession = DBUtils.openSqlSession();
+            sqlSession = DbUtils.openSqlSession();
             UserMapper userMapper = sqlSession.getMapper(UserMapper.class);
             for (int i = 0; i < 3; i++) {
                 userMapper.insertUser(new User(null, "u-" + i, "p-" + i, "a-" + i));
@@ -54,7 +54,7 @@ public class Main {
     public void test3() {
         SqlSession sqlSession = null;
         try {
-            sqlSession = DBUtils.openSqlSession();
+            sqlSession = DbUtils.openSqlSession();
             UserMapper userMapper = sqlSession.getMapper(UserMapper.class);
             int i = userMapper.deleteUser(5l);
             System.out.println(i);

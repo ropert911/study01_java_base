@@ -9,11 +9,12 @@ import java.io.IOException;
 import java.io.InputStream;
 
 /**
+ * @author sk-qianxiao
  * Created by sang on 17-1-13.
  */
-public class DBUtils {
+public class DbUtils {
     private static SqlSessionFactory sqlSessionFactory = null;
-    private static final Class CLASS_LOCK = DBUtils.class;
+    private static final Class CLASS_LOCK = DbUtils.class;
 
     public static SqlSessionFactory initSqlSessionFactory() {
         InputStream is = null;

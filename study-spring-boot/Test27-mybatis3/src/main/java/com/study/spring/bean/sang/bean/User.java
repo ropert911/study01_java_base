@@ -1,6 +1,7 @@
 package com.study.spring.bean.sang.bean;
 
 /**
+ * @author sk-qianxiao
  * Created by sang on 17-1-13.
  */
 public class User {
