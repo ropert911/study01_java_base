@@ -22,7 +22,7 @@
     </modules>
     <packaging>pom</packaging>
 
-    <name>study02_spring</name>
+    <name>study_spring</name>
     <description>Demo project for cached</description>
 
     <parent>
