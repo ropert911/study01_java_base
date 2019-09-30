@@ -39,6 +39,8 @@ Demo06-Rest:
     rest客户端，服务端
     Rest-Demo：各位层级的异常处理
     Rest-Swagger：swagger文档写法 + 生成swagger文档
+Demo-Grava: grava使用示例
+    CachedTests：    缓存示例
 Demo-Unitest
     Demo1-JUnit：    Junit示例，testresttemplate, spring mocmvc(支持json)
     Demo2-TestNG：   testng示例，与junit兼容，生成报告，监听用户执行（生成其它报告）
