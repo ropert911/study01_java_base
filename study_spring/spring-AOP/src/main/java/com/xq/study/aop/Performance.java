@@ -3,7 +3,7 @@ package com.xq.study.aop;
 import org.springframework.stereotype.Component;
 
 /**
- * Created by xq on 2017/10/1.
+ * @author sk-qianxiao
  */
 @Component
 public class Performance {

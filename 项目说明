@@ -42,3 +42,21 @@ Demo-Unitest
     Demo4-RestAssured：rest-Assured示例，主要是json
     demo-jacoco-multi-module: 多项目时jacoco的使用
     spring-test-dbunit-sample: dbunit示例
+================study_spring==================
+spring-AOP:     切面的使用
+spring-aware:   BeanNameAware, BeanFactoryAware, ResourceLoaderAware, EnvironmentAware 进行spring的bean,资源，环境进行管理
+spring-bean:
+    conditional：判断不同平台进行对象的注入  使用 @Configuration @Bean @Conditional
+    context：实现bean生命周期监控管理
+    xml：        以xml方式初始化bean数据
+spring-event：   spring进程内事件通知
+spring-i18n：    语言国际化
+spring-res-file:    资源文件的使用
+spring-scheduled
+        java_scheduled:ScheduledExecutorService调度
+        java_timer:java的Timer调度, 和java的ScheduledExecutorService效果一样
+        quartz：使用quarz进行调度
+        spring_scheduler：使用spring scheduler进行调度
+spring-threadpool:
+    asynctask：      使用线程池支持spring的异步任务
+    test.**.task    线程池

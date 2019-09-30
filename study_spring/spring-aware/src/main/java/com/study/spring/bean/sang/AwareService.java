@@ -25,19 +25,35 @@ public class AwareService implements BeanNameAware, BeanFactoryAware, ResourceLo
     private ResourceLoader loader;
     private Environment environment;
 
-    @Override
+    /**
+     * 要建的Bean的名称
+     * @param s
+     */
     public void setBeanName(String s) {
         this.beanName = s;
     }
-    @Override
+
+    /**
+     * 对BeanFactory进行测试
+     * @param beanFactory
+     * @throws BeansException
+     */
     public void setBeanFactory(BeanFactory beanFactory) throws BeansException {
         //获取Bean的生成工厂
     }
-    @Override
+
+    /**
+     * 设备环境变量
+     * @param environment
+     */
     public void setEnvironment(Environment environment) {
         this.environment = environment;
     }
-    @Override
+
+    /**
+     * 资源加载器
+     * @param resourceLoader
+     */
     public void setResourceLoader(ResourceLoader resourceLoader) {
         this.loader = resourceLoader;
     }

@@ -5,12 +5,12 @@ import org.aspectj.lang.annotation.*;
 import org.springframework.stereotype.Component;
 
 /**
- * Created by xq on 2017/10/1.
+ * @author sk-qianxiao
  */
 @Aspect
 @Component
 public class Audience {
-    //声明切点
+    /**声明切点*/
     @Pointcut("execution(* com.xq.study.aop.Performance.performance(int)) && args(number)")
     public void performance(int number) {
     }

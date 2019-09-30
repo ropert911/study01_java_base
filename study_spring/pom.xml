@@ -7,7 +7,6 @@
     <artifactId>study_spring</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <modules>
-        <module>spring-anocation</module>
         <module>spring-AOP</module>
         <module>spring-aware</module>
         <module>spring-bean</module>
