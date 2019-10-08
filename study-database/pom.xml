@@ -9,6 +9,12 @@
     <modules>
         <module>mongo</module>
         <module>mongo_repository</module>
+        <module>mybatis1</module>
+        <module>mybatis2</module>
+        <module>mybatis3</module>
+        <module>mybatis4</module>
+        <module>mybatis5</module>
+        <module>mybatis6</module>
         <module>sql_jdbc_demo</module>
         <module>sql_jpa1_demo</module>
         <module>sql_jpa2_rest_demo</module>
