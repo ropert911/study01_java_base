@@ -1,12 +1,9 @@
-package yiibai.pojo;
+package com.xq.study.mybatis5.mybatis5.pojo;
 
 import java.util.List;
 
 /**
- * @describe: Group
- * @author: Yiibai
- * @version: V1.0
- * @copyright http://www.yiibai.com
+ * @author sk-qianxiao
  */
 public class Group {
     private int groupId;

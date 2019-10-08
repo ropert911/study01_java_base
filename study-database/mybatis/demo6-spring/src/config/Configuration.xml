@@ -16,6 +16,6 @@
 		value=""/> </dataSource> </environment> </environments>
 	-->
 	<mappers>
-		<mapper resource="com/yiibai/maper/UserMaper.xml" />
+		<mapper resource="com/yiibai/com.xq.study.mybatis5.mybatis5.maper/UserMaper.xml" />
 	</mappers>
 </configuration>

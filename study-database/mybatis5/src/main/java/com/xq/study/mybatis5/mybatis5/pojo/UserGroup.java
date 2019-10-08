@@ -1,7 +1,7 @@
-package yiibai.pojo;
+package com.xq.study.mybatis5.mybatis5.pojo;
 
 /**
- * Created by xq on 2018/7/30.
+ * @author sk-qianxiao
  */
 public class UserGroup {
     private int userId;

@@ -31,11 +31,11 @@
 		<!--configLocation属性指定mybatis的核心配置文件-->
 		<property name="configLocation" value="classpath:config/Configuration.xml" />
 		<!-- 所有配置的mapper文件 -->
-		<property name="mapperLocations" value="classpath*:com/yiibai/maper/*.xml" />
+		<property name="mapperLocations" value="classpath*:com/yiibai/com.xq.study.mybatis5.mybatis5.maper/*.xml" />
 	</bean>
 
 	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-		<property name="basePackage" value="com.yiibai.maper" />
+		<property name="basePackage" value="com.yiibai.com.xq.study.mybatis5.mybatis5.maper" />
 	</bean>
 
 </beans> 

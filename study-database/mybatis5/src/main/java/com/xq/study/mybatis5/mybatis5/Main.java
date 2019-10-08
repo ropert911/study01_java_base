@@ -1,18 +1,23 @@
+package com.xq.study.mybatis5.mybatis5;
+
 import java.io.Reader;
 import java.util.List;
 
+import com.xq.study.mybatis5.mybatis5.maper.GroupMaper;
+import com.xq.study.mybatis5.mybatis5.maper.UserGroupMaper;
+import com.xq.study.mybatis5.mybatis5.maper.UserMaper;
+import com.xq.study.mybatis5.mybatis5.pojo.Group;
+import com.xq.study.mybatis5.mybatis5.pojo.User;
+import com.xq.study.mybatis5.mybatis5.pojo.UserGroup;
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
-import com.yiibai.maper.GroupMaper;
-import com.yiibai.maper.UserGroupMaper;
-import com.yiibai.maper.UserMaper;
-import yiibai.pojo.Group;
-import yiibai.pojo.User;
-import yiibai.pojo.UserGroup;
 
+/**
+ * @author sk-qianxiao
+ */
 public class Main {
     private static SqlSessionFactory sqlSessionFactory;
     private static Reader reader;
@@ -26,18 +31,11 @@ public class Main {
         }
     }
 
-    public static SqlSessionFactory getSession() {
-        return sqlSessionFactory;
-    }
 
-    /**
-     * @param args
-     */
     public static void main(String[] args) {
-        // TODO Auto-generated method stub
-        // testAddGroup();
-        // testAddUser();
-        // testAddUserGroup();
+         testAddGroup();
+         testAddUser();
+         testAddUserGroup();
         testGetGroupAndUsers();
 
     }
@@ -93,7 +91,6 @@ public class Main {
     }
 
     public static void testAddGroup() {
-        // TODO Auto-generated method stub
         SqlSession session = sqlSessionFactory.openSession();
         try {
             Group group = new Group();

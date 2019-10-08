@@ -3,9 +3,9 @@
         "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
     <typeAliases>
-        <typeAlias alias="User" type="com.yiibai.pojo.User" />
-        <typeAlias alias="UserGroup" type="yiibai.pojo.UserGroup" />
-        <typeAlias alias="Group" type="yiibai.pojo.Group" />
+        <typeAlias alias="User" type="com.xq.study.mybatis5.mybatis5.pojo.User" />
+        <typeAlias alias="UserGroup" type="com.xq.study.mybatis5.mybatis5.pojo.UserGroup" />
+        <typeAlias alias="Group" type="com.xq.study.mybatis5.mybatis5.pojo.Group" />
     </typeAliases>
 
     <environments default="development">
@@ -13,7 +13,7 @@
             <transactionManager type="JDBC" />
             <dataSource type="POOLED">
                 <property name="driver" value="com.mysql.jdbc.Driver" />
-                <property name="url" value="jdbc:mysql://192.168.0.104:3306/mybatisDemo" />
+                <property name="url" value="jdbc:mysql://47.105.32.179:3306/mybatisDemo" />
                 <property name="username" value="root" />
                 <property name="password" value="123456" />
             </dataSource>
@@ -22,8 +22,8 @@
 
     <mappers>
         <!-- // power by http://www.yiibai.com -->
-        <mapper resource="com/yiibai/maper/UserMaper.xml" />
-        <mapper resource="com/yiibai/maper/GroupMaper.xml" />
-        <mapper resource="com/yiibai/maper/UserGroupMaper.xml" />
+        <mapper resource="config/UserMaper.xml" />
+        <mapper resource="config/GroupMaper.xml" />
+        <mapper resource="config/UserGroupMaper.xml" />
     </mappers>
 </configuration>

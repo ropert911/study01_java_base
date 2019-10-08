@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.yiibai.maper.UserMaper">
+<mapper namespace="com.xq.study.mybatis5.mybatis5.maper.UserMaper">
     <parameterMap type="User" id="parameterUserMap">
         <parameter property="id"/>
         <parameter property="username"/>
@@ -16,7 +16,7 @@
     <resultMap type="User" id="resultUser">
         <result property="id" column="group_id"/>
         <result property="name" column="name"/>
-        <collection property="groups" column="id" select="com.yiibai.maper.UserGroupMaper.getGroupsByUserId"/>
+        <collection property="groups" column="id" select="com.xq.study.mybatis5.mybatis5.maper.UserGroupMaper.getGroupsByUserId"/>
     </resultMap>
 
     <select id="getUser" resultMap="resultUser" parameterType="int">

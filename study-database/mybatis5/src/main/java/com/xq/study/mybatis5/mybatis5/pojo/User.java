@@ -1,12 +1,9 @@
-package yiibai.pojo;
+package com.xq.study.mybatis5.mybatis5.pojo;
 
 import java.util.List;
 
 /**
- * @describe: User
- * @author: Yiibai
- * @version: V1.0
- * @copyright http://www.yiibai.com
+ * @author sk-qianxiao
  */
 public class User {
     private int id;
