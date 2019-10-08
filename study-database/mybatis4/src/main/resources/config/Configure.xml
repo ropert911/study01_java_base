@@ -2,6 +2,7 @@
 <!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
+    <properties resource="config/db.properties"/>
     <typeAliases>
         <typeAlias alias="User" type="com.xq.study.mybatis4.mybatis4.pojo.User" />
         <typeAlias alias="Post" type="com.xq.study.mybatis4.mybatis4.pojo.Post" />

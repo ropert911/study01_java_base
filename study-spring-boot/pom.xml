@@ -23,7 +23,6 @@
         <module>spring-boot-mybatis-mulidatasource</module>
         <module>spring-boot-mybatis-xml</module>
         <module>spring-boot-shiro</module>
-        <module>Test27-mybatis3</module>
         <module>Test27-mybatis4</module>
         <module>Test27-mybatis5</module>
         <module>Test27-mybatis6</module>

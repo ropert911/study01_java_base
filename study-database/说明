@@ -6,7 +6,7 @@ mongo：
 mongo_repository：
     使用 MongoRepository 对mongo进行操作
 
-mybatis1：   纯xml方式使用
+mybatis1：   纯xml方式使用, 连接使用了数据库属性配置文件
 mybatis2：   mapper的定义和实现都是使用接口的方式
 mybatis3:    mapper使用xml实现，接口使用IUser方式定义。相互之间是映射关系。
 mybatis4:    1对1(post-user)，1对多的查询(user-post)
