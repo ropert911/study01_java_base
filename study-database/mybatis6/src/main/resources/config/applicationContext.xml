@@ -13,7 +13,7 @@
 	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">
 		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
 		<property name="url"
-			value="jdbc:mysql://192.168.0.104:3306/mybatisDemo?characterEncoding=utf8" />
+			value="jdbc:mysql://47.105.32.179:3306/mybatisDemo?characterEncoding=utf8" />
 		<property name="username" value="root" />
 		<property name="password" value="123456" />
 	</bean>
@@ -29,6 +29,6 @@
 		<!--sqlSessionFactory属性指定要用到的SqlSessionFactory实例-->
 		<property name="sqlSessionFactory" ref="sqlSessionFactory" />
 		<!--mapperInterface属性指定映射器接口，用于实现此接口并生成映射器对象-->
-		<property name="mapperInterface" value="com.yiibai.com.xq.study.mybatis5.mybatis5.maper.UserMaper" />
+		<property name="mapperInterface" value="com.xq.study.mybatis6.mybatis6.maper.UserMaper" />
 	</bean>
 </beans> 

@@ -1,10 +1,7 @@
-package yiibai.pojo;
+package com.xq.study.mybatis6.mybatis6.pojo;
 
 /**
- * @describe: User
- * @author: Yiibai 
- * @version: V1.0
- * @copyright http://www.yiibai.com
+ * @author sk-qianxiao
  */  
 public class User {
 	private int id;

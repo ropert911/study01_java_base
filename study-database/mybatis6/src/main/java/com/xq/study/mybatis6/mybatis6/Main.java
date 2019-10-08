@@ -1,23 +1,19 @@
+package com.xq.study.mybatis6.mybatis6;
 
 import java.util.List;
 
+import com.xq.study.mybatis6.mybatis6.maper.UserMaper;
+import com.xq.study.mybatis6.mybatis6.pojo.Order;
+import com.xq.study.mybatis6.mybatis6.pojo.User;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 
-import com.yiibai.maper.UserMaper;
-import yiibai.pojo.Order;
-import yiibai.pojo.User;
+
 
 /**
- * Description
- * @author yiibai
- * @date 2015-4-12
- * @copyright http://www.yiibai.com
- * @email yiibai.com@gmai.com
- * @version 1.0
+ * @author sk-qianxiao
  */
-
 public class Main {
 
 	private static ApplicationContext ctx;
@@ -41,7 +37,5 @@ public class Main {
 		for (Order order : orders) {
 			System.out.println("订单号："+order.getOrderNo() + "，订单金额：" + order.getMoney());
 		}
-
 	}
-
 }

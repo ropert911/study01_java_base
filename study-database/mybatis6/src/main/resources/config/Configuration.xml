@@ -3,8 +3,8 @@
 "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
 	<typeAliases>
-		<typeAlias alias="User" type="com.yiibai.pojo.User" />
-		<typeAlias alias="Order" type="com.yiibai.pojo.Order" />
+		<typeAlias alias="User" type="com.xq.study.mybatis6.mybatis6.pojo.User" />
+		<typeAlias alias="Order" type="com.xq.study.mybatis6.mybatis6.pojo.Order" />
 	</typeAliases>
 	<!-- Mybatis和Spring 集成之后,这些可以完全删除（注释掉）,数据库连接的管理交给 Spring 来管理 -->
 	<!--
@@ -16,6 +16,6 @@
 		value=""/> </dataSource> </environment> </environments>
 	-->
 	<mappers>
-		<mapper resource="com/yiibai/com.xq.study.mybatis5.mybatis5.maper/UserMaper.xml" />
+		<mapper resource="config/UserMaper.xml" />
 	</mappers>
 </configuration>
