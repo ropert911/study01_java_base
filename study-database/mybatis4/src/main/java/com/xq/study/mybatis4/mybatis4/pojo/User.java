@@ -1,8 +1,11 @@
-package yiibai.pojo;
+package com.xq.study.mybatis4.mybatis4.pojo;
 
 import java.io.Serializable;
 import java.util.List;
 
+/**
+ * @author sk-qianxiao
+ */
 public class User implements Serializable{
     private int id;
     private String username;

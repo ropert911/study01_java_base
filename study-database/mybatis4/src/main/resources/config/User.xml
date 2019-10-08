@@ -2,14 +2,14 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="yiibai.userMaper">
+<mapper namespace="user.userMaper">
     <!-- User 级联文章查询 方法配置 (一个用户对多个文章)  -->
 
     <resultMap type="User" id="resultUserMap">
         <result property="id" column="user_id" />
         <result property="username" column="username" />
         <result property="mobile" column="mobile" />
-        <collection property="posts" ofType="yiibai.pojo.Post" column="userid">
+        <collection property="posts" ofType="Post" column="userid">
             <id property="id" column="post_id" javaType="int" jdbcType="INTEGER"/>
             <result property="title" column="title" javaType="string" jdbcType="VARCHAR"/>
             <result property="content" column="content" javaType="string" jdbcType="VARCHAR"/>

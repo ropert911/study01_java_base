@@ -1,5 +1,7 @@
-import yiibai.pojo.Post;
-import yiibai.pojo.User;
+
+
+import com.xq.study.mybatis4.mybatis4.pojo.Post;
+import com.xq.study.mybatis4.mybatis4.pojo.User;
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
@@ -8,6 +10,9 @@ import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 import java.io.Reader;
 import java.util.List;
 
+/**
+ * @author sk-qianxiao
+ */
 public class Main {
     private static SqlSessionFactory sqlSessionFactory;
     private static Reader reader;
@@ -21,21 +26,15 @@ public class Main {
         }
     }
 
-    public static SqlSessionFactory getSession() {
-        return sqlSessionFactory;
-    }
-
-    /**
-     * @param args
-     */
     public static void main(String[] args) {
         // TODO Auto-generated method stub
         SqlSession session = sqlSessionFactory.openSession();
         try {
             int userid = 1;
             System.out.println("===========getUser");
-            User user = session.selectOne("yiibai.userMaper.getUser", 1);
+            User user = session.selectOne("user.userMaper.getUser", 1);
             System.out.println("username: " + user.getUsername() + ",");
+
             List<Post> posts = user.getPosts();
             for (Post p : posts) {
                 System.out.println("Title:" + p.getTitle());
@@ -44,7 +43,7 @@ public class Main {
 
             int postId = 1;
             System.out.println("\n===========getPosts");
-            Post post = session.selectOne("yiibai.userMaper.getPosts", postId);
+            Post post = session.selectOne("user.userMaper.getPosts", postId);
             System.out.println("title: " + post.getTitle());
             System.out.println("userName: " + post.getUser().getUsername());
         } finally {
