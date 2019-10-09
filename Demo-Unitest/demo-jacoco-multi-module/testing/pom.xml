@@ -8,7 +8,7 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
-    <artifactId>test-reporting</artifactId>
+    <artifactId>testing</artifactId>
 
     <properties>
         <code.coverage.project.folder>${basedir}/../</code.coverage.project.folder>
