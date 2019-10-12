@@ -1,14 +1,14 @@
-package com.study.kafkaplain.producer.T2Spring;
+package com.xq.study.kafka.spring.service;
 
 import org.apache.kafka.clients.consumer.ConsumerRecord;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.kafka.support.Acknowledgment;
 import org.springframework.kafka.support.KafkaHeaders;
 import org.springframework.messaging.handler.annotation.Header;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
@@ -16,7 +16,7 @@ import java.util.List;
  * @author sk-qianxiao
  * @date 2018/1/24.
  */
-@Component
+@Service
 public class KafkaConsumer {
     public static Logger logger = LoggerFactory.getLogger(KafkaConsumer.class);
 

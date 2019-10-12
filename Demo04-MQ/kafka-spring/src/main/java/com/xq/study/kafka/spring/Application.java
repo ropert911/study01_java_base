@@ -1,7 +1,5 @@
-package com.study.kafkaplain.producer;
+package com.xq.study.kafka.spring;
 
-import com.study.kafkaplain.producer.T2Spring.KafkaProducer;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -12,13 +10,12 @@ import org.springframework.scheduling.annotation.EnableScheduling;
  */
 @SpringBootApplication
 @EnableScheduling
-public class KafkaOfficApplication implements CommandLineRunner {
+public class Application implements CommandLineRunner {
     public static void main(String[] args) {
-        SpringApplication.run(KafkaOfficApplication.class, args);
+        SpringApplication.run(Application.class, args);
     }
 
     @Override
     public void run(String... args) throws Exception {
-//        T1PlainJava.test();
     }
 }

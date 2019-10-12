@@ -1,5 +1,6 @@
 package com.study.kafka.customer.simple1;
 
+import org.apache.kafka.clients.consumer.ConsumerRecord;
 import org.apache.kafka.common.utils.Bytes;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -13,14 +14,14 @@ import java.util.List;
 @Component
 public class Consumer {
     private static final Logger LOGGER = LoggerFactory.getLogger(Consumer.class);
-//    //单个-自动提交
-//    @KafkaListener(group = "${spring.kafka.consumer.group-id}", //分组
-//            topics = "${kafka.test.topic.testA}",               //topic
-//            containerFactory = "kafkaListenerContainerFactory")
-//    void sigalAutoCommit(ConsumerRecord<String, Bytes> data) {
-//        LOGGER.warn("topic={} partition={} offset={} timestamp={} key={} value={}",
-//                data.topic(), data.partition(), data.offset(), data.timestamp(), data.key(), new String(data.value().get()));
-//    }
+    //单个-自动提交
+    @KafkaListener(group = "${spring.kafka.consumer.group-id}", //分组
+            topics = "${kafka.test.topic.testA}",               //topic
+            containerFactory = "kafkaListenerContainerFactory")
+    void sigalAutoCommit(ConsumerRecord<String, Bytes> data) {
+        LOGGER.warn("topic={} partition={} offset={} timestamp={} key={} value={}",
+                data.topic(), data.partition(), data.offset(), data.timestamp(), data.key(), new String(data.value().get()));
+    }
 
 //单个-手动提交
 //    @KafkaListener(group = "${spring.kafka.consumer.group-id}", //分组

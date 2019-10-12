@@ -9,7 +9,7 @@
     <modules>
         <module>ActiveMQ_JMS</module>
         <module>kafka-customer</module>
-        <module>kafka-office</module>
+        <module>kafka-spring</module>
         <module>kafka-producer</module>
         <module>Rabbit_AMQP</module>
         <module>Rabbit_Demo</module>

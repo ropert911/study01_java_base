@@ -1,4 +1,4 @@
-package com.study.kafkaplain.producer.T2Spring;
+package com.xq.study.kafka.spring.config;
 
 import org.apache.kafka.clients.consumer.ConsumerConfig;
 import org.apache.kafka.common.serialization.StringDeserializer;

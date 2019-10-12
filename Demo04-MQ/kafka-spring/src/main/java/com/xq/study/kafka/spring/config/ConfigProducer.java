@@ -1,4 +1,4 @@
-package com.study.kafkaplain.producer.T2Spring;
+package com.xq.study.kafka.spring.config;
 
 import org.apache.kafka.clients.producer.ProducerConfig;
 import org.apache.kafka.common.serialization.IntegerSerializer;
