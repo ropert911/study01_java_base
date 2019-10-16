@@ -61,7 +61,7 @@ spring-bean:
 spring-EL:  el表达式对成员变量进行赋值
 spring-event：   spring进程内事件通知
 spring-i18n：    语言国际化
-spring-res-file:    资源文件的使用
+spring-res-file:    资源文件的使用 : 不同的方式读取资源文件；PatternResolverExample进行同类资源文件的遍历
 spring-scheduled
         java_scheduled:ScheduledExecutorService调度
         java_timer:java的Timer调度, 和java的ScheduledExecutorService效果一样
