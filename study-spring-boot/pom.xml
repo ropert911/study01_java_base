@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.xq.study.spring</groupId>
-    <artifactId>study02-spring-boot</artifactId>
+    <artifactId>study-spring-boot</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <modules>
         <module>MyBlog</module>
