@@ -53,6 +53,15 @@ public class FileSourceExample {
                 System.out.println(new String(st));
             }
             {
+                System.out.println("以classpath方式访问----使用inputstream 按行读读取=======");
+                InputStream inputStream = resource.getInputStream();
+                BufferedReader in2 = new BufferedReader(new InputStreamReader(inputStream));
+                String y = null;
+                while ((y = in2.readLine()) != null) {
+                    System.out.println(y);
+                }
+            }
+            {
                 System.out.println("以类路径的方式访问---使用FileCopyUtils读取=======");
                 EncodedResource encRes = new EncodedResource(resource, "UTF-8");
                 String content = FileCopyUtils.copyToString(encRes.getReader());
