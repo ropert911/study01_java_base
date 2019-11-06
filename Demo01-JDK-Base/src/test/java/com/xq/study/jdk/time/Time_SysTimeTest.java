@@ -16,6 +16,7 @@ public class Time_SysTimeTest {
         LOGGER.error("启动时System.nanoTime==>{}", start);
 
         LOGGER.error("当前毫秒数UTC==>{}", System.currentTimeMillis());
+        LOGGER.error("当前秒数UTC==>{}", System.currentTimeMillis()/1_000);
 
         LOGGER.error("总运行时间(毫秒)==>{}", (System.nanoTime() - start) / 1_000_000);
     }
