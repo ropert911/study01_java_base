@@ -13,7 +13,6 @@ import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.stereotype.Component;
 
-import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -35,23 +34,70 @@ public class InitProject implements ApplicationRunner {
 
     @Override
     public void run(ApplicationArguments args) throws Exception {
-        logger.info("=====================Begin........{}", originData);
+        sendFireSaferData("3001", 0x11760, 105);
+        sendFireSaferData("3002", 0x21780, 105);
+        sendFireSaferData("3003", 0x31800, 105);
+        sendFireSaferData("3004", 0x41800, 105);
+    }
+
+    private List<UnwindData> creatUnWindData(String devType, boolean isNormal) {
+        List<UnwindData> unwindDataList = new ArrayList<>();
+        unwindDataList.add(UnwindData.builder().key("sensorVoltage").value(5.5).build());
         Random random = new Random();
-        int max = 105;
-        for (int i = 0; i < max; ++i) {
-            String deviceTypeCode = "3001";
-            String devMacAddr = "90100005000" + Integer.toHexString(0x11760 + i).toUpperCase();
+        switch (devType) {
+            //TES 单路温度传感器
+            case "3001":
+                if (isNormal) {
+                    unwindDataList.add(UnwindData.builder().key("temperature").value(30 + random.nextInt(20)).build());
+                } else {
+                    unwindDataList.add(UnwindData.builder().key("temperature").value(50 + random.nextInt(40)).build());
+                }
+                break;
+            //THS 温湿度传感器
+            case "3002":
+                if (isNormal) {
+                    unwindDataList.add(UnwindData.builder().key("temperature").value(30 + random.nextInt(20)).build());
+                    unwindDataList.add(UnwindData.builder().key("humidityPresent").value(10 + random.nextInt(20)).build());
+                } else {
+                    unwindDataList.add(UnwindData.builder().key("temperature").value(50 + random.nextInt(40)).build());
+                    unwindDataList.add(UnwindData.builder().key("humidityPresent").value(50 + random.nextInt(40)).build());
+                }
+                break;
+            //WPS  水压传感器
+            case "3003":
+                if (isNormal) {
+                    unwindDataList.add(UnwindData.builder().key("hydraulic").value(40 + random.nextInt(40)).build());
+                } else {
+                    unwindDataList.add(UnwindData.builder().key("hydraulic").value(60 + random.nextInt(60)).build());
+                }
+                break;
+            //WDS 水位传感器
+            case "3004":
+                if (isNormal) {
+                    unwindDataList.add(UnwindData.builder().key("stage").value(100 + random.nextInt(100)).build());
+                } else {
+                    unwindDataList.add(UnwindData.builder().key("stage").value(200 + random.nextInt(200)).build());
+                }
+                break;
+            default:
+                break;
+        }
+
+        return unwindDataList;
+    }
+
+    private void sendFireSaferData(String deviceTypeCode, int macBegin, int devCount) {
+        logger.info("=====================Begin........{}", originData);
+
+        for (int i = 0; i < devCount; ++i) {
+            String devMacAddr = "90100005000" + Integer.toHexString(macBegin + i).toUpperCase();
             String gwid = "000080029c09e987";
-            List<UnwindData> unwindDataList = new ArrayList<>();
-            unwindDataList.add(UnwindData.builder().key("sensorVoltage").value(5.5).build());
-
-            int step = (max - 3) / 5;
-            if (i < step * 5) {
-                unwindDataList.add(UnwindData.builder().key("temperature").value(30 + random.nextInt(3 * i)).build());
-            } else {
-                unwindDataList.add(UnwindData.builder().key("temperature").value(50 + random.nextInt(3 * 5)).build());
+            boolean isNormal = true;
+            int step = (devCount - 3) / 5;
+            if (i > step * 5) {
+                isNormal = false;
             }
-
+            List<UnwindData> unwindDataList = creatUnWindData(deviceTypeCode, isNormal);
 
             String formatDate = TimeUtilForJavaEight.getFormatDate(System.currentTimeMillis(), TimeUnit.MILLISECONDS, TimeUtilForJavaEight.PATTERN_YYYY_MM_DDTHH_MM_SS_XXX);
             String sysTime = TimeUtilForJavaEight.getFormatDate(System.currentTimeMillis(), TimeUnit.MILLISECONDS, TimeUtilForJavaEight.PATTERN_YYYY_MM_DDTHH_MM_SS_SSSXXX);
