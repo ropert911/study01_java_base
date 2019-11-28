@@ -66,17 +66,17 @@ public class InitProject implements ApplicationRunner {
             //WPS  水压传感器
             case "3003":
                 if (isNormal) {
-                    unwindDataList.add(UnwindData.builder().key("hydraulic").value(40 + random.nextInt(40)).build());
+                    unwindDataList.add(UnwindData.builder().key("hydraulic").value(0.40 + random.nextInt(40)/100d).build());
                 } else {
-                    unwindDataList.add(UnwindData.builder().key("hydraulic").value(60 + random.nextInt(60)).build());
+                    unwindDataList.add(UnwindData.builder().key("hydraulic").value(0.60 + random.nextInt(60)/100d).build());
                 }
                 break;
             //WDS 水位传感器
             case "3004":
                 if (isNormal) {
-                    unwindDataList.add(UnwindData.builder().key("stage").value(100 + random.nextInt(100)).build());
+                    unwindDataList.add(UnwindData.builder().key("stage").value(1d + random.nextInt(100)/100d).build());
                 } else {
-                    unwindDataList.add(UnwindData.builder().key("stage").value(200 + random.nextInt(200)).build());
+                    unwindDataList.add(UnwindData.builder().key("stage").value(2d + random.nextInt(200)/100d).build());
                 }
                 break;
             default:
