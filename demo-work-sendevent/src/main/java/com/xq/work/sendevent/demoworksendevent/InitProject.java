@@ -3,12 +3,14 @@ package com.xq.work.sendevent.demoworksendevent;
 import com.alibaba.fastjson.JSON;
 import com.xq.work.sendevent.demoworksendevent.dto.EventInfo;
 import com.xq.work.sendevent.demoworksendevent.kafka.KafkaOperations;
+import org.apache.kafka.common.utils.Bytes;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
+import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Component;
 
 import java.time.LocalDateTime;
@@ -29,6 +31,8 @@ public class InitProject implements ApplicationRunner {
 
     @Autowired
     private KafkaOperations kafkaOperations;
+    @Autowired
+    private KafkaTemplate<Bytes, Bytes> kafkaTemplate;
 
     @Override
     public void run(ApplicationArguments args) throws Exception {
@@ -48,5 +52,7 @@ public class InitProject implements ApplicationRunner {
                 .specReason("specReason_xq")   //确认原因
                 .build();
         kafkaOperations.sendData(originData, (eventInfo.getDeviceMac() + "_" + eventInfo.getEventId()).getBytes(), JSON.toJSONString(eventInfo).getBytes());
+        kafkaTemplate.send(originData, Bytes.wrap((eventInfo.getDeviceMac() + "_" + eventInfo.getEventId()).getBytes()), Bytes.wrap(JSON.toJSONString(eventInfo).getBytes()));
+        kafkaTemplate.flush();
     }
 }
