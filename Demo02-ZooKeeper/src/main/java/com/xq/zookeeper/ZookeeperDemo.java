@@ -10,7 +10,7 @@ import static java.lang.Thread.sleep;
 public class ZookeeperDemo{
     private static final Logger LOGGER = LoggerFactory.getLogger(ZookeeperDemo.class);
     private static final int TIME_OUT = 3000;
-    private static final String HOST = "192.168.17.128:2181";
+    private static final String HOST = "192.168.20.148:2181,192.168.20.149:2181,192.168.20.150:2181";
 
     public static void main(String arg[]) {
         try {
@@ -19,7 +19,7 @@ public class ZookeeperDemo{
                 // 监控所有被触发的事件
                 @Override
                 public void process(WatchedEvent event) {
-//                    LOGGER.info("触发路径 {} 事件 {}！============", event.getPath(), event.getType());
+                    LOGGER.info("触发路径 {} 事件 {}！============", event.getPath(), event.getType());
                 }
             });
             // 创建一个目录节点和子目录结点
