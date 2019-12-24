@@ -15,3 +15,4 @@ CREATE TABLE `user` (
 -- Records of user
 -- ----------------------------
 INSERT INTO `user` VALUES ('1', 'yiibai', 'Tech', 'http://www.yiibai.com', '13800009988');
+INSERT INTO `user` VALUES ('2', 'xiaoqian2', 'Tech', 'http://www.demo.com', '13728567890');

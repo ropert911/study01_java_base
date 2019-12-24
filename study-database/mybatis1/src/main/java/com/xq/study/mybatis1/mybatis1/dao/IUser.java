@@ -1,7 +1,7 @@
-package com.xq.study.mybatis2.mybatis2.dao;
+package com.xq.study.mybatis1.mybatis1.dao;
 
 
-import com.xq.study.mybatis2.mybatis2.models.User;
+import com.xq.study.mybatis1.mybatis1.models.User;
 import org.apache.ibatis.annotations.Select;
 
 /**
