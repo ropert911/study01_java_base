@@ -1,9 +1,6 @@
-package com.xq.study.jdk.time;
-
-import org.junit.Test;
+package com.xq.study.time;
 
 import java.time.*;
-import java.time.temporal.ChronoUnit;
 
 import static java.time.temporal.TemporalAdjusters.firstInMonth;
 
@@ -11,11 +8,14 @@ import static java.time.temporal.TemporalAdjusters.firstInMonth;
  * Created by xq on 2017/9/23.
  */
 public class LocalDateTimeTest {
+    public static void main(String[] args){
+        localDateTimeTest();
+    }
+
     /**
      * LocalDateTime 日期+time
      */
-    @Test
-    public void localDateTimeTest() {
+    public static void localDateTimeTest() {
         //构建方式1
         LocalDateTime dt1 = LocalDateTime.of(2014, Month.MARCH, 18, 13, 45, 20);
         System.out.println(dt1);

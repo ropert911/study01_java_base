@@ -1,7 +1,7 @@
-package com.xq.study.json_googlejson;
+package com.xq.study.json.googlejson;
 
 import com.google.gson.Gson;
-import com.xq.study.json_googlejson.model.Family;
+import com.xq.study.json.googlejson.model.Family;
 
 /**
  * @author sk-qianxiao

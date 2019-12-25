@@ -1,6 +1,5 @@
-package com.xq.study.jdk.time;
+package com.xq.study.time;
 
-import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -19,25 +18,30 @@ import java.util.TimeZone;
 public class Time_Calendar_DateTest {
     private static Logger LOGGER = LoggerFactory.getLogger(Time_Calendar_DateTest.class);
 
-    @Test
-    public void calendarTest() {
+    public static void main(String[] args) {
+        calendarTest();
+        dateTest();
+        test1();
+    }
+
+    public static void calendarTest() {
         /** 日历打印出来的格式 */
         /**
-        java.util.GregorianCalendar
-        [time=1506124495243,                            //utc时间，单位毫秒
-        areFieldsSet=true,areAllFieldsSet=true,
-        lenient=true,
-        zone=sun.util.calendar.ZoneInfo[id="Asia/Shanghai",offset=28800000,dstSavings=0,useDaylight=false,transitions=19,lastRule=null],
-        firstDayOfWeek=1,
-        minimalDaysInFirstWeek=1,
-        ERA=1,
-            YEAR=2017,
-            MONTH=8,                //月是从零开始
-            WEEK_OF_YEAR=38,WEEK_OF_MONTH=4,        //从1开始
-                DAY_OF_MONTH=23,DAY_OF_YEAR=266,DAY_OF_WEEK=7,DAY_OF_WEEK_IN_MONTH=4,
-            AM_PM=0,HOUR=7,HOUR_OF_DAY=7,MINUTE=54,SECOND=55,MILLISECOND=243,
-            ZONE_OFFSET=28800000,DST_OFFSET=0]      // ZONE_OFFSET=28800000  偏移的毫秒数
-        */
+         java.util.GregorianCalendar
+         [time=1506124495243,                            //utc时间，单位毫秒
+         areFieldsSet=true,areAllFieldsSet=true,
+         lenient=true,
+         zone=sun.util.calendar.ZoneInfo[id="Asia/Shanghai",offset=28800000,dstSavings=0,useDaylight=false,transitions=19,lastRule=null],
+         firstDayOfWeek=1,
+         minimalDaysInFirstWeek=1,
+         ERA=1,
+         YEAR=2017,
+         MONTH=8,                //月是从零开始
+         WEEK_OF_YEAR=38,WEEK_OF_MONTH=4,        //从1开始
+         DAY_OF_MONTH=23,DAY_OF_YEAR=266,DAY_OF_WEEK=7,DAY_OF_WEEK_IN_MONTH=4,
+         AM_PM=0,HOUR=7,HOUR_OF_DAY=7,MINUTE=54,SECOND=55,MILLISECOND=243,
+         ZONE_OFFSET=28800000,DST_OFFSET=0]      // ZONE_OFFSET=28800000  偏移的毫秒数
+         */
 
         LOGGER.error("================show calendar");
         Calendar calendar = Calendar.getInstance();//使用默认时区和语言环境获得一个日历
@@ -54,16 +58,14 @@ public class Time_Calendar_DateTest {
         printCalendar(calendar);
     }
 
-    @Test
-    public void dateTest() {
+    public static void dateTest() {
         LOGGER.error("============= show Date");
         Date date = new Date();
         SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss Z");//设置日期时间格式
         LOGGER.error("日期格式化输出=>{}", df.format(date));
     }
 
-    @Test
-    public void test1() {
+    public static void test1() {
         //取得当前的Hijrah 日期，紧接着对其进行修正，得到斋月的第一天，即第9个月
         HijrahDate ramadanDate = HijrahDate.now().with(ChronoField.DAY_OF_MONTH, 1)
                 .with(ChronoField.MONTH_OF_YEAR, 9);
@@ -76,8 +78,7 @@ public class Time_Calendar_DateTest {
     }
 
 
-
-    private void printCalendar(Calendar time) {
+    private static void printCalendar(Calendar time) {
         int year = time.get(Calendar.YEAR);
         int month = time.get(Calendar.MONTH) + 1;
         int date = time.get(Calendar.DATE);

@@ -1,6 +1,4 @@
-package com.xq.study.jdk.time;
-
-import org.junit.Test;
+package com.xq.study.time;
 
 import java.time.*;
 import java.time.temporal.ChronoUnit;
@@ -9,11 +7,14 @@ import java.time.temporal.ChronoUnit;
  * Created by xq on 2017/9/23.
  */
 public class PeriodTest {
+    public static void main(String[] args){
+        durationTest();
+    }
+
     /**
      * Duration时间 Period日期 差
      */
-    @Test
-    public void durationTest() {
+    public static void durationTest() {
         //Duration:LocalDate
         Period p1 = Period.between(LocalDate.of(2014, 3, 8),
                 LocalDate.of(2015, 2, 19));

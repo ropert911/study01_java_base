@@ -1,21 +1,18 @@
-package com.xq.study.jdk.time;
+package com.xq.study.time;
 
-import org.junit.Test;
-
-import java.time.*;
-import java.time.temporal.ChronoUnit;
-
-import static java.time.temporal.TemporalAdjusters.firstInMonth;
+import java.time.Instant;
 
 /**
  * Created by xq on 2017/9/23.
  */
 public class InstantTest {
+    public static void main(String[] args){
+        instantTest();
+    }
     /**
      * 机器时间Instan
      */
-    @Test
-    public void instantTest() {
+    public static void instantTest() {
         //下面几个都相同
         System.out.println(Instant.ofEpochSecond(3));
         System.out.println(Instant.ofEpochSecond(3, 0));

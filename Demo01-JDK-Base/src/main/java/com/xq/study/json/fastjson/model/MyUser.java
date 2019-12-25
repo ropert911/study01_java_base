@@ -1,4 +1,4 @@
-package com.xq.study.json_fastjson.model;
+package com.xq.study.json.fastjson.model;
 
 /**
  *

@@ -1,6 +1,5 @@
-package com.xq.study.jdk.time;
+package com.xq.study.time;
 
-import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -13,11 +12,13 @@ import java.util.TimeZone;
  */
 public class Time_ZonedDateTimeTest {
     private static Logger LOGGER = LoggerFactory.getLogger(Time_ZonedDateTimeTest.class);
-
+    public static void main(String[] args){
+        zonedDateTimeTest();
+        printZimeZone();
+    }
     /**
      * 时区时间测试
      */
-    @Test
     public static void zonedDateTimeTest() {
         ZoneId romeZone = ZoneId.of("Europe/Rome");
         System.out.println(romeZone);
@@ -48,8 +49,7 @@ public class Time_ZonedDateTimeTest {
     /**
      * 打印时区信息
      */
-    @Test
-    public void printZimeZone() {
+    public static void printZimeZone() {
         TimeZone tz = TimeZone.getDefault();
         LOGGER.info("详情 {}", tz);
         LOGGER.info("显示名称 {}", tz.getDisplayName());

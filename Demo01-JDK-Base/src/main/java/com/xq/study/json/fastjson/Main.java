@@ -1,8 +1,8 @@
-package com.xq.study.json_fastjson;
+package com.xq.study.json.fastjson;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
-import com.xq.study.json_fastjson.model.MyUser;
+import com.xq.study.json.fastjson.model.MyUser;
 
 import java.util.ArrayList;
 import java.util.List;

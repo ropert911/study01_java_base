@@ -1,23 +1,19 @@
-package com.xq.study.jdk.time;
+package com.xq.study.time;
 
-import org.junit.Test;
-
-import java.time.*;
-import java.time.format.DateTimeFormatter;
-import java.time.temporal.ChronoField;
-import java.time.temporal.ChronoUnit;
-
-import static java.time.temporal.TemporalAdjusters.*;
+import java.time.LocalTime;
 
 /**
  * Created by xq on 2017/9/23.
  */
 public class LocalTimeTest {
+    public static void main(String[] args){
+        localTimeTest();
+    }
+
     /**
      * LocalTime time
      */
-    @Test
-    public void localTimeTest() {
+    public static void localTimeTest() {
         LocalTime time = LocalTime.parse("13:45:20");
         time = LocalTime.of(13, 45, 20);  //13:45:20
         System.out.println(time);   //13:45:20

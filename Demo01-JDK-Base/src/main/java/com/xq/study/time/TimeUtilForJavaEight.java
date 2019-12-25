@@ -1,4 +1,4 @@
-package com.xq.study.jdk.time;
+package com.xq.study.time;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

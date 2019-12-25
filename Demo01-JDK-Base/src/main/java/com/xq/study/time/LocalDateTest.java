@@ -1,10 +1,7 @@
-package com.xq.study.jdk.time;
+package com.xq.study.time;
 
-import org.junit.Test;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
-import java.time.*;
+import java.time.DayOfWeek;
+import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoField;
 import java.time.temporal.ChronoUnit;
@@ -15,11 +12,14 @@ import static java.time.temporal.TemporalAdjusters.*;
  * Created by xq on 2017/9/23.
  */
 public class LocalDateTest {
+    public static void main(String[] args){
+        localDateTest();
+    }
+
     /**
      * LocalDate 日期
      */
-    @Test
-    public void localDateTest() {
+    public static void localDateTest() {
         LocalDate date = LocalDate.parse("2014-03-18");     //2014-03-18
         date = LocalDate.parse("20140318", DateTimeFormatter.BASIC_ISO_DATE);
         date = LocalDate.parse("2014-03-18", DateTimeFormatter.ISO_LOCAL_DATE);
