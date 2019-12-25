@@ -1,6 +1,4 @@
-package com.xq.study.jdk.container;
-
-import org.junit.Test;
+package com.xq.study.container;
 
 import java.util.*;
 
@@ -8,11 +6,16 @@ import java.util.*;
  * Created by sk-qianxiao on 2019/3/4.
  */
 public class MapTest {
+    public static void main(String[] args) {
+        transforTest();
+        map2ListTest();
+        map2SetTest();
+    }
+
     /**
      * Map 遍历
      */
-    @Test
-    public void transforTest() {
+    public static void transforTest() {
         Map<Integer, Integer> map = new HashMap<>();
         //这是最常见的并且在大多数情况下也是最可取的遍历方式。在键值都需要时使用
         for (Map.Entry<Integer, Integer> entry : map.entrySet()) {
@@ -49,8 +52,7 @@ public class MapTest {
     /**
      * Map 转 list
      */
-    @Test
-    public void map2ListTest() {
+    public static void map2ListTest() {
         Map<String, String> map = new HashMap<String, String>();
         map.put("A", "ABC");
         map.put("K", "KK");
@@ -68,8 +70,7 @@ public class MapTest {
     /**
      * Map 转 Set
      */
-    @Test
-    public void map2SetTest() {
+    public static void map2SetTest() {
         Map<String, String> map = new HashMap<String, String>();
         map.put("A", "ABC");
         map.put("K", "KK");

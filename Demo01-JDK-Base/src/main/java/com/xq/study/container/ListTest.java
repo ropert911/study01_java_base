@@ -1,6 +1,4 @@
-package com.xq.study.jdk.container;
-
-import org.junit.Test;
+package com.xq.study.container;
 
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -14,8 +12,11 @@ public class ListTest {
     /**
      * list 转 数组
      */
-    @Test
-    public  void testList2Array() {
+    public static void main(String[] args) {
+        testList2Array();
+        testList2Set();
+    }
+    public  static void testList2Array() {
         //List-->数组
         List<String> list = new ArrayList<String>();
         list.add("AA");
@@ -30,8 +31,7 @@ public class ListTest {
     /**
      * list 转 set
      */
-    @Test
-    public  void testList2Set() {
+    public static void testList2Set() {
 
         List<String> list = new ArrayList<String>();
         list.add("ABC");

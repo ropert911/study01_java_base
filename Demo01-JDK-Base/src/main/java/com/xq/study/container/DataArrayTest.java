@@ -1,6 +1,4 @@
-package com.xq.study.jdk.container;
-
-import org.junit.Test;
+package com.xq.study.container;
 
 import java.lang.reflect.Array;
 import java.util.Arrays;
@@ -9,8 +7,13 @@ import java.util.List;
 import java.util.Set;
 
 public class DataArrayTest {
-    @Test
-    public void useArray() {
+    public static void main(String[] args) {
+        useArray();
+        array2SetTest();
+        array2ListTest();
+    }
+
+    public static void useArray() {
         int[][][] matrix1 = (int[][][]) Array.newInstance(int.class, 3, 3, 3);
         int[][][] matrix2 = (int[][][]) Array.newInstance(int[].class, 3, 3);
         String[] names = (String[]) Array.newInstance(String.class, 3);
@@ -24,8 +27,8 @@ public class DataArrayTest {
         }
     }
 
-    @Test
-    public void array2SetTest() {
+
+    public static void array2SetTest() {
         String[] arr = {"AA", "BB", "DD", "CC", "BB"};
 
         //数组-->Set
@@ -33,8 +36,8 @@ public class DataArrayTest {
         System.out.println(set);
     }
 
-    @Test
-    public void array2ListTest() {
+
+    public static void array2ListTest() {
         //数组-->List
         String[] ss = {"JJ", "KK"};
         List<String> list1 = Arrays.asList(ss);
