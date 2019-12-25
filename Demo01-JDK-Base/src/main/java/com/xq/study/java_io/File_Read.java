@@ -1,4 +1,4 @@
-package com.xq.study.jdk.java_io;
+package com.xq.study.java_io;
 
 import java.io.*;
 

@@ -1,4 +1,4 @@
-package com.xq.study.net_http;
+package com.xq.study.net.http;
 
 /**
  * @author sk-qianxiao

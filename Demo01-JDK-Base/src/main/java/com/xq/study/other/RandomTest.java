@@ -1,6 +1,5 @@
-package com.xq.study.jdk;
+package com.xq.study.other;
 
-import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -12,8 +11,11 @@ import java.util.Random;
 public class RandomTest {
     private static Logger LOGGER = LoggerFactory.getLogger(RandomTest.class);
 
-    @Test
-    public  void test1() {
+    public static void main(String[] args) {
+        test1();
+    }
+
+    public static void test1() {
         double num = Math.random() * 100;
         LOGGER.error("Math.random() * 100=>{}", num);
 

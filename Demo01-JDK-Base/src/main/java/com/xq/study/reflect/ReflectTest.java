@@ -1,4 +1,4 @@
-package com.xq.study.jdk.reflect;
+package com.xq.study.reflect;
 
 
 import com.xq.study.model.FieldContainer;

@@ -1,14 +1,11 @@
-package com.xq.study.jdk;
+package com.xq.study.other;
 
 import com.xq.study.model.Shop;
-import org.junit.Assert;
-import org.junit.Test;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.*;
 
-import static java.lang.Thread.sleep;
 import static java.util.stream.Collectors.toList;
 
 /**
@@ -17,8 +14,14 @@ import static java.util.stream.Collectors.toList;
  * @author sk-qianxiao
  */
 public class FutureTest {
-    @Test
-    public void test1() {
+    public static void main(String[] args) {
+        test1();
+        test2();
+        test3();
+        test4();
+    }
+
+    public static void test1() {
         ExecutorService executor = Executors.newCachedThreadPool();
         Future<Double> future = executor.submit(() -> {
             System.out.println("in thread");
@@ -27,7 +30,7 @@ public class FutureTest {
 
         try {
             double result = future.get(1, TimeUnit.SECONDS);
-            Assert.assertEquals(result, 1d, 0d);
+            System.out.println(result);
         } catch (ExecutionException ee) {
             /** 计算抛出一个异常*/
         } catch (InterruptedException ie) {
@@ -39,8 +42,7 @@ public class FutureTest {
         executor.shutdown();
     }
 
-    @Test
-    public void test2() {
+    public static void test2() {
         long start = System.nanoTime();
         Shop s = new Shop("Shop-1");
         Future<Double> futurePrice1 = getPriceAsync1(s);
@@ -50,8 +52,8 @@ public class FutureTest {
         try {
             double price1 = futurePrice1.get();
             double price2 = futurePrice2.get();
-            Assert.assertTrue(price1 > 0);
-            Assert.assertTrue(price2 > 0);
+            System.out.println(price1);
+            System.out.println(price2);
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
@@ -62,8 +64,7 @@ public class FutureTest {
     /**
      * 并发查询不同商店价格，使用CompletableFuture提供的异步机制
      */
-    @Test
-    public void test3() {
+    public static void test3() {
         long start = System.nanoTime();
         Shop s1 = new Shop("SHOP-1");
         Shop s2 = new Shop("SHOP-2");
@@ -101,8 +102,7 @@ public class FutureTest {
     /**
      * 并发请求多个，添加线程池提高并发度
      */
-    @Test
-    public void test4() {
+    public static void test4() {
         long start = System.nanoTime();
 
         Shop s1 = new Shop("SHOP-1");
@@ -150,7 +150,7 @@ public class FutureTest {
      * @param s
      * @return
      */
-    public Future<Double> getPriceAsync1(Shop s) {
+    public static Future<Double> getPriceAsync1(Shop s) {
         CompletableFuture<Double> futurePrice = new CompletableFuture<>();
         new Thread(() -> {
             try {
@@ -167,7 +167,7 @@ public class FutureTest {
     /**
      * 使用工厂方法supplyAsync创建CompletableFuture对象
      */
-    public Future<Double> getPriceAsync2(Shop s) {
+    public static Future<Double> getPriceAsync2(Shop s) {
         return CompletableFuture.supplyAsync(() -> s.calculatePrice());
     }
 }

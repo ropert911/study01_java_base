@@ -1,4 +1,4 @@
-package com.xq.study.jdk.javax_script;
+package com.xq.study.javax_script;
 
 import javax.script.*;
 import java.io.FileWriter;

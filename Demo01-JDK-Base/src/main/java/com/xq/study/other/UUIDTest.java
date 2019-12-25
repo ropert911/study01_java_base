@@ -1,4 +1,4 @@
-package com.xq.study.jdk;
+package com.xq.study.other;
 
 import java.util.UUID;
 

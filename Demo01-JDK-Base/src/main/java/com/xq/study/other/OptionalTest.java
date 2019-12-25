@@ -1,9 +1,8 @@
-package com.xq.study.jdk;
+package com.xq.study.other;
 
 import com.xq.study.model.Car;
 import com.xq.study.model.Insurance;
 import com.xq.study.model.Person;
-import org.junit.Test;
 
 import java.util.Optional;
 
@@ -11,8 +10,11 @@ import java.util.Optional;
  * Created by xq on 2019/3/1.
  */
 public class OptionalTest {
-    @Test
-    public void test1() {
+    public static void main(String[] args) {
+        test1();
+    }
+
+    public static void test1() {
         Optional<Car> optCarNull = Optional.empty();            //声明空的对象
         Optional<Car> optCar1 = Optional.ofNullable(null);  //可接受null的Optional
         Optional<Insurance> insurance = Optional.of(new Insurance("中国人寿"));

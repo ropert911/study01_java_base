@@ -1,4 +1,4 @@
-package com.xq.study.net_udp;
+package com.xq.study.net.udp;
 
 /**
  * @author sk-qianxiao
