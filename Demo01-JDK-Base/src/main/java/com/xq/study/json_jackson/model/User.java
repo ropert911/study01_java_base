@@ -1,4 +1,4 @@
-package com.xq.study.model;
+package com.xq.study.json_jackson.model;
 
 import java.util.Date;
 import java.util.List;

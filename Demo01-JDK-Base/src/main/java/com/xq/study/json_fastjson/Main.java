@@ -1,9 +1,8 @@
-package com.xq.study.jdk.json.fastjson;
+package com.xq.study.json_fastjson;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
-import com.xq.study.model.MyUser;
-import org.junit.Test;
+import com.xq.study.json_fastjson.model.MyUser;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -11,10 +10,10 @@ import java.util.Map;
 
 /**
  * @author sk-qianxiao
+ * @date 2019/12/25
  */
-public class JsonTest {
-    @Test
-    public void test1() {
+public class Main {
+    public static void main(String[] args) throws Exception{
         MyUser a = new MyUser();
         a.setName("xq1");
         MyUser b = new MyUser();

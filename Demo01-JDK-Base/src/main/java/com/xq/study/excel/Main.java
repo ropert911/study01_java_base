@@ -1,11 +1,10 @@
-package com.xq.study.jdk.excel;
+package com.xq.study.excel;
 
 import org.apache.poi.ss.usermodel.CellType;
 import org.apache.poi.xssf.usermodel.XSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
-import org.junit.Test;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.Resource;
 
@@ -14,9 +13,12 @@ import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ExcelParseTest {
-    @Test
-    public void test1() throws Exception {
+/**
+ * @author sk-qianxiao
+ * @date 2019/12/25
+ */
+public class Main {
+    public static void main(String[] args) throws Exception{
         Resource res2 = new ClassPathResource("区域IoT设备导入模板.xlsx");
         InputStream ins2 = res2.getInputStream();
 
@@ -44,7 +46,8 @@ public class ExcelParseTest {
         int itfRowsNum = gwSheet.getPhysicalNumberOfRows();
         for (int i = 1; i < itfRowsNum; i++) {
             data.clear();
-            XSSFRow xssfRow = gwSheet.getRow(i);   //从第二列获取
+            //从第二列获取
+            XSSFRow xssfRow = gwSheet.getRow(i);
             for (int j = 0; j < itfCellNum; j++) {
                 data.add(getCellString(xssfRow, j));
             }
@@ -52,7 +55,7 @@ public class ExcelParseTest {
         }
     }
 
-    private String getCellString(XSSFRow xssfRow, int index) {
+    private static String getCellString(XSSFRow xssfRow, int index) {
         XSSFCell cell = xssfRow.getCell(index);
         if (cell == null) {
             return "";
