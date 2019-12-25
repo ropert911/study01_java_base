@@ -1,18 +1,15 @@
-package com.xq.study.jdk.compress;
+package com.xq.study.compress;
 
-import org.junit.Assert;
-import org.junit.Test;
 
 import java.net.SocketException;
 
-public class GzipUtilTest {
-    @Test
-    public void test1() {
+public class Main {
+    public static void main(String[] args) {
         String value = "Hello world";
         try {
             byte[] bytes = GzipUtil.compress(value.getBytes());
             byte[] orData = GzipUtil.decompress(bytes);
-            Assert.assertEquals(value, new String(orData));
+            System.out.println(new String(orData));
         } catch (SocketException e) {
             e.printStackTrace();
         } catch (Exception e) {

@@ -1,4 +1,4 @@
-package com.xq.study.jdk.compress;
+package com.xq.study.compress;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
@@ -42,7 +42,7 @@ public class GzipUtil {
      * @param outputStream 输出流
      * @throws Exception
      */
-    public static void compress(InputStream inputStream, OutputStream outputStream)
+    private static void compress(InputStream inputStream, OutputStream outputStream)
             throws Exception {
 
         GZIPOutputStream gzipOutputStream = new GZIPOutputStream(outputStream);
@@ -86,7 +86,7 @@ public class GzipUtil {
      * @param os xx
      * @throws Exception xx
      */
-    public static void decompress(InputStream is, OutputStream os)
+    private static void decompress(InputStream is, OutputStream os)
             throws Exception {
 
         GZIPInputStream gis = new GZIPInputStream(is);
