@@ -1,11 +1,11 @@
-package com.xq.study.jdk.net.udp;
+package com.xq.study.net_udp;
 
-import org.junit.Assert;
-import org.junit.Test;
-
-public class UdpTest {
-    @Test
-    public void test1() {
+/**
+ * @author sk-qianxiao
+ * @date 2019/12/25
+ */
+public class Main {
+    public static void main(String[] args) {
         UdpService udpService = new UdpService();
         Thread thread = new Thread(() -> {
             udpService.startServer();
@@ -15,7 +15,7 @@ public class UdpTest {
         String value = "Hello world";
         UdpClient udpClient = new UdpClient();
         String receivedData = udpClient.sendData(value);
-        Assert.assertEquals(value, receivedData);
+        System.out.println(receivedData);
 
         udpService.setExit(true);
     }

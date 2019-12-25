@@ -1,4 +1,4 @@
-package com.xq.study.jdk.net.udp;
+package com.xq.study.net_udp;
 
 import java.net.DatagramPacket;
 import java.net.DatagramSocket;

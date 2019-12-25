@@ -1,4 +1,4 @@
-package com.xq.study.jdk.net.http;
+package com.xq.study.net_http;
 
 import org.springframework.http.HttpStatus;
 
@@ -43,7 +43,7 @@ public class HttpUrlConnectionUtil {
         return result;
     }
 
-    public static String readData(HttpURLConnection connection) {
+    private static String readData(HttpURLConnection connection) {
         InputStream is = null;
         BufferedReader br = null;
         String result = null;
