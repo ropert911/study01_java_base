@@ -1,7 +1,6 @@
-package com.xq.study.jdk.stream;
+package com.xq.study.stream;
 
-import com.xq.study.model.Dish;
-import org.junit.Test;
+import com.xq.study.stream.model.Dish;
 
 import java.io.IOException;
 import java.nio.charset.Charset;
@@ -10,7 +9,6 @@ import java.nio.file.Paths;
 import java.util.*;
 import java.util.concurrent.ForkJoinPool;
 import java.util.concurrent.ForkJoinTask;
-import java.util.concurrent.RecursiveTask;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 import java.util.stream.LongStream;
@@ -21,12 +19,24 @@ import static java.util.stream.Collectors.toList;
 /**
  * Created by xq on 2019/2/24.
  */
-public class StreamTest {
+public class Main {
+    public static void main(String[] args) {
+        test1();
+        test2();
+        test3();
+        test4();
+        test6();
+        test7();
+        test8();
+        test9();
+        test10();
+        reduce();
+    }
+
     /**
      * filter,map,skip,limit,sort 等中间操作
      */
-    @Test
-    public void test1() {
+    public static void test1() {
         List<Integer> numbers = Arrays.asList(1, 2, 1, 3, 3, 2, 4);
         numbers.stream().filter(i -> i % 2 == 0).sorted().forEach(System.out::println);
         numbers.stream().filter(i -> i % 2 == 0).sorted(Comparator.reverseOrder()).forEach(System.out::println);
@@ -53,8 +63,7 @@ public class StreamTest {
     /**
      * forEach, collect
      */
-    @Test
-    public void test2() {
+    public static void test2() {
         //forEach操作
         List<Integer> numbers = Arrays.asList(1, 2, 1, 3, 3, 2, 4);
         numbers.stream().forEach(System.out::println);  //numbers.forEach(System.out::println);
@@ -70,8 +79,7 @@ public class StreamTest {
     /**
      * anyMatch,allMath, noneMathc等结果判断操作
      */
-    @Test
-    public void test3() {
+    public static void test3() {
         List<Dish> menu = new ArrayList<>();
 
         //anyMatch: 至少匹配一个元素
@@ -87,8 +95,7 @@ public class StreamTest {
     /**
      * findAny,findFirst 元素查找
      */
-    @Test
-    public void test4() {
+    public static void test4() {
         List<Dish> menu = new ArrayList<>();
 
         //findAny: 查找到任一个元素
@@ -103,8 +110,7 @@ public class StreamTest {
     /**
      * reduce: 它不适合做原始类型的操作 int,double等
      */
-    @Test
-    public void reduce() {
+    public static void reduce() {
         List<Integer> numbers = Arrays.asList(1, 3, 5);
 
         numbers.stream().reduce(0, (a, b) -> a + b);  //求和:第一个是初始值，第二个是BinaryOperator
@@ -116,8 +122,7 @@ public class StreamTest {
     /**
      * 原始流物化成 IntStream,DoubleStream等，从而方便做基本数据类型的操作 最大，最小等
      */
-    @Test
-    public void test6() {
+    public static void test6() {
         //生成流
         IntStream evenNumbers = IntStream.rangeClosed(1, 100).filter(n -> n % 2 == 0);
         System.out.println(evenNumbers.count());
@@ -150,8 +155,7 @@ public class StreamTest {
     /**
      * 生成流
      */
-    @Test
-    public void test7() {
+    public static void test7() {
         //空流
         Stream<String> emptyStream = Stream.empty();
 
@@ -183,8 +187,7 @@ public class StreamTest {
     /**
      * 分组， 规约, 汇总：求和，平均，计数，最大，最小，连接
      */
-    @Test
-    public void test8() {
+    public static void test8() {
         List<Dish> menu = new ArrayList<>();
         Dish dish = new Dish();
         dish.setName("宫爆肉丁");
@@ -241,8 +244,7 @@ public class StreamTest {
     /**
      * 分区：只两个分组的分组功能
      */
-    @Test
-    public void test9() {
+    public static void test9() {
         List<Dish> menu = new ArrayList<>();
         Dish dish = new Dish();
         dish.setName("宫爆肉丁");
@@ -264,46 +266,6 @@ public class StreamTest {
                                 Collectors.groupingBy(Dish::getType)));
     }
 
-    class ForkJoinSumCalculator extends RecursiveTask<Long> {
-        private final long[] numbers;
-        private final int start;
-        private final int end;
-        public static final long THRESHOLD = 10_000;
-
-        public ForkJoinSumCalculator(long[] numbers) {
-            this(numbers, 0, numbers.length);
-        }
-
-        private ForkJoinSumCalculator(long[] numbers, int start, int end) {
-            this.numbers = numbers;
-            this.start = start;
-            this.end = end;
-        }
-
-        @Override
-        protected Long compute() {
-            int length = end - start;
-            if (length <= THRESHOLD) {
-                return computeSequentially();
-            }
-            ForkJoinSumCalculator leftTask =
-                    new ForkJoinSumCalculator(numbers, start, start + length / 2);
-            leftTask.fork();
-            ForkJoinSumCalculator rightTask =
-                    new ForkJoinSumCalculator(numbers, start + length / 2, end);
-            Long rightResult = rightTask.compute();
-            Long leftResult = leftTask.join();
-            return leftResult + rightResult;
-        }
-
-        private long computeSequentially() {
-            long sum = 0;
-            for (int i = start; i < end; i++) {
-                sum += numbers[i];
-            }
-            return sum;
-        }
-    }
 
     /**
      * 分治合并框架：ForkJoinTask(分治合并,这和Stream里的并行一样)
@@ -311,8 +273,7 @@ public class StreamTest {
      *
      * @return
      */
-    @Test
-    public void test10() {
+    public static void test10() {
         long n = 10;
         long[] numbers = LongStream.rangeClosed(1, n).toArray();
         ForkJoinTask<Long> task = new ForkJoinSumCalculator(numbers);
