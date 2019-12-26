@@ -4,8 +4,11 @@ package com.xq.study.dynamic_proxy;
  * @author sk-qianxiao
  * @date 2019/12/25
  */
-public class JavaDeveloper implements Developer{
+public class JavaDeveloper implements Developer {
     private String name;
+
+    public JavaDeveloper() {
+    }
 
     public JavaDeveloper(String name) {
         this.name = name;
@@ -21,11 +24,11 @@ public class JavaDeveloper implements Developer{
 
     @Override
     public void code() {
-        System.out.println(name+" is coding java.");
+        System.out.println(name + " is coding java.");
     }
 
     @Override
     public void debug() {
-        System.out.println(name+" is debug java.");
+        System.out.println(name + " is debug java.");
     }
 }

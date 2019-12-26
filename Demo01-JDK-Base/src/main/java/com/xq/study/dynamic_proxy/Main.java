@@ -9,9 +9,12 @@ import java.lang.reflect.Proxy;
 public class Main {
     public static void main(String[] args) {
         JavaDeveloper jack = new JavaDeveloper("Jack");
+        Developer jdkProxy = JdkProxy.newProxyInstance(jack);
+        jdkProxy.code();
+        jdkProxy.debug();
 
-        Developer jackProxy = (Developer) Proxy.newProxyInstance(jack.getClass().getClassLoader(), jack.getClass().getInterfaces(), new JackHandler(jack));
-        jackProxy.code();
-        jackProxy.debug();
+        Developer cglibProxy = CglibProxy.newProxyInstance(JavaDeveloper.class);
+        cglibProxy.code();
+        cglibProxy.debug();
     }
 }
