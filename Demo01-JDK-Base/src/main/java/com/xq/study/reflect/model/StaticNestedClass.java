@@ -1,4 +1,4 @@
-package com.xq.study.model;
+package com.xq.study.reflect.model;
 
 /**
  * @author sk-qianxiao

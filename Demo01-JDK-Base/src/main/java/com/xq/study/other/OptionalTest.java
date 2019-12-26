@@ -1,8 +1,8 @@
 package com.xq.study.other;
 
-import com.xq.study.model.Car;
-import com.xq.study.model.Insurance;
-import com.xq.study.model.Person;
+import com.xq.study.other.model.Car;
+import com.xq.study.other.model.Insurance;
+import com.xq.study.other.model.Person;
 
 import java.util.Optional;
 

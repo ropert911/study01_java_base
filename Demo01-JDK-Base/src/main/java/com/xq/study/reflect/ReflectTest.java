@@ -1,12 +1,15 @@
 package com.xq.study.reflect;
 
 
-import com.xq.study.model.FieldContainer;
-import com.xq.study.model.MethodContainer;
-import com.xq.study.model.StaticNestedClass;
-import com.xq.study.model.VarargsConstructor;
+import com.xq.study.reflect.model.FieldContainer;
+import com.xq.study.reflect.model.MethodContainer;
+import com.xq.study.reflect.model.StaticNestedClass;
+import com.xq.study.reflect.model.VarargsConstructor;
 
-import java.lang.reflect.*;
+import java.lang.reflect.Constructor;
+import java.lang.reflect.Field;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
 
 /**
  * @author sk-qianxiao

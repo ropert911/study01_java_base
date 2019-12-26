@@ -1,6 +1,6 @@
 package com.xq.study.other;
 
-import com.xq.study.model.Shop;
+import com.xq.study.other.model.Shop;
 
 import java.util.ArrayList;
 import java.util.List;
