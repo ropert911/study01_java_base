@@ -6,7 +6,6 @@ import org.slf4j.LoggerFactory;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-@SpringBootApplication
 public class Log3Log4j2Application {
     private static final Logger logger = LoggerFactory.getLogger(Log3Log4j2Application.class);
     public static void main(String[] args) {
