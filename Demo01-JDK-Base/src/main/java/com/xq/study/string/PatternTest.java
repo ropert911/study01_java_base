@@ -37,6 +37,12 @@ public class PatternTest {
             List<String> r = getmutiString("<td>(.+)</td><td>([0-9,\\.]+)%", text);
             System.out.println(r);
         }
+
+        {
+            String text = "0.08%|0.09%";
+            List<String> r = getmutiString("([0-9,\\.]+)%\\|([0-9,\\.]+)%", text);
+            System.out.println(r);
+        }
     }
 
     public static String getString(String pstr, String text) {
