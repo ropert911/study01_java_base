@@ -1,4 +1,4 @@
-package com.xq.study.other.model;
+package com.xq.study.concurrent.model;
 
 import static java.lang.Thread.sleep;
 

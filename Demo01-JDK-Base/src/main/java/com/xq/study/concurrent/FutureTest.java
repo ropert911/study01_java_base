@@ -1,10 +1,11 @@
-package com.xq.study.other;
+package com.xq.study.concurrent;
 
-import com.xq.study.other.model.Shop;
+import com.xq.study.concurrent.model.Shop;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.*;
+
 
 import static java.util.stream.Collectors.toList;
 
