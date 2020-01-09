@@ -1,16 +1,16 @@
-package com.quick.okhttp;
+package com.xq.study.net_okhttp;
 
 import com.squareup.okhttp.*;
 import okio.BufferedSink;
 
 import java.io.IOException;
 
-public class PostStream {
+public class SyncPostStream {
     public static void main(String[] args) throws IOException {
         OkHttpClient client = new OkHttpClient();
+
         final MediaType MEDIA_TYPE_TEXT = MediaType.parse("text/plain");
         final String postBody = "Hello World";
-
         RequestBody requestBody = new RequestBody() {
             @Override
             public MediaType contentType() {
@@ -28,10 +28,7 @@ public class PostStream {
             }
         };
 
-        Request request = new Request.Builder()
-                .url("http://www.baidu.com")
-                .post(requestBody)
-                .build();
+        Request request = new Request.Builder().url("http://www.baidu.com").post(requestBody).build();
 
         Response response = client.newCall(request).execute();
         if (!response.isSuccessful()) {

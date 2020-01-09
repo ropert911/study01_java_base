@@ -1,19 +1,16 @@
-package com.quick.okhttp;
+package com.xq.study.net_okhttp;
 
 import com.squareup.okhttp.*;
 
 import java.io.IOException;
 
-public class PostString {
+public class SyncPostForm {
     public static void main(String[] args) throws IOException {
         OkHttpClient client = new OkHttpClient();
-        MediaType MEDIA_TYPE_TEXT = MediaType.parse("text/plain");
-        String postBody = "Hello World";
 
-        Request request = new Request.Builder()
-                .url("http://www.baidu.com")
-                .post(RequestBody.create(MEDIA_TYPE_TEXT, postBody))
-                .build();
+        RequestBody formBody = new FormEncodingBuilder().add("query", "Hello").build();
+
+        Request request = new Request.Builder().url("http://www.baidu.com").post(formBody).build();
 
         Response response = client.newCall(request).execute();
         if (!response.isSuccessful()) {

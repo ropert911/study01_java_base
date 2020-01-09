@@ -1,4 +1,4 @@
-package com.quick.okhttp;
+package com.xq.study.net_okhttp;
 
 
 import com.squareup.okhttp.*;
@@ -6,12 +6,10 @@ import com.squareup.okhttp.*;
 import java.io.IOException;
 
 public class AsyncGet {
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) {
         OkHttpClient client = new OkHttpClient();
 
-        Request request = new Request.Builder()
-                .url("http://www.baidu.com")
-                .build();
+        Request request = new Request.Builder().url("http://www.baidu.com").build();
 
         client.newCall(request).enqueue(new Callback() {
 
@@ -26,8 +24,11 @@ public class AsyncGet {
                     throw new IOException("服务器端错误: " + response);
                 }
 
+                System.out.println("inner callback");
                 System.out.println(response.body().string());
             }
         });
+
+        System.out.println("this is end of main");
     }
 }

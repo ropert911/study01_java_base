@@ -1,4 +1,4 @@
-package com.quick.okhttp;
+package com.xq.study.net_okhttp;
 
 import com.squareup.okhttp.*;
 

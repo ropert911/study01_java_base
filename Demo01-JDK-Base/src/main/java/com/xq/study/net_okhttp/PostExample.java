@@ -1,4 +1,4 @@
-package com.quick.test;
+package com.xq.study.net_okhttp;
 
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;

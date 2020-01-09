@@ -1,4 +1,4 @@
-package com.quick.okhttp;
+package com.xq.study.net_okhttp;
 
 
 import com.squareup.okhttp.*;
@@ -6,12 +6,13 @@ import com.squareup.okhttp.*;
 import java.io.IOException;
 import java.net.Proxy;
 
+/**
+ * client登陆时进行认证
+ */
 public class Authentication {
     public static void main(String[] args) throws IOException {
         OkHttpClient client = new OkHttpClient();
         client.setAuthenticator(new Authenticator() {
-
-
             @Override
             public Request authenticate(Proxy proxy, Response response) throws IOException {
                 String credential = Credentials.basic("user", "password");
@@ -26,9 +27,7 @@ public class Authentication {
             }
         });
 
-        Request request = new Request.Builder()
-                .url("http://www.baidu.com")
-                .build();
+        Request request = new Request.Builder().url("http://www.baidu.com").build();
 
         Response response = client.newCall(request).execute();
         if (!response.isSuccessful()) {

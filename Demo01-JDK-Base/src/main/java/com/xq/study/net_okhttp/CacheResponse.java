@@ -1,4 +1,4 @@
-package com.quick.okhttp;
+package com.xq.study.net_okhttp;
 
 import com.squareup.okhttp.*;
 
@@ -9,14 +9,14 @@ import java.nio.file.Files;
 public class CacheResponse {
     public static void main(String[] args) throws IOException {
         int cacheSize = 100 * 1024 * 1024;
-        File cacheDirectory = Files.createTempDirectory("cache").toFile();
-        Cache cache = new Cache(cacheDirectory, cacheSize);
-        OkHttpClient client = new OkHttpClient();
-        client.setCache(cache);
 
-        Request request = new Request.Builder()
-                .url("http://www.baidu.com")
-                .build();
+        OkHttpClient client = new OkHttpClient();
+
+        //设置缓存
+        File cacheDirectory = Files.createTempDirectory("cache").toFile();
+        client.setCache(new Cache(cacheDirectory, cacheSize));
+
+        Request request = new Request.Builder().url("http://www.baidu.com").build();
 
         Response response = client.newCall(request).execute();
         if (!response.isSuccessful()) {

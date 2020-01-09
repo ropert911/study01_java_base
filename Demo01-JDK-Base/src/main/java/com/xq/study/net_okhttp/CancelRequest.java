@@ -1,4 +1,4 @@
-package com.quick.okhttp;
+package com.xq.study.net_okhttp;
 
 import com.google.common.collect.Lists;
 import com.squareup.okhttp.Callback;
@@ -23,12 +23,8 @@ public class CancelRequest {
 
     public void sendRequests(List<String> urls) {
         for (String item : urls) {
-            client.newCall(new Request.Builder()
-                    .url(item)
-                    .tag(this.tag)
-                    .build())
-                    .enqueue(new SimpleCallback());
-
+            Request request = new Request.Builder().url(item).tag(this.tag).build();
+            client.newCall(request).enqueue(new SimpleCallback());
         }
     }
 
