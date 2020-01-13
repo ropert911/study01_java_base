@@ -3,7 +3,7 @@ package com.xq.study.json.jackson;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ObjectNode;
-import com.xq.study.json.googlejson.model.Family;
+import com.xq.study.json.gson.model.Family;
 import com.xq.study.json.jackson.model.Link;
 import com.xq.study.json.jackson.model.Son;
 import com.xq.study.json.jackson.model.User;

@@ -1,4 +1,4 @@
-package com.xq.study.json.googlejson.model;
+package com.xq.study.json.gson.model;
 
 /**
  * @author sk-qianxiao
