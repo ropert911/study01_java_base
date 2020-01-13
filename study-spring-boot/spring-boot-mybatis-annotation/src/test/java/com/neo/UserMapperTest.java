@@ -1,7 +1,8 @@
-package com.neo.mapper;
+package com.neo;
 
 import java.util.List;
 
+import com.neo.mapper.UserMapper;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -17,7 +18,7 @@ import com.neo.enums.UserSexEnum;
 public class UserMapperTest {
 
 	@Autowired
-	private UserMapper UserMapper;
+	private com.neo.mapper.UserMapper UserMapper;
 
 	@Test
 	public void testInsert() throws Exception {
