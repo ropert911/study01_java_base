@@ -1,4 +1,4 @@
-package com.study.spring.threadpool.asynctask;
+package com.xq.study.asynctask;
 
 import org.springframework.aop.interceptor.AsyncUncaughtExceptionHandler;
 import org.springframework.context.annotation.ComponentScan;
@@ -15,7 +15,7 @@ import java.util.concurrent.Executor;
  * @author sk-qianxiao
  */
 @Configuration
-@ComponentScan("com.study.spring.threadpool.asynctask")
+@ComponentScan("com.xq.study.asynctask")
 @EnableAsync
 public class TaskExcutorConfig implements AsyncConfigurer {
     @Override

@@ -1,4 +1,4 @@
-package com.study.spring.threadpool.task;
+package com.xq.study.threadpool.task;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -6,12 +6,12 @@ import org.slf4j.LoggerFactory;
 /**
  * Created by sk-qianxiao on 2017/11/20.
  */
-public class AggregateTask implements Runnable {
-    private static final Logger LOGGER = LoggerFactory.getLogger(AggregateTask.class);
+public class RunnableTask implements Runnable {
+    private static final Logger LOGGER = LoggerFactory.getLogger(RunnableTask.class);
 
     private String command;
 
-    public AggregateTask(String key) {
+    public RunnableTask(String key) {
         this.command = key;
     }
 
@@ -19,6 +19,6 @@ public class AggregateTask implements Runnable {
     public void run() {
         Thread thread = Thread.currentThread();
         thread.setName(thread.getName() + "-" + command);
-        LOGGER.error("做任务 {}", command);
+        System.out.println("做任务 " + command);
     }
 }

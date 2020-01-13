@@ -1,10 +1,10 @@
-package com.study.spring.threadpool.task;
+package com.xq.study.threadpool.task;
 
-public class MyThread extends Thread {
+public class ThreadTask extends Thread {
 
     private String name;
 
-    public MyThread(String name) {
+    public ThreadTask(String name) {
         this.name = name;
     }
 
