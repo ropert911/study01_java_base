@@ -1,5 +1,6 @@
-package com.study.scheduled.quarz;
+package com.xq.study.schedule;
 
+import com.xq.study.schedule.task.MyJob;
 import org.quartz.*;
 import org.quartz.impl.StdSchedulerFactory;
 import org.quartz.impl.calendar.AnnualCalendar;

@@ -1,4 +1,4 @@
-package com.xq.study.elasticjob.config;
+package com.xq.study.schedule.elasticjob.config;
 
 import com.dangdang.ddframe.job.reg.zookeeper.ZookeeperConfiguration;
 import com.dangdang.ddframe.job.reg.zookeeper.ZookeeperRegistryCenter;
@@ -14,11 +14,13 @@ import org.springframework.context.annotation.Configuration;
 public class RegistryCenterConfig {
 
     @Bean(initMethod = "init")
-    public ZookeeperRegistryCenter regCenter(@Value("${regCenter.serverList}") final String serverList, @Value("${regCenter.namespace}") final String namespace) {
+    public ZookeeperRegistryCenter regCenter(@Value("${regCenter.serverList}") final String serverList,
+                                             @Value("${regCenter.namespace}") final String namespace) {
         return new ZookeeperRegistryCenter(new ZookeeperConfiguration(serverList, namespace));
     }
+
     @Bean
-    public JobSettingsAPI jobSettingsAPI(ZookeeperRegistryCenter regCenter){
+    public JobSettingsAPI jobSettingsAPI(ZookeeperRegistryCenter regCenter) {
         return new JobSettingsAPIImpl(regCenter);
     }
 }

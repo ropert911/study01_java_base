@@ -1,4 +1,4 @@
-package com.study.scheduled.quarz;
+package com.xq.study.schedule.task;
 
 import org.quartz.Job;
 import org.quartz.JobDataMap;

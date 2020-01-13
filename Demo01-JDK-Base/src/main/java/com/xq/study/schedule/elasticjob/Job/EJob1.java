@@ -1,4 +1,4 @@
-package com.xq.study.elasticjob.Job;
+package com.xq.study.schedule.elasticjob.Job;
 
 import com.dangdang.ddframe.job.api.ShardingContext;
 import com.dangdang.ddframe.job.api.simple.SimpleJob;

@@ -1,4 +1,4 @@
-package com.xq.study.elasticjob.config;
+package com.xq.study.schedule.elasticjob.config;
 
 import com.dangdang.ddframe.job.config.JobCoreConfiguration;
 import com.dangdang.ddframe.job.config.simple.SimpleJobConfiguration;
@@ -6,13 +6,11 @@ import com.dangdang.ddframe.job.lite.api.JobScheduler;
 import com.dangdang.ddframe.job.lite.config.LiteJobConfiguration;
 import com.dangdang.ddframe.job.lite.spring.api.SpringJobScheduler;
 import com.dangdang.ddframe.job.reg.zookeeper.ZookeeperRegistryCenter;
-import com.xq.study.elasticjob.Job.EJob1;
-import com.xq.study.elasticjob.Job.EJob2;
+import com.xq.study.schedule.elasticjob.Job.EJob1;
+import com.xq.study.schedule.elasticjob.Job.EJob2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-
-import javax.annotation.Resource;
 
 /**
  * Created by sk-qianxiao on 2017/10/19.

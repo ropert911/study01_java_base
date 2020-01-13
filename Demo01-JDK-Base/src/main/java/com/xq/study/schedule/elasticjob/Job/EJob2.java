@@ -1,4 +1,4 @@
-package com.xq.study.elasticjob.Job;
+package com.xq.study.schedule.elasticjob.Job;
 
 import com.dangdang.ddframe.job.api.ShardingContext;
 import com.dangdang.ddframe.job.api.simple.SimpleJob;
@@ -9,9 +9,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import javax.annotation.Resource;
 import java.util.List;
-import java.util.Optional;
 
 /**
  * Created by sk-qianxiao on 2017/10/19.
