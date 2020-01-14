@@ -1,8 +1,8 @@
-package com.study.spring.mybatis1.mapper;
+package com.study.spring.mybatis.xml.mapper;
 
 import java.util.List;
 
-import com.study.spring.mybatis1.entity.UserEntity;
+import com.study.spring.mybatis.xml.entity.UserEntity;
 
 public interface UserMapper {
 	
