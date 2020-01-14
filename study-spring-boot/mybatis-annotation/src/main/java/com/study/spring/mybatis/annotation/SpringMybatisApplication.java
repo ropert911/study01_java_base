@@ -1,8 +1,8 @@
-package com.study.spring.mybatis1;
+package com.study.spring.mybatis.annotation;
 
-import com.study.spring.mybatis1.entity.UserEntity;
-import com.study.spring.mybatis1.entity.UserSexEnum;
-import com.study.spring.mybatis1.service.UserService;
+import com.study.spring.mybatis.annotation.service.UserService;
+import com.study.spring.mybatis.annotation.entity.UserEntity;
+import com.study.spring.mybatis.annotation.entity.UserSexEnum;
 import org.mybatis.spring.annotation.MapperScan;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

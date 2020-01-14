@@ -1,4 +1,4 @@
-package com.study.spring.mybatis1.entity;
+package com.study.spring.mybatis.annotation.entity;
 
 import lombok.Builder;
 import lombok.Data;

@@ -1,7 +1,7 @@
-package com.study.spring.mybatis1.service;
+package com.study.spring.mybatis.annotation.service;
 
-import com.study.spring.mybatis1.entity.UserEntity;
-import com.study.spring.mybatis1.mapper.UserMapper;
+import com.study.spring.mybatis.annotation.entity.UserEntity;
+import com.study.spring.mybatis.annotation.mapper.UserMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

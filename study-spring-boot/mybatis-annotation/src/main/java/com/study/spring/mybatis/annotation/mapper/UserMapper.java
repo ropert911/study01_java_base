@@ -1,4 +1,4 @@
-package com.study.spring.mybatis1.mapper;
+package com.study.spring.mybatis.annotation.mapper;
 
 import java.util.List;
 
@@ -9,8 +9,8 @@ import org.apache.ibatis.annotations.Results;
 import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
 
-import com.study.spring.mybatis1.entity.UserEntity;
-import com.study.spring.mybatis1.entity.UserSexEnum;
+import com.study.spring.mybatis.annotation.entity.UserEntity;
+import com.study.spring.mybatis.annotation.entity.UserSexEnum;
 
 public interface UserMapper {
     @Insert("INSERT INTO users(userName,passWord,nick_name,user_sex) VALUES(#{userName}, #{passWord},#{nickName}, #{userSex})" +
