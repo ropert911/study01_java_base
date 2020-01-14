@@ -13,6 +13,45 @@ public class Car implements BeanFactoryAware, BeanNameAware, InitializingBean, D
     private String color;
     private int maxSpeed;
 
+    public Car() {
+        System.out.println("Car()构造函数。");
+    }
+
+    public void introduce() {
+        System.out.println("introduce:" + this.toString());
+    }
+
+    public String getBrand() {
+        System.out.println("getBrand");
+        return brand;
+    }
+
+    public void setBrand(String brand) {
+        System.out.println("setBrand");
+        this.brand = brand;
+    }
+
+    public String getColor() {
+        System.out.println("getColor");
+        return color;
+    }
+
+    public void setColor(String color) {
+        System.out.println("setColor");
+        this.color = color;
+    }
+
+    public int getMaxSpeed() {
+        System.out.println("getMaxSpeed");
+        return maxSpeed;
+    }
+
+    public void setMaxSpeed(int maxSpeed) {
+        System.out.println("setMaxSpeed");
+        this.maxSpeed = maxSpeed;
+    }
+
+
     /**
      * BeanFactoryAware接口方法
      *
@@ -21,7 +60,7 @@ public class Car implements BeanFactoryAware, BeanNameAware, InitializingBean, D
      */
     @Override
     public void setBeanFactory(BeanFactory beanFactory) throws BeansException {
-        System.out.println("第7步 - 将BeanFactory容器实例设置到bean中");
+        System.out.println("setBeanFactory - 将BeanFactory容器实例设置到bean中");
     }
 
     /**
@@ -31,7 +70,7 @@ public class Car implements BeanFactoryAware, BeanNameAware, InitializingBean, D
      */
     @Override
     public void setBeanName(String s) {
-        System.out.println("第6步 - 将配置文件中的该bean对应的名称设置到bean中");
+        System.out.println("setBeanName - 将配置文件中的该bean对应的名称设置到bean中==" + s);
     }
 
     /**
@@ -41,15 +80,7 @@ public class Car implements BeanFactoryAware, BeanNameAware, InitializingBean, D
      */
     @Override
     public void afterPropertiesSet() throws Exception {
-        System.out.println("第9步 ");
-    }
-
-    public Car() {
-        System.out.println("调用Car()构造函数。");
-    }
-
-    public void introduce() {
-        System.out.println("introduce:" + this.toString());
+        System.out.println("afterPropertiesSet ");
     }
 
     /**
@@ -59,31 +90,8 @@ public class Car implements BeanFactoryAware, BeanNameAware, InitializingBean, D
      */
     @Override
     public void destroy() throws Exception {
-        System.out.println("第13步 - 释放资源,记录日志等");
+        System.out.println("destroy - 释放资源,记录日志等");
     }
 
 
-    public String getBrand() {
-        return brand;
-    }
-
-    public void setBrand(String brand) {
-        this.brand = brand;
-    }
-
-    public String getColor() {
-        return color;
-    }
-
-    public void setColor(String color) {
-        this.color = color;
-    }
-
-    public int getMaxSpeed() {
-        return maxSpeed;
-    }
-
-    public void setMaxSpeed(int maxSpeed) {
-        this.maxSpeed = maxSpeed;
-    }
 }
