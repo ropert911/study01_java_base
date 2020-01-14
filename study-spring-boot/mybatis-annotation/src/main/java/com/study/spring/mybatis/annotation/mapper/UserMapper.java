@@ -13,7 +13,7 @@ import com.study.spring.mybatis.annotation.entity.UserEntity;
 import com.study.spring.mybatis.annotation.entity.UserSexEnum;
 
 public interface UserMapper {
-    @Insert("INSERT INTO users(userName,passWord,nick_name,user_sex) VALUES(#{userName}, #{passWord},#{nickName}, #{userSex})" +
+    @Insert("INSERT INTO users(id,userName,passWord,nick_name,user_sex) VALUES(#{id},#{userName}, #{passWord},#{nickName}, #{userSex})" +
             " ON DUPLICATE KEY UPDATE  userName=VALUES(userName),passWord=VALUES(passWord),user_sex=VALUES(user_sex),nick_name=VALUES(nick_name)")
     void insert(UserEntity user);
 

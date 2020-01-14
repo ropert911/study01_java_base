@@ -18,7 +18,7 @@ import java.util.List;
  * @author sk-qianxiao
  */
 @SpringBootApplication
-@MapperScan("com.study.spring.mybatis1.mapper")
+@MapperScan("com.study.spring.mybatis.annotation.mapper")
 public class SpringMybatisApplication implements ApplicationRunner {
     private final static Logger logger = LoggerFactory.getLogger(SpringMybatisApplication.class);
 
@@ -31,10 +31,10 @@ public class SpringMybatisApplication implements ApplicationRunner {
 
     @Override
     public void run(ApplicationArguments applicationArguments) throws Exception {
-        UserEntity userEntity = UserEntity.builder().id(1L).nickName("大乖").passWord("secrit").userName("xiaoqian").userSex(UserSexEnum.MAN).build();
+        UserEntity userEntity = UserEntity.builder().id(1L).nickName("疯子").passWord("secrit").userName("xiaoqian").userSex(UserSexEnum.MAN).build();
         userService.save(userEntity);
 
-        UserEntity uget = userService.getUser(10L);
+        UserEntity uget = userService.getUser(1L);
         logger.info("get user[{}]=={}", userEntity.getId(),uget);
 
         uget.setNickName("new_neck");
