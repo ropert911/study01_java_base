@@ -8,7 +8,6 @@
     <version>0.0.1-SNAPSHOT</version>
     <modules>
         <module>demo-lombok</module>
-        <module>flyway-demo-master</module>
         <module>gpb-parser</module>
     </modules>
     <packaging>pom</packaging>
