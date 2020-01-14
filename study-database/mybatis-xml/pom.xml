@@ -4,11 +4,11 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.neo</groupId>
-	<artifactId>spring-boot-mybatis-xml</artifactId>
+	<artifactId>mybatis-xml</artifactId>
 	<version>1.0.0</version>
 	<packaging>jar</packaging>
 
-	<name>spring-boot-mybatis-xml</name>
+	<name>mybatis-xml</name>
 	<description>Demo project for Spring Boot and mybatis</description>
 
 	<parent>
