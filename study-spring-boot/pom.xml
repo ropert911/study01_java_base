@@ -10,19 +10,12 @@
         <module>MyBlog</module>
         <module>quick-ElasticSearch</module>
         <module>quick-img2txt</module>
-        <module>quick-mybatis-druid</module>
-        <module>quick-okhttp</module>
         <module>quick-oauth2</module>
         <module>quick-oss</module>
         <module>quick-package-assembly</module>
         <module>quick-package-assembly-multi-env</module>
-        <module>quick-tika</module>
         <module>quick-wx-api</module>
-        <module>spring-boot-mybatis-annotation</module>
-        <module>spring-boot-mybatis-annotation-mulidatasource</module>
-        <module>spring-boot-mybatis-mulidatasource</module>
-        <module>spring-boot-mybatis-xml</module>
-        <module>spring-boot-shiro</module>
+         <module>spring-boot-shiro</module>
     </modules>
     <packaging>pom</packaging>
 
