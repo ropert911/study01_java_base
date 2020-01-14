@@ -5,7 +5,7 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
        http://www.springframework.org/schema/beans/spring-beans-4.0.xsd">
 
-    <bean id="car" class="com.study.res.file.XmlBeanFactoryExample.Car"
+    <bean id="car" class="com.study.spring.res.Car"
           init-method="myInit"
           destroy-method="myDestory"
           p:brand="奥迪R8"

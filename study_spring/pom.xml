@@ -7,12 +7,10 @@
     <artifactId>study_spring</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <modules>
-        <module>spring-bean</module>
-        <module>spring-event</module>
-
-
         <module>spring-AOP</module>
+        <module>spring-bean</module>
         <module>spring-EL</module>
+        <module>spring-event</module>
         <module>spring-i18n</module>
         <module>spring-res-file</module>
     </modules>
