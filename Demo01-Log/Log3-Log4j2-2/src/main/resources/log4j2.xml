@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Configuration status="WARN">
     <Properties>
-        <property name="LOG_PATH">C:/Users/sk-qianxiao/Desktop/</property>
-        <property name="LOG_FILE">testlog4j2</property>
+        <property name="LOG_PATH">C:\\Users\\sk-qianxiao\\Desktop\\data\\</property>
+        <property name="LOG_FILE">Log3_Log4j2_2</property>
     </Properties>
     <Appenders>
         <Console name="Console" target="SYSTEM_OUT">

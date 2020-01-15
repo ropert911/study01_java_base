@@ -19,7 +19,7 @@ public class FileSourceExample {
         try {
             //使用系统路径的方式加载文件
             {
-                String filePath = "C:/Users/sk-qianxiao/Desktop/abc.txt";
+                String filePath = "C:\\Users\\sk-qianxiao\\Desktop\\data\\spring_res_file.txt";
                 WritableResource res1 = new PathResource(filePath);
 
                 //写文件

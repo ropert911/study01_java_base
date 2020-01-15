@@ -8,9 +8,12 @@ public class Slf4jOrgApplication {
     private static final Logger logger = LoggerFactory.getLogger(Slf4jOrgApplication.class);
 
     public static void main(String[] args) {
-        logger.error("Slf4jOrgApplication  error msg");
-        logger.warn("Slf4jOrgApplication   warn msg");
-        logger.info("Slf4jOrgApplication   info msg");
-        logger.debug("Slf4jOrgApplication  debug msg");
+        int i = 10;
+        while (i-- > 0) {
+            logger.error("Slf4jOrgApplication  error msg");
+            logger.warn("Slf4jOrgApplication   warn msg");
+            logger.info("Slf4jOrgApplication   info msg");
+            logger.debug("Slf4jOrgApplication  debug msg");
+        }
     }
 }
