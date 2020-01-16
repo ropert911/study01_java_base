@@ -1,11 +1,15 @@
 package com.study.spring.i18n;
 
+import com.study.spring.i18n.service.LocaleMessageSourceService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.MessageSource;
-import org.springframework.context.i18n.LocaleContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.LocaleResolver;
+import org.springframework.web.servlet.i18n.AcceptHeaderLocaleResolver;
+import org.springframework.web.servlet.i18n.CookieLocaleResolver;
 import org.springframework.web.servlet.i18n.SessionLocaleResolver;
 import org.springframework.web.servlet.support.RequestContextUtils;
 
@@ -19,6 +23,7 @@ import java.util.Locale;
  */
 @Controller
 public class HelloController {
+    private final static Logger logger = LoggerFactory.getLogger(HelloController.class);
     @Autowired
     private MessageSource messageSource;
 
@@ -27,22 +32,21 @@ public class HelloController {
 
     @RequestMapping("/hello")
     public String hello(HttpServletRequest request) {
-        //系统区域
-        Locale locale1 = LocaleContextHolder.getLocale();
-        String msg1 = messageSource.getMessage("welcome", null, locale1);
-        System.out.println("（系统区域）-得到msg=" + msg1);
+        /**AcceptHeaderLocaleResolver 是MVC默认的解析器, 是通过浏览器头部的语言信息来进行多语言选择，默认是不需要进行什么操作的*/
+        /** 这个头部是由用户的web浏览器根据底层操作系统的区域设置进行设定*/
+        /** 修改request accept-language可以在浏览器的设置里进行修改*/
+        logger.info("request.header中的Accept-Language={}", RequestContextUtils.getLocale(request));
 
-        /**这里的国际化用的是AcceptHeaderLocaleResolver*/
-        /** 这个头部是由用户的web浏览器根据底层操作系统的区域设置进行设定。请注意，这个区域解析器无法改变用户的区域，因为它无法修改用户操作系统的区域设置*/
-        Locale locale2 = RequestContextUtils.getLocale(request);
-        String msg2 = messageSource.getMessage("welcome", null, locale2);
-        System.out.println("（request的Accept-Language）-msg=" + msg2);
+        logger.info("cookie 中的语言 {}", RequestContextUtils.getLocaleResolver(request).resolveLocale(request));
 
-        String msg3 = localeMessageSourceService.getMessage("welcome");
-        System.out.println("（封装过的）--得到msg=" + msg3);
+//        //系统区域
+//        logger.info("本地语言 = {}", LocaleContextHolder.getLocale());
 
-        String msg4 = messageSource.getMessage("welcome", null, Locale.US);
-        System.out.println("（指定英文） msg=" + msg4);
+        /**sesstion语言如果要生效，需要声明 Bean；并在必要的地方进行语言的设定*/
+        logger.info("session语言 = {}", request.getSession().getAttribute(SessionLocaleResolver.LOCALE_SESSION_ATTRIBUTE_NAME));
+
+
+        logger.info("得到信息{}", localeMessageSourceService.getMessage("welcome"));
 
         return "/hello";
     }
@@ -56,14 +60,15 @@ public class HelloController {
      */
     @RequestMapping("/changeSessionLanauage")
     public String changeSessionLanauage(HttpServletRequest request, String lang) {
-        System.out.println(lang);
+        Locale locale = Locale.CHINA;
         if ("zh".equals(lang)) {
-            /**代码中即可通过以下方法进行语言设置*/
-            request.getSession().setAttribute(SessionLocaleResolver.LOCALE_SESSION_ATTRIBUTE_NAME, new Locale("zh", "CN"));
+            locale = Locale.CHINA;
         } else if ("en".equals(lang)) {
-            /**代码中即可通过以下方法进行语言设置*/
-            request.getSession().setAttribute(SessionLocaleResolver.LOCALE_SESSION_ATTRIBUTE_NAME, new Locale("en", "US"));
+            locale = Locale.ENGLISH;
         }
+
+        logger.info("==========================修改session语言 {}", locale);
+        request.getSession().setAttribute(SessionLocaleResolver.LOCALE_SESSION_ATTRIBUTE_NAME, locale);
         return "redirect:/hello";
     }
 
@@ -75,15 +80,21 @@ public class HelloController {
      * @param lang
      * @return
      */
-    @RequestMapping("/changeSessionLanauage2")
+    @RequestMapping("/changecookeLanguage")
     public String changeSessionLanauage2(HttpServletRequest request, HttpServletResponse response, String lang) {
-        System.out.println(lang);
-        LocaleResolver localeResolver = RequestContextUtils.getLocaleResolver(request);
+        Locale locale = Locale.CHINA;
         if ("zh".equals(lang)) {
-            localeResolver.setLocale(request, response, new Locale("zh", "CN"));
+            locale = Locale.CHINA;
         } else if ("en".equals(lang)) {
-            localeResolver.setLocale(request, response, new Locale("en", "US"));
+            locale = Locale.ENGLISH;
         }
+
+        logger.info("=============设置cookies语言 {}", locale);
+        LocaleResolver localeResolver = RequestContextUtils.getLocaleResolver(request);
+        if (localeResolver instanceof CookieLocaleResolver) {
+            localeResolver.setLocale(request, response, locale);
+        }
+
         return "redirect:/hello";
     }
 }
