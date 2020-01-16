@@ -4,9 +4,9 @@
 <configuration>
     <properties resource="config/db.properties"/>
     <typeAliases>
-        <typeAlias alias="User" type="com.xq.study.mybatis5.mybatis5.pojo.User" />
-        <typeAlias alias="UserGroup" type="com.xq.study.mybatis5.mybatis5.pojo.UserGroup" />
-        <typeAlias alias="Group" type="com.xq.study.mybatis5.mybatis5.pojo.Group" />
+        <typeAlias alias="User" type="com.study.base.mybatis5.mybatis5.pojo.User" />
+        <typeAlias alias="UserGroup" type="com.study.base.mybatis5.mybatis5.pojo.UserGroup" />
+        <typeAlias alias="Group" type="com.study.base.mybatis5.mybatis5.pojo.Group" />
     </typeAliases>
 
     <environments default="development">

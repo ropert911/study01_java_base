@@ -4,26 +4,26 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
     <!--普通创建方式-->
-    <bean class="com.study.spring.bean.xml.User" id="user" scope="prototype"/>
+    <bean class="com.study.rest.consumer.bean.xml.User" id="user" scope="prototype"/>
     <!--静态工厂创建-->
-    <bean id="user2" class="com.study.spring.bean.xml.User2Factory" factory-method="getInstance"/>
+    <bean id="user2" class="com.study.rest.consumer.bean.xml.User2Factory" factory-method="getInstance"/>
     <!--实例工厂创建-->
-    <bean class="com.study.spring.bean.xml.User3Factory" id="user3Factory"/>
+    <bean class="com.study.rest.consumer.bean.xml.User3Factory" id="user3Factory"/>
     <bean id="user3" factory-bean="user3Factory" factory-method="getUser3"/>
-    <bean id="user4" class="com.study.spring.bean.xml.User4">
+    <bean id="user4" class="com.study.rest.consumer.bean.xml.User4">
         <constructor-arg name="username" value="张三"/>
     </bean>
-    <bean id="user5" class="com.study.spring.bean.xml.User5">
+    <bean id="user5" class="com.study.rest.consumer.bean.xml.User5">
         <property name="username" value="lisi"/>
     </bean>
-    <bean id="userDao" class="com.study.spring.bean.xml.UserDao"/>
-    <bean id="userService" class="com.study.spring.bean.xml.UserService">
+    <bean id="userDao" class="com.study.rest.consumer.bean.xml.UserDao"/>
+    <bean id="userService" class="com.study.rest.consumer.bean.xml.UserService">
         <!--<property name="userDao" ref="userDao"/>-->
         <constructor-arg name="userDao" ref="userDao"/>
     </bean>
-    <bean id="user6" class="com.study.spring.bean.xml.User6" p:username="张三">
+    <bean id="user6" class="com.study.rest.consumer.bean.xml.User6" p:username="张三">
     </bean>
-    <bean id="user7" class="com.study.spring.bean.xml.User7">
+    <bean id="user7" class="com.study.rest.consumer.bean.xml.User7">
         <property name="names">
             <list>
                 <value>张三</value>

@@ -11,7 +11,7 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
 
-    <groupId>com.quick</groupId>
+    <groupId>com.study.rest.swagger</groupId>
     <artifactId>Rest-Swagger</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>jar</packaging>

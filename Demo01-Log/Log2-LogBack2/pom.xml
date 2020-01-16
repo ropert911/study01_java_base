@@ -8,7 +8,7 @@
         <version>2.1.7.RELEASE</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <groupId>com.study.log.logback</groupId>
+    <groupId>com.study.log.logback2</groupId>
     <artifactId>Log2-LogBack2</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>Log2-LogBack2</name>
