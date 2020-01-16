@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="com.study.base.mybatis1.mybatis1.dao.IUser">
+<mapper namespace="com.study.db.mybatis1.dao.IUser">
     <delete id="deleteUser" parameterType="int">
         DELETE FROM user WHERE id = #{id}
     </delete>

@@ -4,8 +4,8 @@
 <configuration>
     <properties resource="config/db.properties"/>
     <typeAliases>
-        <typeAlias alias="User" type="com.study.base.mybatis4.mybatis4.pojo.User" />
-        <typeAlias alias="Post" type="com.study.base.mybatis4.mybatis4.pojo.Post" />
+        <typeAlias alias="User" type="com.study.db.mybatis4.pojo.User" />
+        <typeAlias alias="Post" type="com.study.db.mybatis4.pojo.Post" />
     </typeAliases>
 
     <environments default="development">

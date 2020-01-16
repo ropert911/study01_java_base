@@ -8,7 +8,7 @@
         <version>2.1.9.RELEASE</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <groupId>com.xq.study.mybatis1</groupId>
+    <groupId>com.study.db.mybatis1</groupId>
     <artifactId>mybatis1</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>mybatis1</name>
