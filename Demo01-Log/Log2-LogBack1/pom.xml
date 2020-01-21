@@ -30,23 +30,23 @@
 			<artifactId>slf4j-api</artifactId>
 			<version>1.7.12</version>
 		</dependency>
-		<!-- logback:核心代码模块-->
+		<!-- logback:核心代码模块,1.2.0以后处理了totalSizeCap无效的问题-->
 		<dependency>
 			<groupId>ch.qos.logback</groupId>
 			<artifactId>logback-core</artifactId>
-			<version>1.1.7</version>
+			<version>1.2.3</version>
 		</dependency>
 		<!--实现slf4j接口-->
 		<dependency>
 			<groupId>ch.qos.logback</groupId>
 			<artifactId>logback-classic</artifactId>
-			<version>1.1.7</version>
+			<version>1.2.3</version>
 		</dependency>
 		<!--访问模块与Servlet容器集成提供通过Http来访问日志的功能-->
 		<dependency>
 			<groupId>ch.qos.logback</groupId>
 			<artifactId>logback-access</artifactId>
-			<version>1.1.7</version>
+			<version>1.2.3</version>
 		</dependency>
 	</dependencies>
 

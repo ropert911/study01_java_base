@@ -10,7 +10,7 @@ public class Slf4jOrgApplication {
     private static final Logger logger = LoggerFactory.getLogger(Slf4jOrgApplication.class);
 
     public static void main(String[] args) {
-        int i = 10;
+        int i = 10000000;
         while (i-- > 0) {
             logger.error("com.study.log.logback1.Slf4jOrgApplication  error msg");
             logger.warn("com.study.log.logback1.Slf4jOrgApplication   warn msg");
