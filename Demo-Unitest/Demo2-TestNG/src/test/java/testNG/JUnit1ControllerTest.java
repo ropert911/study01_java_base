@@ -1,8 +1,10 @@
-package com.study.unittest.apitest2.emoapitest2.controller;
+package testNG;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.ObjectWriter;
-import com.study.unittest.apitest2.emoapitest2.podo.IMSUser;
+import org.springframework.beans.factory.annotation.Autowired;
+import testNG.controller.AUserController;
+import testNG.podo.AUser;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -24,6 +26,9 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 public class JUnit1ControllerTest {
     private static Logger logger = LoggerFactory.getLogger(JUnit1ControllerTest.class);
 
+    @Autowired
+    private AUserController aUserController;
+
     //伪造mvc环境
     private MockMvc mockMvc;
 
@@ -31,7 +36,7 @@ public class JUnit1ControllerTest {
     @Before
     public void setUp() throws Exception {
         //两个都可以，一个是全部的，一个是单个
-        mockMvc = MockMvcBuilders.standaloneSetup(new ISMUserController()).build();
+        mockMvc = MockMvcBuilders.standaloneSetup(aUserController).build();
     }
 
     @After
@@ -69,7 +74,7 @@ public class JUnit1ControllerTest {
     @Test
     public void book4() throws Exception {
         logger.info("xxxxxxxxxxxx-----book4");
-        IMSUser book = new IMSUser();
+        AUser book = new AUser();
         book.setName("红楼梦");
         book.setAuthor("xq");
         book.setPrice(30);

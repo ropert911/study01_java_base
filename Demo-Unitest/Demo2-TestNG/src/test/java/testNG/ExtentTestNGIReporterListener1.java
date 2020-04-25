@@ -1,4 +1,4 @@
-package com.study.unittest.apitest2.emoapitest2.controller;
+package testNG;
 
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;

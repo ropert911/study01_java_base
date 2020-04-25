@@ -1,4 +1,4 @@
-package com.study.unittest.apitest2.emoapitest2.controller;
+package testNG;
 
 import org.junit.Assert;
 import org.slf4j.Logger;
@@ -6,7 +6,7 @@ import org.slf4j.LoggerFactory;
 import org.testng.annotations.*;
 
 //执行顺序  BeforeSuite  BeforeTest BeforeClass BeforeMethod
-public class ISMUserController1Test {
+public class AUserController1Test {
     private final Logger logger = LoggerFactory.getLogger(getClass());
 
     @BeforeClass    //在调用当前类的第一个测试方法之前运行，注释方法仅运行一次
@@ -73,7 +73,7 @@ public class ISMUserController1Test {
     @Test(groups="group1-1")
     public void testBook2() {
         logger.info("222---- testBook2");
-        Assert.assertNotNull(null);
+        Assert.assertNull(null);
     }
 
     @Test(groups="group3")

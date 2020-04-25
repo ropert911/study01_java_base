@@ -4,8 +4,8 @@
 <suite name="TestAll3">
     <test name="JUnitTests" junit="true">
         <classes>
-            <class name="com.study.unittest.apitest2.emoapitest2.controller.JUnit1ControllerTest"/>
-            <class name="com.study.unittest.apitest2.emoapitest2.controller.JUnit2ControllerTest"/>
+            <class name="testNG.JUnit1ControllerTest"/>
+            <class name="testNG.JUnit2ControllerTest"/>
         </classes>
     </test>
 </suite>

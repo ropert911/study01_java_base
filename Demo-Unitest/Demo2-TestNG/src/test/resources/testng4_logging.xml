@@ -3,13 +3,13 @@
 
 <suite name="Simple Reporter Suite">
     <listeners>
-        <listener class-name="com.study.unittest.apitest2.emoapitest2.controller.CustomReporter"/>
-        <listener class-name="com.study.unittest.apitest2.emoapitest2.controller.CustomListener"/>
+        <listener class-name="testNG.CustomReporter"/>
+        <listener class-name="testNG.CustomListener"/>
     </listeners>
 
     <test name="Simple Reporter test">
         <classes>
-            <class name="com.study.unittest.apitest2.emoapitest2.controller.SampleTest"/>
+            <class name="testNG.SampleTest"/>
         </classes>
     </test>
 </suite>

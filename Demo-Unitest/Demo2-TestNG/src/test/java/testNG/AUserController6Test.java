@@ -1,4 +1,4 @@
-package com.study.unittest.apitest2.emoapitest2.controller;
+package testNG;
 
 
 import org.slf4j.Logger;
@@ -11,7 +11,7 @@ import org.testng.Assert;
 import org.testng.annotations.*;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
-public class ISMUserController5Test extends AbstractTestNGSpringContextTests {
+public class AUserController6Test extends AbstractTestNGSpringContextTests {
     private final Logger logger = LoggerFactory.getLogger(getClass());
 
     @Autowired

@@ -55,7 +55,7 @@ public class MockMvcTest {
         logger.info(result);
 
         //进行json格式的判断
-        mockMvc.perform(get("/book/xiaoqian"))
+        mockMvc.perform(get("/book/book/xiaoqian"))
                 .andExpect(jsonPath("$.author", is("罗贯中")));
     }
 

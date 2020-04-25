@@ -7,13 +7,13 @@
     <!-- @BeforeTest -->
     <test name="case1-1">
         <classes>
-            <class name="com.study.unittest.apitest2.emoapitest2.controller.ISMUserController1Test"/>
-            <class name="com.study.unittest.apitest2.emoapitest2.controller.ISMUserController2Test"/>
+            <class name="testNG.AUserController1Test"/>
+            <class name="testNG.AUserController2Test"/>
         </classes>
     </test>
     <test name="case1-2">
         <classes>
-            <class name="com.study.unittest.apitest2.emoapitest2.controller.ISMUserController1Test"/>
+            <class name="testNG.AUserController1Test"/>
         </classes>
     </test>
 </suite>

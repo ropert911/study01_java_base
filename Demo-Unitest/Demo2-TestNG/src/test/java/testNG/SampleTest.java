@@ -1,4 +1,4 @@
-package com.study.unittest.apitest2.emoapitest2.controller;
+package testNG;
 
 import org.testng.Assert;
 import org.testng.Reporter;

@@ -1,22 +1,22 @@
-package com.study.unittest.apitest2.emoapitest2.podo;
+package testNG.podo;
 
 import java.io.Serializable;
 
 /**
  * Created by sang on 2017/9/9.
  */
-public class IMSUser implements Serializable{
+public class AUser implements Serializable{
     private String name;
     private int price;
     private String author;
     private String publisher;
 
-    public IMSUser() {
+    public AUser() {
     }
 
     @Override
     public String toString() {
-        return "IMSUser{" +
+        return "AUser{" +
                 "name='" + name + '\'' +
                 ", price=" + price +
                 ", author='" + author + '\'' +
@@ -56,7 +56,7 @@ public class IMSUser implements Serializable{
         this.publisher = publisher;
     }
 
-    public IMSUser(String name, int price, String author, String publisher) {
+    public AUser(String name, int price, String author, String publisher) {
         this.name = name;
         this.price = price;
         this.author = author;

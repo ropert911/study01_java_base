@@ -4,12 +4,12 @@
 <suite name="All Test Suite">
 
     <listeners>
-        <listener class-name="com.study.unittest.apitest2.emoapitest2.controller.ExtentTestNGIReporterListener1"/>
+        <listener class-name="testNG.ExtentTestNGIReporterListener1"/>
     </listeners>
 
     <test verbose="2" preserve-order="true" name="TestName">
         <classes>
-            <class name="com.study.unittest.apitest2.emoapitest2.controller.TestNGHelloWorld1"/>
+            <class name="testNG.TestNGHelloWorld1"/>
         </classes>
     </test>
 </suite>

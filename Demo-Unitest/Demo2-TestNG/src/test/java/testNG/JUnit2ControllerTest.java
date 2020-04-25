@@ -1,6 +1,6 @@
-package com.study.unittest.apitest2.emoapitest2.controller;
+package testNG;
 
-import com.study.unittest.apitest2.emoapitest2.podo.IMSUser;
+import testNG.podo.AUser;
 import org.junit.*;
 import org.junit.runner.RunWith;
 import org.slf4j.Logger;
@@ -8,7 +8,6 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.web.client.TestRestTemplate;
-import org.springframework.http.ResponseEntity;
 import org.springframework.test.context.junit4.SpringRunner;
 
 /**
@@ -58,13 +57,13 @@ public class JUnit2ControllerTest {
 
     @Test
     public void bookModify() throws Exception {
-        IMSUser book = new IMSUser();
+        AUser book = new AUser();
         book.setName("红楼梦");
         book.setAuthor("xq");
         book.setPrice(30);
         book.setPublisher("人民文学出版本社");
 
-        IMSUser b = testRestTemplate.postForObject("/book/book/" + "xiaoqian", book, IMSUser.class);
+        AUser b = testRestTemplate.postForObject("/book/book/" + "xiaoqian", book, AUser.class);
         logger.info(b.toString());
     }
 }

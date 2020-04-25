@@ -1,4 +1,4 @@
-package com.study.unittest.apitest2.emoapitest2.controller;
+package testNG;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -16,8 +16,8 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @AutoConfigureMockMvc
-@SpringBootTest//(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
-public class ISMUserController4Test extends AbstractTestNGSpringContextTests{
+@SpringBootTest
+public class AUserController4Test extends AbstractTestNGSpringContextTests{
     private final Logger logger = LoggerFactory.getLogger(getClass());
 
     @Autowired
@@ -31,6 +31,5 @@ public class ISMUserController4Test extends AbstractTestNGSpringContextTests{
                 .andReturn().getResponse().getContentAsString();
         logger.info(result);
         Assert.assertNotNull(result);
-        logger.info("4444444444444444444444444");
     }
 }
