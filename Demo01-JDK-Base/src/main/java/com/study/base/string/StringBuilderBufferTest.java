@@ -25,4 +25,13 @@ public class StringBuilderBufferTest {
         endTime = System.currentTimeMillis();
         System.out.println("时间=" + (endTime - startTime) + "ms");
     }
+
+    void translate(){
+        int a =1;
+        long b = 1;
+        double c = 1;
+        boolean d = true;
+        String s = String.valueOf(a);
+        int i = Integer.valueOf(s);
+    }
 }
