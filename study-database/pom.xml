@@ -9,6 +9,7 @@
     <modules>
         <module>mongo</module>
         <module>mongo_repository</module>
+        <module>mybatis-flyway</module>
         <module>mybatis1</module>
         <module>mybatis4</module>
         <module>mybatis5</module>
