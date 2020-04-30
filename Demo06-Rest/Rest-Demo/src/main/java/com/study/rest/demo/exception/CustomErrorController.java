@@ -17,7 +17,6 @@ import java.util.Map;
 /**
  * 系统异常统一处理（包括spring framework内异常）
  *
- * @author sk-shifanwen on 2019/7/23.
  */
 @RestController
 public class CustomErrorController extends BasicErrorController {

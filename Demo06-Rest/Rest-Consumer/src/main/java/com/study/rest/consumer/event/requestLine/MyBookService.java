@@ -5,7 +5,7 @@ import feign.RequestLine;
 
 /**
  * PM 远程 REST API
- * @author sk-shifanwen
+ *
  * @date 2019/1/18
  */
 public interface MyBookService {
