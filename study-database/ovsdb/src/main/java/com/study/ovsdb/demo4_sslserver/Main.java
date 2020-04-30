@@ -1,4 +1,4 @@
-package com.study.ovsdb.demo3_sslwithfile;
+package com.study.ovsdb.demo4_sslserver;
 
 /**
  * @author sk-qianxiao
@@ -7,6 +7,5 @@ package com.study.ovsdb.demo3_sslwithfile;
 public class Main {
     public static void main(String[] args) throws Exception {
         SslServer.init();
-        SslClient.init();
     }
 }
