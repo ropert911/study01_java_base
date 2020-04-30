@@ -12,6 +12,6 @@ public class Main {
     public static void main(String[] args) throws Exception {
         SslUtil.SelfSignedSslContextPair sslContextPair = newSelfSignedSslContextPair();
         SslServer.init();
-        SslClient.init(sslContextPair);
+        SslClient.init();
     }
 }

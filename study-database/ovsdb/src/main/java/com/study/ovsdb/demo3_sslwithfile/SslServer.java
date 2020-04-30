@@ -12,8 +12,11 @@ import com.vmware.ovsdb.service.OvsdbPassiveConnectionListener;
 import com.vmware.ovsdb.service.impl.OvsdbPassiveConnectionListenerImpl;
 import io.netty.handler.ssl.SslContext;
 import io.netty.handler.ssl.SslContextBuilder;
+import org.springframework.core.io.ClassPathResource;
+import org.springframework.core.io.Resource;
 
 import java.io.File;
+import java.io.InputStream;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
@@ -38,10 +41,18 @@ public class SslServer {
     };
 
 
-    public static void init() throws Exception{
-        SslContext serverSslCtx = SslContextBuilder.forServer(
-                new File("C:\\Users\\sk-qianxiao\\Desktop\\onos-cert\\ubunto\\onos.jks"), new File("C:\\Users\\sk-qianxiao\\Desktop\\onos-cert\\ubunto\\onos.jks"))
-                .trustManager(new File("C:\\Users\\sk-qianxiao\\Desktop\\onos-cert\\ubunto\\onos.jks"))
+    public static void init() throws Exception {
+//        SslContext serverSslCtx = SslContextBuilder.forServer(
+//                new File("C:\\Users\\sk-qianxiao\\Desktop\\cert_test\\server.crt"),
+//                new File("C:\\Users\\sk-qianxiao\\Desktop\\cert_test\\server.pkcs8"))
+//                .trustManager(new File("C:\\Users\\sk-qianxiao\\Desktop\\cert_test\\client.crt"))
+//                .build();
+
+        InputStream server_crt = new ClassPathResource("server.crt").getInputStream();
+        InputStream server_pkcs8 = new ClassPathResource("server.pkcs8").getInputStream();
+        InputStream client_crt = new ClassPathResource("client.crt").getInputStream();
+        SslContext serverSslCtx = SslContextBuilder.forServer(server_crt, server_pkcs8)
+                .trustManager(client_crt)
                 .build();
         passiveListener.startListeningWithSsl(Constans.PORT, serverSslCtx, connectionCallback).join();
     }

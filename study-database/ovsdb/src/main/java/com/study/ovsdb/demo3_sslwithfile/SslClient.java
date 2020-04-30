@@ -8,8 +8,11 @@ import com.vmware.ovsdb.protocol.operation.notation.Function;
 import com.vmware.ovsdb.protocol.util.OvsdbConstant;
 import io.netty.handler.ssl.SslContext;
 import io.netty.handler.ssl.SslContextBuilder;
+import org.springframework.core.io.ClassPathResource;
+import org.springframework.core.io.Resource;
 
 import java.io.File;
+import java.io.InputStream;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.stream.Collectors;
@@ -21,13 +24,21 @@ import java.util.stream.Collectors;
 public class SslClient {
     private static final ActiveOvsdbServerEmulator activeOvsdbServer = new ActiveOvsdbServerEmulator(Constans.HOST, Constans.PORT);
 
-    public static void init(SslUtil.SelfSignedSslContextPair sslContextPair) throws Exception {
+    public static void init() throws Exception {
         testSelectTransact();
 
+//        SslContext clientSslCtx = SslContextBuilder.forClient()
+//                .keyManager(new File("C:\\Users\\sk-qianxiao\\Desktop\\cert_test\\client.crt"),
+//                        new File("C:\\Users\\sk-qianxiao\\Desktop\\cert_test\\client.pkcs8"))
+//                .trustManager(new File("C:\\Users\\sk-qianxiao\\Desktop\\cert_test\\server.crt"))
+//                .build();
+
+        InputStream client_crt = new ClassPathResource("client.crt").getInputStream();
+        InputStream client_pkcs8 = new ClassPathResource("client.pkcs8").getInputStream();
+        InputStream server_crt = new ClassPathResource("server.crt").getInputStream();
         SslContext clientSslCtx = SslContextBuilder.forClient()
-                .keyManager(new File("C:\\Users\\sk-qianxiao\\Desktop\\onos-cert\\simulator\\sc-privkey.pem"),
-                        new File("C:\\Users\\sk-qianxiao\\Desktop\\onos-cert\\simulator\\sc-req.pem"))
-                .trustManager(new File("C:\\Users\\sk-qianxiao\\Desktop\\onos-cert\\ubunto\\cacert.pem"))
+                .keyManager(client_crt, client_pkcs8)
+                .trustManager(server_crt)
                 .build();
         activeOvsdbServer.connectWithSsl(clientSslCtx).join();
     }
