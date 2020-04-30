@@ -1,4 +1,4 @@
-package com.study.jsonrpc;
+package com.study.jsonrpc.server;
 
 import com.googlecode.jsonrpc4j.spring.AutoJsonRpcServiceImplExporter;
 import org.springframework.beans.factory.annotation.Configurable;

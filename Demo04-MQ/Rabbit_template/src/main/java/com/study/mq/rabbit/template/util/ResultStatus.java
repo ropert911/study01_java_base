@@ -62,7 +62,7 @@ public enum ResultStatus {
 	http_status_too_many_requests(429, "Too Many Requests"),
 	http_status_request_header_fields_too_large(431, "Request Header Fields Too Large"),
 
-	// --- 5xx Server Error ---
+	// --- 5xx com.study.demo1jsonrpc.Server Error ---
 	http_status_internal_server_error(500, "系统错误"),
 	http_status_not_implemented(501, "Not Implemented"),
 	http_status_bad_gateway(502, "Bad Gateway"),

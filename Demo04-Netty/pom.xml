@@ -9,7 +9,7 @@
     <modules>
         <module>Netty-Client</module>
         <module>Netty-Demo</module>
-        <module>Netty-Server</module>
+        <module>Netty-com.study.demo1jsonrpc.Server</module>
     </modules>
     <packaging>pom</packaging>
 

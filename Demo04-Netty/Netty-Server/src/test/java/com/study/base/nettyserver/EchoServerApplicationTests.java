@@ -16,7 +16,7 @@ public class EchoServerApplicationTests {
     @Test
     public void contextLoads() {
         try {
-            log.info("Http Server listening on 3636 ...");
+            log.info("Http com.study.demo1jsonrpc.Server listening on 3636 ...");
             new EchoServer(3636).start();
         } catch (Exception e) {
             e.printStackTrace();
