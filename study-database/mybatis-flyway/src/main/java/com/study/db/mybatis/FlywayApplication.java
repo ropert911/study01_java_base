@@ -1,4 +1,4 @@
-package com.skspruce.homeap.dcm;
+package com.study.db.mybatis;
 
 
 import org.mybatis.spring.annotation.MapperScan;
