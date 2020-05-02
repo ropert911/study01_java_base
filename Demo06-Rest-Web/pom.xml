@@ -4,17 +4,16 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.study.rest</groupId>
-    <artifactId>Demo06-Rest</artifactId>
+    <artifactId>Demo06-Rest-Web</artifactId>
+    <name>Demo06-Rest-Web</name>
     <version>0.0.1-SNAPSHOT</version>
     <modules>
+        <module>demo-web</module>
         <module>Rest-Demo</module>
         <module>Rest-Consumer</module>
         <module>Rest-Swagger</module>
     </modules>
     <packaging>pom</packaging>
-
-    <name>Demo06-Rest</name>
-    <description>Demo project for Spring Boot</description>
 
     <parent>
         <groupId>org.springframework.boot</groupId>
