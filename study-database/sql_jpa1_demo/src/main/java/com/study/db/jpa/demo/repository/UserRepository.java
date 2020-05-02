@@ -8,9 +8,7 @@ import org.springframework.data.repository.query.Param;
 
 import com.study.db.jpa.demo.domain.User;
 
-public interface UserRepository extends Repository<User, Long>
-{
-
+public interface UserRepository extends Repository<User, Long> {
     List<User> findByNameAndAddress(String name, String address);
 
     @Query(value = "from User u where u.name=:name")
