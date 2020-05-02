@@ -9,7 +9,10 @@ mongo_repository：
 mybatis1：   纯xml方式使用, 连接使用了数据库属性配置文件; mapper使用了xml和dao两种方式
 mybatis4:    1对1(post-user)，1对多的查询(user-post)
 mybatis5:    多对多关系User-Group-UserGroup
-mybatis6:    使用spring方式进行 操作
+mybatis-xml         xml方式+注解方式
+mybatis-annotation:    使用spring方式进行 操作
+mybatis-mulidatasource  又数据源方式
+mybatis-flyway:         flyway的 + mybatis anotation方式
 
 sql_jdbc_demo
     使用 JdbcTemplate 对sql进行操作

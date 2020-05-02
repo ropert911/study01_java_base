@@ -9,14 +9,13 @@
     <modules>
         <module>mongo</module>
         <module>mongo_repository</module>
-        <module>mybatis-flyway</module>
         <module>mybatis1</module>
         <module>mybatis4</module>
         <module>mybatis5</module>
-        <module>mybatis6</module>
+        <module>mybatis-xml</module>
         <module>mybatis-annotation</module>
         <module>mybatis-mulidatasource</module>
-        <module>mybatis-xml</module>
+        <module>mybatis-flyway</module>
         <module>ovsdb</module>
         <module>sql_jdbc_demo</module>
         <module>sql_jpa1_demo</module>

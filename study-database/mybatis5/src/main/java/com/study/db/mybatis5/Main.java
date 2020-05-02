@@ -41,7 +41,6 @@ public class Main {
     }
 
     public static void testGetGroupAndUsers() {
-        UserGroup userGroup = new UserGroup();
         SqlSession session = sqlSessionFactory.openSession();
         try {
             GroupMaper groupMaper = session.getMapper(GroupMaper.class);
@@ -75,7 +74,6 @@ public class Main {
     }
 
     public static void testAddUser() {
-        // TODO Auto-generated method stub
         SqlSession session = sqlSessionFactory.openSession();
         try {
             User user = new User();
@@ -84,7 +82,6 @@ public class Main {
             UserMaper userMaper = session.getMapper(UserMaper.class);
             userMaper.insertUser(user);
             session.commit();
-            // System.out.println(user.getGroupId());
         } finally {
             session.close();
         }
