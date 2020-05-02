@@ -14,9 +14,10 @@
         <module>Demo04-Netty</module>
         <module>Demo05-Cache</module>
         <module>Demo05-ES-Client</module>
-        <module>Demo06-Rest</module>
+        <module>Demo06-Rest-Web</module>
         <module>Demo-Gpb</module>
         <module>Demo-Guava</module>
+        <module>Demo-JsonRpc</module>
         <module>Demo-Lombok</module>
         <module>Demo-Unitest</module>
         <module>study-database</module>
