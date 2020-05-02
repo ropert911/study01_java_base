@@ -2,14 +2,14 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="com.study.db.mybatis1.dao.IUser">
-    <delete id="deleteUser" parameterType="int">
-        DELETE FROM user WHERE id = #{id}
-    </delete>
-
+<mapper namespace="com.study.db.mybatis1.mapper.IUser">
     <insert id="insertUser" parameterType="User">
         INSERT INTO user(name,dept, website,phone) VALUES(#{name}, #{dept}, #{website}, #{phone})
     </insert>
+
+    <delete id="deleteUser" parameterType="int">
+        DELETE FROM user WHERE id = #{id}
+    </delete>
 
     <update id="updateUser" parameterType="User">
         UPDATE user SET name=#{name},dept = #{dept}, website = #{website}, phone = #{phone} WHERE id = #{id}
@@ -17,6 +17,10 @@
 
     <select id="getUser" parameterType="int" resultType="User">
         SELECT * FROM user WHERE id = #{userId}
+    </select>
+
+    <select id="GetUserByID_xml" parameterType="int" resultType="User">
+        select * from `user` where id = #{id}
     </select>
 
     <select id="getUserList" resultType="User">

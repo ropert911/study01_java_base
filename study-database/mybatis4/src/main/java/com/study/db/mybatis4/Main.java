@@ -27,10 +27,8 @@ public class Main {
     }
 
     public static void main(String[] args) {
-        // TODO Auto-generated method stub
         SqlSession session = sqlSessionFactory.openSession();
         try {
-            int userid = 1;
             System.out.println("===========getUser");
             User user = session.selectOne("user.userMaper.getUser", 1);
             System.out.println("username: " + user.getUsername() + ",");

@@ -1,4 +1,6 @@
-use mybatisDemo;
+DROP DATABASE IF EXISTS mybatisDemo;
+CREATE DATABASE mybatisDemo CHARACTER SET utf8;
+USE mybatisDemo;
 
 -- ----------------------------
 -- Table structure for `user`
@@ -9,7 +11,7 @@ CREATE TABLE `user` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `username` varchar(64) NOT NULL DEFAULT '',
   `mobile` int(10) unsigned NOT NULL DEFAULT '0',
-  `created` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `created` datetime NOT NULL DEFAULT '0000-01-01 00:00:00',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
@@ -28,7 +30,7 @@ CREATE TABLE `post` (
   `userid` int(10) unsigned NOT NULL,
   `title` varchar(254) NOT NULL DEFAULT '',
   `content` text,
-  `created` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `created` datetime NOT NULL DEFAULT '0000-01-01 00:00:00',
   PRIMARY KEY (`post_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 

@@ -1,4 +1,4 @@
-package com.study.db.mybatis1.dao;
+package com.study.db.mybatis1.mapper;
 
 
 import com.study.db.mybatis1.models.User;

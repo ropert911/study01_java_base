@@ -4,11 +4,11 @@
 <configuration>
     <properties resource="config/db.properties"/>
     <typeAliases>
-        <typeAlias alias="User" type="com.study.db.mybatis1.models.User" />
+        <typeAlias alias="User" type="com.study.db.mybatis1.models.User"/>
     </typeAliases>
     <environments default="development">
         <environment id="development">
-            <transactionManager type="JDBC" />
+            <transactionManager type="JDBC"/>
             <dataSource type="POOLED">
                 <property name="driver" value="${driver}"/>
                 <property name="url" value="${url}"/>
@@ -19,7 +19,6 @@
     </environments>
 
     <mappers>
-        <mapper resource="config/User.xml" />
-        <mapper resource="config/UserDao.xml" />
+        <mapper resource="config/UserDao.xml"/>
     </mappers>
 </configuration>
