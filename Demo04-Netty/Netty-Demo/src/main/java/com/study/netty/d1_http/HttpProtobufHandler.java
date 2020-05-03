@@ -1,5 +1,6 @@
-package com.study.netty.d2_tcp.server.opmserver;
+package com.study.netty.d1_http;
 
+import io.netty.buffer.Unpooled;
 import io.netty.channel.ChannelFutureListener;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.SimpleChannelInboundHandler;
@@ -9,17 +10,13 @@ import org.slf4j.LoggerFactory;
 
 import java.net.URI;
 
-/**
- * Created by sk-ziconglu on 2017/3/9.
- */
 public class HttpProtobufHandler extends SimpleChannelInboundHandler<FullHttpRequest> {
-    private static final Logger LOGGER = LoggerFactory.getLogger(HttpProtobufHandler.class);
+    private static final Logger logger = LoggerFactory.getLogger(HttpProtobufHandler.class);
 
     @Override
     protected void channelRead0(ChannelHandlerContext channelHandlerContext, FullHttpRequest fullHttpRequest) throws Exception {
         FullHttpResponse response;
 
-        //发送：curl -v -X POST --retry 3  --retry-delay 10 --retry-max-time 900 --data-binary @abc http://10.10.23.13:3636/arrow/iops-collector-api:insertSksinfdfsafo >/dev/null
         try {
             URI uri = new URI(fullHttpRequest.uri());
 
@@ -29,10 +26,10 @@ public class HttpProtobufHandler extends SimpleChannelInboundHandler<FullHttpReq
             System.out.println("=========" + uri.toString() + "================");
             System.out.println(con);
 
-            response = new DefaultFullHttpResponse(HttpVersion.HTTP_1_1, HttpResponseStatus.OK);
-
+//            response = new DefaultFullHttpResponse(HttpVersion.HTTP_1_1, HttpResponseStatus.OK);
+            response = new DefaultFullHttpResponse(HttpVersion.HTTP_1_1, HttpResponseStatus.OK, Unpooled.wrappedBuffer("test http".getBytes()));
         } catch (Throwable cause) {
-            LOGGER.error("Fail to send message", cause);
+            logger.error("Fail to send message", cause);
             response = new DefaultFullHttpResponse(HttpVersion.HTTP_1_1, HttpResponseStatus.INTERNAL_SERVER_ERROR);
         }
 
@@ -41,8 +38,7 @@ public class HttpProtobufHandler extends SimpleChannelInboundHandler<FullHttpReq
 
     @Override
     public void exceptionCaught(ChannelHandlerContext ctx, Throwable cause) {
-        LOGGER.error("Exception caught:", cause);
+        logger.error("Exception caught:", cause);
         ctx.writeAndFlush(new DefaultFullHttpResponse(HttpVersion.HTTP_1_1, HttpResponseStatus.BAD_REQUEST)).addListener(ChannelFutureListener.CLOSE);
     }
-
 }
