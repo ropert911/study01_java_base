@@ -4,6 +4,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.util.Random;
+import java.util.UUID;
 
 /**
  * Created by xq on 2017/9/23.
@@ -16,22 +17,36 @@ public class RandomTest {
     }
 
     public static void test1() {
+        uuidTest();
+        mathRandom();
+        randomTest();
+    }
+
+    public static void uuidTest() {
+        UUID uuid = UUID.randomUUID();
+        System.out.println(uuid.toString());
+    }
+
+    public static void mathRandom() {
         double num = Math.random() * 100;
         LOGGER.error("Math.random() * 100=>{}", num);
+    }
 
-        Random r3 = new Random();
+    public static void randomTest() {
+        Random random = new Random();
 
-        LOGGER.info("生成的[0,10)之间的整数");
+        System.out.print("1-10的Double");
         for (int i = 0; i < 10; i++) {
-            System.out.print(r3.nextInt(10) + " ");
+            System.out.print(random.nextInt(10) + " ");
         }
         System.out.println(" ");
 
-        LOGGER.info("生成的[0,1)之间的double");
+        System.out.print("1-10的整数");
         for (int i = 0; i < 10; i++) {
-            System.out.print(r3.nextDouble() + " ");
-            r3.doubles();
+            System.out.print(random.nextDouble() + " ");
+            random.doubles();
         }
         System.out.println(" ");
+
     }
 }
