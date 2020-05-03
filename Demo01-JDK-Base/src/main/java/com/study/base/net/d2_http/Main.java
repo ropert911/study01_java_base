@@ -1,4 +1,4 @@
-package com.study.base.net.demo2_http;
+package com.study.base.net.d2_http;
 
 /**
  * @author sk-qianxiao
