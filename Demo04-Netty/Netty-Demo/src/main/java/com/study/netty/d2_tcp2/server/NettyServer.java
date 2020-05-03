@@ -17,9 +17,9 @@ public class NettyServer {
     private static final EventLoopGroup workerGroup = new NioEventLoopGroup(BIZTHREADSIZE);
 
     //服务端
-    ServerBootstrap serverBootstrap;
+    static ServerBootstrap serverBootstrap;
 
-    public void init() {
+    public static void start() {
         serverBootstrap = new ServerBootstrap();
         serverBootstrap.group(bossGroup, workerGroup);
         serverBootstrap.channel(NioServerSocketChannel.class);
@@ -37,19 +37,20 @@ public class NettyServer {
                 pipeline.addLast(new StringDecoder(CharsetUtil.UTF_8));
                 pipeline.addLast(new StringEncoder(CharsetUtil.UTF_8));
                 //添加handler监听客户端Channel的状态变化
-                pipeline.addLast(new TcpServerHandler());
+                pipeline.addLast(new TcpServerHandler2());
             }
         });
 
         try {
             //服务端启动
-            ChannelFuture cf = serverBootstrap.bind("127.0.0.1", 3636).sync();
-//            Toast.makeText(getActivity(), "TCP服务器已启动", Toast.LENGTH_SHORT).show();
-
-            cf.channel().closeFuture().sync();
+            ChannelFuture cf = serverBootstrap.bind("127.0.0.1", 8080).sync();
+//            cf.channel().closeFuture().sync();
         } catch (InterruptedException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
+    }
+
+    public static void main(String [] args){
+        start();
     }
 }

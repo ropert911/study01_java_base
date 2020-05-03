@@ -36,14 +36,23 @@ public class NettyClient {
         ChannelFuture f;
         try {
             //连接服务端
-            f = b.connect("127.0.0.1", 3636).sync();
+            f = b.connect("127.0.0.1", 8080).sync();
             serverChannel = f.channel();
-            serverChannel.writeAndFlush("<<<<<<<<<<<<<<<<客户端请求连接>>>>>>>>>>>>>>>>");
+            serverChannel.writeAndFlush("<<<<<<<<<<<<<<<<client msg>>>>>>>>>>>>>>>>");
 
             serverChannel.flush();
             serverChannel.closeFuture().sync();
         } catch (InterruptedException e) {
             // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+    }
+
+    public static void main(String [] args){
+        try {
+            NettyClient client = new NettyClient();
+            client.init();
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
