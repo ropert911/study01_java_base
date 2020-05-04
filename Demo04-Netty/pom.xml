@@ -4,11 +4,11 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.study.netty.demo</groupId>
-    <artifactId>Demo4-Netty</artifactId>
+    <artifactId>Demo04-Netty</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>jar</packaging>
 
-    <name>Demo4-Netty</name>
+    <name>Demo04-Netty</name>
     <description>Demo project for Spring Boot</description>
 
     <parent>
