@@ -1,4 +1,4 @@
-package com.study.netty.d2_tcp_ssl.client;
+package com.study.netty.d2_tcp_ssl_single.client;
 
 import io.netty.bootstrap.Bootstrap;
 import io.netty.buffer.ByteBufAllocator;
@@ -26,14 +26,14 @@ import java.util.concurrent.TimeUnit;
 public class TcpClient {
     private static final Logger logger = LoggerFactory.getLogger(TcpClient.class);
     private static Bootstrap bootstrap = null;
-    private static Channel channel ;
+    private static Channel channel;
 
 
     private static SSLEngine getSSLEngine(ByteBufAllocator alloc) throws IOException {
-        InputStream client_crt = new ClassPathResource("client.crt").getInputStream();
-        InputStream client_pkcs8 = new ClassPathResource("client.pkcs8").getInputStream();
+//        InputStream server_crt = new ClassPathResource("client.crt").getInputStream();
+//        InputStream server_pkcs8 = new ClassPathResource("client.pkcs8").getInputStream();
         InputStream server_crt = new ClassPathResource("server.crt").getInputStream();
-        SslContext sslContext = SslContextBuilder.forServer(client_crt, client_pkcs8)
+        SslContext sslContext = SslContextBuilder.forClient()
                 .trustManager(server_crt).build();
 
         SSLEngine sslEngine = sslContext.newEngine(alloc);
@@ -71,7 +71,8 @@ public class TcpClient {
                     SSLEngine sslEngine = getSSLEngine(ch.alloc());
 
                     pipeline.addFirst("ssl", new SslHandler(sslEngine));
-;                   pipeline.addLast("frameDecoder", new LengthFieldBasedFrameDecoder(Integer.MAX_VALUE, 0, 4, 0, 4));
+                    ;
+                    pipeline.addLast("frameDecoder", new LengthFieldBasedFrameDecoder(Integer.MAX_VALUE, 0, 4, 0, 4));
                     pipeline.addLast("frameEncoder", new LengthFieldPrepender(4));
                     pipeline.addLast("decoder", new StringDecoder(CharsetUtil.UTF_8));
                     pipeline.addLast("encoder", new StringEncoder(CharsetUtil.UTF_8));

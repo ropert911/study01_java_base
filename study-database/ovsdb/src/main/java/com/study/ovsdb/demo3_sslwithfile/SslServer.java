@@ -50,9 +50,9 @@ public class SslServer {
 
         InputStream server_crt = new ClassPathResource("server.crt").getInputStream();
         InputStream server_pkcs8 = new ClassPathResource("server.pkcs8").getInputStream();
-        InputStream client_crt = new ClassPathResource("client.crt").getInputStream();
+//        InputStream client_crt = new ClassPathResource("client.crt").getInputStream();
         SslContext serverSslCtx = SslContextBuilder.forServer(server_crt, server_pkcs8)
-                .trustManager(client_crt)
+//                .trustManager(client_crt)
                 .build();
         passiveListener.startListeningWithSsl(Constans.PORT, serverSslCtx, connectionCallback).join();
     }
@@ -63,7 +63,7 @@ public class SslServer {
             CompletableFuture<OperationResult[]> f = ovsdbClient.transact("hardware_vtep", ImmutableList.of(select));
             OperationResult[] ops = f.join();
             System.out.println("read result========");
-            System.out.println(ops.toString());
+            System.out.println(ops[0].toString());
         } catch (OvsdbClientException e) {
             e.printStackTrace();
         }
