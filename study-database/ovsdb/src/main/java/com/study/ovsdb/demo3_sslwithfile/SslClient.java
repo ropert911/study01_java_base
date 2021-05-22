@@ -33,11 +33,11 @@ public class SslClient {
 //                .trustManager(new File("C:\\Users\\sk-qianxiao\\Desktop\\cert_test\\server.crt"))
 //                .build();
 
-        InputStream client_crt = new ClassPathResource("client.crt").getInputStream();
-        InputStream client_pkcs8 = new ClassPathResource("client.pkcs8").getInputStream();
+//        InputStream client_crt = new ClassPathResource("client.crt").getInputStream();
+//        InputStream client_pkcs8 = new ClassPathResource("client.pkcs8").getInputStream();
         InputStream server_crt = new ClassPathResource("server.crt").getInputStream();
         SslContext clientSslCtx = SslContextBuilder.forClient()
-                .keyManager(client_crt, client_pkcs8)
+//                .keyManager(client_crt, client_pkcs8)
                 .trustManager(server_crt)
                 .build();
         activeOvsdbServer.connectWithSsl(clientSslCtx).join();
