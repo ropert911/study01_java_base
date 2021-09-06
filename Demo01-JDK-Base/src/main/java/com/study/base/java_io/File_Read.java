@@ -1,6 +1,10 @@
 package com.study.base.java_io;
 
+import org.apache.commons.io.FileUtils;
+
 import java.io.*;
+import java.nio.charset.Charset;
+import java.util.List;
 
 /**
  * 文件读取
@@ -9,14 +13,20 @@ public class File_Read {
     public static void main(String[] args) {
         String fileName = "C:/temp/newTemp.txt";
 
-        File_Read.readFileByBytes(fileName); //以字节方式读
-        File_Read.readFileByChars(fileName); //以字符为单位读取文件内容，一次读一个字节
-        File_Read.readFileByLines(fileName);     //以行为单位读取文件内容，一次读一整行
+        //以字节方式读
+        File_Read.readFileByBytes(fileName);
+        //以字符为单位读取文件内容，一次读一个字节
+        File_Read.readFileByChars(fileName);
+        //以行为单位读取文件内容，一次读一整行
+        File_Read.readFileByLines(fileName);
+        //使用FileUtils读取
+        readAllLine();
         File_Read.readFileByRandomAccess(fileName);
     }
 
     /**
      * 以字节为单位读取文件，常用于读二进制文件，如图片、声音、影像等文件。
+     *
      * @param fileName xx
      */
     public static void readFileByBytes(String fileName) {
@@ -61,6 +71,7 @@ public class File_Read {
 
     /**
      * 以字符为单位读取文件，常用于读文本，数字等类型的文件
+     *
      * @param fileName xxx
      */
     public static void readFileByChars(String fileName) {
@@ -120,6 +131,7 @@ public class File_Read {
 
     /**
      * 以行为单位读取文件，常用于读面向行的格式化文件
+     *
      * @param fileName xx
      */
     public static void readFileByLines(String fileName) {
@@ -146,6 +158,27 @@ public class File_Read {
                 } catch (IOException e1) {
                 }
             }
+        }
+    }
+
+    public static void readAllLine() {
+        File file = new File("demo1.txt");
+        try {
+            // 读取文件
+            List<String> lines = FileUtils.readLines(file, Charset.defaultCharset());
+            // 写入文件
+            FileUtils.writeLines(new File("demo2.txt"), lines);
+        } catch (Exception e) {
+
+        }
+
+        try {
+            // 复制文件
+            File srcFile = new File("aa");
+            File destFile = new File("bb");
+            FileUtils.copyFile(srcFile, destFile);
+        } catch (Exception e) {
+
         }
     }
 
