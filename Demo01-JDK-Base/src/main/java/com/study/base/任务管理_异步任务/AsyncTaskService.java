@@ -1,4 +1,4 @@
-package com.study.base.asynctask;
+package com.study.base.任务管理_异步任务;
 
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;

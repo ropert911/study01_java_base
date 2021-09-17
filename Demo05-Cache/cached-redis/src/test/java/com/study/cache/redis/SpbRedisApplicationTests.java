@@ -1,7 +1,6 @@
 package com.study.cache.redis;
 
 import com.study.cache.redis.example.*;
-import com.study.redis.example.*;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -12,7 +12,6 @@
         <module>demo-web-socket</module>
         <module>Rest-Demo</module>
         <module>Rest-Consumer</module>
-        <module>Rest-Swagger</module>
     </modules>
     <packaging>pom</packaging>
 

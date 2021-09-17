@@ -1,4 +1,4 @@
-package com.study.base.asynctask;
+package com.study.base.任务管理_异步任务;
 
 import org.springframework.aop.interceptor.AsyncUncaughtExceptionHandler;
 import org.springframework.context.annotation.ComponentScan;
@@ -11,11 +11,9 @@ import java.util.concurrent.Executor;
 
 /**
  * 开启异步任务支持
- *
- * @author sk-qianxiao
  */
 @Configuration
-@ComponentScan("com.xq.study.asynctask")
+@ComponentScan("com.study.base.任务管理_异步任务")
 @EnableAsync
 public class TaskExcutorConfig implements AsyncConfigurer {
     @Override

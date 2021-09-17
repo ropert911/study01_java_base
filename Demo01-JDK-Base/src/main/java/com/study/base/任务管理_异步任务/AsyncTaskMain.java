@@ -1,4 +1,4 @@
-package com.study.base.asynctask;
+package com.study.base.任务管理_异步任务;
 
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
@@ -7,7 +7,7 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
  *
  * @author sk-qianxiao
  */
-public class AsyncTaskTest {
+public class AsyncTaskMain {
     public static void main(String[] args) {
         AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(TaskExcutorConfig.class);
 

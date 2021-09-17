@@ -51,8 +51,8 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 				<configuration>
-	                <fork>true</fork>
-	            </configuration>
+					<mainClass>com.study.ovsdb.TestApplication</mainClass>
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>
