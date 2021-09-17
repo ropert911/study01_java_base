@@ -1,4 +1,4 @@
-package com.study.base.concurrent.model;
+package com.study.base.任务管理_concurrent.model;
 
 import static java.lang.Thread.sleep;
 

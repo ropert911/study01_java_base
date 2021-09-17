@@ -1,4 +1,4 @@
-package com.study.base.concurrent;
+package com.study.base.任务管理_concurrent;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -38,6 +38,8 @@ public class CountDownLatchMain {
         sleep(1000);
 
         startLatch.countDown();
+
         endLatch.await();
+        logger.info("main end");
     }
 }

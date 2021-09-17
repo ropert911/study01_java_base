@@ -1,6 +1,6 @@
-package com.study.base.concurrent;
+package com.study.base.任务管理_concurrent;
 
-import com.study.base.concurrent.model.Shop;
+import com.study.base.任务管理_concurrent.model.Shop;
 
 import java.util.ArrayList;
 import java.util.List;
