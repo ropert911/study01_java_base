@@ -1,4 +1,4 @@
-package com.study.base.threadpool.task;
+package com.study.base.任务管理_线程池.task;
 
 public class ThreadTask extends Thread {
 
@@ -10,7 +10,7 @@ public class ThreadTask extends Thread {
 
     @Override
     public void run() {
-        System.out.println("获取"+name+"的信息并保存");
+        System.out.println("获取" + name + "的信息并保存");
         try {
             Thread.sleep(1000);
         } catch (InterruptedException e) {

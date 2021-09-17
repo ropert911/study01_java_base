@@ -1,16 +1,17 @@
-package com.study.base.threadpool;
+package com.study.base.任务管理_线程池;
 
-import com.study.base.threadpool.task.RunnableTask;
-import com.study.base.threadpool.task.ThreadTask;
+import com.study.base.任务管理_线程池.task.RunnableTask;
+import com.study.base.任务管理_线程池.task.ThreadTask;
 import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
 
 /**
+ * 手动建
+ *
  * @author sk-qianxiao
  * @date 2020/1/13
  */
 public class ThreadPoolTaskExecutorTest {
-    public static void main(String[] args) throws Exception{
-
+    public static void main(String[] args) throws Exception {
         ThreadPoolTaskExecutor taskExecutor = new ThreadPoolTaskExecutor();
 
         /**线程数*/
@@ -21,8 +22,8 @@ public class ThreadPoolTaskExecutorTest {
         taskExecutor.setQueueCapacity(25);
         taskExecutor.initialize();
 
-        taskExecutor.submit(new RunnableTask("task1"));
-        taskExecutor.execute(new ThreadTask("task2"));
+        taskExecutor.submit(new RunnableTask("Name-RunnableTask"));
+        taskExecutor.execute(new ThreadTask("Name-ThreadTask"));
 
         System.out.println("main end;");
     }

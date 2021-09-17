@@ -1,8 +1,8 @@
-package com.study.base.threadpool;
+package com.study.base.任务管理_线程池;
 
-import com.study.base.threadpool.task.CallableTask;
-import com.study.base.threadpool.task.RunnableTask;
-import com.study.base.threadpool.task.ThreadTask;
+import com.study.base.任务管理_线程池.task.CallableTask;
+import com.study.base.任务管理_线程池.task.RunnableTask;
+import com.study.base.任务管理_线程池.task.ThreadTask;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -11,14 +11,15 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 
 /**
- * @author sk-qianxiao
+ * 只一个线程的线程池
+ * 问题：允许请求队列长度为Integer.MAX_VALUE
  */
-public class CachedThreadPoolTest {
-    public static void main(String[] args){
+public class SingleThreadPoolTestTest {
+    public static void main(String[] args) {
         try {
-            ExecutorService exec = Executors.newCachedThreadPool();
-            exec.submit(new RunnableTask("test"));
-            exec.execute(new ThreadTask("张"));
+            ExecutorService exec = Executors.newSingleThreadExecutor();
+            exec.submit(new RunnableTask("Name-RunnableTask"));
+            exec.execute(new ThreadTask("Name-ThreadTask"));
 
 
             List<CallableTask> callList = new ArrayList<CallableTask>();
