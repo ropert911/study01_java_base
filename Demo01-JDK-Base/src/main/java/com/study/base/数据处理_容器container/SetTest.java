@@ -1,4 +1,4 @@
-package com.study.base.container;
+package com.study.base.数据处理_容器container;
 
 import java.util.*;
 
@@ -7,7 +7,9 @@ import java.util.*;
  */
 public class SetTest {
     public static void main(String[] args) {
+        //Set 转 数据
         testSet2Array();
+        //set 转 list
         testSet2List();
     }
 
@@ -27,7 +29,7 @@ public class SetTest {
     }
 
     /**
-     * /set 转 list
+     * set 转 list
      */
     public static void testSet2List() {
 

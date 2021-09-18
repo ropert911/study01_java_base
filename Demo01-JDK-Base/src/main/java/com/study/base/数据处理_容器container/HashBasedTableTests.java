@@ -1,4 +1,4 @@
-package com.study.base.container;
+package com.study.base.数据处理_容器container;
 
 import com.google.common.collect.HashBasedTable;
 import com.google.common.collect.Table;
@@ -6,13 +6,13 @@ import com.google.common.collect.Table;
 import java.util.Map;
 
 /**
+ * Table 一种有两个key的HashMap
+ *
  * @author sk-qianxiao
  * @date 2021/9/6
  */
 public class HashBasedTableTests {
     public static void main(String[] args) {
-        //Table 一种有两个key的HashMap
-
         // 一批用户，同时按年龄和性别分组
         Table<Integer, String, String> table = HashBasedTable.create();
         table.put(18, "男", "yideng");

@@ -1,4 +1,4 @@
-package com.study.base.container;
+package com.study.base.数据处理_容器container;
 
 import java.util.*;
 
@@ -7,8 +7,11 @@ import java.util.*;
  */
 public class MapTest {
     public static void main(String[] args) {
+        //遍历
         transforTest();
+        //Map 转 list
         map2ListTest();
+        //Map 转 Set
         map2SetTest();
     }
 

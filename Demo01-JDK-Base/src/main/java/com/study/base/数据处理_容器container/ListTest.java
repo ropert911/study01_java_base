@@ -1,7 +1,6 @@
-package com.study.base.container;
+package com.study.base.数据处理_容器container;
 
 import org.apache.commons.collections4.CollectionUtils;
-import org.eclipse.jetty.util.ajax.JSON;
 
 import java.util.*;
 import java.util.stream.Collectors;
@@ -20,7 +19,9 @@ public class ListTest {
         testList2Set();
         //元素拼接
         testListJoin();
+        //交集--会改变原list
         testListInnerJoin();
+        //交集、并集、差集 - 不改变原list
         testListUnion();
     }
 

@@ -1,4 +1,4 @@
-package com.study.base.container;
+package com.study.base.数据处理_容器container;
 
 import com.google.common.collect.HashMultiset;
 import com.google.common.collect.Multiset;
@@ -7,12 +7,13 @@ import java.util.Iterator;
 import java.util.Set;
 
 /**
+ * Multiset 一种用来计数的Set
+ *
  * @author sk-qianxiao
  * @date 2021/9/6
  */
 public class MultisetTest {
     public static void main(String[] args) {
-        //Multiset 一种用来计数的Set
         Multiset<String> multiset = HashMultiset.create();
         multiset.add("apple");
         multiset.add("apple");

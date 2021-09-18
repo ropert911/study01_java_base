@@ -1,4 +1,4 @@
-package com.study.base.container;
+package com.study.base.数据处理_容器container;
 
 import org.eclipse.jetty.util.ajax.JSON;
 
@@ -10,10 +10,14 @@ import java.util.Set;
 
 public class DataArrayTest {
     public static void main(String[] args) {
+        //生成数组
         newArray();
+        //List转数组
         testList2Array();
-        testArray2Set();
+        //数组转List
         testArray2List();
+        //数据转Set
+        testArray2Set();
     }
 
     public static void newArray() {
@@ -43,15 +47,6 @@ public class DataArrayTest {
         }
     }
 
-    public static void testArray2Set() {
-        {
-            String[] arr = {"AA", "BB", "DD", "CC", "BB"};
-            Set<String> set = new HashSet<String>(Arrays.asList(arr));
-            System.out.println("数组 转 Set<String> " + set);
-        }
-    }
-
-
     public static void testArray2List() {
         {
             String[] ss = {"JJ", "KK"};
@@ -64,5 +59,11 @@ public class DataArrayTest {
         }
     }
 
-
+    public static void testArray2Set() {
+        {
+            String[] arr = {"AA", "BB", "DD", "CC", "BB"};
+            Set<String> set = new HashSet<String>(Arrays.asList(arr));
+            System.out.println("数组 转 Set<String> " + set);
+        }
+    }
 }
