@@ -1,4 +1,4 @@
-package com.study.base.compress;
+package com.study.base.数据处理_压缩解压;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
@@ -35,28 +35,6 @@ public class GzipUtil {
         return output;
     }
 
-    /**
-     * 数据压缩
-     *
-     * @param inputStream  输入流
-     * @param outputStream 输出流
-     * @throws Exception
-     */
-    private static void compress(InputStream inputStream, OutputStream outputStream)
-            throws Exception {
-
-        GZIPOutputStream gzipOutputStream = new GZIPOutputStream(outputStream);
-
-        int count;
-        byte[] data = new byte[BUFFER];
-        while ((count = inputStream.read(data, 0, BUFFER)) != -1) {
-            gzipOutputStream.write(data, 0, count);
-        }
-
-        gzipOutputStream.finish();
-        gzipOutputStream.flush();
-        gzipOutputStream.close();
-    }
 
     /**
      * 数据解压缩
@@ -79,12 +57,36 @@ public class GzipUtil {
         return outData;
     }
 
+
+    /**
+     * 数据压缩
+     *
+     * @param inputStream
+     * @param outputStream
+     * @throws Exception
+     */
+    private static void compress(InputStream inputStream, OutputStream outputStream)
+            throws Exception {
+
+        GZIPOutputStream gzipOutputStream = new GZIPOutputStream(outputStream);
+
+        int count;
+        byte[] data = new byte[BUFFER];
+        while ((count = inputStream.read(data, 0, BUFFER)) != -1) {
+            gzipOutputStream.write(data, 0, count);
+        }
+
+        gzipOutputStream.finish();
+        gzipOutputStream.flush();
+        gzipOutputStream.close();
+    }
+
     /**
      * 数据解压缩
      *
-     * @param is xx
-     * @param os xx
-     * @throws Exception xx
+     * @param is
+     * @param os
+     * @throws Exception
      */
     private static void decompress(InputStream is, OutputStream os)
             throws Exception {
@@ -99,5 +101,4 @@ public class GzipUtil {
 
         gis.close();
     }
-
 }

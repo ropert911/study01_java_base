@@ -1,4 +1,4 @@
-package com.study.base.stream.model;
+package com.study.base.数据处理_stream.model;
 
 /**
  * @author sk-qianxiao
@@ -7,6 +7,13 @@ public class Dish {
     private int type;
     private int calories;
     private String name;
+
+    public Dish(int type, int calories, String name) {
+        this.type = type;
+        this.calories = calories;
+        this.name = name;
+    }
+    public Dish(){}
 
     public int getType() {
         return type;
