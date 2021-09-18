@@ -3,6 +3,8 @@ package com.study.base.patterns;
 import java.io.*;
 
 /**
+ * DCL, Double Check Lock ：通过 synchronized 加锁后进行二次实例化检查
+ *
  * @author sk-qianxiao
  * @date 2020/1/7
  */
@@ -21,7 +23,7 @@ public class DCLSingleton implements Serializable {
 
     //处理反射问题
     private DCLSingleton() {
-        if (mInstance!=null) {
+        if (mInstance != null) {
             throw new RuntimeException("想反射我，没门！");
         }
     }
@@ -40,6 +42,7 @@ public class DCLSingleton implements Serializable {
 
     /**
      * 防序列化
+     *
      * @return
      */
     protected Object readResolve() {
@@ -60,7 +63,7 @@ public class DCLSingleton implements Serializable {
         System.out.println(instance);
 
         // 把对象写到文件中
-        try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("chenmo"));){
+        try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("chenmo"));) {
             oos.writeObject(instance);
         } catch (IOException e) {
             e.printStackTrace();
@@ -68,7 +71,7 @@ public class DCLSingleton implements Serializable {
 
 
         // 从文件中读出对象，可以看到反序列化失败
-        try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(new File("chenmo")));){
+        try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(new File("chenmo")));) {
             instance.setName("YY");
             DCLSingleton instance2 = (DCLSingleton) ois.readObject();
             System.out.println(instance2);

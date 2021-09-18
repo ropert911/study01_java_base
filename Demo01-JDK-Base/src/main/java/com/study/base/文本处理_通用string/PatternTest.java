@@ -1,4 +1,4 @@
-package com.study.base.string;
+package com.study.base.文本处理_通用string;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,30 +18,31 @@ public class PatternTest {
                     "提取码：    5dlw\n" +
                     "复制这段内容后打开百度网盘手机App，操作更方便哦";
             String str = getString("链接：\\s*(http.*)", text);
-            System.out.println(str);
+            System.out.println("单个提取--获取到链接：" + str);
             str = getString("提取码：\\s*(.*)", text);
-            System.out.println(str);
-        }
-        {
-            String text = "0.15%|0.16%";
-            List<String> r = getmutiString("([0-9,\\.]+).*([0-9,\\.]+)", text);
-            System.out.println(r);
+            System.out.println("单个提取--获取到提取码：" + str);
         }
         {
             String text = "1.50%（每年";
             String r = getString("([0-9,\\.]+)%\\（每年", text);
-            System.out.println(r);
+            System.out.println("单个提取--得到数字" + r);
+        }
+
+        {
+            String text = "0.15%|0.16%";
+            List<String> r = getmutiString("([0-9,\\.]+).*([0-9,\\.]+)", text);
+            System.out.println("多个提取--得到数字：" + r);
         }
         {
             String text = "<tr><td class=\"th\">---</td><td>小于等于6天</td><td>1.50%</td></tr>";
             List<String> r = getmutiString("<td>(.+)</td><td>([0-9,\\.]+)%", text);
-            System.out.println(r);
+            System.out.println("多个提取--得到数字：" + r);
         }
 
         {
             String text = "0.08%|0.09%";
-            List<String> r = getmutiString("([0-9,\\.]+)%\\|([0-9,\\.]+)%", text);
-            System.out.println(r);
+            List<String> r = getmutiString("([0-9,\\.]+%)\\|([0-9,\\.]+%)", text);
+            System.out.println("多个提取--得到数字：" + r);
         }
     }
 

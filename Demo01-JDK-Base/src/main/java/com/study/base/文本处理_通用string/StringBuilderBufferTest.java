@@ -1,10 +1,4 @@
-package com.study.base.string;
-
-import org.apache.commons.lang3.StringUtils;
-
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+package com.study.base.文本处理_通用string;
 
 /**
  * @author xq
@@ -12,10 +6,10 @@ import java.util.List;
  **/
 public class StringBuilderBufferTest {
     public static void main(String[] args) {
+        //StringBuffer 是线程安全的
         testStringBuffer();
+        //StringBuilder 非线程安全的
         testStringBuilder();
-        translate();
-        testStringUtils();
     }
 
     static void testStringBuffer() {
@@ -40,21 +34,5 @@ public class StringBuilderBufferTest {
         }
         long endTime = System.currentTimeMillis();
         System.out.println("时间=" + (endTime - startTime) + "ms");
-    }
-
-    static void translate() {
-        int a = 1;
-        long b = 1;
-        double c = 1;
-        boolean d = true;
-        String s = String.valueOf(a);
-        int i = Integer.valueOf(s);
-    }
-
-    static void testStringUtils() {
-        List<String> list = new ArrayList<>();
-        list.add("Hollis");
-        list.add("每日更新java相关技术");
-        System.out.println(StringUtils.join(new ArrayList<String>(list), ","));
     }
 }
