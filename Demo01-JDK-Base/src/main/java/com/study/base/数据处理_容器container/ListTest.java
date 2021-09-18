@@ -17,6 +17,8 @@ public class ListTest {
         DataArrayTest.testList2Array();
         //list转set
         testList2Set();
+        //list转Map
+        testList2Map();
         //元素拼接
         testListJoin();
         //交集--会改变原list
@@ -54,6 +56,18 @@ public class ListTest {
         System.out.println("List<String> 转Set<String> " + listSet);
     }
 
+
+    public static void testList2Map() {
+        List<String> list = new ArrayList<String>();
+        list.add("ABC");
+        list.add("EFG");
+        list.add("LMN");
+        list.add("LMN");
+
+        //List-->map
+        Map<Integer, String> map = list.stream().collect(Collectors.toMap(String::length, a -> a));
+        System.out.println("List<String> 转Map<Integer,String> " + map);
+    }
 
     public static void testListInnerJoin() {
         List<String> list1 = new ArrayList<>();
