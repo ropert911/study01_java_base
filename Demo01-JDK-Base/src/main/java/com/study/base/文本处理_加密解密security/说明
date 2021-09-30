@@ -37,8 +37,16 @@ AES -  对称加密算法
     AES加密原理
         采用对称分组密码体制，密钥的长度最少支持为128、192、256位；加密分组长度128位，如果数据块及密钥长度不足时，会补齐进行加密。
 
+加密模式  --- DES/AES 加密模式  ECB/CBC/CFB/OFB
+        https://www.cnblogs.com/happyhippy/archive/2006/12/23/601353.html
+        ECB   电子密码本模式：Electronic codebook  每块堵路加密
+            优点：分块处理 并行处理
+            缺点：同样的原文得到相同的密文  容易被攻击
+        CBC 密码分组链接：Cipher-block chaining  每块加密依赖前一块的密文
+            优点：同样的原文得到不同的密文  原文微下的改变影响后面全部密文
+            缺点：加密需要串行处理  误差传递
 
 RSA  - 公私钥加解密算法
-    
+
 
 http://www.metools.info/code/c24.html
