@@ -17,7 +17,7 @@ import java.util.List;
  * @author sk-qianxiao
  * @date 2019/12/25
  */
-public class Main {
+public class ExcelReadTest {
     public static void main(String[] args) throws Exception{
         Resource res2 = new ClassPathResource("区域IoT设备导入模板.xlsx");
         InputStream ins2 = res2.getInputStream();
