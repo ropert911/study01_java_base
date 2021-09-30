@@ -4,6 +4,7 @@ import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.net.SocketException;
 import java.util.zip.GZIPInputStream;
 import java.util.zip.GZIPOutputStream;
 
@@ -100,5 +101,21 @@ public class GzipUtil {
         }
 
         gis.close();
+    }
+
+
+    public static void main(String[] args) {
+        String value = "Hello world";
+        try {
+            //数据压缩
+            byte[] bytes = GzipUtil.compress(value.getBytes());
+            //数据解压
+            byte[] orData = GzipUtil.decompress(bytes);
+            System.out.println(new String(orData));
+        } catch (SocketException e) {
+            e.printStackTrace();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }
