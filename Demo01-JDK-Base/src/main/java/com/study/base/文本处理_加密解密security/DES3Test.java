@@ -10,7 +10,7 @@ import java.security.Key;
 /**
  * 3DES算法
  */
-public class DES2Test {
+public class DES3Test {
 
 
     public static void main(String[] args) {

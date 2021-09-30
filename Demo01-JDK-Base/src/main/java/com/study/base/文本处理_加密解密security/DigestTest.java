@@ -2,7 +2,10 @@ package com.study.base.文本处理_加密解密security;
 
 import org.apache.commons.codec.binary.Base16;
 import org.apache.commons.codec.binary.Base64;
+import org.apache.commons.codec.binary.Hex;
 
+import javax.crypto.Mac;
+import javax.crypto.spec.SecretKeySpec;
 import java.io.UnsupportedEncodingException;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
@@ -78,6 +81,28 @@ public class DigestTest {
 //            String output = toHexString(byteArray);
 //            System.out.println(input + " 在SHA3后转16进制==" + output);
 //        }
+
+        {
+            System.out.println(input + " HmacMD5转16进制==" + hmac(input, "password", "HmacMD5"));
+            System.out.println(input + " HmacSHA1转16进制==" + hmac(input, "password", "HmacSHA1"));
+            System.out.println(input + " HmacSHA224转16进制==" + hmac(input, "password", "HmacSHA224"));
+            System.out.println(input + " HmacSHA256转16进制==" + hmac(input, "password", "HmacSHA256"));
+            System.out.println(input + " HmacSHA384转16进制==" + hmac(input, "password", "HmacSHA384"));
+            System.out.println(input + " HmacSHA512转16进制==" + hmac(input, "password", "HmacSHA512"));
+        }
+    }
+
+    private static String hmac(String input, String key, String type) {
+        try {
+            SecretKeySpec signingKey = new SecretKeySpec(key.getBytes("utf-8"), type);
+            Mac mac = Mac.getInstance(type);
+            mac.init(signingKey);
+            byte[] rawHmac = mac.doFinal(input.getBytes("utf-8"));
+            return Hex.encodeHexString(rawHmac);
+        } catch (Exception e) {
+        }
+
+        return null;
     }
 
     private static byte[] toDigestBytes(String input, String type) {
