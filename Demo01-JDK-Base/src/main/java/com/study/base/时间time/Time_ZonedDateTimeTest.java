@@ -3,7 +3,11 @@ package com.study.base.时间time;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.time.*;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.Locale;
 import java.util.TimeZone;
 
@@ -12,10 +16,23 @@ import java.util.TimeZone;
  */
 public class Time_ZonedDateTimeTest {
     private static Logger LOGGER = LoggerFactory.getLogger(Time_ZonedDateTimeTest.class);
-    public static void main(String[] args){
-        zonedDateTimeTest();
-        printZimeZone();
+
+    public static void main(String[] args) throws Exception {
+        DateFormat dateFormat = new SimpleDateFormat("yyyyMMddHHmmss");
+        Date date = dateFormat.parse("20211008142605");
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTime(date);
+
+        System.out.println(calendar.get(Calendar.YEAR));
+        System.out.println(calendar.get(Calendar.MONTH));
+        System.out.println(calendar.get(Calendar.DATE));
+        System.out.println(calendar.get(Calendar.HOUR_OF_DAY));
+        System.out.println(calendar.get(Calendar.MINUTE));
+        System.out.println(calendar.get(Calendar.SECOND));
+//        zonedDateTimeTest();
+//        printZimeZone();
     }
+
     /**
      * 时区时间测试
      */
